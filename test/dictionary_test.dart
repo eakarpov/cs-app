@@ -9,6 +9,8 @@ import 'package:cs/core/personal_store.dart';
 import 'package:cs/features/dictionary/data/dictionary_repository.dart';
 import 'package:cs/features/dictionary/domain/models.dart';
 import 'package:cs/features/dictionary/presentation/search_controller.dart';
+import 'package:cs/features/dictionary/presentation/cs_keyboard.dart';
+import 'package:cs/features/dictionary/presentation/article_screen.dart';
 
 http.Response response(
   String body,
@@ -46,6 +48,156 @@ String page(String name) => jsonEncode({
   'nextCursor': null,
 });
 void main() {
+  test(
+    'keyboard preserves selected base for marks and erases grapheme clusters',
+    () {
+      const selected = TextEditingValue(
+        text: 'слово',
+        selection: TextSelection(baseOffset: 0, extentOffset: 2),
+      );
+      final stressed = insertCs(selected, '\u0301', mark: true);
+      expect(stressed.text, 'сл\u0301ово');
+      expect(stressed.selection.baseOffset, 3);
+      expect(eraseCs(stressed).text, 'сово');
+      expect(insertCs(selected, 'ꙋ').text, 'ꙋово');
+      const empty = TextEditingValue(
+        text: '',
+        selection: TextSelection.collapsed(offset: 0),
+      );
+      expect(insertCs(empty, '\u0483', mark: true), empty);
+      final titlo = insertCs(
+        const TextEditingValue(
+          text: 'бо',
+          selection: TextSelection.collapsed(offset: 2),
+        ),
+        '\u2ded\u0487',
+        mark: true,
+      );
+      expect(titlo.text, 'бо\u2ded\u0487');
+      expect(eraseCs(titlo).text, 'б');
+    },
+  );
+  testWidgets(
+    'project pages are reachable from menu without changing the search',
+    (tester) async {
+      final personal = PersonalStore(MemoryPreferences());
+      await personal.initialized;
+      final repository = DictionaryRepository(
+        client: MockClient((_) async => response(page('word'), 200)),
+      );
+      await tester.pumpWidget(
+        ChurchSlavonicApp(repository: repository, personal: personal),
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byTooltip('Меню проекта'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('О проекте'));
+      await tester.pumpAndSettle();
+      expect(find.text('ЦС Словарь'), findsOneWidget);
+      await tester.scrollUntilVisible(find.text('Полезные ресурсы'), 300);
+      await tester.tap(find.text('Полезные ресурсы'));
+      await tester.pumpAndSettle();
+      expect(find.text('Уставные чтения'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      repository.close();
+    },
+  );
+  testWidgets(
+    'CS keyboard applies edited query once and is absent in reverse search',
+    (tester) async {
+      tester.platformDispatcher.textScaleFactorTestValue = 1.8;
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      final personal = PersonalStore(MemoryPreferences());
+      await personal.initialized;
+      final queries = <String>[];
+      final repository = DictionaryRepository(
+        client: MockClient((r) async {
+          queries.add(r.url.queryParameters['q'] ?? '');
+          return response(page('word'), 200);
+        }),
+      );
+      await tester.pumpWidget(
+        ChurchSlavonicApp(repository: repository, personal: personal),
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byTooltip('Клавиатура ЦС'));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('ѣ').last);
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('ѣ').last);
+      await tester.pump();
+      expect(queries, isEmpty);
+      await tester.tap(find.text('Найти'));
+      await tester.pumpAndSettle();
+      expect(queries, ['ѣ']);
+      expect(find.widgetWithText(TextField, 'ѣ'), findsOneWidget);
+      await tester.tap(find.text('Русский'));
+      await tester.pumpAndSettle();
+      expect(find.byTooltip('Клавиатура ЦС'), findsNothing);
+      expect(tester.takeException(), isNull);
+      repository.close();
+    },
+  );
+
+  testWidgets('prepared examples open the exact source entry', (tester) async {
+    final personal = PersonalStore(MemoryPreferences());
+    await personal.initialized;
+    final paths = <String>[];
+    final repository = DictionaryRepository(
+      client: MockClient((r) async {
+        paths.add(r.url.path);
+        return response(
+          jsonEncode(
+            r.url.path.contains('source-entries')
+                ? {
+                    'title': 'Словарь',
+                    'paragraphs': [
+                      {
+                        'runs': [
+                          {'text': 'Исходная статья', 'kind': 'text'},
+                        ],
+                      },
+                    ],
+                  }
+                : {
+                    'id': 'a',
+                    'name': 'а҆́бїе',
+                    'examples': [
+                      {
+                        'id': 'e',
+                        'quote': 'И абие',
+                        'citation': 'Марк. 1, 10',
+                        'sourceId': 'exact-source',
+                        'sourceTitle': 'Словарь Дьяченко',
+                        'script': 'source',
+                      },
+                    ],
+                  },
+          ),
+          200,
+        );
+      }),
+    );
+    await tester.pumpWidget(
+      MaterialApp(
+        home: ArticleScreen(
+          id: 'a',
+          repository: repository,
+          personal: personal,
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Примеры'));
+    await tester.pumpAndSettle();
+    expect(find.text('И абие'), findsOneWidget);
+    expect(find.text('Марк. 1, 10'), findsOneWidget);
+    await tester.tap(find.text('Словарь Дьяченко'));
+    await tester.pumpAndSettle();
+    expect(paths.last, endsWith('/source-entries/exact-source'));
+    expect(find.text('Исходная статья', findRichText: true), findsOneWidget);
+    repository.close();
+  });
   testWidgets('request timeout is readable and leaves no pending UI timer', (
     tester,
   ) async {
@@ -291,6 +443,22 @@ void main() {
       await tester.tap(find.byTooltip('В избранное'));
       await tester.pumpAndSettle();
       expect(personal.favorites.single.id, 'word');
+      await tester.tap(find.text('Примеры'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('Примеры пока не выделены'), findsOneWidget);
+      await tester.tap(find.text('Формы'));
+      await tester.pumpAndSettle();
+      expect(
+        find.textContaining('Парадигма пока не определена'),
+        findsOneWidget,
+      );
+      await tester.tap(find.byTooltip('Источники и пометы'));
+      await tester.pumpAndSettle();
+      expect(find.text('Происхождение лексемы'), findsOneWidget);
+      Navigator.of(tester.element(find.text('Происхождение лексемы'))).pop();
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Толкования'));
+      await tester.pumpAndSettle();
       await tester.tap(find.text('Словарь Свирелина').first);
       await tester.pumpAndSettle();
       expect(

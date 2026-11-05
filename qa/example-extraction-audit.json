@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-05",
+  "readOnly": true,
+  "publicationVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+  "sourceEntries": 75266,
+  "entriesWithExamples": 9527,
+  "extractedExamples": 10887,
+  "bySource": {
+    "Св": 1563,
+    "ГлтНЗ": 5956,
+    "Дч*": 3368
+  },
+  "limitations": [
+    "Counts include repeated quotations across source fragments",
+    "Not editorial verification",
+    "Only adjacent numeric chapter/verse citations and source-specific quotation styles",
+    "SCРЯ and other layouts need separate review"
+  ],
+  "deployed": false
+}

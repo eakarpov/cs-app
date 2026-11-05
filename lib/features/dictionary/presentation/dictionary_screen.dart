@@ -6,6 +6,8 @@ import 'search_controller.dart';
 import 'article_screen.dart';
 import 'report_dialog.dart';
 import 'search_result_heading.dart';
+import 'project_pages.dart';
+import 'cs_keyboard.dart';
 
 class DictionaryScreen extends StatefulWidget {
   const DictionaryScreen({
@@ -61,6 +63,19 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
       selection: TextSelection.collapsed(offset: start + value.length),
     );
     search.change(text.text);
+  }
+
+  Future<void> keyboard() async {
+    FocusManager.instance.primaryFocus?.unfocus();
+    final before = text.text;
+    final submit = await showModalBottomSheet<bool>(
+      context: context,
+      isScrollControlled: true,
+      builder: (_) => CsKeyboard(controller: text),
+    );
+    if (mounted && (submit == true || text.text != before)) {
+      search.change(text.text, immediate: true);
+    }
   }
 
   void settings() => showModalBottomSheet<void>(
@@ -123,7 +138,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                   onPressed: () => showLicensePage(
                     context: context,
                     applicationName: 'ЦС Словарь',
-                    applicationVersion: '0.1.0',
+                    applicationVersion: '0.1.1',
                   ),
                   child: const Text('Лицензии'),
                 ),
@@ -202,13 +217,24 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                       ? 'Слово или словоформа'
                       : 'Русское слово или выражение',
                   prefixIcon: const Icon(Icons.search),
-                  suffixIcon: IconButton(
-                    tooltip: 'Очистить',
-                    onPressed: () {
-                      text.clear();
-                      search.change('');
-                    },
-                    icon: const Icon(Icons.clear),
+                  suffixIcon: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (search.direction == 'cu-ru')
+                        IconButton(
+                          tooltip: 'Клавиатура ЦС',
+                          onPressed: keyboard,
+                          icon: const Icon(Icons.keyboard_alt_outlined),
+                        ),
+                      IconButton(
+                        tooltip: 'Очистить',
+                        onPressed: () {
+                          text.clear();
+                          search.change('');
+                        },
+                        icon: const Icon(Icons.clear),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -337,6 +363,24 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
       appBar: AppBar(
         title: Text(['Словарь', 'Избранное', 'История'][tab]),
         actions: [
+          PopupMenuButton<String>(
+            tooltip: 'Меню проекта',
+            onSelected: (value) => Navigator.push(
+              context,
+              MaterialPageRoute<void>(
+                builder: (_) => value == 'about'
+                    ? const ProjectAboutScreen()
+                    : const UsefulResourcesScreen(),
+              ),
+            ),
+            itemBuilder: (_) => const [
+              PopupMenuItem(value: 'about', child: Text('О проекте')),
+              PopupMenuItem(
+                value: 'resources',
+                child: Text('Полезные ресурсы'),
+              ),
+            ],
+          ),
           IconButton(
             tooltip: 'Настройки',
             onPressed: widget.personal.ready ? settings : null,

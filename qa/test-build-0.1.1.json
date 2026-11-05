@@ -1,0 +1,25 @@
+{
+  "version": "0.1.1+2",
+  "apk": "build/acceptance/cs-dictionary-0.1.1.apk",
+  "bytes": 56510589,
+  "sha256": "0681843cd8a3162d042faec841e4d88cb669feb0240410e5576ba6242fe850c6",
+  "applicationId": "info.typikon.cs",
+  "androidMinSdk": 24,
+  "signing": "debug; same certificate as 0.1.0+1",
+  "logo": "ЦС; Monomakh Unicode; user-selected",
+  "checks": {
+    "flutterAnalyze": "passed",
+    "flutterTests": 13,
+    "csDictionaryTests": 16,
+    "backendTypecheck": "passed",
+    "bundledLogoMatches": true,
+    "oldApkUnchanged": true
+  },
+  "backendChangesDeployed": false,
+  "knownOpen": [
+    "M01 double accents",
+    "M02 hard-sign ending segmentation",
+    "M03 uk ending segments in publication",
+    "separate examples require prepared API deployment"
+  ]
+}

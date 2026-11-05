@@ -103,6 +103,18 @@ class Paradigm {
   final List<FormSlot> slots;
 }
 
+class DictionaryExample {
+  DictionaryExample(Json j)
+    : id = string(j['id']),
+      quote = string(j['quote']),
+      citation = string(j['citation']),
+      sourceId = string(j['sourceId']),
+      sourceTitle = string(j['sourceTitle']),
+      church = j['script'] == 'church';
+  final String id, quote, citation, sourceId, sourceTitle;
+  final bool church;
+}
+
 class WordArticle {
   WordArticle(Json j)
     : id = string(j['id']),
@@ -127,6 +139,9 @@ class WordArticle {
       relations = array(j['relations']).map(object).toList(),
       etymologies = array(j['etymologies']).map(object).toList(),
       usage = array(j['usage']).map(object).toList(),
+      examples = array(
+        j['examples'],
+      ).map((v) => DictionaryExample(object(v))).toList(),
       composition = array(j['composition']).map(object).toList();
   final String id, name, pos, morphologyStatus;
   final List<DataOrigin> lexemeOrigins, schemeOrigins;
@@ -134,6 +149,7 @@ class WordArticle {
   final List<SourceCard> sources, relatedSources;
   final List<Paradigm> paradigms;
   final List<WordForm> extra;
+  final List<DictionaryExample> examples;
   final List<Json> relations, etymologies, usage, composition;
 }
 
