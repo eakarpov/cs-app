@@ -1,0 +1,785 @@
+{
+  "version": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+  "tested": 480,
+  "directions": {
+    "cu-ru": 360,
+    "ru-cu": 120
+  },
+  "failed": [],
+  "p95LocalMs": 7.449142000000165,
+  "baselineFingerprint": "4e644d50b2ca6c1be6caa31d0695cc2ca556c30ed52df883bb54d885fe41745c",
+  "missingLegacy": [],
+  "changedLocalFields": [],
+  "brokenSegments": 0,
+  "orphanRelations": 0,
+  "unscopedRelations": 0,
+  "verifiedRelations": 6,
+  "etymologies": 8,
+  "probes": [
+    {
+      "query": "а",
+      "results": 2
+    },
+    {
+      "query": "и",
+      "results": 2
+    },
+    {
+      "query": "бог",
+      "results": 50
+    },
+    {
+      "query": "земли",
+      "results": 1
+    },
+    {
+      "query": "бг҃ъ",
+      "results": 50
+    }
+  ],
+  "unknownWordResults": 0,
+  "publication": {
+    "version": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+    "articles": 34119,
+    "forms": 3161477,
+    "sources": 75266,
+    "relations": 14862,
+    "verifiedRelations": 6,
+    "etymologies": 8,
+    "droppedUnresolvedHypotheses": 0,
+    "sha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158"
+  },
+  "http": {
+    "checks": [
+      {
+        "name": "real form, public CORS and version",
+        "passed": [
+          {
+            "id": "68399a217310e32be5d783bb",
+            "name": "землѧ̀",
+            "pos": "noun",
+            "match": "stored-form",
+            "matched": "зе́мли",
+            "grammar": "единственное число · родительный / единственное число · дательный / единственное число · местный",
+            "rank": 1,
+            "exact": true
+          }
+        ]
+      },
+      {
+        "name": "real article and stable identity",
+        "passed": [
+          {
+            "kind": "noun",
+            "title": "Склонение",
+            "slots": [
+              {
+                "id": "sgNom",
+                "label": "единственное число · именительный",
+                "forms": [
+                  {
+                    "value": "землѧ́",
+                    "origin": "stored",
+                    "grammar": "sgNom",
+                    "segments": null,
+                    "provenance": [
+                      {
+                        "targetId": "form:cdbba818631fec44452cdf03d90dfae698f6a6ad88515fa72b6bbccba12c545c",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "sgAcc",
+                "label": "единственное число · винительный",
+                "forms": [
+                  {
+                    "value": "зе́млю",
+                    "origin": "stored",
+                    "grammar": "sgAcc",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "зе́мл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "ю"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "form:a339543d1961cb5c37753509b5ce22e7efa180b775dbadfacff54af6439290a0",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "sgGen",
+                "label": "единственное число · родительный",
+                "forms": [
+                  {
+                    "value": "зе́мли",
+                    "origin": "stored",
+                    "grammar": "sgGen",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "зе́мл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "и"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "form:208420ef6663d26bafd0f75f05358f4bc722cefcb32748f3f5097b7e592da3a9",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "sgDat",
+                "label": "единственное число · дательный",
+                "forms": [
+                  {
+                    "value": "зе́мли",
+                    "origin": "stored",
+                    "grammar": "sgDat",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "зе́мл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "и"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "form:208420ef6663d26bafd0f75f05358f4bc722cefcb32748f3f5097b7e592da3a9",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  },
+                  {
+                    "value": "землѣ́",
+                    "origin": "stored",
+                    "grammar": "sgDat",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "земл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "ѣ́"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "form:05793f68dcef0bb3b91f597b8b6e82b00eb2c94f5ed4a5221d45c4c8598aa852",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "sgLoc",
+                "label": "единственное число · местный",
+                "forms": [
+                  {
+                    "value": "зе́мли",
+                    "origin": "stored",
+                    "grammar": "sgLoc",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "зе́мл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "и"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "form:208420ef6663d26bafd0f75f05358f4bc722cefcb32748f3f5097b7e592da3a9",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  },
+                  {
+                    "value": "землѣ́",
+                    "origin": "stored",
+                    "grammar": "sgLoc",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "земл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "ѣ́"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "form:05793f68dcef0bb3b91f597b8b6e82b00eb2c94f5ed4a5221d45c4c8598aa852",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "sgIns",
+                "label": "единственное число · творительный",
+                "forms": [
+                  {
+                    "value": "зе́млею",
+                    "origin": "stored",
+                    "grammar": "sgIns",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "зе́мл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "ею"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "form:52f69a834ba646cd24ecf30714a133696eb80bcec66bd340c4f78708a2ac30c1",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "sgVoc",
+                "label": "единственное число · звательный",
+                "forms": [
+                  {
+                    "value": "земле́",
+                    "origin": "stored",
+                    "grammar": "sgVoc",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "земл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "е́"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "form:06fd852f4155ed1f0882873e02bdb272b957d14ee6cda6401adf3a3cff76b6be",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "plNom",
+                "label": "множественное число · именительный",
+                "forms": [
+                  {
+                    "value": "зємли",
+                    "origin": "generated",
+                    "grammar": "plNom",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "зємл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "и"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "scheme:f11538dba0b95782991197454064f2a262b2afe04c378a4f739a324d909f4185",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  },
+                  {
+                    "value": "земли",
+                    "origin": "generated",
+                    "grammar": "plNom",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "земл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "и"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "scheme:f11538dba0b95782991197454064f2a262b2afe04c378a4f739a324d909f4185",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "plAcc",
+                "label": "множественное число · винительный",
+                "forms": [
+                  {
+                    "value": "зємли",
+                    "origin": "generated",
+                    "grammar": "plAcc",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "зємл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "и"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "scheme:f11538dba0b95782991197454064f2a262b2afe04c378a4f739a324d909f4185",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  },
+                  {
+                    "value": "земли",
+                    "origin": "generated",
+                    "grammar": "plAcc",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "земл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "и"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "scheme:f11538dba0b95782991197454064f2a262b2afe04c378a4f739a324d909f4185",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "plGen",
+                "label": "множественное число · родительный",
+                "forms": [
+                  {
+                    "value": "земе́ль",
+                    "origin": "stored",
+                    "grammar": "plGen",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "земе́л"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "ь"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "form:07aa3eef31a0c378685d9df98d6bb6615c7a6667f0dc7abf03d072bd0bfbd145",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "plDat",
+                "label": "множественное число · дательный",
+                "forms": [
+                  {
+                    "value": "землѧмъ",
+                    "origin": "generated",
+                    "grammar": "plDat",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "земл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "ѧмъ"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "scheme:f11538dba0b95782991197454064f2a262b2afe04c378a4f739a324d909f4185",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "plLoc",
+                "label": "множественное число · местный",
+                "forms": [
+                  {
+                    "value": "зе́млѧхъ",
+                    "origin": "stored",
+                    "grammar": "plLoc",
+                    "segments": null,
+                    "provenance": [
+                      {
+                        "targetId": "form:b00919bdc5a9decfc40443c96f109342c8b7a1f179ac29be1637fb212d5b562b",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "plIns",
+                "label": "множественное число · творительный",
+                "forms": [
+                  {
+                    "value": "землѧ́ми",
+                    "origin": "stored",
+                    "grammar": "plIns",
+                    "segments": null,
+                    "provenance": [
+                      {
+                        "targetId": "form:56800bd11cdb72a8ea766b9ea7134fecee8c62a563e6765390217d788cc5fa14",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "duNomAcc",
+                "label": "двойственное число · именительный/винительный",
+                "forms": [
+                  {
+                    "value": "зємли̑",
+                    "origin": "generated",
+                    "grammar": "duNomAcc",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "зємл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "и̑"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "scheme:f11538dba0b95782991197454064f2a262b2afe04c378a4f739a324d909f4185",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  },
+                  {
+                    "value": "земли̑",
+                    "origin": "generated",
+                    "grammar": "duNomAcc",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "земл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "и̑"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "scheme:f11538dba0b95782991197454064f2a262b2afe04c378a4f739a324d909f4185",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "duGenLoc",
+                "label": "двойственное число · родительный/местный",
+                "forms": [
+                  {
+                    "value": "зємлю̑",
+                    "origin": "generated",
+                    "grammar": "duGenLoc",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "зємл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "ю̑"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "scheme:f11538dba0b95782991197454064f2a262b2afe04c378a4f739a324d909f4185",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  },
+                  {
+                    "value": "землю̑",
+                    "origin": "generated",
+                    "grammar": "duGenLoc",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "земл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "ю̑"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "scheme:f11538dba0b95782991197454064f2a262b2afe04c378a4f739a324d909f4185",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "duDatIns",
+                "label": "двойственное число · дательный/творительный",
+                "forms": [
+                  {
+                    "value": "землѧма",
+                    "origin": "generated",
+                    "grammar": "duDatIns",
+                    "segments": [
+                      {
+                        "kind": "stem",
+                        "text": "земл"
+                      },
+                      {
+                        "kind": "ending",
+                        "text": "ѧма"
+                      }
+                    ],
+                    "provenance": [
+                      {
+                        "targetId": "scheme:f11538dba0b95782991197454064f2a262b2afe04c378a4f739a324d909f4185",
+                        "sourceId": "work:polyakov-grammar",
+                        "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                        "origin": "dictionary",
+                        "attribution": "exact-match",
+                        "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "source contents, origin version and anchors",
+        "passed": "dda11fdeaa9990c074b1ab67c7c6fd6874334154c0dc0201ed4f17e7799840b4"
+      },
+      {
+        "name": "short/titlo а",
+        "passed": true
+      },
+      {
+        "name": "short/titlo и",
+        "passed": true
+      },
+      {
+        "name": "short/titlo бг҃ъ",
+        "passed": true
+      },
+      {
+        "name": "reverse labels",
+        "passed": true
+      },
+      {
+        "name": "bad direction",
+        "passed": true
+      },
+      {
+        "name": "bad ID",
+        "passed": true
+      },
+      {
+        "name": "missing article",
+        "passed": true
+      },
+      {
+        "name": "report validation",
+        "passed": true
+      },
+      {
+        "name": "explicit report accepted",
+        "passed": true
+      },
+      {
+        "name": "oversized report",
+        "passed": true
+      },
+      {
+        "name": "search rate limit and retry-after",
+        "passed": true
+      },
+      {
+        "name": "independent public etymology",
+        "passed": true
+      }
+    ],
+    "passed": 15,
+    "failed": 0
+  },
+  "flutter": {
+    "analyze": "passed",
+    "tests": 9,
+    "android": "built, debug signing",
+    "ios": "not built: Xcode unavailable",
+    "physicalDevices": "not tested"
+  },
+  "backendTests": {
+    "typikonWeb": {
+      "passed": 1493,
+      "skipped": 2,
+      "failed": 0
+    },
+    "interlex": {
+      "testsPassed": 2,
+      "newTypeErrors": 0,
+      "existingTypeErrors": 114
+    }
+  },
+  "android": {
+    "version": "0.1.0+1",
+    "applicationId": "info.typikon.cs",
+    "signing": "debug (closed acceptance only)",
+    "bytes": 55260285,
+    "sha256": "e89754b78493a2461be2da7983655dc36bf6956725a4bc8bf7a1c50bbe3a5428",
+    "apiBase": "https://www.typikon.info/api/v2/cs/",
+    "interlexBase": "https://interslavic-lexicon.com/api/public/cs/",
+    "serverActivationRequired": true
+  },
+  "releaseStatus": "closed acceptance candidate; new server APIs not deployed; device/editorial/load acceptance pending"
+}

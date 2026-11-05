@@ -1,0 +1,2406 @@
+{
+  "publicationVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+  "note": "Автоматический набор нахождения: 360 лемм/выписанных форм старого снимка и 120 явно выраженных русских эквивалентов. Нужна отдельная редакторская проверка смыслов.",
+  "cases": [
+    {
+      "query": "а",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d75f00"
+    },
+    {
+      "query": "авіа́ѳаръ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d75f49"
+    },
+    {
+      "query": "авіаѳа́ръ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d75f49"
+    },
+    {
+      "query": "ага́ва",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d75f92"
+    },
+    {
+      "query": "адама́нскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d75fdb"
+    },
+    {
+      "query": "адуи́левъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76024"
+    },
+    {
+      "query": "адуи́лева",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76024"
+    },
+    {
+      "query": "а́інъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7606d"
+    },
+    {
+      "query": "алеѯі́й",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d760b6"
+    },
+    {
+      "query": "алеѯі́а",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d760b6"
+    },
+    {
+      "query": "амамаа́ѳъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d760ff"
+    },
+    {
+      "query": "амма́дъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76148"
+    },
+    {
+      "query": "амма́дѣ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76148"
+    },
+    {
+      "query": "анані́й",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76191"
+    },
+    {
+      "query": "а́ннинъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d761da"
+    },
+    {
+      "query": "а́ннино",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d761da"
+    },
+    {
+      "query": "апо́столъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76223"
+    },
+    {
+      "query": "апо́стѡлъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76223"
+    },
+    {
+      "query": "ареопа́гъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7626c"
+    },
+    {
+      "query": "ареопа́га",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7626c"
+    },
+    {
+      "query": "арпѵ́ла",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d762b5"
+    },
+    {
+      "query": "арпѵ́лы",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d762b5"
+    },
+    {
+      "query": "архітектѡ́нствовати",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d762fe"
+    },
+    {
+      "query": "архітекто́нствовати",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d762fe"
+    },
+    {
+      "query": "асі́да",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76347"
+    },
+    {
+      "query": "ассу́ровъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76390"
+    },
+    {
+      "query": "ассу́ровы",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76390"
+    },
+    {
+      "query": "афе́ковъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d763d9"
+    },
+    {
+      "query": "афе́кова",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d763d9"
+    },
+    {
+      "query": "ахіе́зеръ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76422"
+    },
+    {
+      "query": "ахіе́зера",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76422"
+    },
+    {
+      "query": "басносло́вецъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7646b"
+    },
+    {
+      "query": "басносло́вца",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7646b"
+    },
+    {
+      "query": "безвѣ́стность",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d764b4"
+    },
+    {
+      "query": "безлѣ́тный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d764fd"
+    },
+    {
+      "query": "безлѣ́тнаго",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d764fd"
+    },
+    {
+      "query": "безпа́губный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76546"
+    },
+    {
+      "query": "безпа́губны",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76546"
+    },
+    {
+      "query": "безразсу́днѡ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7658f"
+    },
+    {
+      "query": "безсѣ́меннѡ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d765d8"
+    },
+    {
+      "query": "безыме́нный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76621"
+    },
+    {
+      "query": "безъ̑име́нныя",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76621"
+    },
+    {
+      "query": "благовре́менство",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7666a"
+    },
+    {
+      "query": "благовре́менства",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7666a"
+    },
+    {
+      "query": "благодая́ніе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d766b3"
+    },
+    {
+      "query": "бл҃годая́ніе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d766b3"
+    },
+    {
+      "query": "благоимѣ́тися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d766fc"
+    },
+    {
+      "query": "бл҃гоимѣ́тися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d766fc"
+    },
+    {
+      "query": "благообра́зный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76745"
+    },
+    {
+      "query": "благоѻбра́зный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76745"
+    },
+    {
+      "query": "благопра́вити",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7678e"
+    },
+    {
+      "query": "благопра́вящіи",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7678e"
+    },
+    {
+      "query": "благосла́вный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d767d7"
+    },
+    {
+      "query": "благосла́внаго",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d767d7"
+    },
+    {
+      "query": "благоти́шіе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76820"
+    },
+    {
+      "query": "бл҃готи́шіе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76820"
+    },
+    {
+      "query": "благохи́трость",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76869"
+    },
+    {
+      "query": "благохи́тростьми",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76869"
+    },
+    {
+      "query": "бли́зкій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d768b2"
+    },
+    {
+      "query": "бли́зкое",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d768b2"
+    },
+    {
+      "query": "богатѣ́тися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d768fb"
+    },
+    {
+      "query": "богатѣ́яся",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d768fb"
+    },
+    {
+      "query": "богодѣ́йный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76944"
+    },
+    {
+      "query": "бг҃одѣ̂йныя",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76944"
+    },
+    {
+      "query": "богомладе́нецъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7698d"
+    },
+    {
+      "query": "бг҃омладе́нца",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7698d"
+    },
+    {
+      "query": "богопораже́нный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d769d6"
+    },
+    {
+      "query": "бг҃опораже́нною",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d769d6"
+    },
+    {
+      "query": "богосло́віе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76a1f"
+    },
+    {
+      "query": "богосло́вія",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76a1f"
+    },
+    {
+      "query": "богоявле́нный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76a68"
+    },
+    {
+      "query": "бг҃оявле́нный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76a68"
+    },
+    {
+      "query": "бори́тель",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76ab1"
+    },
+    {
+      "query": "бори́теля",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76ab1"
+    },
+    {
+      "query": "бренодѣ́латель",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76afa"
+    },
+    {
+      "query": "бѣ́гати",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76b43"
+    },
+    {
+      "query": "бѣ́гаю",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76b43"
+    },
+    {
+      "query": "бѣщи́",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76b8c"
+    },
+    {
+      "query": "бѣгу́",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76b8c"
+    },
+    {
+      "query": "валаа́й",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76bd5"
+    },
+    {
+      "query": "валаа́и",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76bd5"
+    },
+    {
+      "query": "вара́къ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76c1e"
+    },
+    {
+      "query": "вара́ка",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76c1e"
+    },
+    {
+      "query": "васі́лла",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76c67"
+    },
+    {
+      "query": "вдо́вски",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76cb0"
+    },
+    {
+      "query": "велегла́сіе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76cf9"
+    },
+    {
+      "query": "велегла́сія",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76cf9"
+    },
+    {
+      "query": "великострада́лецъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76d42"
+    },
+    {
+      "query": "великострада́льче",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76d42"
+    },
+    {
+      "query": "вероні́ка",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76d8b"
+    },
+    {
+      "query": "веѳара́нъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76dd4"
+    },
+    {
+      "query": "вжиля́тися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76e1d"
+    },
+    {
+      "query": "вжиля́ешися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76e1d"
+    },
+    {
+      "query": "ви́дъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76e66"
+    },
+    {
+      "query": "ви́да",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76e66"
+    },
+    {
+      "query": "вѵссо́нъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76eaf"
+    },
+    {
+      "query": "віссо́нъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76eaf"
+    },
+    {
+      "query": "вкуша́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76ef8"
+    },
+    {
+      "query": "вкуша́еши",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76ef8"
+    },
+    {
+      "query": "влюбому́дренный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76f41"
+    },
+    {
+      "query": "влюбому́дренныя",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76f41"
+    },
+    {
+      "query": "вня́тельный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76f8a"
+    },
+    {
+      "query": "вня́телна",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76f8a"
+    },
+    {
+      "query": "вожделѣ́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76fd3"
+    },
+    {
+      "query": "вожделѣ́ютъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d76fd3"
+    },
+    {
+      "query": "возволнова́тися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7701c"
+    },
+    {
+      "query": "возволну́ются",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7701c"
+    },
+    {
+      "query": "воздая́ніе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77065"
+    },
+    {
+      "query": "воздая́нія",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77065"
+    },
+    {
+      "query": "возжелѣ́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d770ae"
+    },
+    {
+      "query": "возжелѣ́хъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d770ae"
+    },
+    {
+      "query": "возмощи́",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d770f7"
+    },
+    {
+      "query": "возмогу́",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d770f7"
+    },
+    {
+      "query": "возѡкружа́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77140"
+    },
+    {
+      "query": "возъ̑ѡкружа́я",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77140"
+    },
+    {
+      "query": "возсмердѣ́тися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77189"
+    },
+    {
+      "query": "возсмерди́тся",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77189"
+    },
+    {
+      "query": "вои́стинну",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d771d2"
+    },
+    {
+      "query": "вои́стин̑ну",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d771d2"
+    },
+    {
+      "query": "вѡ́носъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7721b"
+    },
+    {
+      "query": "восклица́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77264"
+    },
+    {
+      "query": "восклица́ю",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77264"
+    },
+    {
+      "query": "восплаще́ніе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d772ad"
+    },
+    {
+      "query": "воспѣва́тель",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d772f6"
+    },
+    {
+      "query": "воспѣва́тєли",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d772f6"
+    },
+    {
+      "query": "восшумѣ́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7733f"
+    },
+    {
+      "query": "возшуми́тъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7733f"
+    },
+    {
+      "query": "вражи́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77388"
+    },
+    {
+      "query": "вража́ше",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77388"
+    },
+    {
+      "query": "вруча́тися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d773d1"
+    },
+    {
+      "query": "вруча́ется",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d773d1"
+    },
+    {
+      "query": "всегуби́тель",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7741a"
+    },
+    {
+      "query": "всегуби́теля",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7741a"
+    },
+    {
+      "query": "вселе́нскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77463"
+    },
+    {
+      "query": "вселе́нскагѡ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77463"
+    },
+    {
+      "query": "всепло́дный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d774ac"
+    },
+    {
+      "query": "всепло́дно",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d774ac"
+    },
+    {
+      "query": "всесоверша́емый",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d774f5"
+    },
+    {
+      "query": "всесоверша́ема",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d774f5"
+    },
+    {
+      "query": "вскиса́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7753e"
+    },
+    {
+      "query": "вскиса́етъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7753e"
+    },
+    {
+      "query": "вузі́евъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77587"
+    },
+    {
+      "query": "вузі́еву",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77587"
+    },
+    {
+      "query": "высокогля́дати",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d775d0"
+    },
+    {
+      "query": "высокогля́дающіи",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d775d0"
+    },
+    {
+      "query": "вѣ́дѣти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77619"
+    },
+    {
+      "query": "вѣ́мъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77619"
+    },
+    {
+      "query": "вѣ́чный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77662"
+    },
+    {
+      "query": "вѣ́чнаго",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77662"
+    },
+    {
+      "query": "гада́тельствоватися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d776ab"
+    },
+    {
+      "query": "гада́тельствуется",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d776ab"
+    },
+    {
+      "query": "галілѡ́ѳъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d776f4"
+    },
+    {
+      "query": "галілѡ́ѳѣ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d776f4"
+    },
+    {
+      "query": "гее́нскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7773d"
+    },
+    {
+      "query": "гее́ннскагѡ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7773d"
+    },
+    {
+      "query": "ге́ѳовъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77786"
+    },
+    {
+      "query": "ге́ѳова",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77786"
+    },
+    {
+      "query": "гла́снѣ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d777cf"
+    },
+    {
+      "query": "го́воръ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77818"
+    },
+    {
+      "query": "го́вору",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77818"
+    },
+    {
+      "query": "гордели́вѣ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77861"
+    },
+    {
+      "query": "господонача́льный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d778aa"
+    },
+    {
+      "query": "гдс̑онача́льный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d778aa"
+    },
+    {
+      "query": "гребне́вскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d778f3"
+    },
+    {
+      "query": "гребне́вскою",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d778f3"
+    },
+    {
+      "query": "грясти́",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7793c"
+    },
+    {
+      "query": "гряду́",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7793c"
+    },
+    {
+      "query": "далма́тія",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77985"
+    },
+    {
+      "query": "далма́тію",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77985"
+    },
+    {
+      "query": "дая́ніе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d779ce"
+    },
+    {
+      "query": "дая́нія",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d779ce"
+    },
+    {
+      "query": "двора́сленный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77a17"
+    },
+    {
+      "query": "двора́сленныя",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77a17"
+    },
+    {
+      "query": "держа́ва",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77a60"
+    },
+    {
+      "query": "держа́ву",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77a60"
+    },
+    {
+      "query": "ди́вій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77aa9"
+    },
+    {
+      "query": "ди́віяго",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77aa9"
+    },
+    {
+      "query": "для",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77af2"
+    },
+    {
+      "query": "добролю́біе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77b3b"
+    },
+    {
+      "query": "добролю́бія",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77b3b"
+    },
+    {
+      "query": "дово́льный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77b84"
+    },
+    {
+      "query": "дово́лнагѡ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77b84"
+    },
+    {
+      "query": "долголѣ́тствовати",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77bcd"
+    },
+    {
+      "query": "долголѣ́тствуютъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77bcd"
+    },
+    {
+      "query": "доны́нѣшній",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77c16"
+    },
+    {
+      "query": "доны́нѣшняго",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77c16"
+    },
+    {
+      "query": "достолѣ́пнѣ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77c5f"
+    },
+    {
+      "query": "дрема́ніе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77ca8"
+    },
+    {
+      "query": "дрема́нія",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77ca8"
+    },
+    {
+      "query": "духовѣща́нный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77cf1"
+    },
+    {
+      "query": "духовѣща́нныхъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77cf1"
+    },
+    {
+      "query": "дѣ́вственникъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77d3a"
+    },
+    {
+      "query": "дѣ́вственника",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77d3a"
+    },
+    {
+      "query": "дѣ́яти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77d83"
+    },
+    {
+      "query": "дѣ́ю",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77d83"
+    },
+    {
+      "query": "еѵпраѯі́а",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77dcc"
+    },
+    {
+      "query": "єѵпраѯі́а",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77dcc"
+    },
+    {
+      "query": "еде́мовъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77e15"
+    },
+    {
+      "query": "єде́мова",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77e15"
+    },
+    {
+      "query": "единомы́сленникъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77e5e"
+    },
+    {
+      "query": "єдиномы́сленники",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77e5e"
+    },
+    {
+      "query": "единоя́трный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77ea7"
+    },
+    {
+      "query": "єдиноя́трный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77ea7"
+    },
+    {
+      "query": "екклесіа́стъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77ef0"
+    },
+    {
+      "query": "єклісіа́стъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77ef0"
+    },
+    {
+      "query": "еліа́дъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77f39"
+    },
+    {
+      "query": "єліа́дъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77f39"
+    },
+    {
+      "query": "еліфаа́довъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77f82"
+    },
+    {
+      "query": "єліфаа́дѡвы",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77f82"
+    },
+    {
+      "query": "еммау́съ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77fcb"
+    },
+    {
+      "query": "єммау́съ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d77fcb"
+    },
+    {
+      "query": "епіха́ріа",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78014"
+    },
+    {
+      "query": "єпіха́ріа",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78014"
+    },
+    {
+      "query": "есрѡ́мль",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7805d"
+    },
+    {
+      "query": "єсрѡ́мля",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7805d"
+    },
+    {
+      "query": "ефре́мъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d780a6"
+    },
+    {
+      "query": "єфре́мъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d780a6"
+    },
+    {
+      "query": "желтово́дскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d780ef"
+    },
+    {
+      "query": "желтово́дскагѡ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d780ef"
+    },
+    {
+      "query": "живода́вецъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78138"
+    },
+    {
+      "query": "живода́вца",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78138"
+    },
+    {
+      "query": "жизнотво́рный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78181"
+    },
+    {
+      "query": "жизнотво́рное",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78181"
+    },
+    {
+      "query": "завдіи́ль",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d781ca"
+    },
+    {
+      "query": "задо́нскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78213"
+    },
+    {
+      "query": "задо́нскагѡ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78213"
+    },
+    {
+      "query": "законослуже́бникъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7825c"
+    },
+    {
+      "query": "законослуже́бники",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7825c"
+    },
+    {
+      "query": "заони́кіевскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d782a5"
+    },
+    {
+      "query": "заони́кіевскому",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d782a5"
+    },
+    {
+      "query": "заре́дъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d782ee"
+    },
+    {
+      "query": "заѳои́совъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78337"
+    },
+    {
+      "query": "заѳои́совыхъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78337"
+    },
+    {
+      "query": "ѕвѣрообра́зный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78380"
+    },
+    {
+      "query": "ѕвѣроѻбра́зное",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78380"
+    },
+    {
+      "query": "зефрѡ́нъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d783c9"
+    },
+    {
+      "query": "зефрѡ́на",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d783c9"
+    },
+    {
+      "query": "златосло́вный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78412"
+    },
+    {
+      "query": "златосло́внымъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78412"
+    },
+    {
+      "query": "ѕлокова́рнѡ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7845b"
+    },
+    {
+      "query": "ѕлосмра́дный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d784a4"
+    },
+    {
+      "query": "ѕлосмра́дное",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d784a4"
+    },
+    {
+      "query": "зна́меніе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d784ed"
+    },
+    {
+      "query": "знаме́ніе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d784ed"
+    },
+    {
+      "query": "зука́мъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78536"
+    },
+    {
+      "query": "іамврі́инъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7857f"
+    },
+    {
+      "query": "іамврі̂ины",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7857f"
+    },
+    {
+      "query": "іве́ріа",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d785c8"
+    },
+    {
+      "query": "іве́ріи",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d785c8"
+    },
+    {
+      "query": "іева́нь",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78611"
+    },
+    {
+      "query": "іева́ня",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78611"
+    },
+    {
+      "query": "іекона́мъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7865a"
+    },
+    {
+      "query": "іекона́ма",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7865a"
+    },
+    {
+      "query": "іермѡ́ѳъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d786a3"
+    },
+    {
+      "query": "іефалті́мскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d786ec"
+    },
+    {
+      "query": "іефалті̂мскимъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d786ec"
+    },
+    {
+      "query": "избы́тіе",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78735"
+    },
+    {
+      "query": "избытіе́",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78735"
+    },
+    {
+      "query": "извѣсти́тися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7877e"
+    },
+    {
+      "query": "извѣсти́тся",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7877e"
+    },
+    {
+      "query": "издѣ́тска",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d787c7"
+    },
+    {
+      "query": "измы́слити",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78810"
+    },
+    {
+      "query": "измы́слиша",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78810"
+    },
+    {
+      "query": "изѡбрѣсти́ся",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78859"
+    },
+    {
+      "query": "изъ̑ѡбрѣто́шася",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78859"
+    },
+    {
+      "query": "изслѣ́довати",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d788a2"
+    },
+    {
+      "query": "изслѣ́дуютъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d788a2"
+    },
+    {
+      "query": "изъя́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d788eb"
+    },
+    {
+      "query": "изъ̑я́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d788eb"
+    },
+    {
+      "query": "іллѵрі́йскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78934"
+    },
+    {
+      "query": "іллѵрі́йстѣмъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78934"
+    },
+    {
+      "query": "иногда́",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7897d"
+    },
+    {
+      "query": "іѡа́ѳъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d789c6"
+    },
+    {
+      "query": "іѡсафа́товъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78a0f"
+    },
+    {
+      "query": "іѡсафа́тово",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78a0f"
+    },
+    {
+      "query": "іс",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78a58"
+    },
+    {
+      "query": "искуси́тельный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78aa1"
+    },
+    {
+      "query": "искуси́тельнымъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78aa1"
+    },
+    {
+      "query": "испо́лнительный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78aea"
+    },
+    {
+      "query": "ѵссѡ́пъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78b33"
+    },
+    {
+      "query": "ѵссѡ́па",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78b33"
+    },
+    {
+      "query": "исто́ргнутися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78b7c"
+    },
+    {
+      "query": "исто́ргнется",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78b7c"
+    },
+    {
+      "query": "исцѣли́тель",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78bc5"
+    },
+    {
+      "query": "исцѣли́теля",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78bc5"
+    },
+    {
+      "query": "іу́лій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78c0e"
+    },
+    {
+      "query": "казни́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78c57"
+    },
+    {
+      "query": "казня́тъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78c57"
+    },
+    {
+      "query": "камила́въ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78ca0"
+    },
+    {
+      "query": "каріѡ́ѳъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78ce9"
+    },
+    {
+      "query": "ка́фъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78d32"
+    },
+    {
+      "query": "кефіра́",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78d7b"
+    },
+    {
+      "query": "кѵрі́лло",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78dc4"
+    },
+    {
+      "query": "клеопа́тра",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78e0d"
+    },
+    {
+      "query": "клеѡпа́тра",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78e0d"
+    },
+    {
+      "query": "кова́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78e56"
+    },
+    {
+      "query": "куе́тъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78e56"
+    },
+    {
+      "query": "колоко́льня",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78e9f"
+    },
+    {
+      "query": "колоко́льнѣ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78e9f"
+    },
+    {
+      "query": "конча́ти",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78ee8"
+    },
+    {
+      "query": "конча́етъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78ee8"
+    },
+    {
+      "query": "корми́тися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78f31"
+    },
+    {
+      "query": "кощу́нствовати",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78f7a"
+    },
+    {
+      "query": "кра́тъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78fc3"
+    },
+    {
+      "query": "кра́томъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d78fc3"
+    },
+    {
+      "query": "кро́вь",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7900c"
+    },
+    {
+      "query": "кровь",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7900c"
+    },
+    {
+      "query": "куа́ртъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79055"
+    },
+    {
+      "query": "куа́рта",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79055"
+    },
+    {
+      "query": "къ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7909e"
+    },
+    {
+      "query": "ко",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7909e"
+    },
+    {
+      "query": "ласѳе́нъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d790e7"
+    },
+    {
+      "query": "ласѳе́ну",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d790e7"
+    },
+    {
+      "query": "лео́нтій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79130"
+    },
+    {
+      "query": "лео́нтіа",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79130"
+    },
+    {
+      "query": "лѵді́а",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79179"
+    },
+    {
+      "query": "лѵді́ю",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79179"
+    },
+    {
+      "query": "лихои́мственнѡ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d791c2"
+    },
+    {
+      "query": "ложесна́",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7920b"
+    },
+    {
+      "query": "ложесны́",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7920b"
+    },
+    {
+      "query": "лу́чшинство",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79254"
+    },
+    {
+      "query": "лу́чшинства",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79254"
+    },
+    {
+      "query": "любе́зный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7929d"
+    },
+    {
+      "query": "любе́знагѡ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7929d"
+    },
+    {
+      "query": "любому́ченичный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d792e6"
+    },
+    {
+      "query": "любому́чєничныя",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d792e6"
+    },
+    {
+      "query": "ля́данскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7932f"
+    },
+    {
+      "query": "ля́данскомъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7932f"
+    },
+    {
+      "query": "магнисі́йскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79378"
+    },
+    {
+      "query": "магнисі́йская",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79378"
+    },
+    {
+      "query": "мала́ѯовъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d793c1"
+    },
+    {
+      "query": "мала́ѯово",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d793c1"
+    },
+    {
+      "query": "маме́лфа",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7940a"
+    },
+    {
+      "query": "мареѡ́ѳовъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79453"
+    },
+    {
+      "query": "мареѡ́ѳова",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79453"
+    },
+    {
+      "query": "ма́сличина",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7949c"
+    },
+    {
+      "query": "ма́сличину",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7949c"
+    },
+    {
+      "query": "махаѳі́нскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d794e5"
+    },
+    {
+      "query": "махаѳі́нскихъ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d794e5"
+    },
+    {
+      "query": "мела́дій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7952e"
+    },
+    {
+      "query": "мела́дія",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7952e"
+    },
+    {
+      "query": "ме́рзостный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79577"
+    },
+    {
+      "query": "ме́рзѡстная",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79577"
+    },
+    {
+      "query": "мехураѳі́нскій",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d795c0"
+    },
+    {
+      "query": "мимоходи́тельнѣ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79609"
+    },
+    {
+      "query": "мѵропода́тельный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79652"
+    },
+    {
+      "query": "мѵропода́тельны",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79652"
+    },
+    {
+      "query": "міхаи́ло",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7969b"
+    },
+    {
+      "query": "многобѣ́дный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d796e4"
+    },
+    {
+      "query": "многобѣ́ден̑",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d796e4"
+    },
+    {
+      "query": "многоми́лостивый",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7972d"
+    },
+    {
+      "query": "многомлс̑тивый",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d7972d"
+    },
+    {
+      "query": "многорыда́тельный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79776"
+    },
+    {
+      "query": "многорыда́тельно",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79776"
+    },
+    {
+      "query": "многочу́дный",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d797bf"
+    },
+    {
+      "query": "многочу́днагѡ",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d797bf"
+    },
+    {
+      "query": "мо́лвитися",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79808"
+    },
+    {
+      "query": "мо́лвится",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79808"
+    },
+    {
+      "query": "мони́сто",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79851"
+    },
+    {
+      "query": "мѡни́ста",
+      "direction": "cu-ru",
+      "expectedId": "68399a217310e32be5d79851"
+    },
+    {
+      "query": "-ен",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d359"
+    },
+    {
+      "query": "без оскудения",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d79f8f"
+    },
+    {
+      "query": "безчестие",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7a381"
+    },
+    {
+      "query": "благочестиво мудрствовать",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d76875"
+    },
+    {
+      "query": "большои топор",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7aa44"
+    },
+    {
+      "query": "быть благовествуему",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d76677"
+    },
+    {
+      "query": "быть одним",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77eaf"
+    },
+    {
+      "query": "быть соумерщвляему",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d0c1"
+    },
+    {
+      "query": "в разговоре: особенныи образ выражения",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7b3bf"
+    },
+    {
+      "query": "великодушно",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d766c7"
+    },
+    {
+      "query": "весьма умножаться",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7ba99"
+    },
+    {
+      "query": "винная ягода",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7ccb4"
+    },
+    {
+      "query": "во всю ночь",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7a618"
+    },
+    {
+      "query": "возлагать",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d79a64"
+    },
+    {
+      "query": "ворота",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77396"
+    },
+    {
+      "query": "всегда близкии",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7bcfd"
+    },
+    {
+      "query": "всячески",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77571"
+    },
+    {
+      "query": "высокоумствовать",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77ce7"
+    },
+    {
+      "query": "говорить что нибуть недельное",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d849"
+    },
+    {
+      "query": "греховныи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7cb2d"
+    },
+    {
+      "query": "девства",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7c380"
+    },
+    {
+      "query": "деиствие отдавшаго",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7ab5a"
+    },
+    {
+      "query": "деиствование в пользу",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d766cf"
+    },
+    {
+      "query": "делаться смрадным",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77188"
+    },
+    {
+      "query": "для убеждения или улики",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7ad18"
+    },
+    {
+      "query": "доставляющии упокоение",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7db91"
+    },
+    {
+      "query": "думающии о себе высоко",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d775d7"
+    },
+    {
+      "query": "железо",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d780fa"
+    },
+    {
+      "query": "заведывавшии сбором",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7bd8f"
+    },
+    {
+      "query": "заменяющии или сменяющии кого-л",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7b836"
+    },
+    {
+      "query": "затруднение",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d782b8"
+    },
+    {
+      "query": "знои",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d780dc"
+    },
+    {
+      "query": "изгорода в поле",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7df8a"
+    },
+    {
+      "query": "изображенныи в писании неясно",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d519"
+    },
+    {
+      "query": "или заговоре",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7cb2b"
+    },
+    {
+      "query": "или свое лице",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7c678"
+    },
+    {
+      "query": "имеющии величественныи и строиныи стан",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77b64"
+    },
+    {
+      "query": "имеющии три зубца",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d754"
+    },
+    {
+      "query": "исполненныи многих трудов",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7973c"
+    },
+    {
+      "query": "к наушничеству",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7e329"
+    },
+    {
+      "query": "клясться",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7c4bf"
+    },
+    {
+      "query": "краденыи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d5b8"
+    },
+    {
+      "query": "ласково говорить",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7a5a9"
+    },
+    {
+      "query": "лишенныи языка",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7661c"
+    },
+    {
+      "query": "любящии своих детеи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7e18f"
+    },
+    {
+      "query": "мещущии камни из пращеи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d78c8a"
+    },
+    {
+      "query": "монофелит",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77e32"
+    },
+    {
+      "query": "наблюдающии за устроиством в чертоге",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7e217"
+    },
+    {
+      "query": "называемое попросту деревянным",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77f25"
+    },
+    {
+      "query": "нарушение счастия",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7a271"
+    },
+    {
+      "query": "начать греметь",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7705d"
+    },
+    {
+      "query": "не имеющии никакого порока",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77493"
+    },
+    {
+      "query": "не понимать",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d788cb"
+    },
+    {
+      "query": "невоздержныи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d79c9e"
+    },
+    {
+      "query": "неимение достаточнаго пространства",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d86f"
+    },
+    {
+      "query": "неподшитыи мехом или ватою",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d3cf"
+    },
+    {
+      "query": "неразумно",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7daee"
+    },
+    {
+      "query": "неясность",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d60a"
+    },
+    {
+      "query": "нося на главе венец",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77629"
+    },
+    {
+      "query": "обвязывать",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7a73c"
+    },
+    {
+      "query": "обольщать пением",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7a527"
+    },
+    {
+      "query": "ограждение",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7aade"
+    },
+    {
+      "query": "оказывать благоговение",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d76694"
+    },
+    {
+      "query": "опытныи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7db31"
+    },
+    {
+      "query": "острота понятия",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d76b39"
+    },
+    {
+      "query": "отменно благозвучныи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d773e5"
+    },
+    {
+      "query": "относящиися к священноначалию",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7c8d7"
+    },
+    {
+      "query": "очень искусныи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d766ff"
+    },
+    {
+      "query": "перебегающии из места в место",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d76b42"
+    },
+    {
+      "query": "письменное обязательство",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7c4e6"
+    },
+    {
+      "query": "по полам",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7b277"
+    },
+    {
+      "query": "подаваемыя за обедом и ужином",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d303"
+    },
+    {
+      "query": "подобныи небесному грому",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d79c31"
+    },
+    {
+      "query": "покрываться ржавчиною",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7c42c"
+    },
+    {
+      "query": "помога",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7b2db"
+    },
+    {
+      "query": "посвященная воспоминанию страстеи христовых",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d362"
+    },
+    {
+      "query": "пот выходит крупными каплями",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d778e9"
+    },
+    {
+      "query": "правыи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77a85"
+    },
+    {
+      "query": "предварительно сделать",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7b80f"
+    },
+    {
+      "query": "представляться",
+      "direction": "ru-cu",
+      "expectedId": "1ad71fe40c9913a3af9b5669"
+    },
+    {
+      "query": "преподающии вредное учение",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d773b4"
+    },
+    {
+      "query": "привилегия",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7b897"
+    },
+    {
+      "query": "прикровенно",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d519"
+    },
+    {
+      "query": "принадлежащии царю",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7e13d"
+    },
+    {
+      "query": "присвоение имени христова",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7e0e2"
+    },
+    {
+      "query": "приятныи запах",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7665c"
+    },
+    {
+      "query": "производящии гром с молниею",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7791a"
+    },
+    {
+      "query": "проповедавшии бога",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d769f5"
+    },
+    {
+      "query": "прохлада",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7732d"
+    },
+    {
+      "query": "работающии у другаго из наима",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7c104"
+    },
+    {
+      "query": "раздумывать",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7c24d"
+    },
+    {
+      "query": "расположенные дугообразно над глазною впадиною",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d76b02"
+    },
+    {
+      "query": "род тенет",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d529"
+    },
+    {
+      "query": "с доброю славою",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d767d6"
+    },
+    {
+      "query": "самолично",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d791c7"
+    },
+    {
+      "query": "своиственныи ангелам",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d761bb"
+    },
+    {
+      "query": "сделанныи из золота",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d78416"
+    },
+    {
+      "query": "середина",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7b9b6"
+    },
+    {
+      "query": "склонныи к прощению",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d99f"
+    },
+    {
+      "query": "служащее к поддержанию чего либо",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7b161"
+    },
+    {
+      "query": "смягчать",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7da75"
+    },
+    {
+      "query": "совершенно безмятежныи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d773ef"
+    },
+    {
+      "query": "содержащиися в тюрьме",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7da29"
+    },
+    {
+      "query": "соответственно святости",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7c8cd"
+    },
+    {
+      "query": "состояние живущих целомудренно",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77d3e"
+    },
+    {
+      "query": "спасаемыи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d76a32"
+    },
+    {
+      "query": "становиться плешивым",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7a684"
+    },
+    {
+      "query": "страсть к лицу другаго пола",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d792bb"
+    },
+    {
+      "query": "сходныи нравом или своиствами",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7b144"
+    },
+    {
+      "query": "текущии золотыми струями",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d78417"
+    },
+    {
+      "query": "тоска",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7db5f"
+    },
+    {
+      "query": "убуждшеся",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7d8c3"
+    },
+    {
+      "query": "удовлетворить",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77b78"
+    },
+    {
+      "query": "умирать",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d77796"
+    },
+    {
+      "query": "управлять четвертои частью страны или области",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7e24f"
+    },
+    {
+      "query": "утверждать в чем либо",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d76fbe"
+    },
+    {
+      "query": "хижина",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7e066"
+    },
+    {
+      "query": "целительныи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d773a7"
+    },
+    {
+      "query": "чисто вещественныи",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d773ff"
+    },
+    {
+      "query": "чуждыи одоления ратованием",
+      "direction": "ru-cu",
+      "expectedId": "68399a217310e32be5d7a191"
+    }
+  ]
+}

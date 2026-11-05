@@ -10,6 +10,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
+  http: ^1.6.0
+  shared_preferences: ^2.5.4
+  url_launcher: ^6.3.1
+  cupertino_icons: ^1.0.8
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -17,3 +24,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/fonts/LICENSE.txt
+  fonts:
+    - family: Monomakh
+      fonts:
+        - asset: assets/fonts/MonomakhUnicode.otf
+    - family: OldStandard
+      fonts:
+        - asset: assets/fonts/OldStandard-Regular.otf
