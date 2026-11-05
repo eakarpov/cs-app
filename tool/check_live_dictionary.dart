@@ -20,6 +20,21 @@ Future<void> main() async {
     );
     final article = await repository.article(forms.items.first.id);
     check('real paradigms', article.paradigms.isNotEmpty);
+    check('source-backed examples', article.examples.isNotEmpty);
+    final example = article.examples.first;
+    check(
+      'example belongs to article source',
+      article.sources.any((s) => s.id == example.sourceId),
+    );
+    final exampleSource = await repository.source(example.sourceId);
+    check(
+      'example source identity',
+      array(exampleSource['examples'])
+          .map(object)
+          .any((e) => e['id'] == example.id && e['quote'] == example.quote),
+    );
+    check('example has citation', example.citation.isNotEmpty);
+
     check('versioned data', forms.version.isNotEmpty);
     for (final p in article.paradigms) {
       for (final slot in p.slots) {

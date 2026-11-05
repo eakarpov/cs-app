@@ -135,7 +135,7 @@ class ProjectAboutScreen extends StatelessWidget {
           const SizedBox(height: 16),
           Text('ЦС Словарь', style: Theme.of(context).textTheme.headlineMedium),
           const SizedBox(height: 8),
-          const Text('Версия 0.1.1 · тестовый выпуск'),
+          const Text('Версия 0.1.2 · тестовый выпуск'),
           const SizedBox(height: 24),
           const Text(
             'Словарь помогает понимать церковнославянские тексты и изучать язык: находить слова и словоформы, читать толкования и разбирать словоизменение. Проект развивается вместе с «Уставными чтениями».',
@@ -178,7 +178,7 @@ class ProjectAboutScreen extends StatelessWidget {
             onPressed: () => showLicensePage(
               context: context,
               applicationName: 'ЦС Словарь',
-              applicationVersion: '0.1.1',
+              applicationVersion: '0.1.2',
             ),
             child: const Text('Лицензии'),
           ),

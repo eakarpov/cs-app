@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
@@ -198,6 +199,69 @@ void main() {
     expect(find.text('Исходная статья', findRichText: true), findsOneWidget);
     repository.close();
   });
+  for (final fixture in ['earth-article', 'unassigned-article']) {
+    testWidgets('forms survive scrolling and returning to the tab: $fixture', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      final raw = File('test/fixtures/$fixture.json').readAsStringSync();
+      final article = WordArticle(object(jsonDecode(raw)));
+      final personal = PersonalStore(MemoryPreferences());
+      await personal.initialized;
+      final repository = DictionaryRepository(
+        client: MockClient((_) async => response(raw, 200)),
+      );
+      await tester.pumpWidget(
+        MaterialApp(
+          home: ArticleScreen(
+            id: article.id,
+            repository: repository,
+            personal: personal,
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Формы'));
+      await tester.pumpAndSettle();
+      if (article.paradigms.any((p) => p.slots.isNotEmpty)) {
+        await tester.tap(find.text('Склонение'));
+        await tester.pumpAndSettle();
+      }
+      await tester.drag(
+        find.byType(CustomScrollView).last,
+        const Offset(0, -280),
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Толкования'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Формы'));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      await tester.scrollUntilVisible(
+        find.text('Другие выписанные формы'),
+        300,
+        scrollable: find
+            .descendant(
+              of: find.byType(CustomScrollView).last,
+              matching: find.byType(Scrollable),
+            )
+            .first,
+      );
+      if (article.paradigms.any((p) => p.slots.isNotEmpty)) {
+        await tester.tap(find.text('Другие выписанные формы'));
+        await tester.pumpAndSettle();
+      }
+      expect(
+        find.text(article.extra.first.value, findRichText: true),
+        findsWidgets,
+      );
+      expect(tester.takeException(), isNull);
+      repository.close();
+    });
+  }
   testWidgets('request timeout is readable and leaves no pending UI timer', (
     tester,
   ) async {

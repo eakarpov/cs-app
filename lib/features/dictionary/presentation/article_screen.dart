@@ -151,6 +151,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
   }
 
   Widget relations(List<Json> rows, bool proposed) => ExpansionTile(
+    key: PageStorageKey('${widget.id}:relations:$proposed'),
     title: Text(proposed ? 'Предположительные связи' : 'Подтверждённые связи'),
     subtitle: proposed
         ? const Text('Машинное сопоставление; требует проверки')
@@ -488,6 +489,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                               ),
                             if (a.relatedSources.isNotEmpty)
                               ExpansionTile(
+                                key: PageStorageKey('${a.id}:related-sources'),
                                 title: const Text(
                                   'Перекрёстные ссылки источника',
                                 ),
@@ -573,8 +575,13 @@ class _ArticleScreenState extends State<ArticleScreen> {
                               ),
                             if (a.morphologyStatus == 'notApplicable')
                               const Text('Слово не изменяется.'),
-                            for (final p in a.paradigms)
+                            for (final p in a.paradigms.where(
+                              (p) => p.slots.isNotEmpty,
+                            ))
                               ExpansionTile(
+                                key: PageStorageKey(
+                                  '${a.id}:paradigm:${a.paradigms.indexOf(p)}',
+                                ),
                                 title: Text(p.title),
                                 children: p.slots
                                     .map(
@@ -635,6 +642,10 @@ class _ArticleScreenState extends State<ArticleScreen> {
                               ),
                             if (a.extra.isNotEmpty)
                               ExpansionTile(
+                                key: PageStorageKey('${a.id}:extra'),
+                                initiallyExpanded: a.paradigms.every(
+                                  (p) => p.slots.isEmpty,
+                                ),
                                 title: const Text('Другие выписанные формы'),
                                 children: a.extra
                                     .map(
@@ -647,6 +658,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                               ),
                             if (a.composition.isNotEmpty)
                               ExpansionTile(
+                                key: PageStorageKey('${a.id}:composition'),
                                 title: const Text('Состав написания'),
                                 children: a.composition
                                     .map(

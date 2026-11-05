@@ -1,0 +1,31 @@
+{
+  "version": "0.1.2+3",
+  "apk": "build/acceptance/cs-dictionary-0.1.2.apk",
+  "bytes": 56510593,
+  "sha256": "9dd94caea1977bd3af2a16a1208ea2b8a0915ba832b114e1dd7a6c3732f12f58",
+  "applicationId": "info.typikon.cs",
+  "androidMinSdk": 24,
+  "signing": "debug; same certificate as 0.1.0+1",
+  "logo": "ЦС; Monomakh Unicode; user-selected",
+  "checks": {
+    "flutterAnalyze": "passed",
+    "flutterTests": 15,
+    "csDictionaryTests": 16,
+    "backendTypecheck": "passed",
+    "bundledLogoMatches": true,
+    "oldApkUnchanged": true,
+    "liveClientChecks": 34,
+    "realArticleRegressionFixtures": [
+      "земля",
+      "ава"
+    ]
+  },
+  "backendChangesDeployed": true,
+  "knownOpen": [
+    "M01 double accents",
+    "M02 hard-sign ending segmentation",
+    "M03 uk ending segments in publication"
+  ],
+  "backendRevision": "2bffd56c52b0e360bbb25c9b424243c553eba999",
+  "fix": "Separate PageStorage keys for scroll offsets and expansion states; regression reproduced before fix"
+}

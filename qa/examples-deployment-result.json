@@ -1,0 +1,67 @@
+{
+  "checkedAtUtc": "2026-11-05T11:02:52Z",
+  "api": "https://www.typikon.info/api/v2/cs/",
+  "version": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+  "buildId": "XDS7Y1AzsVIGiMuN5Lo2M",
+  "articleChecks": [
+    {
+      "query": "абие",
+      "id": "68399a217310e32be5d75f08",
+      "name": "а҆́бїе",
+      "examples": 3,
+      "sourceEntries": 3
+    },
+    {
+      "query": "земля",
+      "id": "68399a217310e32be5d783bb",
+      "name": "землѧ̀",
+      "examples": 3,
+      "sourceEntries": 2
+    },
+    {
+      "query": "слово",
+      "id": "68399a217310e32be5d7cc1d",
+      "name": "сло́во",
+      "examples": 4,
+      "sourceEntries": 3
+    },
+    {
+      "query": "аарон",
+      "id": "68399a217310e32be5d75f03",
+      "name": "а҆арѡ́нъ",
+      "examples": 2,
+      "sourceEntries": 2
+    },
+    {
+      "query": "ми",
+      "id": "68399a217310e32be5d7605e",
+      "name": "а҆́зъ",
+      "examples": 1,
+      "sourceEntries": 1
+    },
+    {
+      "query": "чудо",
+      "id": "68399a217310e32be5d7e2e1",
+      "name": "чꙋ́до",
+      "examples": 4,
+      "sourceEntries": 2
+    }
+  ],
+  "matchedLocalExpected": true,
+  "correctSourceAndSourceVersion": true,
+  "sourceTextContainsEachQuote": true,
+  "proposedAndCrossReferencesExcluded": true,
+  "readerAppVersionEndpointsUnchanged": true,
+  "writesPerformed": false,
+  "server": {
+    "revision": "2bffd56c52b0e360bbb25c9b424243c553eba999",
+    "current": "/var/www/typikon.su/typikon-web-releases/releases/20261105T105852Z-2bffd56c52b0-268504",
+    "previous": "/var/www/typikon.su/typikon-web-releases/releases/20261105T091244Z-e2e06bec8876-144210",
+    "publicationSha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158",
+    "noblesSha256": "06226482176ae3508ec16060a9ccb2c0d17c2aa52a0171f41c3e9d94b125b24b",
+    "productionConfigurationPreserved": true,
+    "previousReleaseAvailable": true,
+    "backupDirectory": "/home/admin/typikon-cs-api-release/20261105-examples"
+  },
+  "dartClientChecks": 34
+}

@@ -138,7 +138,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                   onPressed: () => showLicensePage(
                     context: context,
                     applicationName: 'ЦС Словарь',
-                    applicationVersion: '0.1.1',
+                    applicationVersion: '0.1.2',
                   ),
                   child: const Text('Лицензии'),
                 ),
