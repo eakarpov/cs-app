@@ -12,6 +12,9 @@ void main() {
       'Monomakh Unicode',
       'Old Standard',
     ], await rootBundle.loadString('assets/fonts/LICENSE.txt'));
+    yield LicenseEntryWithLineBreaks([
+      'Shafarik',
+    ], await rootBundle.loadString('assets/fonts/Shafarik-OFL.txt'));
   });
   runApp(
     ChurchSlavonicApp(

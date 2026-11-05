@@ -26,6 +26,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/fonts/LICENSE.txt
+    - assets/fonts/Shafarik-OFL.txt
     - assets/branding/app-icon.png
   fonts:
     - family: Monomakh
@@ -34,3 +35,7 @@ flutter:
     - family: OldStandard
       fonts:
         - asset: assets/fonts/OldStandard-Regular.otf
+
+    - family: Shafarik
+      fonts:
+        - asset: assets/fonts/Shafarik-Regular.otf

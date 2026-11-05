@@ -104,6 +104,70 @@ void main() {
     },
   );
   testWidgets(
+    'encyclopedia navigation keeps the dictionary query at large text size',
+    (tester) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1;
+      tester.platformDispatcher.textScaleFactorTestValue = 1.8;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      final personal = PersonalStore(MemoryPreferences());
+      await personal.initialized;
+      await personal.settings(theme: ThemeMode.dark, size: 30);
+      var requests = 0;
+      final repository = DictionaryRepository(
+        client: MockClient((_) async {
+          requests++;
+          return response(page('word'), 200);
+        }),
+      );
+      await tester.pumpWidget(
+        ChurchSlavonicApp(repository: repository, personal: personal),
+      );
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextField), 'слово');
+      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Энциклопедия'));
+      await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(find.text('Ждите обновлений'), 300);
+      expect(find.text('Ждите обновлений'), findsOneWidget);
+      await tester.scrollUntilVisible(find.text('Азбуки'), -300);
+      await tester.tap(find.text('Азбуки'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Глаголица'));
+      await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(find.text('Ⰰ ⰰ'), 500);
+      expect(find.text('Ⰰ ⰰ'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      await tester.tap(find.byTooltip('Назад'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Кириллица'));
+      await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(find.text('А а'), 500);
+      expect(find.text('А а'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      await tester.tap(find.byTooltip('Назад'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byTooltip('Назад'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Диакритика'));
+      await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(find.text('Знак тысячи'), 600);
+      expect(find.text('҂'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      await tester.tap(find.byTooltip('Назад'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Словарь'));
+      await tester.pumpAndSettle();
+      expect(find.widgetWithText(TextField, 'слово'), findsOneWidget);
+      expect(requests, 1);
+      expect(tester.takeException(), isNull);
+      repository.close();
+    },
+  );
+  testWidgets(
     'CS keyboard applies edited query once and is absent in reverse search',
     (tester) async {
       tester.platformDispatcher.textScaleFactorTestValue = 1.8;

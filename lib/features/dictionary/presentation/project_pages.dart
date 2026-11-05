@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../../../core/external_link.dart';
 
 // Titles and destinations checked against the publishers on 2026-11-05.
 const projectResources = [
@@ -53,24 +53,6 @@ const projectResources = [
 class UsefulResourcesScreen extends StatelessWidget {
   const UsefulResourcesScreen({super.key});
 
-  Future<void> open(BuildContext context, String url) async {
-    try {
-      if (await launchUrl(
-        Uri.parse(url),
-        mode: LaunchMode.externalApplication,
-      )) {
-        return;
-      }
-    } catch (_) {
-      // Some devices have no browser or deny external intents.
-    }
-    if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Не удалось открыть ссылку в браузере.')),
-      );
-    }
-  }
-
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text('Полезные ресурсы')),
@@ -101,7 +83,7 @@ class UsefulResourcesScreen extends StatelessWidget {
                 ),
               ),
               trailing: const Icon(Icons.open_in_new),
-              onTap: () => open(context, projectResources[i].url),
+              onTap: () => openExternalLink(context, projectResources[i].url),
             ),
           ),
         ],

@@ -8,6 +8,7 @@ import 'report_dialog.dart';
 import 'search_result_heading.dart';
 import 'project_pages.dart';
 import 'cs_keyboard.dart';
+import '../../encyclopedia/presentation/encyclopedia_screen.dart';
 
 class DictionaryScreen extends StatefulWidget {
   const DictionaryScreen({
@@ -174,6 +175,11 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
           child: Column(
             children: [
               SegmentedButton<String>(
+                direction:
+                    MediaQuery.sizeOf(context).width < 600 &&
+                        MediaQuery.textScalerOf(context).scale(14) > 18
+                    ? Axis.vertical
+                    : Axis.horizontal,
                 segments: const [
                   ButtonSegment(
                     value: 'cu-ru',
@@ -361,7 +367,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
     listenable: widget.personal,
     builder: (context, _) => Scaffold(
       appBar: AppBar(
-        title: Text(['Словарь', 'Избранное', 'История'][tab]),
+        title: Text(['Словарь', 'Избранное', 'История', 'Энциклопедия'][tab]),
         actions: [
           PopupMenuButton<String>(
             tooltip: 'Меню проекта',
@@ -412,6 +418,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                       widget.personal.history,
                       'Открытые статьи появятся здесь.',
                     ),
+                    3 => EncyclopediaHome(textSize: widget.personal.fontSize),
                     _ => searchView(),
                   },
           ),
@@ -427,6 +434,10 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
             label: 'Избранное',
           ),
           NavigationDestination(icon: Icon(Icons.history), label: 'История'),
+          NavigationDestination(
+            icon: Icon(Icons.auto_stories_outlined),
+            label: 'Энциклопедия',
+          ),
         ],
       ),
     ),
