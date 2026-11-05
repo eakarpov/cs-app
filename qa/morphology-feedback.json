@@ -1,0 +1,73 @@
+{
+  "publicationVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+  "status": "queued for next correction batch; no data regeneration or deployment",
+  "issues": [
+    {
+      "id": "M01",
+      "title": "Added kamora retains an existing stress sign",
+      "reproduction": {
+        "input": "аарѡ́нъ",
+        "actual": "аарѡ̑́нъ",
+        "function": "typikon-web/src/lib/morphology/orthography.ts:withKamora"
+      },
+      "acceptance": "For a simple generated word, determine the stress position from the supported scheme or an attested form and apply the appropriate single stress sign. Preserve breathing, titla and source spellings. Do not guess by keeping the final sign."
+    },
+    {
+      "id": "M02",
+      "title": "Final hard sign becomes an ambiguous boundary under a search key",
+      "reproduction": {
+        "form": "аарѡ́нъ",
+        "stems": [
+          "аарѡ́н"
+        ],
+        "actual": null,
+        "function": "typikon-web/src/lib/csDictionary/morphology.ts:segmentsFor"
+      },
+      "expectedSegments": [
+        {
+          "kind": "stem",
+          "text": "аарѡ́н"
+        },
+        {
+          "kind": "ending",
+          "text": "ъ"
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "title": "Stored uk-ending segmentation was lost in the publication derivative",
+      "lexemeId": "68399a217310e32be5d75f03",
+      "slot": "sgDat",
+      "published": {
+        "value": "аарѡ́нꙋ",
+        "origin": "stored",
+        "grammar": "sgDat",
+        "segments": null
+      },
+      "currentCode": {
+        "value": "аарѡ́нꙋ",
+        "origin": "stored",
+        "grammar": "sgDat",
+        "segments": [
+          {
+            "kind": "stem",
+            "text": "аарѡ́н"
+          },
+          {
+            "kind": "ending",
+            "text": "ꙋ"
+          }
+        ]
+      },
+      "acceptance": "Regenerate the publication from the reviewed source inputs and preserve or recompute segment boundaries during whole-word orthographic conversion."
+    }
+  ],
+  "automaticIndicator": {
+    "repeatedSlotOccurrencesWithMultipleStressMarks": {
+      "generated": 637106,
+      "stored": 3231
+    },
+    "qualification": "Includes repeated slots, compounds and clitics. This is not a count of unique words or confirmed linguistic errors; stored source forms require separate review."
+  }
+}

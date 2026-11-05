@@ -5,6 +5,7 @@ import '../domain/models.dart';
 import 'search_controller.dart';
 import 'article_screen.dart';
 import 'report_dialog.dart';
+import 'search_result_heading.dart';
 
 class DictionaryScreen extends StatefulWidget {
   const DictionaryScreen({
@@ -313,12 +314,9 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                     }
                     final hit = search.items[i];
                     return ListTile(
-                      title: Text(
-                        hit.name,
-                        style: TextStyle(
-                          fontFamily: 'Monomakh',
-                          fontSize: widget.personal.fontSize,
-                        ),
+                      title: SearchResultHeading(
+                        hit: hit,
+                        size: widget.personal.fontSize,
                       ),
                       subtitle: Text(
                         '${hit.matchLabel}\n${hit.matched}${hit.grammar.isEmpty ? '' : ' · ${hit.grammar}'}',

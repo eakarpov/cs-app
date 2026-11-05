@@ -3,6 +3,8 @@ Json object(Object? v) => v is Map ? v.cast<String, Object?>() : {};
 List<Object?> array(Object? v) => v is List ? v.cast<Object?>() : [];
 String string(Object? v, [String fallback = '']) => v is String ? v : fallback;
 
+enum SearchIndicator { translation, prefix }
+
 class SearchHit {
   SearchHit(Json j)
     : id = string(j['id']),
@@ -14,6 +16,12 @@ class SearchHit {
       grammar = string(j['grammar']);
   final String id, name, pos, match, matched, grammar;
   final bool exact;
+  SearchIndicator? get indicator {
+    if (match == 'explanation') return null;
+    if (!exact) return SearchIndicator.prefix;
+    return match == 'translation' ? SearchIndicator.translation : null;
+  }
+
   String get matchLabel {
     final label =
         const {
