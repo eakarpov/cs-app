@@ -1,0 +1,50 @@
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+/coverage/
+**/doc/api/
+**/ios/Flutter/.last_build_id
+
+# IDE and OS
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.idea/
+*.iml
+.vscode/
+
+# Local credentials and signing
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+**/key.properties
+
+# Dictionary source archives and generated databases
+/Chu-Rus_Reference_v3.dsl.dz
+*.dsl
+*.dz
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.db
+*.db-*
+*.bson
+*.archive
+*.gz
+
+# Local audit data and import/deployment artifacts
+/import/
+/integration/
+/audit/*.csv
+/audit/*.json
+/audit/verify-*.txt
+__pycache__/
