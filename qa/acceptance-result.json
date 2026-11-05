@@ -142,12 +142,13 @@
     "sha256": "e89754b78493a2461be2da7983655dc36bf6956725a4bc8bf7a1c50bbe3a5428",
     "apiBase": "https://www.typikon.info/api/v2/cs/",
     "interlexBase": "https://interslavic-lexicon.com/api/public/cs/",
-    "serverActivationRequired": true
+    "serverActivationRequired": false
   },
-  "releaseStatus": "closed acceptance candidate; new server APIs not deployed; device/editorial/load acceptance pending",
+  "releaseStatus": "APIs deployed and dictionary publication active; closed mobile acceptance pending physical devices, editorial review and store signing",
   "commits": {
     "appImplementation": "373fbee",
     "typikonWeb": "e2e06be",
     "interlex": "265dd6e"
-  }
+  },
+  "deploymentReport": "qa/deployment-result.json"
 }

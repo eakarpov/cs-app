@@ -12,12 +12,13 @@
 flutter pub get
 flutter analyze
 flutter test
+dart run tool/check_live_dictionary.dart
 flutter run \
   --dart-define=CS_API_BASE_URL=https://YOUR-STAGING/api/v2/cs/ \
   --dart-define=CS_INTERLEX_BASE_URL=https://YOUR-INTERLEX/api/public/cs/
 ```
 
-URL должны заканчиваться `/`. По умолчанию указаны `https://www.typikon.info/api/v2/cs/` и `https://interslavic-lexicon.com/api/public/cs/`. Эти адреса заработают после отдельной выкладки нового серверного контракта и публикационного представления. Серверные API-ключи в приложение не встраиваются.
+URL должны заканчиваться `/`. По умолчанию указаны `https://www.typikon.info/api/v2/cs/` и `https://interslavic-lexicon.com/api/public/cs/`. Оба API и словарная публикация активированы 5 ноября 2026 года; существующий APK работает с ними без пересборки. Отчёт — [docs/api-deployment.md](docs/api-deployment.md). Серверные API-ключи в приложение не встраиваются.
 
 ```sh
 flutter build apk --release \

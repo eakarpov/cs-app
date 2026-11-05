@@ -1,0 +1,110 @@
+{
+  "deployedAtUtc": "2026-11-05T09:42:10.992718+00:00",
+  "api": "https://www.typikon.info/api/v2/cs/",
+  "interlexApi": "https://interslavic-lexicon.com/api/public/cs/",
+  "typikonWebCommit": "e2e06bec8876a9fb5a2e76c20d3857ca162d62d6",
+  "typikonBuildId": "hnG-y9BtNSnFTzH_rpXj4",
+  "interlexCommit": "265dd6e88656225f871d12d3e5b649d41775afe7",
+  "nginxPolicyCommit": "f1294172b2f0c74ba5d211a9dc4fd97c036a8a35",
+  "publication": {
+    "version": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+    "sha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158",
+    "integrity": "ok",
+    "counts": {
+      "articles": 34119,
+      "forms": 3161477,
+      "sources": 75266
+    },
+    "publication": "/var/www/typikon-data/cs-dictionary/publications/aa4f4913.sqlite",
+    "compressedBackup": "/home/admin/typikon-cs-api-release/20261105-aa4f4913/publication-aa4f4913.sqlite.gz"
+  },
+  "canonical": {
+    "count": 34013,
+    "fingerprint": "8bf06cf03d5226602cc1b36e57a0c17901992905b5781b59050ebf316037ffca",
+    "pavelId": "68399a217310e32be5d7ad30",
+    "pavelScheme": "N1t*",
+    "allCanonicalIdsAndLocalFieldsPresent": true
+  },
+  "publicSearch": {
+    "tested": 480,
+    "passed": 480,
+    "failures": [],
+    "versions": [
+      "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb"
+    ],
+    "p95PublicHttpMs": 196.14277700020466,
+    "p50PublicHttpMs": 111.38639950513607,
+    "load": "single persistent HTTP client, up to 1.82 requests/second; includes client network"
+  },
+  "apkRepositoryChecks": {
+    "api": "https://www.typikon.info/api/v2/cs/",
+    "interlex": "https://interslavic-lexicon.com/api/public/cs/",
+    "version": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+    "passed": 30,
+    "checks": [
+      "attested form search",
+      "real paradigms",
+      "versioned data",
+      "segments reconstruct зе́млю",
+      "segments reconstruct зе́мли",
+      "segments reconstruct зе́мли",
+      "segments reconstruct землѣ́",
+      "segments reconstruct зе́мли",
+      "segments reconstruct землѣ́",
+      "segments reconstruct зе́млею",
+      "segments reconstruct земле́",
+      "segments reconstruct зємли",
+      "segments reconstruct земли",
+      "segments reconstruct зємли",
+      "segments reconstruct земли",
+      "segments reconstruct земе́ль",
+      "segments reconstruct землѧмъ",
+      "segments reconstruct зємли̑",
+      "segments reconstruct земли̑",
+      "segments reconstruct зємлю̑",
+      "segments reconstruct землю̑",
+      "segments reconstruct землѧма",
+      "source content",
+      "short words",
+      "titlo",
+      "explicit reverse equivalents",
+      "compound found",
+      "enclitic kept separate",
+      "verified semantic link and source",
+      "public interlex and reviewed revision"
+    ]
+  },
+  "publicProtocolChecks": {
+    "passed": 8,
+    "checks": [
+      "public search, CORS and exact version",
+      "invalid query direction",
+      "invalid lexeme ID",
+      "missing lexeme",
+      "invalid source ID",
+      "public preflight",
+      "health and deployed revision hnG-y9BtNSnFTzH_rpXj4",
+      "health and deployed revision 265dd6e88656"
+    ],
+    "reportWritePerformed": false
+  },
+  "ingress": {
+    "statusCounts": {
+      "204": 30,
+      "429": 10
+    },
+    "rateLimitResponse": "JSON with Retry-After, CORS and no-store",
+    "reviewedPublicProtoArticles": 8
+  },
+  "backupDirectoryOnServer": "/home/admin/typikon-cs-api-release/20261105-aa4f4913",
+  "nativeMongoBackup": {
+    "format": "MongoDB native archive, gzip",
+    "collection": "typikon-csl.lexems",
+    "bytes": 2113600,
+    "sha256": "eb659dee03466d501a7e593dfead7b088231d42380168597e3bf7abac5fcc046"
+  },
+  "configurationHandling": "server-local production configuration and backup; only the non-secret publication path persisted locally",
+  "rawPublicationDownloadHttpStatus": 404,
+  "apkRebuildRequired": false,
+  "physicalDevicesTested": false
+}
