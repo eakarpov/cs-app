@@ -1,0 +1,199 @@
+{
+  "date": "2026-11-06",
+  "mode": "read-only-pilot",
+  "productionApplied": false,
+  "downloadedFiles": [
+    {
+      "url": "https://kaikki.org/dictionary/downloads/ru/ru-extract.jsonl.gz",
+      "bytes": 308932274,
+      "sha256": "fdcb978c76b660e0e43977bbf7487c812e6d42e965b0a73e3f5b4ba6981174c4",
+      "remote": {
+        "Content-Length": "308932274",
+        "Last-Modified": "Fri, 30 Oct 2026 20:52:14 GMT",
+        "ETag": "\"6ae5037e-1269eeb2\""
+      }
+    },
+    {
+      "url": "https://kaikki.org/dictionary/Old%20Church%20Slavonic/kaikki.org-dictionary-OldChurchSlavonic.jsonl",
+      "bytes": 46731927,
+      "sha256": "f4865afe6d4ffd1ab6816db95cab603775323115f692715b92a68cc897c7b8b8",
+      "remote": {
+        "Content-Length": "46731927",
+        "Last-Modified": "Fri, 30 Oct 2026 22:53:40 GMT",
+        "ETag": "\"6ae51ff4-2c91297\""
+      }
+    },
+    {
+      "url": "https://kaikki.org/dictionary/Proto-Slavic/kaikki.org-dictionary-ProtoSlavic.jsonl",
+      "bytes": 51696473,
+      "sha256": "b051a5f3b58c9c2189bae8d189bcb702d34622f395a7389d5465f85515e59388",
+      "remote": {
+        "Content-Length": "51696473",
+        "Last-Modified": "Fri, 30 Oct 2026 23:04:11 GMT",
+        "ETag": "\"6ae5226b-314d359\""
+      }
+    }
+  ],
+  "matching": {
+    "completedAtUtc": "2026-11-06T12:02:59Z",
+    "publicationVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+    "nativeArticles": 34119,
+    "interlexProtoArticles": 24531,
+    "protoSnapshotSource": "interlex-production",
+    "protoSnapshotExportedAtUtc": "2026-11-06T11:44:09.520Z",
+    "selectedRecords": 26333,
+    "counts": {
+      "ru:church-slavonic:entries": 8539,
+      "ru:church-slavonic:no-compatible-candidate": 3928,
+      "ru:old-church-slavonic:entries": 7036,
+      "ru:old-church-slavonic:unique-candidate": 1784,
+      "ru:church-slavonic:unique-candidate": 4416,
+      "ru:old-church-slavonic:ambiguous": 79,
+      "ru:church-slavonic:ambiguous": 195,
+      "ru:old-church-slavonic:no-compatible-candidate": 5173,
+      "en:old-church-slavonic:entries": 4635,
+      "en:old-church-slavonic:no-compatible-candidate": 2886,
+      "en:old-church-slavonic:unique-candidate": 1640,
+      "en:old-church-slavonic:ambiguous": 109
+    },
+    "distinctSourcePages": {
+      "ru:church-slavonic": 8439,
+      "ru:old-church-slavonic": 7006,
+      "ru:proto-slavic": 640,
+      "en:old-church-slavonic": 4568,
+      "en:proto-slavic": 5233
+    },
+    "content": {
+      "ru:church-slavonic": {
+        "senses": 8808,
+        "examples": 2121,
+        "forms": 1000,
+        "hasEtymology": 59,
+        "hasUnresolvedEtymology": 7681,
+        "hasTemplateExpansionWarning": 0
+      },
+      "ru:old-church-slavonic": {
+        "senses": 7279,
+        "examples": 265,
+        "forms": 40685,
+        "hasEtymology": 379,
+        "hasUnresolvedEtymology": 6509,
+        "hasTemplateExpansionWarning": 0
+      },
+      "ru:proto-slavic": {
+        "senses": 692,
+        "examples": 2,
+        "forms": 140,
+        "hasEtymology": 594,
+        "hasUnresolvedEtymology": 44,
+        "hasTemplateExpansionWarning": 0
+      },
+      "en:old-church-slavonic": {
+        "senses": 5902,
+        "examples": 1246,
+        "forms": 291490,
+        "hasEtymology": 2636,
+        "hasUnresolvedEtymology": 0,
+        "hasTemplateExpansionWarning": 141
+      },
+      "en:proto-slavic": {
+        "senses": 7131,
+        "examples": 1189,
+        "forms": 249231,
+        "hasEtymology": 5226,
+        "hasUnresolvedEtymology": 0,
+        "hasTemplateExpansionWarning": 2508
+      }
+    },
+    "nativeProposals": 8223,
+    "spellingProposals": 9177,
+    "directProtoEvidenceRows": 4246,
+    "directProtoEvidenceWithInterlexMatch": 1344,
+    "directProtoChainsWithNativeAndInterlex": 772,
+    "reverseProtoEvidenceRows": 4852,
+    "reverseProtoChainsWithNativeAndInterlex": 459,
+    "protoArticleHeadsNeedingReview": 3347,
+    "reviewSampleSize": 200,
+    "distinctDirectLexemeProtoCandidates": 706,
+    "distinctReverseLexemeProtoCandidates": 819,
+    "confirmedLinksCreated": 0,
+    "writesToWorkingDatabases": false,
+    "limitations": [
+      "English language exports are postprocessed; Russian export is raw Wiktextract",
+      "Revision IDs are not exposed by these exports",
+      "Language labels do not independently prove an izvod attribution",
+      "Search-key and script-variant collisions are review candidates, not identities",
+      "Unparsed etymological prose remains in raw records; no invented reconstructions",
+      "No automatic new lexemes, schemes, stress or spellings were published"
+    ]
+  },
+  "verification": {
+    "preparedAtUtc": "2026-11-06T12:05:15Z",
+    "publicationVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+    "publicationSha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158",
+    "nativeIndexSha256": "e211607cf05c5d33e5e0b926c088dbd6a11190e091f3b2fa0f9abb75aea8604e",
+    "interlexProtoSnapshotSha256": "c0b201977552e6676eb83478be20ad2df1d9c955d688c023bab5d3b61512c1e3",
+    "inputsPreserved": true,
+    "allCandidateIdsExistInInputs": true,
+    "allEvidenceSourceIdsExist": true,
+    "selectedSha256": "a0ae4d82564964c41c10d2d395349733ae66c5eb59cb4920a79215fbe66f4f48",
+    "selectedDistinctContentRecords": 26333,
+    "distinctLexemeProtoCandidatePairs": 1002,
+    "reviewFirstPairs": 183,
+    "numberOfConfirmedMappings": 0,
+    "hasUpstreamRevisionFields": false,
+    "appliedToProduction": false,
+    "historicalDatesInferredFromWikiTimestamps": false,
+    "notes": [
+      "All IDs are references to existing snapshots. No new lexemes or proto entries are created.",
+      "Read-only production proto SELECT and read-only local publication export.",
+      "Raw Russian export; English OCS and Proto-Slavic exports are postprocessed, not raw."
+    ]
+  },
+  "distinctNativeLexemesWithCandidates": 5133,
+  "unitTestsPassed": 12,
+  "artifactsRoot": "import/wiktionary-pilot/",
+  "normalizerFilesSha256": {
+    "../typikon-web/src/lib/cslav/core.ts": "272ac5bd5435d3d5ec5d12f5f5a81c0c240dcb5fe7975a10bcfca2049d706a04",
+    "../typikon-web/src/utils/churchSlavonic.ts": "cae49489cf7656f67f9ac13bcbc23c680d3a4b19de8ca987b773e15a9f377bbb"
+  },
+  "upstreamProvenance": {
+    "english": [
+      {
+        "index": "Old-Church-Slavonic-index.html",
+        "extractedAtDate": "2026-10-30",
+        "dumpDate": "2026-10-01",
+        "commitLinks": [
+          "https://github.com/tatuylonen/wiktextract/commit/19f9a3006a405fb7bfb40193dca41c7117a009a5",
+          "https://github.com/tatuylonen/wikitextprocessor/commit/6f96ddf5f3466707f1869fe6618390fd77dfd109"
+        ]
+      },
+      {
+        "index": "Proto-Slavic-index.html",
+        "extractedAtDate": "2026-10-30",
+        "dumpDate": "2026-10-01",
+        "commitLinks": [
+          "https://github.com/tatuylonen/wiktextract/commit/19f9a3006a405fb7bfb40193dca41c7117a009a5",
+          "https://github.com/tatuylonen/wikitextprocessor/commit/6f96ddf5f3466707f1869fe6618390fd77dfd109"
+        ]
+      }
+    ],
+    "russianDumpDate": "2026-10-01",
+    "russianDumpDateStatus": "from-associated-extraction-log",
+    "sourceLicenseNotice": "Retain Wiktionary attribution, applicable CC BY-SA terms, source links and modification notices before any publication.",
+    "pageRevisionIds": "not exposed in downloaded entry JSON; no revision ids inferred from live pages"
+  },
+  "repeatability": {
+    "identicalGeneratedOutputs": true,
+    "files": {
+      "native-proposals.jsonl": "ae4141e953942b96e1dfada995c7ba60481ed96f3639687fba395cbf9e6af65e",
+      "unmatched.jsonl": "1ce6783ca2a10afcb8052b178a2866789f71c5c1c51c19af779931febdb6792d",
+      "spelling-proposals.jsonl": "1b946b49a39762547783333c6b438d475125a76c7662a2ac6ec4c629e6c1cdf1",
+      "etymology-proposals.jsonl": "0017ad0f03e31a094792538c0747b9e81d87bd03e00cc19eb5fa75d2a7f314f1",
+      "reverse-proto-proposals.jsonl": "cf9e010960760fab9b0c8fad5a8553294b888673e8c92ef3e9c8f9c86bccd94d",
+      "review-sample.json": "ba6c027883c352fc36398a23b2f118a8a91337ac741a40fcf01d4a04d3f4767e",
+      "review.html": "c9abb1af0c97269748ba1fa1360b34c78062839027a8a6ca2b32705cde751519"
+    },
+    "editorialDecisionsApplied": false
+  }
+}
