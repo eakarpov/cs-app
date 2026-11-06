@@ -1,0 +1,434 @@
+{
+  "appliedAtDate": "2026-11-06",
+  "typikonEditorialCommit": "14d93bf",
+  "readerCodeRelease": "2bffd56",
+  "server": {
+    "backup": {
+      "path": "/var/www/typikon-data/cs-dictionary/backups/before-wiktionary-58c9ecd7.sqlite",
+      "sha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158",
+      "bytes": 3899518976,
+      "base": "/var/www/typikon-data/cs-dictionary/publications/aa4f4913.sqlite",
+      "sourceUnchanged": true
+    },
+    "candidate": {
+      "version": "d32ab4d442e149ffa8712d7526fd7f3cfdda9b7645212fee1ff0aee78b8ec25f",
+      "bundleId": "58c9ecd7c5fcfe74c9a5a167a43076e46b0c8db4df32987e1e65e9b5e5718b4e",
+      "baseVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+      "baseSha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158",
+      "candidateSha256": "7d780f01efa737d9a30b8d3cdb3784ddc26126e0418cb003bc5e1895b4070d01",
+      "editorialSha256": "a0fc672ea5b9d314f954c79658db41b889bb5320a7ffb94d5977f00e11084d60",
+      "counts": {
+        "articles": 34119,
+        "changedArticles": 17,
+        "newReferences": 17,
+        "sourceRecords": 31,
+        "decisions": 85
+      },
+      "allIdsPreserved": true,
+      "allNonEtymologyArticleFieldsPreserved": true,
+      "allExistingTableSchemasAndCountsPreserved": true,
+      "writeAuthorizerRestrictedToEtymologyPayloadAndMetadata": true,
+      "quickCheck": "ok",
+      "productionActivated": false
+    },
+    "activation": {
+      "version": "d32ab4d442e149ffa8712d7526fd7f3cfdda9b7645212fee1ff0aee78b8ec25f",
+      "previousVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+      "checkedLexemes": [
+        {
+          "lexemeId": "68399a217310e32be5d7e170",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d7e182",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d7e14e",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d77e24",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d77e46",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d77eb0",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d785c7",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d78926",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d76466",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d76b00",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d77c40",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d78a9a",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d78ccb",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d78f18",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d78eff",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d7919e",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d79b11",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d7e18e",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d7a696",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d7a5ea",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d7a691",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d7a692",
+          "references": 1
+        },
+        {
+          "lexemeId": "68399a217310e32be5d7aa89",
+          "references": 1
+        },
+        {
+          "lexemeId": "f2aaf68d3cd7bd9b33ebcd0d",
+          "references": 1
+        },
+        {
+          "lexemeId": "b7564173add672927e9b7b7a",
+          "references": 1
+        }
+      ],
+      "publishedReferences": 25,
+      "newReferences": 17,
+      "searchProbes": [
+        {
+          "query": "а",
+          "direction": "cu-ru",
+          "items": 2
+        },
+        {
+          "query": "и",
+          "direction": "cu-ru",
+          "items": 2
+        },
+        {
+          "query": "бог",
+          "direction": "cu-ru",
+          "items": 5
+        },
+        {
+          "query": "земли",
+          "direction": "cu-ru",
+          "items": 1
+        },
+        {
+          "query": "бог",
+          "direction": "ru-cu",
+          "items": 5
+        }
+      ],
+      "service": "active",
+      "backup": {
+        "path": "/var/www/typikon-data/cs-dictionary/backups/before-wiktionary-58c9ecd7.sqlite",
+        "sha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158",
+        "bytes": 3899518976,
+        "base": "/var/www/typikon-data/cs-dictionary/publications/aa4f4913.sqlite",
+        "sourceUnchanged": true
+      },
+      "productionActivated": true
+    },
+    "preactivation": {
+      "version": "d32ab4d442e149ffa8712d7526fd7f3cfdda9b7645212fee1ff0aee78b8ec25f",
+      "candidate": "/var/www/typikon-data/cs-dictionary/publications/etymology-58c9ecd7.sqlite",
+      "previous": "/var/www/typikon-data/cs-dictionary/publications/aa4f4913.sqlite",
+      "releaseUnchanged": "/var/www/typikon.su/typikon-web-releases/releases/20261105T105852Z-2bffd56c52b0-268504",
+      "backup": {
+        "path": "/var/www/typikon-data/cs-dictionary/backups/before-wiktionary-58c9ecd7.sqlite",
+        "sha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158",
+        "bytes": 3899518976,
+        "base": "/var/www/typikon-data/cs-dictionary/publications/aa4f4913.sqlite",
+        "sourceUnchanged": true
+      }
+    }
+  },
+  "localCandidate": {
+    "version": "d32ab4d442e149ffa8712d7526fd7f3cfdda9b7645212fee1ff0aee78b8ec25f",
+    "bundleId": "58c9ecd7c5fcfe74c9a5a167a43076e46b0c8db4df32987e1e65e9b5e5718b4e",
+    "baseVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+    "baseSha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158",
+    "candidateSha256": "6af9f2f3784ddc2245c4bef09a06465a1f8e67817cec14b0e5a97a8c9a11bfc7",
+    "editorialSha256": "a0fc672ea5b9d314f954c79658db41b889bb5320a7ffb94d5977f00e11084d60",
+    "counts": {
+      "articles": 34119,
+      "changedArticles": 17,
+      "newReferences": 17,
+      "sourceRecords": 31,
+      "decisions": 85
+    },
+    "allIdsPreserved": true,
+    "allNonEtymologyArticleFieldsPreserved": true,
+    "allExistingTableSchemasAndCountsPreserved": true,
+    "writeAuthorizerRestrictedToEtymologyPayloadAndMetadata": true,
+    "quickCheck": "ok",
+    "productionActivated": false
+  },
+  "localPublication": {
+    "currentPath": "/Users/georgecarpow/Documents/own/cs-app/import/cs-publication-v1.sqlite",
+    "backupPath": "/Users/georgecarpow/Documents/own/cs-app/import/publication-backups/aa4f4913-before-wiktionary.sqlite",
+    "version": "d32ab4d442e149ffa8712d7526fd7f3cfdda9b7645212fee1ff0aee78b8ec25f",
+    "oldSha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158",
+    "newSha256": "6af9f2f3784ddc2245c4bef09a06465a1f8e67817cec14b0e5a97a8c9a11bfc7",
+    "allNonEtymologyFieldsPreserved": true
+  },
+  "acceptance": {
+    "version": "d32ab4d442e149ffa8712d7526fd7f3cfdda9b7645212fee1ff0aee78b8ec25f",
+    "tested": 480,
+    "directions": {
+      "cu-ru": 360,
+      "ru-cu": 120
+    },
+    "failed": [],
+    "missingLegacy": [],
+    "changedLocalFields": [],
+    "brokenSegments": 0,
+    "orphanRelations": 0,
+    "unscopedRelations": 0,
+    "etymologies": 25,
+    "p95LocalMs": 5.874199999999973
+  },
+  "reviewDecisions": {
+    "readyApplied": 17,
+    "deferredUnpublished": 11,
+    "rejectedUnpublished": 57
+  },
+  "testsPassed": 48,
+  "allIdsAndLocalEditsPreserved": true,
+  "backupVerified": true,
+  "productionActivated": true,
+  "publicVerification": {
+    "checkedAtUtc": "2026-11-06T20:25:26.509033+00:00",
+    "version": "d32ab4d442e149ffa8712d7526fd7f3cfdda9b7645212fee1ff0aee78b8ec25f",
+    "checkedArticles": 25,
+    "allMatch": true,
+    "articles": [
+      {
+        "id": "68399a217310e32be5d7e170",
+        "name": "цѣли́тель",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d7e182",
+        "matches": true,
+        "httpStatus": 200,
+        "references": 1,
+        "retriedSequentially": true,
+        "name": "цѣ́лость"
+      },
+      {
+        "id": "68399a217310e32be5d7e14e",
+        "name": "ца́та",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d77e24",
+        "name": "еди́ница",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d77e46",
+        "name": "еди́ножды",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d77eb0",
+        "matches": true,
+        "httpStatus": 200,
+        "references": 1,
+        "compressedTransfer": true,
+        "name": "еди́нъ"
+      },
+      {
+        "id": "68399a217310e32be5d785c7",
+        "name": "и҆́бо",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d78926",
+        "name": "и҆лѝ",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d76466",
+        "name": "ба́нѧ",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d76b00",
+        "matches": true,
+        "httpStatus": 200,
+        "references": 1,
+        "retriedSequentially": true,
+        "name": "бри́ти"
+      },
+      {
+        "id": "68399a217310e32be5d77c40",
+        "name": "доста́ти",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d78a9a",
+        "name": "и҆скꙋпи́ти",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d78ccb",
+        "name": "ка́плѧ",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d78f18",
+        "matches": true,
+        "httpStatus": 200,
+        "references": 1,
+        "compressedTransfer": true,
+        "name": "ко́рень"
+      },
+      {
+        "id": "68399a217310e32be5d78eff",
+        "name": "кора̀",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d7919e",
+        "name": "лиса̀",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d79b11",
+        "matches": true,
+        "httpStatus": 200,
+        "references": 1,
+        "retriedSequentially": true,
+        "name": "наро́къ"
+      },
+      {
+        "id": "68399a217310e32be5d7e18e",
+        "name": "ча́до",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d7a696",
+        "name": "ѡ҆́брꙋчь",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d7a5ea",
+        "name": "ѡ҆бличи́ти",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d7a691",
+        "name": "ѡ҆брꙋчи́ти",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "68399a217310e32be5d7a692",
+        "matches": true,
+        "httpStatus": 200,
+        "references": 1,
+        "compressedTransfer": true,
+        "name": "ѡ҆брꙋчи́тисѧ"
+      },
+      {
+        "id": "68399a217310e32be5d7aa89",
+        "matches": true,
+        "httpStatus": 200,
+        "references": 1,
+        "name": "ѡ҆снова́ти",
+        "transferSeconds": 71.184565,
+        "transferBytes": 127260
+      },
+      {
+        "id": "f2aaf68d3cd7bd9b33ebcd0d",
+        "name": "ꙗ҆́блоко",
+        "matches": true,
+        "references": 1
+      },
+      {
+        "id": "b7564173add672927e9b7b7a",
+        "name": "ꙗ҆́щеръ",
+        "matches": true,
+        "references": 1
+      }
+    ],
+    "productionActivated": true
+  },
+  "followUpFindings": [
+    {
+      "kind": "slow-large-article-transfer",
+      "lexemeId": "68399a217310e32be5d7aa89",
+      "name": "ѡ҆снова́ти",
+      "bytes": 127260,
+      "seconds": 71.184565,
+      "cause": "not-established; server-local API checks passed",
+      "status": "open",
+      "action": "Measure transfer and timeout of large articles separately on real devices",
+      "clientTimeoutSeconds": 15
+    }
+  ],
+  "typikonProjectHead": "1172800"
+}

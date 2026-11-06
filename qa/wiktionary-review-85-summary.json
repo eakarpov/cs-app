@@ -1,0 +1,348 @@
+{
+  "date": "2026-11-06",
+  "reviewSummary": {
+    "reviewedPairs": 85,
+    "decisions": {
+      "ready": 17,
+      "defer": 11,
+      "reject": 57
+    },
+    "readyLexemes": 17,
+    "bundleId": "58c9ecd7c5fcfe74c9a5a167a43076e46b0c8db4df32987e1e65e9b5e5718b4e",
+    "sources": 31,
+    "baseline": {
+      "publicationVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+      "publicationSha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158",
+      "protoSnapshotSha256": "c919136300300b1ced2822d9e486c05c2e5120099358d2ca918413e9e816c4fb",
+      "nativePayloadSha256": {
+        "68399a217310e32be5d76466": "39b5c8c82f389ec6a76eeaa2cdb5569565deb810801472f096a6796f69339e29",
+        "68399a217310e32be5d76b00": "d4f00b88eb83b50fb872607336efed19d4f425d970d75001d7662ec7d7189d9c",
+        "68399a217310e32be5d77c40": "e73493dfa242c5012d8c7d2a2f37bc4859a30f53494013d114478d62b6b4ef5f",
+        "68399a217310e32be5d78a9a": "46cd0c4df2bd598753b150eded554a6efcf1f8309835d736f6cbc912a2d78f4f",
+        "68399a217310e32be5d78ccb": "49693525e8eb41976eeb5f9b9793c4bf0524338fd70591129fe18be8573c355e",
+        "68399a217310e32be5d78f18": "356ea9868f7be40252b6fcfa8d5f6f9410de76b0cd9d40614131ec7149a722fd",
+        "68399a217310e32be5d78eff": "620c4cd261165aaec190fed5381de85baf7eebac608bb3ca924bad9911274fad",
+        "68399a217310e32be5d7919e": "b87b1db1b4731ac38cc576d29cf5af63b9c805068bf2b4c3aab938e8a1463930",
+        "68399a217310e32be5d79b11": "608b365df5166cb6f7eff5db75cc36a3247ccb1f4693a6209f204794701d50db",
+        "68399a217310e32be5d7e18e": "6059aa791817b3077611a984b7bc010d707c153cb9a130a4825eb3b1fc20d28e",
+        "68399a217310e32be5d7a696": "5dc284e410501c051b76bbd50067f988461df575cd82e812adf13be407461ef3",
+        "68399a217310e32be5d7a5ea": "efe3ce417a5d9731dbc99c8e3be0b7a470e46d51d5dc03d16412bac18388edca",
+        "68399a217310e32be5d7a691": "c8b19a1aa7f8e2397cbf5df9319e48cdfdfb8e7b2b04355146d03fa57f6e4725",
+        "68399a217310e32be5d7a692": "80cfb0cea72de2714e51986ef50dd72865fca3b22071c5a89815ae252aed2d81",
+        "68399a217310e32be5d7aa89": "e79763fed5e898df04ad77856ff61c3ea929af7f357cd053876d0def8375791c",
+        "f2aaf68d3cd7bd9b33ebcd0d": "17e31933cc30e251b158c0df1d9c1e61a79a1b7a1698a58ae845ed6f379fa00b",
+        "b7564173add672927e9b7b7a": "56b716602dc078a05a665c8e15ce505bb4c946e9a42759f865a651f5a0580c45"
+      }
+    },
+    "allSourceSpansValidated": true,
+    "sourceSnapshotsPreserved": true,
+    "productionApplied": false
+  },
+  "verification": {
+    "all85ExplicitlyReviewed": true,
+    "ready": 17,
+    "deferred": 11,
+    "rejected": 57,
+    "referencesInDraft": 25,
+    "originalReferencesPreserved": 8,
+    "originalEditorialFileUnchanged": true,
+    "publicationSha256Preserved": true,
+    "evidenceFilesPreserved": true,
+    "repeatMergeByteIdentical": true,
+    "allSpansValidated": true,
+    "testsPassed": 45,
+    "productionApplied": false
+  },
+  "rejectionReasons": {
+    "wrong-homonym": 8,
+    "wrong-native-sense": 5,
+    "ocr-homograph": 3,
+    "contradictory-reconstruction": 1,
+    "part-of-speech-conflict": 1,
+    "truncated-multiword-heading": 38,
+    "index-page-not-article": 1
+  },
+  "readyPairs": [
+    {
+      "pairId": "95d308236784cfd5a12598c098d1a2b7adb107c84153a85bfc6ff2a940c8828a",
+      "lexemeId": "68399a217310e32be5d76466",
+      "name": "ба́нѧ",
+      "protoArticleId": 835,
+      "protoArticleLemma": "ban'a",
+      "decision": "ready"
+    },
+    {
+      "pairId": "b4bffb159ba57364441e0087f55c903216b08fae96adf44a6db8c8ac0717dd73",
+      "lexemeId": "68399a217310e32be5d76b00",
+      "name": "бри́ти",
+      "protoArticleId": 1729,
+      "protoArticleLemma": "briti (sę)",
+      "decision": "ready"
+    },
+    {
+      "pairId": "3acc72fb94df1a5cca99a6e587b90e601d36f317f81a1e081008804fe29cb178",
+      "lexemeId": "68399a217310e32be5d77c40",
+      "name": "доста́ти",
+      "protoArticleId": 3457,
+      "protoArticleLemma": "dostati",
+      "decision": "ready"
+    },
+    {
+      "pairId": "904891fc96e2bf481cdfa926f981cd1f86b09fcfefd45cfcf4e499f9cb359eed",
+      "lexemeId": "68399a217310e32be5d78a9a",
+      "name": "и҆скꙋпи́ти",
+      "protoArticleId": 6840,
+      "protoArticleLemma": "jьzkupiti",
+      "decision": "ready"
+    },
+    {
+      "pairId": "83b30ec0e9dfb2656e935291b06d5b0442346c98fbf19652fb3343b0366b60ed",
+      "lexemeId": "68399a217310e32be5d78ccb",
+      "name": "ка́плѧ",
+      "protoArticleId": 7427,
+      "protoArticleLemma": "kapja",
+      "decision": "ready"
+    },
+    {
+      "pairId": "a2f3645e0ad2d28da14613cb54178dfeb7cf68d05a988e70d098f08c817b58e6",
+      "lexemeId": "68399a217310e32be5d78f18",
+      "name": "ко́рень",
+      "protoArticleId": 7959,
+      "protoArticleLemma": "kоrеnь",
+      "decision": "ready"
+    },
+    {
+      "pairId": "cd9600642f518336070bbef830d9dc966edd27bf7902e0c73988ee9a18086126",
+      "lexemeId": "68399a217310e32be5d78eff",
+      "name": "кора̀",
+      "protoArticleId": 7931,
+      "protoArticleLemma": "kоrа",
+      "decision": "ready"
+    },
+    {
+      "pairId": "252aed610fda92ecd8fcfdb951efb43d8af4345de91bb2ca11bde479b664068a",
+      "lexemeId": "68399a217310e32be5d7919e",
+      "name": "лиса̀",
+      "protoArticleId": 10556,
+      "protoArticleLemma": "lisa",
+      "decision": "ready"
+    },
+    {
+      "pairId": "4d91d9964739c0d5fc1e927c0e126eaba02a2205efec131e8d470646a90b7baf",
+      "lexemeId": "68399a217310e32be5d79b11",
+      "name": "наро́къ",
+      "protoArticleId": 15732,
+      "protoArticleLemma": "nаrоkъ I",
+      "decision": "ready"
+    },
+    {
+      "pairId": "d490a5bc3f4df603e19f947384a90d77e0ada2490e5b170f7b34f923f4350ae6",
+      "lexemeId": "68399a217310e32be5d7e18e",
+      "name": "ча́до",
+      "protoArticleId": 2647,
+      "protoArticleLemma": "čędo/*čęda/*čędъ",
+      "decision": "ready"
+    },
+    {
+      "pairId": "3306d09919972dacd8f1b709ea0b4cd726cbf24ed01e2a20c6affec0dec65227",
+      "lexemeId": "68399a217310e32be5d7a696",
+      "name": "ѡ҆́брꙋчь",
+      "protoArticleId": 19785,
+      "protoArticleLemma": "obrǫčь/*obrǫča",
+      "decision": "ready"
+    },
+    {
+      "pairId": "a54f83b48eb1d339e9d3d8f8fe415188b87de8c09a932d0678ba5f9dbf9e87ba",
+      "lexemeId": "68399a217310e32be5d7a5ea",
+      "name": "ѡ҆бличи́ти",
+      "protoArticleId": 18853,
+      "protoArticleLemma": "obličiti I",
+      "decision": "ready"
+    },
+    {
+      "pairId": "e725ce9bb03759dd83103abf2b2878faaac5efe63119504d827171908f3c725d",
+      "lexemeId": "68399a217310e32be5d7a691",
+      "name": "ѡ҆брꙋчи́ти",
+      "protoArticleId": 19784,
+      "protoArticleLemma": "obrǫčiti (sę)",
+      "decision": "ready"
+    },
+    {
+      "pairId": "5d51af689dc8841773e8f664b7e46180b85de1b49e88137a81ba45351ab5c734",
+      "lexemeId": "68399a217310e32be5d7a692",
+      "name": "ѡ҆брꙋчи́тисѧ",
+      "protoArticleId": 19784,
+      "protoArticleLemma": "obrǫčiti (sę)",
+      "decision": "ready"
+    },
+    {
+      "pairId": "ba3fed0e0103326abc9624de51eb60acf95ba742c6b16bec9c5f9b9aa7ded1a1",
+      "lexemeId": "68399a217310e32be5d7aa89",
+      "name": "ѡ҆снова́ти",
+      "protoArticleId": 20050,
+      "protoArticleLemma": "obsnovati (sę) *obsnujǫ (sę)",
+      "decision": "ready"
+    },
+    {
+      "pairId": "d35fe4ca046bc8c81fa0bc1749b0242e774a3daf0619566d7cf61eccc1cd4bd7",
+      "lexemeId": "f2aaf68d3cd7bd9b33ebcd0d",
+      "name": "ꙗ҆́блоко",
+      "protoArticleId": 284,
+      "protoArticleLemma": "аblъkо",
+      "decision": "ready"
+    },
+    {
+      "pairId": "bd98435aaff78007293aa1ecf45457c0e2c1004b08b45bbace8324c3f54ddb01",
+      "lexemeId": "b7564173add672927e9b7b7a",
+      "name": "ꙗ҆́щеръ",
+      "protoArticleId": 408,
+      "protoArticleLemma": "аščеrъ",
+      "decision": "ready"
+    }
+  ],
+  "draft": {
+    "bundleId": "58c9ecd7c5fcfe74c9a5a167a43076e46b0c8db4df32987e1e65e9b5e5718b4e",
+    "expectedOriginalDecisionsSha256": "83daf6a96caf866b142f3d75ce663c2014f84d9667299e924cd2e1e3f57d8729",
+    "mergedDecisionsSha256": "a0fc672ea5b9d314f954c79658db41b889bb5320a7ffb94d5977f00e11084d60",
+    "addedReferences": 17,
+    "preservedExistingReferences": 8,
+    "decisionsRecorded": 85,
+    "sourcesPreserved": 31,
+    "productionApplied": false
+  },
+  "typikonLiveCheck": {
+    "checkedAtUtc": "2026-11-06T19:24:30.196770+00:00",
+    "url": "https://www.typikon.info/api/v2/cs/search?q=баня&direction=cu-ru&limit=1",
+    "liveVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+    "expectedVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+    "matches": true,
+    "method": "GET via curl",
+    "productionApplied": false
+  },
+  "interlexLiveCheck": {
+    "checkedAtUtc": "2026-11-06T19:35:48.189367+00:00",
+    "method": "public GET with canonical redirects",
+    "articles": [
+      {
+        "articleId": 835,
+        "url": "https://interslavic-lexicon.com/api/public/cs/proto/835",
+        "matches": true,
+        "bodySha256": "d756f93356e13a61b622ffd7ff25c344e3f96dca47feb5b8cea977e19ce06a92"
+      },
+      {
+        "articleId": 1729,
+        "url": "https://www.interslavic-lexicon.com/api/public/cs/proto/1729",
+        "matches": true,
+        "httpStatus": 200,
+        "bodySha256": "f64bcc29aa739ff0dda63a2f77f76853bd5f96552ffe957352d2f5bcdf41e07b",
+        "retriedAtCanonicalHost": true
+      },
+      {
+        "articleId": 3457,
+        "url": "https://www.interslavic-lexicon.com/api/public/cs/proto/3457",
+        "matches": true,
+        "httpStatus": 200,
+        "bodySha256": "0d9511daa7680714aa92e562cbe0521faa7c738416e11c781cb2d7ec3615fb72",
+        "retriedAtCanonicalHost": true
+      },
+      {
+        "articleId": 6840,
+        "url": "https://interslavic-lexicon.com/api/public/cs/proto/6840",
+        "matches": true,
+        "bodySha256": "a716456f4c049b03af8dee874cff8f88e6e61eb751ae1aa40447fd376a5d95a8"
+      },
+      {
+        "articleId": 7427,
+        "url": "https://interslavic-lexicon.com/api/public/cs/proto/7427",
+        "matches": true,
+        "bodySha256": "5c8c5179b4459aa3750433df8c296ce3aaf95aa12eeee1b1a81c9fc688e8cd08"
+      },
+      {
+        "articleId": 7959,
+        "url": "https://interslavic-lexicon.com/api/public/cs/proto/7959",
+        "matches": true,
+        "bodySha256": "672067b57b9e53a8f100bc34991ee83c73c79c6516e863381421a068c7184f85"
+      },
+      {
+        "articleId": 7931,
+        "url": "https://interslavic-lexicon.com/api/public/cs/proto/7931",
+        "matches": true,
+        "bodySha256": "4eeb151ddab92897e935f5bdb3846972a6022785c41b84314881a725d0113e46"
+      },
+      {
+        "articleId": 10556,
+        "url": "https://www.interslavic-lexicon.com/api/public/cs/proto/10556",
+        "matches": true,
+        "httpStatus": 200,
+        "bodySha256": "63872c2cfc8ecd4ddbefb9d611d2d077fb54028fa6e6e099850d35a506e46c58",
+        "retriedAtCanonicalHost": true
+      },
+      {
+        "articleId": 15732,
+        "url": "https://interslavic-lexicon.com/api/public/cs/proto/15732",
+        "matches": true,
+        "bodySha256": "ac2b439878758a7b4501b0acbe09e63b53c676d53072775c821eb2ef3c505d99"
+      },
+      {
+        "articleId": 2647,
+        "url": "https://www.interslavic-lexicon.com/api/public/cs/proto/2647",
+        "matches": true,
+        "httpStatus": 200,
+        "bodySha256": "b35672314bccf24605429f765191ae1de12e4e18507a2ffa3f0b82e47b57390e",
+        "retriedAtCanonicalHost": true
+      },
+      {
+        "articleId": 19785,
+        "url": "https://interslavic-lexicon.com/api/public/cs/proto/19785",
+        "matches": true,
+        "bodySha256": "44382ab89b01b088485cf66d0d866c25ef106347b508977373880ea4c69a2cce"
+      },
+      {
+        "articleId": 18853,
+        "url": "https://interslavic-lexicon.com/api/public/cs/proto/18853",
+        "matches": true,
+        "bodySha256": "5a94b55731d4b9ff637b4dbcfcfb9758e139136715dbe4d0e716d990f979e14a"
+      },
+      {
+        "articleId": 19784,
+        "url": "https://www.interslavic-lexicon.com/api/public/cs/proto/19784",
+        "matches": true,
+        "httpStatus": 200,
+        "bodySha256": "66609ab803f70bdb44b3f0ba1b192f19774810efe15c117fa5a9125265b81271",
+        "retriedAtCanonicalHost": true
+      },
+      {
+        "articleId": 20050,
+        "url": "https://interslavic-lexicon.com/api/public/cs/proto/20050",
+        "matches": true,
+        "bodySha256": "8b8a161e6c6f6d0a588c4dee3dfc2f68913e1195720d58b0fcc6bb07c3807386"
+      },
+      {
+        "articleId": 284,
+        "url": "https://interslavic-lexicon.com/api/public/cs/proto/284",
+        "matches": true,
+        "bodySha256": "ca0bf5fb384e39edaad9e55f3ee39155733e288278ff3282caeeb376f8130ad5"
+      },
+      {
+        "articleId": 408,
+        "url": "https://www.interslavic-lexicon.com/api/public/cs/proto/408",
+        "matches": true,
+        "httpStatus": 200,
+        "bodySha256": "7868f6f0fb5922ae3b41f7f357ce0b3887aeb5481a2ae45a42fa2cff7018e291",
+        "retriedAtCanonicalHost": true
+      }
+    ],
+    "allMatch": true,
+    "productionApplied": false
+  },
+  "sourceRegistryByKind": {
+    "wiktionary": 15,
+    "interlex-proto": 16
+  },
+  "tests": {
+    "extractionMatchingAndSafety": 34,
+    "import": 11,
+    "total": 45
+  },
+  "appliedToProduction": false
+}

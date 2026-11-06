@@ -1,0 +1,270 @@
+{
+  "english": {
+    "archive": "import/wiktionary-full/raw/en-extract.jsonl.gz",
+    "download": {
+      "url": "https://kaikki.org/dictionary/raw-wiktextract-data.jsonl.gz",
+      "retrievedAtUtc": "2026-11-06T12:46:34Z",
+      "remote": {
+        "Content-Length": "3082476978",
+        "Last-Modified": "Fri, 30 Oct 2026 20:48:24 GMT",
+        "ETag": "\"6ae50298-b7baddb2\""
+      },
+      "bytes": 3082476978,
+      "sha256": "5ff2c072f8099f2d2ce484bd6957bf179f046d2ad37bc36555edf8bb84cb5291",
+      "compression": "gzip",
+      "rangeWorkers": 4
+    },
+    "rowsScanned": 11121531,
+    "uncompressedBytesScanned": 26613558507,
+    "selectedRows": 10246,
+    "selectedByClassification": {
+      "old-church-slavonic": 4635,
+      "church-slavonic": 138,
+      "proto-slavic": 5473
+    },
+    "gzipCrcValidated": true,
+    "completeScan": true,
+    "appliedToProduction": false
+  },
+  "russian": {
+    "archive": "import/wiktionary-pilot/raw/ru-extract.jsonl.gz",
+    "download": {
+      "url": "https://kaikki.org/dictionary/downloads/ru/ru-extract.jsonl.gz",
+      "retrievedAtUtc": "2026-11-06T11:51:25Z",
+      "remote": {
+        "Content-Length": "308932274",
+        "Last-Modified": "Fri, 30 Oct 2026 20:52:14 GMT",
+        "ETag": "\"6ae5037e-1269eeb2\""
+      },
+      "bytes": 308932274,
+      "sha256": "fdcb978c76b660e0e43977bbf7487c812e6d42e965b0a73e3f5b4ba6981174c4",
+      "compression": "gzip",
+      "rawIndex": "download-index.html"
+    },
+    "rowsScanned": 2729136,
+    "selectedRows": 16225,
+    "selectedByClassification": {
+      "church-slavonic": 8539,
+      "old-church-slavonic": 7036,
+      "proto-slavic": 650
+    },
+    "contextParentRecords": 32247,
+    "distinctHistoricalWitnesses": 57078,
+    "witnessesByClassification": {
+      "old-east-slavic": 18568,
+      "old-church-slavonic": 30825,
+      "church-slavonic": 7685
+    },
+    "witnessesByBasis": {
+      "explicit-language-marker-prose": 31542,
+      "language-marker-and-anchored-wikilink": 24584,
+      "explicit-language-anchor": 952
+    },
+    "unresolvedMarkerOccurrences": 9053,
+    "eligibleSharedOriginClaims": 27017,
+    "gzipCrcValidated": true,
+    "completeScan": true,
+    "appliedToProduction": false
+  },
+  "matching": {
+    "completedAtUtc": "2026-11-06T12:50:23Z",
+    "publicationVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+    "nativeArticles": 34119,
+    "interlexProtoArticles": 24531,
+    "protoSnapshotSource": "interlex-production",
+    "protoSnapshotExportedAtUtc": "2026-11-06T12:20:03.848Z",
+    "selectedRecords": 26471,
+    "counts": {
+      "ru:church-slavonic:entries": 8539,
+      "ru:church-slavonic:no-compatible-candidate": 3928,
+      "ru:old-church-slavonic:entries": 7036,
+      "ru:old-church-slavonic:unique-candidate": 1784,
+      "ru:church-slavonic:unique-candidate": 4416,
+      "ru:old-church-slavonic:ambiguous": 79,
+      "ru:church-slavonic:ambiguous": 195,
+      "ru:old-church-slavonic:no-compatible-candidate": 5173,
+      "en:old-church-slavonic:entries": 4635,
+      "en:old-church-slavonic:no-compatible-candidate": 2886,
+      "en:old-church-slavonic:unique-candidate": 1640,
+      "en:old-church-slavonic:ambiguous": 109,
+      "en:church-slavonic:entries": 138,
+      "en:church-slavonic:unique-candidate": 66,
+      "en:church-slavonic:no-compatible-candidate": 70,
+      "en:church-slavonic:ambiguous": 2
+    },
+    "distinctSourcePages": {
+      "ru:church-slavonic": 8439,
+      "ru:old-church-slavonic": 7006,
+      "ru:proto-slavic": 640,
+      "en:old-church-slavonic": 4568,
+      "en:church-slavonic": 136,
+      "en:proto-slavic": 5233
+    },
+    "content": {
+      "ru:church-slavonic": {
+        "senses": 8808,
+        "examples": 2121,
+        "forms": 1000,
+        "hasEtymology": 59,
+        "hasUnresolvedEtymology": 7681,
+        "hasTemplateExpansionWarning": 0
+      },
+      "ru:old-church-slavonic": {
+        "senses": 7279,
+        "examples": 265,
+        "forms": 40685,
+        "hasEtymology": 379,
+        "hasUnresolvedEtymology": 6509,
+        "hasTemplateExpansionWarning": 0
+      },
+      "ru:proto-slavic": {
+        "senses": 692,
+        "examples": 2,
+        "forms": 140,
+        "hasEtymology": 594,
+        "hasUnresolvedEtymology": 44,
+        "hasTemplateExpansionWarning": 0
+      },
+      "en:old-church-slavonic": {
+        "senses": 5902,
+        "examples": 1246,
+        "forms": 291490,
+        "hasEtymology": 2636,
+        "hasUnresolvedEtymology": 0,
+        "hasTemplateExpansionWarning": 141
+      },
+      "en:church-slavonic": {
+        "senses": 148,
+        "examples": 33,
+        "forms": 260,
+        "hasEtymology": 41,
+        "hasUnresolvedEtymology": 0,
+        "hasTemplateExpansionWarning": 1
+      },
+      "en:proto-slavic": {
+        "senses": 7131,
+        "examples": 1189,
+        "forms": 249231,
+        "hasEtymology": 5226,
+        "hasUnresolvedEtymology": 0,
+        "hasTemplateExpansionWarning": 2508
+      }
+    },
+    "nativeProposals": 8291,
+    "spellingProposals": 9272,
+    "directProtoEvidenceRows": 4307,
+    "directProtoEvidenceWithInterlexMatch": 1364,
+    "directProtoChainsWithNativeAndInterlex": 776,
+    "reverseProtoEvidenceRows": 4852,
+    "reverseProtoChainsWithNativeAndInterlex": 459,
+    "protoArticleHeadsNeedingReview": 3347,
+    "reviewSampleSize": 200,
+    "distinctDirectLexemeProtoCandidates": 708,
+    "distinctReverseLexemeProtoCandidates": 819,
+    "confirmedLinksCreated": 0,
+    "writesToWorkingDatabases": false,
+    "limitations": [
+      "Acquisition kinds in this trial: raw-wiktextract",
+      "Revision IDs are not exposed by these exports",
+      "Language labels do not independently prove an izvod attribution",
+      "Search-key and script-variant collisions are review candidates, not identities",
+      "Unparsed etymological prose remains in raw records; no invented reconstructions",
+      "No automatic new lexemes, schemes, stress or spellings were published"
+    ]
+  },
+  "historicalMatching": {
+    "counts": {
+      "old-church-slavonic:witnesses": 30825,
+      "old-church-slavonic:no-candidate": 15471,
+      "old-east-slavic:witnesses": 18568,
+      "old-east-slavic:no-candidate": 11856,
+      "old-church-slavonic:unique-candidate": 14628,
+      "church-slavonic:witnesses": 7685,
+      "church-slavonic:no-candidate": 5339,
+      "old-east-slavic:unique-candidate": 6434,
+      "old-church-slavonic:ambiguous": 726,
+      "church-slavonic:unique-candidate": 2222,
+      "old-east-slavic:ambiguous": 278,
+      "church-slavonic:ambiguous": 124
+    },
+    "eligibleProtoEvidenceRows": 27017,
+    "allMappingsProposed": true,
+    "cooccurrencesExcludedFromProtoMappings": true,
+    "appliedToProduction": false
+  },
+  "verification": {
+    "preparedAtUtc": "2026-11-06T12:50:53Z",
+    "publicationVersion": "aa4f4913d1994d412bb4daaa08ccdd2428bfbb0e8a3759f9eff8da14a8d889fb",
+    "publicationSha256": "d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158",
+    "nativeIndexSha256": "10d9dd6c1cb00596936d3cbb1c86bb1579d36d1ab64a6405a3bcc57e20e0ff2e",
+    "interlexProtoSnapshotSha256": "c919136300300b1ced2822d9e486c05c2e5120099358d2ca918413e9e816c4fb",
+    "inputsPreserved": true,
+    "allCandidateIdsExistInInputs": true,
+    "allEvidenceSourceIdsExist": true,
+    "selectedSha256": "dd7ed5db541dd6e594efd2d1c2e43838a68c586021bc894358f277b17a88c426",
+    "selectedDistinctContentRecords": 26471,
+    "historicalWitnessSourceRecords": 57078,
+    "distinctLexemeProtoCandidatePairs": 1087,
+    "reviewFirstPairs": 184,
+    "numberOfConfirmedMappings": 0,
+    "hasUpstreamRevisionFields": false,
+    "appliedToProduction": false,
+    "historicalDatesInferredFromWikiTimestamps": false,
+    "notes": [
+      "All IDs are references to existing snapshots. No new lexemes or proto entries are created.",
+      "Read-only production proto SELECT and read-only local publication export.",
+      "Source acquisition kinds: raw-wiktextract"
+    ]
+  },
+  "historicalDistinctSpellingsByClass": {
+    "church-slavonic": 959,
+    "old-church-slavonic": 1975,
+    "old-east-slavic": 1840
+  },
+  "historicalWitnessesWithNativeCandidates": 24412,
+  "historicalDistinctNativeLexemes": 1333,
+  "historicalEligibleProtoRowsWithBothCandidates": 4876,
+  "historicalDistinctLexemeProtoPairs": 340,
+  "protoPairComparison": {
+    "previous": 1002,
+    "current": 1087,
+    "retained": 1002,
+    "added": 85,
+    "removed": 0
+  },
+  "nativeDistinctLexemesFromDictionaryEntries": 5145,
+  "sourceRowsByEditionAndClass": {
+    "ru:church-slavonic": 8539,
+    "ru:old-church-slavonic": 7036,
+    "ru:proto-slavic": 650,
+    "en:old-church-slavonic": 4635,
+    "en:church-slavonic": 138,
+    "en:proto-slavic": 5473
+  },
+  "historicalSpanChecksPassed": true,
+  "historicalReviewSampleSize": 200,
+  "confirmedMappings": 0,
+  "appliedToProduction": false,
+  "repeatability": {
+    "identical": true,
+    "comparedFiles": 11,
+    "sha256": {
+      "native-proposals.jsonl": "a54c79027fdc5b3edbc313735e4ae729d0fda5b26fe4ac4616b2d03fa32529ec",
+      "unmatched.jsonl": "143fbe7154fd6876b2aea001504b5a3822d805a7b4536eabaadb526cf5122c6b",
+      "spelling-proposals.jsonl": "30185e6cb79f51042f82dff4c8c7abf769135e833cff454c307d0965bfeb9416",
+      "etymology-proposals.jsonl": "4ee7f87048d02aa327012608ff8bf709fb18ce2efc1b2b87f942226f4b726ca3",
+      "reverse-proto-proposals.jsonl": "9452ce22599d0837438ec15218a97f6606b595f13c353f298cc62226c926a8c0",
+      "interlex-heads-needing-review.jsonl": "ae6e88890cf9234208302668075fcf15c772b3c0b13816a402c1a033c885c1a7",
+      "review-sample.json": "b3336918bfdd0930f0f39163d7af36345a57e4d84155b0d0ace62ee7b1dff513",
+      "review.html": "ac130ef615e484cce4a6fde4abfb0dd05609c965ec80bfa1efbb92c35430d5ff",
+      "historical-spelling-proposals.jsonl": "f4086fe9565af210efb32e7187de01f5a634baa3047d5173643672afa27ba665",
+      "historical-proto-proposals.jsonl": "6a36cb08466e9a44a35f0333adffc07ff1e07e12cf4eaa51d8aa90faf6495a1e",
+      "historical-proto-context-only.jsonl": "163fb6c8fc63682d9d22702b248a0a7a5b923456de020674f3f9bb13fbbc2ffc"
+    },
+    "timestampsExcluded": true,
+    "appliedToProduction": false
+  },
+  "tests": {
+    "passed": 29
+  }
+}

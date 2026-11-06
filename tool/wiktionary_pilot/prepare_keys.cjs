@@ -2,7 +2,7 @@
 const fs=require('node:fs');
 const requireAt=require('node:module').createRequire(process.cwd()+'/package.json');
 const {civilKey}=requireAt('./src/lib/cslav/core.ts');
-const root='../cs-app/import/wiktionary-pilot';
+const root=process.argv[2]??'../cs-app/import/wiktionary-pilot';
 const readline=require('node:readline');
 (async()=>{
  const terms=new Set();
@@ -22,6 +22,8 @@ const readline=require('node:readline');
   }}
   walk(r.raw.descendants??[]);
  }
+ const history=root+'/historical-witnesses.jsonl';
+ if(fs.existsSync(history))for await(const line of readline.createInterface({input:fs.createReadStream(history)})){const r=JSON.parse(line);terms.add(r.word);if(r.lemmaTarget)terms.add(r.lemmaTarget);}
  const keys={};for(const term of terms)keys[term]=civilKey(term);
  fs.writeFileSync(root+'/civil-keys.json',JSON.stringify(keys));
  console.log(JSON.stringify({searchKeys:terms.size}));

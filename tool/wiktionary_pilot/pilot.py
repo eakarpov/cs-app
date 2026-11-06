@@ -37,14 +37,18 @@ def proto_key(word,fold_accents=False,repair=False):
     return unicodedata.normalize('NFC',value)
 
 def proto_heads(lemma):
-    # Full words, not roots: never remove inflectional or derivational endings.
-    # Preserve homonym/alternative article identity and reject concatenated heads.
+    # Keep phrases intact: 'ob bokъ' must never become the head 'ob'.
+    # Strip only explicit grammatical/homonym metadata, never arbitrary words.
     terms=[]
     for part in lemma.split('/'):
-        token=part.strip().split()[0] if part.strip() else ''
-        token=token.lstrip('*').rstrip('.,;:')
-        if not token or '*' in token or any(c in token for c in '()[]{}=+'):continue
-        if all(c.isalpha() or unicodedata.category(c).startswith('M') or c in "ьъ-ʹ’'" for c in token):terms.append(token)
+        part=part.strip().lstrip('*').strip()
+        part=re.sub(r'\s+род\s+п\b.*$', '', part)
+        part=re.sub(r'\s+(?:I{1,3}|IV|V|VI{0,3}|IX|X|l)$', '', part)
+        part=re.sub(r'\s*\(sę\)', '', part)
+        for token in re.split(r'\s+\*',part):
+            token=token.strip().lstrip('*').rstrip('.,;:')
+            if not token or '*' in token or any(c in token for c in '()[]{}=+'):continue
+            if all(c.isalpha() or unicodedata.category(c).startswith('M') or c.isspace() or c in "ьъ-ʹ’'" for c in token):terms.append(token)
     return list(dict.fromkeys(terms))
 
 def language_class(raw):
@@ -142,6 +146,9 @@ class ProtoIndex:
         self.rows={row['id']:row for row in data['rows']}
         self.maps=[collections.defaultdict(set) for _ in range(3)];self.unparsed=[]
         for row in data['rows']:
+          body=' '.join(row.get('body','').split())
+          if body.startswith('Здесь представлен праславянский лексический фонд на начальные фонемы') and 'на основе объединения этимологических сведений' in body:
+            self.unparsed.append({'id':row['id'],'lemma':row['lemma'],'reason':'non-article-index-page'});continue
           heads=proto_heads(row['lemma'])
           if not heads:self.unparsed.append({'id':row['id'],'lemma':row['lemma']})
           for head in heads:
@@ -247,7 +254,7 @@ def match(root):
       return '<tr>'+''.join('<td>'+escape(str(x))+'</td>' for x in [r['edition'],r['classification'],r['word'],r['pos'],r['matchCategory'],candidates])+f'<td><a href="{escape(r["sourceUrl"],quote=True)}">Источник</a></td></tr>'
     html='''<!doctype html><html lang="ru"><meta charset="utf-8"><title>Пробное сопоставление Викисловаря</title><style>@font-face{font-family:Monomakh;src:url(../../assets/fonts/MonomakhUnicode.otf)}@font-face{font-family:Shafarik;src:url(../../assets/fonts/Shafarik-Regular.otf)}td:nth-child(3){font-family:Monomakh,Shafarik,serif;font-size:22px}body{font:16px system-ui;margin:24px;color:#202020;background:#faf8f1}table{border-collapse:collapse;width:100%}td,th{border:1px solid #bbb;padding:10px;vertical-align:top}th{position:sticky;top:0;background:#e8e3d6}a{color:#00509a}</style><h1>Пробное сопоставление Викисловаря</h1><p>200 записей для ручной проверки. Все соответствия — предложения. Рабочие базы не изменены. Совпадение ключа не доказывает тождество лексем.</p><table><tr><th>Редакция</th><th>Раздел</th><th>Слово</th><th>Часть речи</th><th>Результат</th><th>Кандидаты typikon-web</th><th>Статья</th></tr>'''+''.join(html_item(r) for r in sample)+'</table></html>'
     (root/'review.html').write_text(html)
-    report={'completedAtUtc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'publicationVersion':native_data['version'],'nativeArticles':len(native_data['rows']),'interlexProtoArticles':len(proto_data['rows']),'protoSnapshotSource':proto_data['source'],'protoSnapshotExportedAtUtc':proto_data['exportedAtUtc'],'selectedRecords':len(records),'counts':dict(counts),'distinctSourcePages':{k:len(v) for k,v in page_groups.items()},'content':{k:dict(v) for k,v in features_by_group.items()},'nativeProposals':len(native_links),'spellingProposals':len(spelling_links),'directProtoEvidenceRows':len(proto_links),'directProtoEvidenceWithInterlexMatch':sum(bool(r['interlexCandidates']) for r in proto_links),'directProtoChainsWithNativeAndInterlex':sum(bool(r['interlexCandidates'] and r['nativeCandidates']) for r in proto_links),'reverseProtoEvidenceRows':len(reverse),'reverseProtoChainsWithNativeAndInterlex':sum(bool(r['interlexCandidates'] and r['nativeCandidates']) for r in reverse),'protoArticleHeadsNeedingReview':len(proto.unparsed),'reviewSampleSize':len(sample),'distinctDirectLexemeProtoCandidates':len({(m['lexemeId'],p['articleId']) for r in proto_links for m in r['nativeCandidates'] for p in r['interlexCandidates']}),'distinctReverseLexemeProtoCandidates':len({(m['lexemeId'],p['articleId']) for r in reverse for m in r['nativeCandidates'] for p in r['interlexCandidates']}),'confirmedLinksCreated':0,'writesToWorkingDatabases':False,'limitations':['English language exports are postprocessed; Russian export is raw Wiktextract','Revision IDs are not exposed by these exports','Language labels do not independently prove an izvod attribution','Search-key and script-variant collisions are review candidates, not identities','Unparsed etymological prose remains in raw records; no invented reconstructions','No automatic new lexemes, schemes, stress or spellings were published']}
+    report={'completedAtUtc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'publicationVersion':native_data['version'],'nativeArticles':len(native_data['rows']),'interlexProtoArticles':len(proto_data['rows']),'protoSnapshotSource':proto_data['source'],'protoSnapshotExportedAtUtc':proto_data['exportedAtUtc'],'selectedRecords':len(records),'counts':dict(counts),'distinctSourcePages':{k:len(v) for k,v in page_groups.items()},'content':{k:dict(v) for k,v in features_by_group.items()},'nativeProposals':len(native_links),'spellingProposals':len(spelling_links),'directProtoEvidenceRows':len(proto_links),'directProtoEvidenceWithInterlexMatch':sum(bool(r['interlexCandidates']) for r in proto_links),'directProtoChainsWithNativeAndInterlex':sum(bool(r['interlexCandidates'] and r['nativeCandidates']) for r in proto_links),'reverseProtoEvidenceRows':len(reverse),'reverseProtoChainsWithNativeAndInterlex':sum(bool(r['interlexCandidates'] and r['nativeCandidates']) for r in reverse),'protoArticleHeadsNeedingReview':len(proto.unparsed),'reviewSampleSize':len(sample),'distinctDirectLexemeProtoCandidates':len({(m['lexemeId'],p['articleId']) for r in proto_links for m in r['nativeCandidates'] for p in r['interlexCandidates']}),'distinctReverseLexemeProtoCandidates':len({(m['lexemeId'],p['articleId']) for r in reverse for m in r['nativeCandidates'] for p in r['interlexCandidates']}),'confirmedLinksCreated':0,'writesToWorkingDatabases':False,'limitations':['Acquisition kinds in this trial: '+', '.join(sorted({r['acquisitionKind'] for r in records})),'Revision IDs are not exposed by these exports','Language labels do not independently prove an izvod attribution','Search-key and script-variant collisions are review candidates, not identities','Unparsed etymological prose remains in raw records; no invented reconstructions','No automatic new lexemes, schemes, stress or spellings were published']}
     write_json(root/'matching-summary.json',report);print(json.dumps(report,ensure_ascii=False,indent=2))
 
 if __name__=='__main__':

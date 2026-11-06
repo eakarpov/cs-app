@@ -2,7 +2,7 @@ const fs=require('node:fs');
 const requireAt=require('node:module').createRequire(process.cwd()+'/package.json');
 const DB=requireAt('better-sqlite3');
 const {civilKey}=requireAt('./src/lib/cslav/core.ts');
-const path='../cs-app/import/wiktionary-pilot/native-index.json';
+const path=process.argv[2]??'../cs-app/import/wiktionary-pilot/native-index.json';
 const db=new DB('../cs-app/import/cs-publication-v1.sqlite',{readonly:true,fileMustExist:true});
 const meta=Object.fromEntries(db.prepare('SELECT key,value FROM metadata').all().map(r=>[r.key,r.value]));
 const rows=[];

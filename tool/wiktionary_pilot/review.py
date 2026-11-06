@@ -16,18 +16,27 @@ def prepare(root=ROOT):
     selected={r['id']:r for r in lines(root/'selected.jsonl')}
     native=read_json(root/'native-index.json');native_by_id={r['id']:r for r in native['rows']}
     proto=read_json(root/'interlex-proto-production.json');proto_by_id={r['id']:r for r in proto['rows']}
+    source_index={key:{k:value[k] for k in ['id','word','sourceUrl']} for key,value in selected.items()}
+    historical=root/'historical-witnesses.jsonl'
+    if historical.exists():
+      parent_ids={r['id'] for r in lines(root/'ru-context-sources.jsonl')}
+      for witness in lines(historical):
+        assert all(id in parent_ids for id in witness['parentSourceEntryIds'])
+        source_index[witness['id']]={k:witness[k] for k in ['id','word','sourceUrl']}
     chains={}
-    for filename in ['etymology-proposals.jsonl','reverse-proto-proposals.jsonl']:
+    files=['etymology-proposals.jsonl','reverse-proto-proposals.jsonl']
+    if (root/'historical-proto-proposals.jsonl').exists():files.append('historical-proto-proposals.jsonl')
+    for filename in files:
       for number,row in enumerate(lines(root/filename),1):
         source_id=row.get('sourceEntryId',row.get('protoSourceEntryId'))
-        assert source_id in selected
+        assert source_id in source_index
         for target in row['nativeCandidates']:
           assert target['lexemeId'] in native_by_id
           for p in row['interlexCandidates']:
             assert p['articleId'] in proto_by_id
             key=(target['lexemeId'],p['articleId'])
             chain=chains.setdefault(key,{'id':hashlib.sha256((key[0]+':'+str(key[1])).encode()).hexdigest(),'lexemeId':key[0],'name':native_by_id[key[0]]['name'],'protoArticleId':key[1],'protoArticleLemma':proto_by_id[key[1]]['lemma'],'protoSourceUrl':proto_by_id[key[1]]['sourceUrl'],'status':'proposed','reviewStatus':'pending','evidence':[]})
-            evidence={'sourceEntryId':source_id,'wikiUrl':selected[source_id]['sourceUrl'],'direction':row['direction'],'artifact':filename,'line':number,'nativeMethod':target['method'],'posCompatible':target.get('posCompatible'),'protoMethod':p['method'],'nativeCandidateCount':len(row['nativeCandidates']),'protoCandidateCount':len(row['interlexCandidates'])}
+            evidence={'sourceEntryId':source_id,'wikiUrl':source_index[source_id]['sourceUrl'],'direction':row['direction'],'artifact':filename,'line':number,'nativeMethod':target['method'],'posCompatible':target.get('posCompatible'),'protoMethod':p['method'],'nativeCandidateCount':len(row['nativeCandidates']),'protoCandidateCount':len(row['interlexCandidates'])}
             if 'evidence' in row:evidence.update({k:row['evidence'][k] for k in ['basis','relation','term']})
             else:evidence.update({'basis':'explicit-descendant-tree','relation':row['descendant']['relation'],'term':row['descendant']['word'],'languageCode':row['descendant']['languageCode'],'sourceTags':row['descendant'].get('sourceTags',[]),'sourcePath':row['descendant'].get('sourcePath',[])})
             chain['evidence'].append(evidence)
@@ -53,7 +62,7 @@ def prepare(root=ROOT):
     assert publication_sha=='d4b8acb29f590ed501ef6c132aca2a4064ebb17d9c5970c3dc9022fdfe06e158'
     selected_sha=sha(root/'selected.jsonl')
     record_keys=set().union(*(r['raw'].keys() for r in selected.values()))
-    manifest={'preparedAtUtc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'publicationVersion':native['version'],'publicationSha256':publication_sha,'nativeIndexSha256':sha(root/'native-index.json'),'interlexProtoSnapshotSha256':sha(root/'interlex-proto-production.json'),'inputsPreserved':True,'allCandidateIdsExistInInputs':True,'allEvidenceSourceIdsExist':True,'selectedSha256':selected_sha,'selectedDistinctContentRecords':len(selected),'distinctLexemeProtoCandidatePairs':len(result),'reviewFirstPairs':sum(r['priority']=='review-first' for r in result),'numberOfConfirmedMappings':0,'hasUpstreamRevisionFields':any('revision' in k or k in {'revid','pageid'} for k in record_keys),'appliedToProduction':False,'historicalDatesInferredFromWikiTimestamps':False,'notes':['All IDs are references to existing snapshots. No new lexemes or proto entries are created.','Read-only production proto SELECT and read-only local publication export.','Raw Russian export; English OCS and Proto-Slavic exports are postprocessed, not raw.']}
+    manifest={'preparedAtUtc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'publicationVersion':native['version'],'publicationSha256':publication_sha,'nativeIndexSha256':sha(root/'native-index.json'),'interlexProtoSnapshotSha256':sha(root/'interlex-proto-production.json'),'inputsPreserved':True,'allCandidateIdsExistInInputs':True,'allEvidenceSourceIdsExist':True,'selectedSha256':selected_sha,'selectedDistinctContentRecords':len(selected),'historicalWitnessSourceRecords':len(source_index)-len(selected),'distinctLexemeProtoCandidatePairs':len(result),'reviewFirstPairs':sum(r['priority']=='review-first' for r in result),'numberOfConfirmedMappings':0,'hasUpstreamRevisionFields':any('revision' in k or k in {'revid','pageid'} for k in record_keys),'appliedToProduction':False,'historicalDatesInferredFromWikiTimestamps':False,'notes':['All IDs are references to existing snapshots. No new lexemes or proto entries are created.','Read-only production proto SELECT and read-only local publication export.','Source acquisition kinds: '+', '.join(sorted({r['acquisitionKind'] for r in selected.values()}))]}
     write_json(root/'verification.json',manifest)
     proof=[]
     for row in result:
@@ -61,7 +70,8 @@ def prepare(root=ROOT):
     write_json(root/'proof-examples.json',proof)
     # Capture upstream extraction dates and revisions from the archived index pages.
     upstream=[]
-    for filename in ['Old-Church-Slavonic-index.html','Proto-Slavic-index.html']:
+    for filename in ['Old-Church-Slavonic-index.html','Proto-Slavic-index.html','download-index.html']:
+      if not (root/'raw'/filename).exists():continue
       text=(root/'raw'/filename).read_text();dates=re.search(r'extracted on (\d{4}-\d\d-\d\d).*?dump.*?dated (\d{4}-\d\d-\d\d)',text,re.S)
       upstream.append({'index':filename,'extractedAtDate':dates[1] if dates else None,'dumpDate':dates[2] if dates else None,'commitLinks':re.findall(r'https://github.com/[^"\s<>]+/commit/[^"\s<>]+',text)})
     ru_log=root/'raw/ru-extract-log-prefix.txt'
@@ -69,4 +79,6 @@ def prepare(root=ROOT):
     ru_date='-'.join(ru_match.groups()) if ru_match else None
     write_json(root/'upstream-provenance.json',{'english':upstream,'russianDumpDate':ru_date,'russianDumpDateStatus':'from-associated-extraction-log' if ru_date else 'not-stated-on-raw-download-index','sourceLicenseNotice':'Retain Wiktionary attribution, applicable CC BY-SA terms, source links and modification notices before any publication.','pageRevisionIds':'not exposed in downloaded entry JSON; no revision ids inferred from live pages'})
     print(json.dumps(manifest,ensure_ascii=False,indent=2))
-if __name__=='__main__':prepare()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=ROOT);args=parser.parse_args();prepare(args.root)

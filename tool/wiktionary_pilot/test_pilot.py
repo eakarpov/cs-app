@@ -18,6 +18,15 @@ class MatchingTests(unittest.TestCase):
   self.assertEqual(proto_key('*čúdo',True),proto_key('čudo',True))
   self.assertEqual(proto_heads('čudo род п -dese/*čudъ'),['čudo','čudъ'])
   self.assertEqual(proto_heads('capati*сьrkу'),[])
+ def test_proto_phrase_is_not_reduced_to_its_first_word(self):
+  self.assertEqual(proto_heads('ob bоkъ'),['ob bоkъ'])
+  p=ProtoIndex({'rows':[{'id':1,'lemma':'ob','sourceUrl':'a'},{'id':2,'lemma':'ob bоkъ','sourceUrl':'b'}]})
+  self.assertEqual([r['articleId'] for r in p.match('*ob')],[1])
+  self.assertEqual(proto_heads('obsnovati (sę) *obsnujǫ (sę)'),['obsnovati','obsnujǫ'])
+ def test_proto_index_page_is_not_a_dictionary_article(self):
+  p=ProtoIndex({'rows':[{'id':342,'lemma':'ako','sourceUrl':'a','body':'Здесь представлен праславянский лексический фонд на начальные фонемы *ak- на основе объединения этимологических сведений из отдельных славянских языков'},{'id':343,'lemma':'ako','sourceUrl':'b','body':'Словарная статья: старославянское ако.'}]})
+  self.assertEqual([r['articleId'] for r in p.match('*ako')],[343])
+  self.assertEqual(p.unparsed[0]['reason'],'non-article-index-page')
  def test_proto_collisions_retain_all_ids(self):
   p=ProtoIndex({'rows':[{'id':1,'lemma':'čudo','sourceUrl':'a'},{'id':2,'lemma':'čudo I','sourceUrl':'b'},{'id':3,'lemma':'čudъ','sourceUrl':'c'}]})
   self.assertEqual([x['articleId'] for x in p.match('čudo')],[1,2])
