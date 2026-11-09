@@ -16,6 +16,33 @@ class SearchResultHeading extends StatelessWidget {
     final indicator = hit.indicator;
     if (indicator == null) return word;
 
+    if (indicator == SearchIndicator.exact) {
+      return Wrap(
+        crossAxisAlignment: WrapCrossAlignment.center,
+        spacing: 6,
+        children: [
+          word,
+          Tooltip(
+            message: 'Полное совпадение запроса',
+            child: Semantics(
+              label: 'Полное совпадение запроса',
+              excludeSemantics: true,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondaryContainer,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: const Text(
+                  '100%',
+                  style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
+    }
     final translation = indicator == SearchIndicator.translation;
     final dark = Theme.of(context).brightness == Brightness.dark;
     final color = translation

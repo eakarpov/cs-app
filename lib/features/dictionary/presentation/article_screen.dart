@@ -1,3 +1,4 @@
+import '../../scripture/presentation/scripture_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../core/personal_store.dart';
@@ -306,7 +307,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
+              ScriptureText(
                 example.quote,
                 style: TextStyle(
                   fontFamily: example.church ? 'Monomakh' : 'OldStandard',
@@ -314,7 +315,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                 ),
               ),
               const SizedBox(height: 12),
-              Text(example.citation),
+              ScriptureText(example.citation),
               TextButton.icon(
                 onPressed: () => openSource(example.sourceId),
                 icon: const Icon(Icons.menu_book_outlined),
@@ -470,7 +471,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                               Card(
                                 child: ListTile(
                                   title: Text(source.title),
-                                  subtitle: Text(
+                                  subtitle: ScriptureText(
                                     '${source.proposed ? 'Предположительное сопоставление\n' : ''}${source.preview}',
                                   ),
                                   trailing: const Icon(Icons.chevron_right),
@@ -500,7 +501,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                     .map(
                                       (source) => ListTile(
                                         title: Text(source.title),
-                                        subtitle: Text(source.preview),
+                                        subtitle: ScriptureText(source.preview),
                                         onTap: () => Navigator.push(
                                           context,
                                           MaterialPageRoute<void>(

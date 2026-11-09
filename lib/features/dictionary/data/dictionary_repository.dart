@@ -72,6 +72,7 @@ class DictionaryRepository {
     String query,
     String direction, {
     String? cursor,
+    int? limit,
   }) async => SearchPage(
     await _get(
       base
@@ -81,6 +82,7 @@ class DictionaryRepository {
               'q': query,
               'direction': direction,
               'cursor': ?cursor,
+              if (limit != null) 'limit': '$limit',
             },
           ),
     ),
@@ -88,6 +90,13 @@ class DictionaryRepository {
   Future<WordArticle> article(String id) async => WordArticle(
     await _get(base.resolve('lexemes/${Uri.encodeComponent(id)}')),
   );
+  Future<List<Json>> lexicalRelations(String id) async => array(
+    (await _get(
+      base
+          .resolve('lexemes/${Uri.encodeComponent(id)}')
+          .replace(queryParameters: {'view': 'relations'}),
+    ))['relations'],
+  ).map(object).toList();
   Future<Json> source(String id) =>
       _get(base.resolve('source-entries/${Uri.encodeComponent(id)}'));
   Future<Json> etymology(int id) => _get(interlexBase.resolve('proto/$id'));

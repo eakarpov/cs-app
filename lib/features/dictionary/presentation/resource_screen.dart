@@ -1,5 +1,7 @@
+import '../../scripture/presentation/scripture_text.dart';
+import '../../scripture/domain/scripture_reference.dart';
+import '../../../core/external_link.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../data/dictionary_repository.dart';
 import '../domain/models.dart';
 
@@ -38,18 +40,21 @@ class _ResourceScreenState extends State<ResourceScreen> {
   }
 
   Future<void> openLink(String target) async {
+    final label = target.startsWith('lookup:') ? target.substring(7) : target;
+    final refs = scriptureReferences(label);
+    if (refs.length == 1 &&
+        (refs.first.start == 0 ||
+            (Uri.tryParse(target)?.host == 'azbyka.ru'))) {
+      await openExternalLink(context, refs.first.uri.toString());
+      return;
+    }
     if (target.startsWith('lookup:')) {
       widget.lookup?.call(target.substring(7));
       return;
     }
     final uri = Uri.tryParse(target);
     if (uri != null && ['https', 'http'].contains(uri.scheme)) {
-      final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
-      if (!ok && mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Не удалось открыть ссылку.')),
-        );
-      }
+      await openExternalLink(context, target);
     }
   }
 
@@ -98,7 +103,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
                     'Этимологическая статья обновлена после проверки связи. Сверьте приведённое свидетельство с новой редакцией.',
                   ),
                 ),
-              SelectableText(
+              ScriptureText(
                 string(j['body']),
                 style: TextStyle(
                   fontSize: widget.size,
@@ -131,33 +136,26 @@ class _ResourceScreenState extends State<ResourceScreen> {
             for (final p in paragraphs)
               Padding(
                 padding: const EdgeInsets.only(bottom: 12),
-                child: Semantics(
-                  label: array(
-                    p['runs'],
-                  ).map((v) => string(object(v)['text'])).join(),
-                  excludeSemantics: true,
-                  child: SelectableText.rich(
-                    TextSpan(
-                      children: array(p['runs']).map((v) {
-                        final r = object(v);
-                        return TextSpan(
-                          text: string(r['text']),
-                          style: TextStyle(
-                            fontFamily: r['kind'] == 'church'
-                                ? 'Monomakh'
-                                : 'OldStandard',
-                            fontWeight: r['kind'] == 'strong'
-                                ? FontWeight.bold
-                                : FontWeight.normal,
-                            fontStyle: r['kind'] == 'emphasis'
-                                ? FontStyle.italic
-                                : FontStyle.normal,
-                          ),
-                        );
-                      }).toList(),
-                    ),
-                    style: TextStyle(fontSize: widget.size, height: 1.5),
-                  ),
+                child: ScriptureText(
+                  '',
+                  spans: array(p['runs']).map((v) {
+                    final r = object(v);
+                    return TextSpan(
+                      text: string(r['text']),
+                      style: TextStyle(
+                        fontFamily: r['kind'] == 'church'
+                            ? 'Monomakh'
+                            : 'OldStandard',
+                        fontWeight: r['kind'] == 'strong'
+                            ? FontWeight.bold
+                            : FontWeight.normal,
+                        fontStyle: r['kind'] == 'emphasis'
+                            ? FontStyle.italic
+                            : FontStyle.normal,
+                      ),
+                    );
+                  }).toList(),
+                  style: TextStyle(fontSize: widget.size, height: 1.5),
                 ),
               ),
             if (targets.isNotEmpty) const Text('Ссылки в статье'),

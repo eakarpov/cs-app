@@ -3,7 +3,7 @@ Json object(Object? v) => v is Map ? v.cast<String, Object?>() : {};
 List<Object?> array(Object? v) => v is List ? v.cast<Object?>() : [];
 String string(Object? v, [String fallback = '']) => v is String ? v : fallback;
 
-enum SearchIndicator { translation, prefix }
+enum SearchIndicator { translation, prefix, exact }
 
 class SearchHit {
   SearchHit(Json j)
@@ -11,15 +11,25 @@ class SearchHit {
       name = string(j['name']),
       pos = string(j['pos']),
       match = string(j['match']),
-      exact = j['exact'] != false,
+      exact = j['exact'] == true,
+      hasExact = j['exact'] is bool,
       matched = string(j['matched']),
       grammar = string(j['grammar']);
   final String id, name, pos, match, matched, grammar;
-  final bool exact;
+  final bool exact, hasExact;
   SearchIndicator? get indicator {
-    if (match == 'explanation') return null;
+    if (match == 'explanation' || !hasExact) return null;
     if (!exact) return SearchIndicator.prefix;
-    return match == 'translation' ? SearchIndicator.translation : null;
+    return match == 'translation'
+        ? SearchIndicator.translation
+        : const {
+            'lemma',
+            'stored-form',
+            'source-variant',
+            'generated-form',
+          }.contains(match)
+        ? SearchIndicator.exact
+        : null;
   }
 
   String get matchLabel {
@@ -33,7 +43,9 @@ class SearchHit {
           'explanation': 'Упоминание в объяснении',
         }[match] ??
         'Соответствие';
-    return exact || match == 'explanation' ? label : '$label · по началу слова';
+    return !hasExact || exact || match == 'explanation'
+        ? label
+        : '$label · по началу слова';
   }
 }
 

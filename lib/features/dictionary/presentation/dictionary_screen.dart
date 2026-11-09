@@ -1,3 +1,5 @@
+import 'lexical_search_controller.dart';
+import 'lexical_search_view.dart';
 import 'package:flutter/material.dart';
 import '../../../core/personal_store.dart';
 import '../data/dictionary_repository.dart';
@@ -26,11 +28,13 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
   late final WordSearchController search = WordSearchController(
     widget.repository,
   );
+  late final lexical = LexicalSearchController(widget.repository);
   final text = TextEditingController();
   int tab = 0;
   @override
   void dispose() {
     search.dispose();
+    lexical.dispose();
     text.dispose();
     super.dispose();
   }
@@ -367,7 +371,15 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
     listenable: widget.personal,
     builder: (context, _) => Scaffold(
       appBar: AppBar(
-        title: Text(['Словарь', 'Избранное', 'История', 'Энциклопедия'][tab]),
+        title: Text(
+          [
+            'Словарь',
+            'Связи слов',
+            'Избранное',
+            'История',
+            'Энциклопедия',
+          ][tab],
+        ),
         actions: [
           PopupMenuButton<String>(
             tooltip: 'Меню проекта',
@@ -410,15 +422,20 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
             child: !widget.personal.ready
                 ? const Center(child: CircularProgressIndicator())
                 : switch (tab) {
-                    1 => saved(
+                    1 => LexicalSearchView(
+                      controller: lexical,
+                      personal: widget.personal,
+                      open: (id) => open(id),
+                    ),
+                    2 => saved(
                       widget.personal.favorites,
                       'В избранном пока нет слов.',
                     ),
-                    2 => saved(
+                    3 => saved(
                       widget.personal.history,
                       'Открытые статьи появятся здесь.',
                     ),
-                    3 => EncyclopediaHome(textSize: widget.personal.fontSize),
+                    4 => EncyclopediaHome(textSize: widget.personal.fontSize),
                     _ => searchView(),
                   },
           ),
@@ -429,6 +446,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
         onDestinationSelected: (i) => setState(() => tab = i),
         destinations: const [
           NavigationDestination(icon: Icon(Icons.search), label: 'Словарь'),
+          NavigationDestination(icon: Icon(Icons.hub_outlined), label: 'Связи'),
           NavigationDestination(
             icon: Icon(Icons.bookmark_outline),
             label: 'Избранное',
