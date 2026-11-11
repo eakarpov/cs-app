@@ -94,7 +94,8 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.text('О проекте'));
       await tester.pumpAndSettle();
-      expect(find.text('ЦС Словарь'), findsOneWidget);
+      expect(find.text('Лексикон ЦС'), findsOneWidget);
+      expect(find.text('Версия 0.1.5'), findsOneWidget);
       await tester.scrollUntilVisible(find.text('Полезные ресурсы'), 300);
       await tester.tap(find.text('Полезные ресурсы'));
       await tester.pumpAndSettle();
@@ -288,6 +289,7 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Формы'));
       await tester.tap(find.text('Формы'));
       await tester.pumpAndSettle();
       if (article.paradigms.any((p) => p.slots.isNotEmpty)) {
@@ -299,8 +301,10 @@ void main() {
         const Offset(0, -280),
       );
       await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Толкования'));
       await tester.tap(find.text('Толкования'));
       await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Формы'));
       await tester.tap(find.text('Формы'));
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
@@ -315,6 +319,11 @@ void main() {
             .first,
       );
       if (article.paradigms.any((p) => p.slots.isNotEmpty)) {
+        await Scrollable.ensureVisible(
+          tester.element(find.text('Другие выписанные формы')),
+          alignment: .5,
+        );
+        await tester.pumpAndSettle();
         await tester.tap(find.text('Другие выписанные формы'));
         await tester.pumpAndSettle();
       }

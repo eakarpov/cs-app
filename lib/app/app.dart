@@ -16,7 +16,7 @@ class ChurchSlavonicApp extends StatelessWidget {
   Widget build(BuildContext context) => ListenableBuilder(
     listenable: personal,
     builder: (context, _) => MaterialApp(
-      title: 'Церковнославянский словарь',
+      title: 'Лексикон ЦС',
       debugShowCheckedModeBanner: false,
       locale: const Locale('ru'),
       supportedLocales: const [Locale('ru')],

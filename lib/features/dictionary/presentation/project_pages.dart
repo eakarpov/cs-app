@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/app_version.dart';
 import '../../../core/external_link.dart';
 
 // Titles and destinations checked against the publishers on 2026-11-05.
@@ -110,14 +111,17 @@ class ProjectAboutScreen extends StatelessWidget {
                 'assets/branding/app-icon.png',
                 width: 96,
                 height: 96,
-                semanticLabel: 'Знак ЦС Словаря',
+                semanticLabel: 'Знак «Лексикон ЦС»',
               ),
             ),
           ),
           const SizedBox(height: 16),
-          Text('ЦС Словарь', style: Theme.of(context).textTheme.headlineMedium),
+          Text(
+            'Лексикон ЦС',
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
           const SizedBox(height: 8),
-          const Text('Версия 0.1.2 · тестовый выпуск'),
+          const Text('Версия $appVersion'),
           const SizedBox(height: 24),
           const Text(
             'Словарь помогает понимать церковнославянские тексты и изучать язык: находить слова и словоформы, читать толкования и разбирать словоизменение. Проект развивается вместе с «Уставными чтениями».',
@@ -159,8 +163,8 @@ class ProjectAboutScreen extends StatelessWidget {
           TextButton(
             onPressed: () => showLicensePage(
               context: context,
-              applicationName: 'ЦС Словарь',
-              applicationVersion: '0.1.2',
+              applicationName: 'Лексикон ЦС',
+              applicationVersion: appVersion,
             ),
             child: const Text('Лицензии'),
           ),

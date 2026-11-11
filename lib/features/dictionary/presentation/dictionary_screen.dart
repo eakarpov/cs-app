@@ -2,6 +2,7 @@ import 'lexical_search_controller.dart';
 import 'lexical_search_view.dart';
 import 'package:flutter/material.dart';
 import '../../../core/personal_store.dart';
+import '../../../core/personal_store_banner.dart';
 import '../data/dictionary_repository.dart';
 import '../domain/models.dart';
 import 'search_controller.dart';
@@ -10,6 +11,8 @@ import 'report_dialog.dart';
 import 'search_result_heading.dart';
 import 'project_pages.dart';
 import 'cs_keyboard.dart';
+import 'settings_screen.dart';
+import 'personal_screens.dart';
 import '../../encyclopedia/presentation/encyclopedia_screen.dart';
 
 class DictionaryScreen extends StatefulWidget {
@@ -83,93 +86,29 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
     }
   }
 
-  void settings() => showModalBottomSheet<void>(
-    context: context,
-    isScrollControlled: true,
-    builder: (context) => SafeArea(
-      child: ListenableBuilder(
-        listenable: widget.personal,
-        builder: (context, _) => Padding(
-          padding: const EdgeInsets.all(20),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text('Настройки'),
-                DropdownButton<ThemeMode>(
-                  value: widget.personal.themeMode,
-                  items: const [
-                    DropdownMenuItem(
-                      value: ThemeMode.system,
-                      child: Text('Как в системе'),
-                    ),
-                    DropdownMenuItem(
-                      value: ThemeMode.light,
-                      child: Text('Светлая тема'),
-                    ),
-                    DropdownMenuItem(
-                      value: ThemeMode.dark,
-                      child: Text('Тёмная тема'),
-                    ),
-                  ],
-                  onChanged: (v) => widget.personal.settings(theme: v),
-                ),
-                Text('Размер текста: ${widget.personal.fontSize.round()}'),
-                Slider(
-                  value: widget.personal.fontSize,
-                  min: 16,
-                  max: 36,
-                  divisions: 20,
-                  onChanged: (v) => widget.personal.settings(size: v),
-                ),
-                SwitchListTile(
-                  title: const Text('Выделять окончания'),
-                  value: widget.personal.highlightEndings,
-                  onChanged: (v) => widget.personal.settings(endings: v),
-                ),
-                SwitchListTile(
-                  title: const Text('Показывать предположительные связи'),
-                  value: widget.personal.showProposed,
-                  onChanged: (v) => widget.personal.settings(proposed: v),
-                ),
-                TextButton(
-                  onPressed: () => widget.personal.clearHistory(),
-                  child: const Text('Очистить историю'),
-                ),
-                const Text(
-                  'Приложение работает при наличии сети. Избранное, история и настройки хранятся на этом устройстве.',
-                ),
-                TextButton(
-                  onPressed: () => showLicensePage(
-                    context: context,
-                    applicationName: 'ЦС Словарь',
-                    applicationVersion: '0.1.2',
-                  ),
-                  child: const Text('Лицензии'),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+  void settings() => Navigator.push(
+    context,
+    MaterialPageRoute<void>(
+      builder: (_) => SettingsScreen(personal: widget.personal),
     ),
   );
-  Widget saved(List<SavedWord> words, String empty) => words.isEmpty
-      ? Center(child: Text(empty))
-      : ListView.builder(
-          itemCount: words.length,
-          itemBuilder: (context, i) => ListTile(
-            title: Text(
-              words[i].name,
-              style: TextStyle(
-                fontFamily: 'Monomakh',
-                fontSize: widget.personal.fontSize,
-              ),
-            ),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => open(words[i].id),
-          ),
-        );
+
+  void profile() => Navigator.push(
+    context,
+    MaterialPageRoute<void>(
+      builder: (_) =>
+          ProfileScreen(personal: widget.personal, open: (id) => open(id)),
+    ),
+  );
+
+  void history() => Navigator.push(
+    context,
+    MaterialPageRoute<void>(
+      builder: (_) =>
+          HistoryScreen(personal: widget.personal, open: (id) => open(id)),
+    ),
+  );
+
   Widget searchView() => ListenableBuilder(
     listenable: search,
     builder: (context, _) => Column(
@@ -372,15 +311,27 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
     builder: (context, _) => Scaffold(
       appBar: AppBar(
         title: Text(
-          [
-            'Словарь',
-            'Связи слов',
-            'Избранное',
-            'История',
-            'Энциклопедия',
-          ][tab],
+          const ['Словарь', 'Связи', 'Энциклопедия'][tab],
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
         actions: [
+          if (tab == 0)
+            IconButton(
+              tooltip: 'История',
+              onPressed: widget.personal.ready ? history : null,
+              icon: const Icon(Icons.history),
+            ),
+          IconButton(
+            tooltip: 'Профиль',
+            onPressed: widget.personal.ready ? profile : null,
+            icon: const Icon(Icons.person_outline),
+          ),
+          IconButton(
+            tooltip: 'Настройки',
+            onPressed: widget.personal.ready ? settings : null,
+            icon: const Icon(Icons.settings_outlined),
+          ),
           PopupMenuButton<String>(
             tooltip: 'Меню проекта',
             onSelected: (value) => Navigator.push(
@@ -399,25 +350,11 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
               ),
             ],
           ),
-          IconButton(
-            tooltip: 'Настройки',
-            onPressed: widget.personal.ready ? settings : null,
-            icon: const Icon(Icons.settings_outlined),
-          ),
         ],
       ),
       body: Column(
         children: [
-          if (widget.personal.error != null)
-            MaterialBanner(
-              content: Text(widget.personal.error!),
-              actions: [
-                TextButton(
-                  onPressed: widget.personal.retryPersistence,
-                  child: const Text('Повторить'),
-                ),
-              ],
-            ),
+          PersonalStoreBanner(personal: widget.personal),
           Expanded(
             child: !widget.personal.ready
                 ? const Center(child: CircularProgressIndicator())
@@ -427,15 +364,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                       personal: widget.personal,
                       open: (id) => open(id),
                     ),
-                    2 => saved(
-                      widget.personal.favorites,
-                      'В избранном пока нет слов.',
-                    ),
-                    3 => saved(
-                      widget.personal.history,
-                      'Открытые статьи появятся здесь.',
-                    ),
-                    4 => EncyclopediaHome(textSize: widget.personal.fontSize),
+                    2 => EncyclopediaHome(textSize: widget.personal.fontSize),
                     _ => searchView(),
                   },
           ),
@@ -447,11 +376,6 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
         destinations: const [
           NavigationDestination(icon: Icon(Icons.search), label: 'Словарь'),
           NavigationDestination(icon: Icon(Icons.hub_outlined), label: 'Связи'),
-          NavigationDestination(
-            icon: Icon(Icons.bookmark_outline),
-            label: 'Избранное',
-          ),
-          NavigationDestination(icon: Icon(Icons.history), label: 'История'),
           NavigationDestination(
             icon: Icon(Icons.auto_stories_outlined),
             label: 'Энциклопедия',
