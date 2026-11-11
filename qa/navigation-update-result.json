@@ -1,0 +1,39 @@
+{
+  "applicationName": "Лексикон ЦС",
+  "package": "info.typikon.cs",
+  "versionName": "0.1.2",
+  "versionCode": 3,
+  "apk": "build/acceptance/lexicon-cs-navigation.apk",
+  "apkSha256": "c5674add6ace78e4bc3924d01c3aa6e5fb1a34fda9911de8d8ece719f24e3e37",
+  "sameSigningCertificateAsPreviousBuild": true,
+  "signingCertificateSha256": "064cc2b565a8574c28929fea39391b3dcefecdfc109df0d8dc9fe6d4da3dccdb",
+  "navigation": {
+    "bottom": [
+      "Словарь",
+      "Связи",
+      "Энциклопедия"
+    ],
+    "settings": "separate page",
+    "favorites": "profile page",
+    "history": "dictionary header only"
+  },
+  "validation": {
+    "flutterAnalyze": "passed",
+    "flutterTestsPassed": 26,
+    "navigationLabelsSingleLineWidths": [
+      320,
+      390
+    ],
+    "largeTextScaleTest": 1.8,
+    "iosPlistLint": "passed",
+    "apkApplicationLabel": "Лексикон ЦС",
+    "visualInspection": "passed"
+  },
+  "screenshots": [
+    "build/navigation-preview/dictionary.png",
+    "build/navigation-preview/profile.png",
+    "build/navigation-preview/history.png",
+    "build/navigation-preview/settings.png",
+    "build/navigation-preview/encyclopedia.png"
+  ]
+}

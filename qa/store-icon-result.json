@@ -1,0 +1,10 @@
+{
+  "file": "assets/branding/store-icon-512.png",
+  "format": "png",
+  "width": 512,
+  "height": 512,
+  "bytes": 23290,
+  "aspectRatio": "1:1",
+  "source": "assets/branding/app-icon.svg",
+  "validation": "passed"
+}

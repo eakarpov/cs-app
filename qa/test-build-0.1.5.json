@@ -1,0 +1,45 @@
+{
+  "version": "0.1.5+6",
+  "applicationName": "Лексикон ЦС",
+  "applicationId": "info.typikon.cs",
+  "apk": "build/acceptance/lexicon-cs-0.1.5.apk",
+  "bytes": 57573827,
+  "sha256": "85252afbfa6f14334eac5f2f27fdaa55d63d84e1c431461a9b3001ecba9d9da9",
+  "androidMinSdk": 24,
+  "sourceRevision": "783b7d246c0ea20c1ecfa077ccd5fa2c4558916f",
+  "features": [
+    "Один прямоугольник на морфему, одна строка с прокруткой, белая карточка",
+    "Шапка без повторов; титло начальной формы под полным написанием",
+    "Таблицы падежей/лиц и чисел; подробный режим и иные написания",
+    "Титла и выносные буквы исключены из основных клеток"
+  ],
+  "signing": {
+    "type": "permanent release key",
+    "certificateSha256": "efbd5403c1bf73c63e8feac9f95b71b2231c96e7d39c8f2be6a153089a8398f8",
+    "sameCertificateAsPreviousApk": true,
+    "apkSignatureVerified": true
+  },
+  "checks": {
+    "flutterAnalyze": "passed",
+    "flutterTests": 42,
+    "releaseNotDebuggable": true,
+    "versionAndLabelVerified": true,
+    "liveMorphemes": {
+      "api": "https://www.typikon.info/api/v2/cs/",
+      "version": "d06531f86ee7a5a9a20b162adbc4447f11d6a57d2ff25b0037aacbf3aeb2a603",
+      "passed": 24,
+      "rootWords": 7,
+      "pages": 1,
+      "unassignedProbe": 0,
+      "checkedAt": "2026-11-11T12:42:37.367984Z"
+    },
+    "displayedVersionMatchesPubspec": true
+  },
+  "acceptanceGuide": "docs/acceptance-0.1.5.md",
+  "physicalDeviceChecked": false,
+  "publishedToStore": false,
+  "serverDataChanged": false,
+  "applicationSourceMatchesRevision": true,
+  "supersedesApkSha256": "f31aeba3a2a4fbc3bf8921ecc7c95a24950a15fb7dc5b3b58d588614a9d56d62",
+  "buildNote": "Пересобрано после сохранения всех исходников приложения в master и исправления номера версии на экранах проекта и лицензий."
+}

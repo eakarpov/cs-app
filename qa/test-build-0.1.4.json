@@ -1,0 +1,42 @@
+{
+  "version": "0.1.4+5",
+  "applicationName": "Лексикон ЦС",
+  "applicationId": "info.typikon.cs",
+  "feature": "Морфемы: схемы, карточки морфем, статистика, связанные слова и сохранённые варианты",
+  "apk": "build/acceptance/lexicon-cs-0.1.4.apk",
+  "bytes": 57229763,
+  "sha256": "b2ea0af06fc350f8960d372b51520fe152bdcbb2b029f6446a3802fc390dbbf9",
+  "androidMinSdk": 24,
+  "signing": {
+    "type": "permanent release key",
+    "certificateSha256": "efbd5403c1bf73c63e8feac9f95b71b2231c96e7d39c8f2be6a153089a8398f8",
+    "apkSignatureVerified": true
+  },
+  "checks": {
+    "flutterAnalyze": "passed",
+    "flutterTests": 34,
+    "releaseNotDebuggable": true,
+    "versionAndLabelVerified": true,
+    "liveMorphemes": {
+      "api": "https://www.typikon.info/api/v2/cs/",
+      "version": "d06531f86ee7a5a9a20b162adbc4447f11d6a57d2ff25b0037aacbf3aeb2a603",
+      "passed": 24,
+      "rootWords": 7,
+      "pages": 1,
+      "unassignedProbe": 0,
+      "checkedAt": "2026-11-11T08:35:48.956811Z"
+    },
+    "liveVariants": {
+      "api": "https://www.typikon.info/api/v2/cs/",
+      "version": "d06531f86ee7a5a9a20b162adbc4447f11d6a57d2ff25b0037aacbf3aeb2a603",
+      "checks": 78,
+      "wordCards": 4,
+      "preservedForms": 8,
+      "checkedAt": "2026-11-11T08:35:34.610081Z"
+    }
+  },
+  "acceptanceGuide": "docs/morphemes/acceptance-0.1.4.md",
+  "physicalDeviceChecked": false,
+  "publishedToStore": false,
+  "serverDataChanged": false
+}
