@@ -86,8 +86,16 @@ Map<String, dynamic> card() => {
   'allomorphs': [
     {'surface': 'ка', 'status': 'proposed', 'note': ''},
   ],
-  'structure': [],
-  'history': [],
+  'schemaVersion': 2,
+  'composition': {'state': 'undescribed', 'models': [], 'notes': []},
+  'etymology': {
+    'state': 'undescribed',
+    'nodes': [],
+    'relations': [],
+    'chains': [],
+    'notes': [],
+  },
+  'sources': [],
 };
 http.Response response(Object body, [int status = 200]) => http.Response(
   jsonEncode(body),
@@ -198,7 +206,7 @@ void main() {
       await repo.morpheme('root:KAJ', version: 'v1');
       await repo.morphemeWords('root:KAJ', version: 'v1', cursor: 'a+/=&');
       expect(requests[0].pathSegments, contains('dict/id'));
-      expect(requests[1].queryParameters, {'version': 'v1'});
+      expect(requests[1].queryParameters, {'version': 'v1', 'schema': '2'});
       expect(requests[2].queryParameters, {
         'version': 'v1',
         'limit': '20',
@@ -315,7 +323,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Слов: 21'), findsOneWidget);
     expect(find.text('Форм: 24'), findsOneWidget);
-    expect(find.text('Семантика'), findsOneWidget);
+    expect(find.text('каяться'), findsOneWidget);
     expect(tester.takeException(), isNull);
     repo.close();
   });
@@ -364,6 +372,11 @@ void main() {
       expect(find.text('Последнее'), findsOneWidget);
       expect(find.text('Первое'), findsNothing);
       expect(find.text('Страница 2'), findsOneWidget);
+      await tester.tap(find.text('Состав и этимология'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Слова'));
+      await tester.pumpAndSettle();
+      expect(find.text('Страница 2'), findsOneWidget);
       await tester.tap(find.text('Последнее'));
       expect(opened, 'dict-last');
       await tester.tap(find.text('Назад'));
@@ -403,6 +416,12 @@ void main() {
     await tester.scrollUntilVisible(
       find.text('Версия базы изменилась. Откройте вкладку «Морфемы» заново.'),
       200,
+      scrollable: find
+          .descendant(
+            of: find.byKey(const PageStorageKey('morpheme-words')),
+            matching: find.byType(Scrollable),
+          )
+          .first,
     );
     expect(find.text('Wrong version'), findsNothing);
     repo.close();

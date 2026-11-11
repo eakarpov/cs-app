@@ -1,0 +1,118 @@
+{
+  "status": "published",
+  "checkedAt": "2026-11-11T16:09:58.709386+00:00",
+  "serverCommit": "0ba45371d01b32a8da3971c49bde0a0a5c0ccbc6",
+  "api": "https://www.typikon.info/api/v2/cs/",
+  "release": "/var/www/typikon.su/typikon-web-releases/releases/20261111T160004Z-morpheme-schema2",
+  "previousRelease": "/var/www/typikon.su/typikon-web-releases/releases/20261111T082352Z-d68e17d92bba-165820",
+  "publication": {
+    "version": "6734f4aefaa287399a9ad7d09fece448387c8b248873d2a4c69f0957f515e15a",
+    "baseVersion": "aa52ec1e650bbf82b109b5052337cd2d0c889edd6bcbbf99c4a7eb40dfcc346a",
+    "baseSha256": "8802e66e3943cbe3a1c8e8b70b3e7acc4f11f66813fa57b7cf8ab4ec4bd72ba3",
+    "sha256": "15243ec7ae9bbad88bd17aaa49eae7c23e5634550565778b38690a757900a30b",
+    "dictionaryVersion": "72dddaaac9f9029a076644ee2788b0062271feb83e5a270527007946dfe9d155",
+    "researchVersion": "0.53",
+    "cards": 208,
+    "models": 16,
+    "historyNotes": 44,
+    "chains": 0,
+    "unchangedTables": [
+      "morpheme_words",
+      "dictionary_morpheme_lexeme",
+      "dictionary_morpheme_form",
+      "variant_provenance",
+      "variant_research_question"
+    ],
+    "allWordAnalysesPreserved": true,
+    "allCommonCardFieldsPreserved": true
+  },
+  "path": "/var/www/typikon-data/cs-dictionary/publications/morphemes-6734f4aefaa287399a9ad7d09fece448387c8b248873d2a4c69f0957f515e15a.sqlite",
+  "dictionaryPath": "/var/www/typikon-data/cs-dictionary/publications/endings-20261111-v1.sqlite",
+  "previousMorphemePath": "/var/www/typikon-data/cs-dictionary/publications/morphemes-aa52ec1e650bbf82b109b5052337cd2d0c889edd6bcbbf99c4a7eb40dfcc346a.sqlite",
+  "validation": {
+    "checkedCards": 208,
+    "canonicalValid": true,
+    "legacyRoundtripExact": true
+  },
+  "checks": {
+    "serverTests": 34,
+    "serverTypecheck": "passed",
+    "flutterFullSuite": 45,
+    "flutterFinalFocused": 12,
+    "flutterAnalyze": "passed",
+    "pythonImporterTests": 3,
+    "pythonExistingExporterTests": 4,
+    "isolatedHttp": {
+      "api": "http://127.0.0.1:3001/api/v2/cs/",
+      "version": "6734f4aefaa287399a9ad7d09fece448387c8b248873d2a4c69f0957f515e15a",
+      "checks": 78,
+      "status": "passed",
+      "legacyDeprecated": true,
+      "legacyContentPreserved": true,
+      "explicitModels": 16,
+      "historicalNotes": 44,
+      "chains": 0,
+      "wordVariantsPreserved": 8
+    },
+    "activeHttp": {
+      "api": "http://127.0.0.1:3000/api/v2/cs/",
+      "version": "6734f4aefaa287399a9ad7d09fece448387c8b248873d2a4c69f0957f515e15a",
+      "checks": 78,
+      "status": "passed",
+      "legacyDeprecated": true,
+      "legacyContentPreserved": true,
+      "explicitModels": 16,
+      "historicalNotes": 44,
+      "chains": 0,
+      "wordVariantsPreserved": 8
+    },
+    "publicHttp": {
+      "api": "https://www.typikon.info/api/v2/cs/",
+      "version": "6734f4aefaa287399a9ad7d09fece448387c8b248873d2a4c69f0957f515e15a",
+      "checks": 78,
+      "status": "passed",
+      "legacyDeprecated": true,
+      "legacyContentPreserved": true,
+      "explicitModels": 16,
+      "historicalNotes": 44,
+      "chains": 0,
+      "wordVariantsPreserved": 8
+    },
+    "publicAppClient": {
+      "api": "https://www.typikon.info/api/v2/cs/",
+      "version": "6734f4aefaa287399a9ad7d09fece448387c8b248873d2a4c69f0957f515e15a",
+      "checks": 9,
+      "status": "passed",
+      "checkedAt": "2026-11-11T16:05:51.594079Z"
+    },
+    "publicMorphemeNavigation": 24,
+    "publicEndingReconstruction": 637
+  },
+  "legacy": {
+    "deprecated": true,
+    "clientParserRemoved": true,
+    "serverAdapter": "legacyMorphemeCard",
+    "sunsetConfig": "CS_MORPHEME_SCHEMA1_SUNSET",
+    "sunsetDate": null,
+    "reason": "Set deadline at first public schema=2 client release +90 days; no public APK release in this task",
+    "removalTask": "RETIRE-MORPHEME-SCHEMA1"
+  },
+  "conservativeImport": {
+    "models": 16,
+    "historyNotes": 44,
+    "chains": 0,
+    "noChainsInferred": true,
+    "sourceKindsNotGuessed": true,
+    "sourceYearsNotGuessed": true,
+    "wordFormsAndAccentsPreserved": true,
+    "allOldCardTextAndStatusesPreserved": true
+  },
+  "rollback": {
+    "override": "/etc/systemd/system/typikon-web.service.d/zzzzz-cs-morpheme-schema2.conf",
+    "previousRelease": "/var/www/typikon.su/typikon-web-releases/releases/20261111T082352Z-d68e17d92bba-165820",
+    "action": "Under deploy lock restore previous current symlink, remove only this override, daemon-reload and restart typikon-web.service; verify previous publication and health. Guard against subsequent releases.",
+    "previousFilesRetained": true
+  },
+  "appVersionChanged": false,
+  "publicApkChanged": false
+}

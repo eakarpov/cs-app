@@ -94,11 +94,15 @@ class MorphemeCard {
       wordCount = (object(j['statistics'])['lexemes'] as num?)?.toInt() ?? 0,
       formCount = (object(j['statistics'])['forms'] as num?)?.toInt() ?? 0,
       variants = array(j['allomorphs']).map(object).toList(),
-      structure = array(j['structure']).map(object).toList(),
-      history = array(j['history']).map(object).toList();
+      composition = MorphemeComposition(object(j['composition'])),
+      etymology = MorphemeEtymology(object(j['etymology'])),
+      sources = array(j['sources']).map(object).toList();
   final String id, title, kind, gloss, status, version;
   final int wordCount, formCount;
-  final List<Json> variants, structure, history;
+  final List<Json> variants, sources;
+  final MorphemeComposition composition;
+  final MorphemeEtymology etymology;
+  String get meaning => gloss == 'INF' ? 'Показатель инфинитива' : gloss;
 }
 
 class MorphemeWords {
@@ -111,4 +115,54 @@ class MorphemeWords {
   final int total;
   final List<Json> items;
   final String? nextCursor;
+}
+
+class MorphemeComposition {
+  MorphemeComposition(Json j)
+    : models = array(j['models']).map(object).toList(),
+      notes = array(j['notes']).map(object).toList();
+  final List<Json> models, notes;
+}
+
+class MorphemeEtymology {
+  MorphemeEtymology(Json j)
+    : nodes = array(j['nodes']).map(object).toList(),
+      relations = array(j['relations']).map(object).toList(),
+      chains = array(j['chains']).map(object).toList(),
+      notes = array(j['notes']).map(object).toList();
+  final List<Json> nodes, relations, chains, notes;
+
+  /// A display order follows explicit dependencies, never array order or dates.
+  /// Each relation keeps its complete input set, so a branch is not a sequence.
+  List<Json> orderedRelations(Json chain) {
+    final byId = {for (final r in relations) string(r['id']): r};
+    final pending = array(chain['relationIds']).map((id) {
+      final r = byId[string(id)];
+      if (r == null) throw const FormatException('Не найдена связь цепочки.');
+      return r;
+    }).toList();
+    final result = <Json>[];
+    while (pending.isNotEmpty) {
+      final available = pending
+          .where(
+            (r) =>
+                r['type'] == 'comparison' ||
+                !pending.any(
+                  (other) =>
+                      other['type'] != 'comparison' &&
+                      array(r['fromNodeIds']).contains(other['toNodeId']),
+                ),
+          )
+          .toList();
+      if (available.isEmpty) {
+        throw const FormatException('Цикл в исторической цепочке.');
+      }
+      available.sort((a, b) => string(a['id']).compareTo(string(b['id'])));
+      for (final r in available) {
+        result.add(r);
+        pending.remove(r);
+      }
+    }
+    return result;
+  }
 }

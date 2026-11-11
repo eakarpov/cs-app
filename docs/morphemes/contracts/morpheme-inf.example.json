@@ -1,0 +1,188 @@
+{
+  "allomorphs": [
+    {
+      "id": "formative_suffix:INF:ти",
+      "note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed",
+      "surface": "ти"
+    }
+  ],
+  "gloss": "INF",
+  "id": "formative_suffix:INF",
+  "kind": "formative_suffix",
+  "statistics": {
+    "forms": 362,
+    "lexemes": 361
+  },
+  "status": "proposed",
+  "title": "ти",
+  "version": "example-next-publication",
+  "schemaVersion": 2,
+  "composition": {
+    "state": "partial",
+    "models": [
+      {
+        "id": "ETYM-INF-NOMINAL",
+        "title": "Историческое членение форманта ти",
+        "level": "historical",
+        "allomorphIds": [
+          "formative_suffix:INF:ти"
+        ],
+        "mappingMode": "concatenative",
+        "status": "proposed",
+        "note": "Исторические компоненты единого письменного форманта, не отдельные морфемы текущего разбора. Детальное распределение компонентов уточняется.",
+        "evidence": [
+          {
+            "sourceId": "gorshkov-2002",
+            "locator": "§143, с.106",
+            "quote": null,
+            "supports": "Именное происхождение инфинитива и дательный падеж; не точный вокализм всех компонентов."
+          }
+        ],
+        "parts": [
+          {
+            "id": "part:INF:t",
+            "label": "т",
+            "surface": "т",
+            "reconstruction": "*t",
+            "kind": null,
+            "function": "nominal_formant",
+            "status": "proposed",
+            "note": "Именной формант; не показатель падежа современного инфинитива.",
+            "evidence": [],
+            "target": null
+          },
+          {
+            "id": "part:INF:i",
+            "label": "и",
+            "surface": "и",
+            "reconstruction": "рефлекс исторического окончания формы основы на *-ti-",
+            "kind": null,
+            "function": "historical_case_form_reflex",
+            "status": "proposed",
+            "note": "Вокализм всей исторической формы. Не утверждается простое ть + и или отдельное падежное и в ЦС.",
+            "evidence": [],
+            "target": null
+          }
+        ],
+        "alignment": [
+          {
+            "allomorphId": "formative_suffix:INF:ти",
+            "startGrapheme": 0,
+            "endGrapheme": 1,
+            "partIds": [
+              "part:INF:t"
+            ]
+          },
+          {
+            "allomorphId": "formative_suffix:INF:ти",
+            "startGrapheme": 1,
+            "endGrapheme": 2,
+            "partIds": [
+              "part:INF:i"
+            ]
+          }
+        ]
+      }
+    ],
+    "notes": []
+  },
+  "etymology": {
+    "state": "partial",
+    "nodes": [
+      {
+        "meaning": null,
+        "language": null,
+        "variety": null,
+        "period": null,
+        "status": "proposed",
+        "note": "Обозначена основа отглагольного имени; полная словоформа здесь не восстановлена.",
+        "evidence": [
+          {
+            "sourceId": "gorshkov-2002",
+            "locator": "§143, с.106",
+            "quote": null,
+            "supports": "Именное происхождение инфинитива и дательный падеж; не точный вокализм всех компонентов."
+          }
+        ],
+        "target": null,
+        "id": "node:INF:nominal",
+        "label": "Отглагольное имя на *-ti-",
+        "form": null,
+        "reconstruction": "*-ti-",
+        "formType": "descriptive"
+      },
+      {
+        "meaning": null,
+        "language": {
+          "id": "cu",
+          "label": "Церковнославянский"
+        },
+        "variety": null,
+        "period": null,
+        "status": "proposed",
+        "note": "",
+        "evidence": [],
+        "target": {
+          "kind": "morpheme",
+          "id": "formative_suffix:INF"
+        },
+        "id": "node:INF:current",
+        "label": "Формант инфинитива",
+        "form": "ти",
+        "reconstruction": null,
+        "formType": "attested"
+      }
+    ],
+    "relations": [
+      {
+        "id": "relation:INF:nominal-origin",
+        "fromNodeIds": [
+          "node:INF:nominal"
+        ],
+        "toNodeId": "node:INF:current",
+        "type": "origin",
+        "label": "Дательный ед. ч. → инфинитив",
+        "status": "proposed",
+        "note": "Источник подтверждает именное происхождение и дательный падеж. Точный праиндоевропейский вокализм здесь не реконструирован.",
+        "evidence": [
+          {
+            "sourceId": "gorshkov-2002",
+            "locator": "§143, с.106",
+            "quote": null,
+            "supports": "Именное происхождение инфинитива и дательный падеж; не точный вокализм всех компонентов."
+          }
+        ]
+      }
+    ],
+    "chains": [
+      {
+        "id": "chain:INF:nominal",
+        "title": "Именное происхождение инфинитива",
+        "status": "proposed",
+        "relationIds": [
+          "relation:INF:nominal-origin"
+        ],
+        "focusNodeId": "node:INF:current",
+        "note": "Редакционный проект цепочки из существующего описания. Дальнейшая история не достроена.",
+        "evidence": [
+          {
+            "sourceId": "gorshkov-2002",
+            "locator": "§143, с.106",
+            "quote": null,
+            "supports": "Именное происхождение инфинитива и дательный падеж; не точный вокализм всех компонентов."
+          }
+        ]
+      }
+    ],
+    "notes": []
+  },
+  "sources": [
+    {
+      "id": "gorshkov-2002",
+      "title": "А. И. Горшков. Старославянский (древнецерковнославянский) язык.",
+      "publicationYear": 2002,
+      "kind": "scholarly_reference"
+    }
+  ]
+}

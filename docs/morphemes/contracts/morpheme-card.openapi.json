@@ -1,0 +1,1121 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Morpheme card composition and etymology",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v2/cs/morphemes/{id}": {
+      "get": {
+        "operationId": "getMorphemeCard",
+        "summary": "One morpheme card with composition and etymological graph",
+        "description": "Implemented. schema=2 is available on canonical publications. Operation is retained; only schema=1 is deprecated. version is an immutable publication ID. No schema means legacy schema=1, deprecated and scheduled for retirement.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 200
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "schema",
+            "in": "query",
+            "required": false,
+            "description": "Always send 2 in the new client. Missing/1 is deprecated and returns 410 after the announced sunset.",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "const": 1,
+                  "deprecated": true
+                },
+                {
+                  "type": "integer",
+                  "const": 2
+                }
+              ],
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "schema=2 returns no legacy fields; schema=1 uses a temporary adapter.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/MorphemeCardV2"
+                    },
+                    {
+                      "$ref": "#/components/schemas/LegacyMorphemeCard"
+                    }
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "ETag": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Includes the representation schema and publication version."
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Morpheme-Schema-Deprecated": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "true for schema=1, also on 304; no date invented before first public schema=2 client release."
+              },
+              "Sunset": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Present after CS_MORPHEME_SCHEMA1_SUNSET is set."
+              }
+            }
+          },
+          "304": {
+            "description": "Unchanged representation for the requested ETag."
+          },
+          "400": {
+            "description": "Invalid or missing argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Morpheme absent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Schema unavailable for selected publication",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "Legacy representation retired",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Publication unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Evidence": {
+        "type": "object",
+        "properties": {
+          "sourceId": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "quote": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "supports": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sourceId",
+          "locator",
+          "quote",
+          "supports"
+        ],
+        "additionalProperties": false
+      },
+      "Source": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "publicationYear": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "primary_attestation",
+              "scholarly_reference",
+              "editorial",
+              "unclassified"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "publicationYear",
+          "kind"
+        ],
+        "additionalProperties": false
+      },
+      "Target": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "morpheme"
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "interlex"
+              },
+              "protoId": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "bodySha256": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "kind",
+              "protoId",
+              "bodySha256"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "Language": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "Variety": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "recension",
+              "dialect",
+              "regional_variant"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            }
+          }
+        },
+        "required": [
+          "label",
+          "type",
+          "evidence"
+        ],
+        "additionalProperties": false
+      },
+      "Period": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "fromYear": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "not": {
+              "const": 0
+            }
+          },
+          "toYear": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "not": {
+              "const": 0
+            }
+          },
+          "basis": {
+            "enum": [
+              "attestation",
+              "reconstruction"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            }
+          }
+        },
+        "required": [
+          "label",
+          "fromYear",
+          "toYear",
+          "basis",
+          "evidence"
+        ],
+        "additionalProperties": false
+      },
+      "Part": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "surface": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reconstruction": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "kind": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "prefix",
+              "root",
+              "interfix",
+              "derivational_suffix",
+              "formative_suffix",
+              "postfix",
+              "stem_suffix",
+              "thematic_vowel",
+              "inflection",
+              null
+            ]
+          },
+          "function": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "disputed",
+              "approved"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            }
+          },
+          "target": {
+            "$ref": "#/components/schemas/Target"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "surface",
+          "reconstruction",
+          "kind",
+          "function",
+          "status",
+          "note",
+          "evidence",
+          "target"
+        ],
+        "additionalProperties": false
+      },
+      "Alignment": {
+        "type": "object",
+        "properties": {
+          "allomorphId": {
+            "type": "string"
+          },
+          "startGrapheme": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "endGrapheme": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "partIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "allomorphId",
+          "startGrapheme",
+          "endGrapheme",
+          "partIds"
+        ],
+        "additionalProperties": false
+      },
+      "CompositionModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "level": {
+            "enum": [
+              "synchronic",
+              "historical"
+            ]
+          },
+          "allomorphIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "mappingMode": {
+            "enum": [
+              "concatenative",
+              "fusion",
+              "unmapped"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "disputed",
+              "approved"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            }
+          },
+          "parts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Part"
+            },
+            "minItems": 1
+          },
+          "alignment": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Alignment"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "level",
+          "allomorphIds",
+          "mappingMode",
+          "status",
+          "note",
+          "evidence",
+          "parts",
+          "alignment"
+        ],
+        "additionalProperties": false
+      },
+      "Note": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "reconstruction": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "disputed",
+              "approved"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            }
+          },
+          "target": {
+            "$ref": "#/components/schemas/Target"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "text",
+          "reconstruction",
+          "status",
+          "evidence",
+          "target"
+        ],
+        "additionalProperties": false
+      },
+      "Composition": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "enum": [
+              "described",
+              "partial",
+              "undescribed"
+            ]
+          },
+          "models": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompositionModel"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Note"
+            }
+          }
+        },
+        "required": [
+          "state",
+          "models",
+          "notes"
+        ],
+        "additionalProperties": false
+      },
+      "Node": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "form": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reconstruction": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "formType": {
+            "enum": [
+              "attested",
+              "reconstructed",
+              "descriptive"
+            ]
+          },
+          "meaning": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "language": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Language"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "variety": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Variety"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "period": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Period"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "disputed",
+              "approved"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            }
+          },
+          "target": {
+            "$ref": "#/components/schemas/Target"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "form",
+          "reconstruction",
+          "formType",
+          "meaning",
+          "language",
+          "variety",
+          "period",
+          "status",
+          "note",
+          "evidence",
+          "target"
+        ],
+        "additionalProperties": false
+      },
+      "Relation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "fromNodeIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "toNodeId": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "origin",
+              "inheritance",
+              "borrowing",
+              "formation",
+              "reanalysis",
+              "grammaticalization",
+              "comparison"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "disputed",
+              "approved"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "fromNodeIds",
+          "toNodeId",
+          "type",
+          "label",
+          "status",
+          "note",
+          "evidence"
+        ],
+        "additionalProperties": false
+      },
+      "Chain": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "disputed",
+              "approved"
+            ]
+          },
+          "relationIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "focusNodeId": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "status",
+          "relationIds",
+          "focusNodeId",
+          "note",
+          "evidence"
+        ],
+        "additionalProperties": false
+      },
+      "Etymology": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "enum": [
+              "described",
+              "partial",
+              "undescribed"
+            ]
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Node"
+            }
+          },
+          "relations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            }
+          },
+          "chains": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Chain"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Note"
+            }
+          }
+        },
+        "required": [
+          "state",
+          "nodes",
+          "relations",
+          "chains",
+          "notes"
+        ],
+        "additionalProperties": false
+      },
+      "MorphemeCardV2": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "gloss": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "disputed",
+              "approved"
+            ]
+          },
+          "version": {
+            "type": "string"
+          },
+          "statistics": {
+            "type": "object",
+            "properties": {
+              "lexemes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "forms": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "lexemes",
+              "forms"
+            ],
+            "additionalProperties": false
+          },
+          "allomorphs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "surface": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "proposed",
+                    "disputed",
+                    "approved"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "surface",
+                "note",
+                "status"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "schemaVersion": {
+            "const": 2
+          },
+          "composition": {
+            "$ref": "#/components/schemas/Composition"
+          },
+          "etymology": {
+            "$ref": "#/components/schemas/Etymology"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "kind",
+          "gloss",
+          "status",
+          "version",
+          "statistics",
+          "allomorphs",
+          "schemaVersion",
+          "composition",
+          "etymology",
+          "sources"
+        ],
+        "additionalProperties": false
+      },
+      "LegacyMorphemeCard": {
+        "type": "object",
+        "deprecated": true,
+        "description": "Deprecated representation. Replaced by schema=2; sunset 90 days after first stable client release, exact date recorded before launch.",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "gloss": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "disputed",
+              "approved"
+            ]
+          },
+          "version": {
+            "type": "string"
+          },
+          "statistics": {
+            "type": "object",
+            "properties": {
+              "lexemes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "forms": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "lexemes",
+              "forms"
+            ],
+            "additionalProperties": false
+          },
+          "allomorphs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "surface": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "proposed",
+                    "disputed",
+                    "approved"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "surface",
+                "note",
+                "status"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "structure": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "deprecated": true,
+            "description": "Use composition.models/notes."
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "deprecated": true,
+            "description": "Use etymology and sources."
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "structure",
+          "history"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

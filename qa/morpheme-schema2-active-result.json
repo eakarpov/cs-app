@@ -1,0 +1,12 @@
+{
+  "api": "http://127.0.0.1:3000/api/v2/cs/",
+  "version": "6734f4aefaa287399a9ad7d09fece448387c8b248873d2a4c69f0957f515e15a",
+  "checks": 78,
+  "status": "passed",
+  "legacyDeprecated": true,
+  "legacyContentPreserved": true,
+  "explicitModels": 16,
+  "historicalNotes": 44,
+  "chains": 0,
+  "wordVariantsPreserved": 8
+}

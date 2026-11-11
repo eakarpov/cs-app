@@ -4,6 +4,8 @@ import '../domain/models.dart';
 import '../domain/morphemes.dart';
 import 'resource_screen.dart';
 
+part 'morpheme_detail.dart';
+
 Color morphemeColor(String kind) => switch (kind) {
   'prefix' => const Color(0xffb94e0c),
   'root' => const Color(0xff171717),
@@ -304,11 +306,13 @@ class MorphemeScreen extends StatefulWidget {
     required this.repository,
     required this.openWord,
     required this.fontSize,
+    this.initialTab = 0,
   });
   final String id, version;
   final DictionaryRepository repository;
   final ValueChanged<String> openWord;
   final double fontSize;
+  final int initialTab;
   @override
   State<MorphemeScreen> createState() => _MorphemeScreenState();
 }
@@ -321,7 +325,6 @@ class _MorphemeScreenState extends State<MorphemeScreen> {
   late Future<MorphemeWords> words = loadWords(null);
   final cursors = <String?>[null];
   int page = 0;
-
   Future<MorphemeWords> loadWords(String? cursor) async {
     final data = await widget.repository.morphemeWords(
       widget.id,
@@ -342,25 +345,96 @@ class _MorphemeScreenState extends State<MorphemeScreen> {
     page = target;
     words = loadWords(cursors[page]);
   });
+  void openTarget(Json target) {
+    if (target['kind'] == 'morpheme') {
+      Navigator.push(
+        context,
+        MaterialPageRoute<void>(
+          builder: (_) => MorphemeScreen(
+            id: string(target['id']),
+            version: widget.version,
+            repository: widget.repository,
+            openWord: widget.openWord,
+            fontSize: widget.fontSize,
+            initialTab: 1,
+          ),
+        ),
+      );
+    } else if (target['kind'] == 'interlex' && target['protoId'] is num) {
+      Navigator.push(
+        context,
+        MaterialPageRoute<void>(
+          builder: (_) => ResourceScreen(
+            repository: widget.repository,
+            id: '',
+            protoId: (target['protoId'] as num).toInt(),
+            expectedBodyHash: target['bodySha256'] as String?,
+            size: widget.fontSize,
+          ),
+        ),
+      );
+    }
+  }
 
-  Widget heading(String text) => Padding(
-    padding: const EdgeInsets.only(top: 24, bottom: 8),
-    child: Text(text, style: Theme.of(context).textTheme.titleLarge),
+  Widget wordsView() => FutureBuilder<MorphemeWords>(
+    future: words,
+    builder: (context, snapshot) {
+      return ListView(
+        key: const PageStorageKey('morpheme-words'),
+        padding: const EdgeInsets.all(16),
+        children: [
+          if (snapshot.hasError)
+            _LoadError(
+              error: snapshot.error!,
+              retry: () => setState(() => words = loadWords(cursors[page])),
+            )
+          else if (!snapshot.hasData)
+            const Center(child: CircularProgressIndicator())
+          else ...[
+            Text(
+              'Связанные слова',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const Text('Каждое слово учитывается один раз.'),
+            if (snapshot.data!.items.isEmpty)
+              const Text('Связанные слова пока не подготовлены.'),
+            for (final w in snapshot.data!.items)
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Text(
+                  string(w['name']),
+                  style: TextStyle(
+                    fontFamily: 'Monomakh',
+                    fontSize: widget.fontSize,
+                  ),
+                ),
+                subtitle: Text(string(w['gloss'])),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => widget.openWord(string(w['id'])),
+              ),
+            Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 8,
+              children: [
+                TextButton(
+                  onPressed: page > 0 ? () => go(page - 1, null) : null,
+                  child: const Text('Назад'),
+                ),
+                Text('Страница ${page + 1}'),
+                TextButton(
+                  onPressed: snapshot.data!.nextCursor != null
+                      ? () => go(page + 1, snapshot.data!.nextCursor)
+                      : null,
+                  child: const Text('Далее'),
+                ),
+              ],
+            ),
+          ],
+        ],
+      );
+    },
   );
-
-  void openRelated(String id) => Navigator.push(
-    context,
-    MaterialPageRoute<void>(
-      builder: (_) => MorphemeScreen(
-        id: id,
-        version: widget.version,
-        repository: widget.repository,
-        openWord: widget.openWord,
-        fontSize: widget.fontSize,
-      ),
-    ),
-  );
-
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text('Морфема')),
@@ -370,12 +444,12 @@ class _MorphemeScreenState extends State<MorphemeScreen> {
         if (snapshot.hasError) {
           return _LoadError(
             error: snapshot.error!,
-            retry: () => setState(() {
-              future = widget.repository.morpheme(
+            retry: () => setState(
+              () => future = widget.repository.morpheme(
                 widget.id,
                 version: widget.version,
-              );
-            }),
+              ),
+            ),
           );
         }
         if (!snapshot.hasData) {
@@ -389,169 +463,97 @@ class _MorphemeScreenState extends State<MorphemeScreen> {
             ),
           );
         }
-        return ListView(
-          padding: const EdgeInsets.all(16),
-          children: [
-            Text(
-              m.title,
-              style: TextStyle(
-                fontFamily: 'Monomakh',
-                fontSize: widget.fontSize + 10,
-              ),
-            ),
-            Text('${morphemeKind(m.kind)} · ${analysisStatus(m.status)}'),
-            const SizedBox(height: 16),
-            Wrap(
-              spacing: 12,
-              runSpacing: 8,
-              children: [
-                Chip(label: Text('Слов: ${m.wordCount}')),
-                Chip(label: Text('Форм: ${m.formCount}')),
-                Chip(label: Text('Вариантов: ${m.variants.length}')),
-              ],
-            ),
-            const Text(
-              'Статистика по текущей версии базы; каждое слово учитывается один раз.',
-            ),
-            heading('Семантика'),
-            Text(m.gloss.isEmpty ? 'Значение пока не описано.' : m.gloss),
-            heading('Варианты морфемы'),
-            for (final v in m.variants)
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                title: Text(
-                  string(v['surface']).isEmpty ? '∅' : string(v['surface']),
-                ),
-                subtitle: Text(
-                  '${analysisStatus(string(v['status']))}\n${string(v['note'])}',
-                ),
-              ),
-            heading('Внутренняя структура'),
-            if (m.structure.isEmpty)
-              const Text('Внутренняя структура пока не описана.'),
-            for (final s in m.structure)
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                title: Text(string(s['title'])),
-                subtitle: Text(
-                  '${string(s['note'])}\n${analysisStatus(string(s['status']))}',
-                ),
-                trailing: s['morphemeId'] is String
-                    ? const Icon(Icons.chevron_right)
-                    : null,
-                onTap: s['morphemeId'] is String
-                    ? () => openRelated(string(s['morphemeId']))
-                    : null,
-              ),
-            heading('Исторические связи'),
-            if (m.history.isEmpty)
-              const Text('Исторические связи пока не описаны.'),
-            for (final h in m.history)
-              Card(
+        final tabs = TabBar(
+          tabs: const [
+            Tab(text: 'Слова'),
+            Tab(text: 'Состав и этимология'),
+          ],
+          isScrollable: true,
+          tabAlignment: TabAlignment.start,
+        );
+        return DefaultTabController(
+          length: 2,
+          initialIndex: widget.initialTab,
+          child: NestedScrollView(
+            headerSliverBuilder: (context, innerScrolled) => [
+              SliverToBoxAdapter(
                 child: Padding(
-                  padding: const EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(16),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        string(h['title']),
-                        style: Theme.of(context).textTheme.titleMedium,
+                        m.title,
+                        style: TextStyle(
+                          fontFamily: 'Monomakh',
+                          fontSize: widget.fontSize + 10,
+                        ),
                       ),
-                      Text(analysisStatus(string(h['status']))),
-                      if (string(h['reconstruction']).isNotEmpty)
-                        Text(string(h['reconstruction'])),
-                      Text(string(h['note'])),
-                      for (final source in array(h['sources']).map(object))
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8),
-                          child: Text(
-                            '${string(source['title'])} · ${string(source['locator'])}',
-                          ),
-                        ),
-                      if (h['morphemeId'] is String)
-                        TextButton(
-                          onPressed: () => openRelated(string(h['morphemeId'])),
-                          child: const Text('Связанная морфема'),
-                        ),
-                      if (h['protoId'] is num)
-                        TextButton(
-                          onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute<void>(
-                              builder: (_) => ResourceScreen(
-                                repository: widget.repository,
-                                id: '',
-                                protoId: (h['protoId'] as num).toInt(),
-                                expectedBodyHash: h['bodySha256'] as String?,
-                                size: widget.fontSize,
-                              ),
-                            ),
-                          ),
-                          child: const Text('Этимологическая статья'),
-                        ),
+                      Text(
+                        '${morphemeKind(m.kind)} · ${analysisStatus(m.status)}',
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        m.meaning.isEmpty
+                            ? 'Значение пока не описано.'
+                            : m.meaning,
+                      ),
+                      const SizedBox(height: 12),
+                      Wrap(
+                        spacing: 12,
+                        runSpacing: 8,
+                        children: [
+                          Text('Слов: ${m.wordCount}'),
+                          Text('Форм: ${m.formCount}'),
+                          Text('Вариантов: ${m.variants.length}'),
+                        ],
+                      ),
                     ],
                   ),
                 ),
               ),
-            heading('Связанные слова'),
-            FutureBuilder<MorphemeWords>(
-              future: words,
-              builder: (context, snapshot) {
-                if (snapshot.hasError) {
-                  return _LoadError(
-                    error: snapshot.error!,
-                    retry: () =>
-                        setState(() => words = loadWords(cursors[page])),
-                  );
-                }
-                if (!snapshot.hasData) {
-                  return const Center(child: CircularProgressIndicator());
-                }
-                final result = snapshot.data!;
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text('Всего слов: ${result.total}'),
-                    if (result.items.isEmpty)
-                      const Text('Связанные слова пока не подготовлены.'),
-                    for (final w in result.items)
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        title: Text(
-                          string(w['name']),
-                          style: const TextStyle(fontFamily: 'Monomakh'),
-                        ),
-                        subtitle: Text(string(w['gloss'])),
-                        trailing: const Icon(Icons.chevron_right),
-                        onTap: () => widget.openWord(string(w['id'])),
-                      ),
-                    Wrap(
-                      alignment: WrapAlignment.spaceBetween,
-                      crossAxisAlignment: WrapCrossAlignment.center,
-                      spacing: 8,
-                      children: [
-                        TextButton(
-                          onPressed: page > 0 ? () => go(page - 1, null) : null,
-                          child: const Text('Назад'),
-                        ),
-                        Text('Страница ${page + 1}'),
-                        TextButton(
-                          onPressed: result.nextCursor != null
-                              ? () => go(page + 1, result.nextCursor)
-                              : null,
-                          child: const Text('Далее'),
-                        ),
-                      ],
-                    ),
-                  ],
-                );
-              },
+              SliverPersistentHeader(
+                pinned: true,
+                delegate: _MorphemeTabs(
+                  tabs,
+                  Theme.of(context).colorScheme.surface,
+                ),
+              ),
+            ],
+            body: TabBarView(
+              children: [
+                wordsView(),
+                _MorphemeDetails(
+                  card: m,
+                  fontSize: widget.fontSize,
+                  openTarget: openTarget,
+                ),
+              ],
             ),
-          ],
+          ),
         );
       },
     ),
   );
+}
+
+class _MorphemeTabs extends SliverPersistentHeaderDelegate {
+  _MorphemeTabs(this.tabs, this.color);
+  final TabBar tabs;
+  final Color color;
+  @override
+  double get minExtent => tabs.preferredSize.height;
+  @override
+  double get maxExtent => minExtent;
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) => Material(color: color, child: tabs);
+  @override
+  bool shouldRebuild(_MorphemeTabs old) =>
+      old.color != color || old.tabs != tabs;
 }
 
 class _LoadError extends StatelessWidget {

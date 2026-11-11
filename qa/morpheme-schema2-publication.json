@@ -1,0 +1,21 @@
+{
+  "version": "6734f4aefaa287399a9ad7d09fece448387c8b248873d2a4c69f0957f515e15a",
+  "baseVersion": "aa52ec1e650bbf82b109b5052337cd2d0c889edd6bcbbf99c4a7eb40dfcc346a",
+  "baseSha256": "8802e66e3943cbe3a1c8e8b70b3e7acc4f11f66813fa57b7cf8ab4ec4bd72ba3",
+  "sha256": "15243ec7ae9bbad88bd17aaa49eae7c23e5634550565778b38690a757900a30b",
+  "dictionaryVersion": "72dddaaac9f9029a076644ee2788b0062271feb83e5a270527007946dfe9d155",
+  "researchVersion": "0.53",
+  "cards": 208,
+  "models": 16,
+  "historyNotes": 44,
+  "chains": 0,
+  "unchangedTables": [
+    "morpheme_words",
+    "dictionary_morpheme_lexeme",
+    "dictionary_morpheme_form",
+    "variant_provenance",
+    "variant_research_question"
+  ],
+  "allWordAnalysesPreserved": true,
+  "allCommonCardFieldsPreserved": true
+}

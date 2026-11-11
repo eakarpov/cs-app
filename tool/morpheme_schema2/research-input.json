@@ -1,0 +1,1921 @@
+{
+  "version": "0.53",
+  "sources": [
+    {
+      "id": "wiktionary-tva",
+      "title": "Wiktionary. Reconstruction:Proto-Slavic/-tva. Просмотренная редакция oldid=92152953",
+      "locator": "https://en.wiktionary.org/w/index.php?title=Reconstruction:Proto-Slavic/-tva&oldid=92152953",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "wiki-dusa",
+      "title": "Wiktionary. Reconstruction:Proto-Slavic/duša",
+      "locator": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Slavic/du%C5%A1a",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "wiki-ov",
+      "title": "Wiktionary. Reconstruction:Proto-Slavic/-ovъ. oldid=93615392",
+      "locator": "https://en.wiktionary.org/w/index.php?title=Reconstruction:Proto-Slavic/-ov%D1%8A&oldid=93615392",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "izotov-2001",
+      "title": "А. И. Изотов. Старославянский и церковнославянский языки: грамматика, упражнения, тексты. М.: ИОСО РАО, 2001. 240 с. Электронная версия",
+      "locator": "https://xn--90anb0a.xn--p1ai/images/Bibl/CSJa.pdf",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "khaburgaev-1986",
+      "title": "Г. А. Хабургаев. Старославянский язык. 1986. §§ 99, 142, 144, 151–154, 232, 234–236, 280–281, 289–290",
+      "locator": "https://djvu.online/file/poQeYkMbKmBXe",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "seligey-2014",
+      "title": "П. О. Селігей. Етимологічний словник запозичених суфіксів і суфіксоїдів в українській мові. 2014. С. 126–127",
+      "locator": "https://irbis-nbuv.gov.ua/E_LIB/PDF/ukr0004902.pdf",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "kiparsky-1972-sk",
+      "title": "В. Кипарский. О суффиксе -ь- в суффиксах -ьск- и -ьство. Вопросы языкознания, 1972, № 2, с. 79– (использована с. 80)",
+      "locator": "https://vja.ruslang.ru/archive/1972-2.pdf",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "vasmer-pechal",
+      "title": "М. Фасмер. Этимологический словарь русского языка. Печаль",
+      "locator": "https://lexicography.online/etymology/п/печаль",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "vasmer-spasti",
+      "title": "М. Фасмер. Этимологический словарь русского языка. Спасти",
+      "locator": "https://lexicography.online/etymology/с/спасти",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "vasmer-sud",
+      "title": "М. Фасмер. Суд I: старославянское сѫдъ",
+      "locator": "https://lexicography.online/etymology/с/суд",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "shansky-kajatsja",
+      "title": "Н. М. Шанский и др. Каяться: *kajati",
+      "locator": "https://lexicography.online/etymology/к/каяться",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "vasmer-zhivu",
+      "title": "М. Фасмер. Живу: жити, живѫ; сравнительные формы",
+      "locator": "https://lexicography.online/etymology/ж/живу",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "gorshkov-2002",
+      "title": "А. И. Горшков. Старославянский (древнецерковнославянский) язык. 2002, §143, с.106",
+      "locator": "https://ru.djvu.online/file/Y91FdTzILrtfZ",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "vasmer-shansky-pamyat",
+      "title": "М. Фасмер; Н. М. Шанский. Память",
+      "locator": "https://lexicography.online/etymology/п/память",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "dementyev-1975",
+      "title": "А. А. Дементьев. Сборник задач и упражнений по старославянскому языку. 1975",
+      "locator": "https://ru.djvu.online/file/oWjMO9ORqsCNY",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "vasmer-videt",
+      "title": "М. Фасмер. Видеть",
+      "locator": "https://lexicography.online/etymology/в/видеть",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "vasmer-zatvor",
+      "title": "М. Фасмер; Н. М. Шанский. Затворить",
+      "locator": "https://lexicography.online/etymology/з/затворить",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "vasmer-smert",
+      "title": "М. Фасмер. Смерть",
+      "locator": "https://lexicography.online/etymology/с/смерть",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "vasmer-vodit",
+      "title": "М. Фасмер. Водить",
+      "locator": "https://lexicography.online/etymology/в/водить",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "vasmer-shansky-nedelya",
+      "title": "Фасмер; Шанский. Неделя",
+      "locator": "https://lexicography.online/etymology/н/неделя",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "vasmer-shansky-smirenny",
+      "title": "Фасмер; Шанский. Смиренный",
+      "locator": "https://lexicography.online/etymology/с/смиренный",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "shansky-padti-043",
+      "title": "Н. М. Шанский, Пасть (глагол)",
+      "locator": "https://lexicography.online/etymology/shansky/п/пасть",
+      "sha256": null,
+      "rights_status": "reference_only"
+    },
+    {
+      "id": "user-compound-refinements-051",
+      "title": "Решения пользователя: ес — расширитель основы мн. числа; народ = на + род внутри составного корня",
+      "locator": "data/morphemes/user-refinements-0.51.json",
+      "sha256": "54802be8ebbf6ed8a39e8a61c8d7b1acbc3ee361a411fc368c44ab6e1b25081f",
+      "rights_status": "user_provided_project_decision"
+    }
+  ],
+  "morphemes": [
+    {
+      "id": "root:род",
+      "kind": "root",
+      "gloss": "род",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:ост",
+      "kind": "derivational_suffix",
+      "gloss": "ост",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "stem_suffix:THEMATIC_A",
+      "kind": "stem_suffix",
+      "gloss": "тематический суффикс а; редакторское решение",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:н",
+      "kind": "derivational_suffix",
+      "gloss": "н",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "prefix:не",
+      "kind": "prefix",
+      "gloss": "не",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "formative_suffix:INF",
+      "kind": "formative_suffix",
+      "gloss": "INF",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:душ",
+      "kind": "root",
+      "gloss": "душ",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:дух",
+      "kind": "root",
+      "gloss": "дух",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "stem_suffix:OV_STEM_EXTENSION",
+      "kind": "stem_suffix",
+      "gloss": "расширитель основы ов/ев, общий для духови, духовный и душевный",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:ск",
+      "kind": "derivational_suffix",
+      "gloss": "ск",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:NOMINAL_TV",
+      "kind": "derivational_suffix",
+      "gloss": "единый именной суффикс тв; этимология описана отдельно от сегментации",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "prefix:на",
+      "kind": "prefix",
+      "gloss": "на",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:люб",
+      "kind": "root",
+      "gloss": "люб",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:ADJECTIVAL_V",
+      "kind": "derivational_suffix",
+      "gloss": "в — суффикс качественного прилагательного; склонность или обладание признаком",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "stem_suffix:LONG_U_V",
+      "kind": "stem_suffix",
+      "gloss": "Расширитель исторической ū-основы: ов/в < ъв; любы/любовь",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "stem_suffix:VERBAL_OVA",
+      "kind": "stem_suffix",
+      "gloss": "Принятая пара цельных глагольных суффиксов ова/ева; внутренняя этимология отложена",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:NOMINAL_AL",
+      "kind": "derivational_suffix",
+      "gloss": "Именной суффикс ал/аль в печаль и производных; родство с ѣль/тѣль — гипотеза",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "prefix:S_PREVERB",
+      "kind": "prefix",
+      "gloss": "Съ(н)-: обычная приставка с/со; совместность, соединение, результат и другие контекстные значения; отдельно от S_GOOD",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:суд",
+      "kind": "root",
+      "gloss": "Суд/сужд — одно семейство; историческое сѫд- с ǫ",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:дѣл",
+      "kind": "root",
+      "gloss": "дѣл",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:ик",
+      "kind": "derivational_suffix",
+      "gloss": "ик",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:вид",
+      "kind": "root",
+      "gloss": "вид",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "formative_suffix:PASSIVE_PRESENT_M",
+      "kind": "formative_suffix",
+      "gloss": "М — причастный формант, в ЦС страдательный; медиальная история отдельно как гипотеза",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:ZH_LIFE",
+      "kind": "root",
+      "gloss": "Ж — корень в пользовательской гипотезе ж-и-в; не установленная замена анализа жи/жив",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:NOMINAL_T",
+      "kind": "derivational_suffix",
+      "gloss": "Именной суффикс т, общий рабочий ID для памяти и смерти; словарное -ть разделено на т и окончание ь. Не причастный т и не инфинитив ти.",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "stem_suffix:LIFE_V",
+      "kind": "stem_suffix",
+      "gloss": "В в гипотезе ж-и-в; предполагаемая связь с адъективным в и глагольным ва",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "formative_suffix:ACTIVE_PRESENT_NTJ",
+      "kind": "formative_suffix",
+      "gloss": "Цельные ющ/ящ — форманты действительного причастия настоящего времени",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:KAJ",
+      "kind": "root",
+      "gloss": "Подтверждённый пользователем корень каj-; письменное ка, j отображается совместно в следующем я",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "formative_suffix:PASSIVE_PAST_AN",
+      "kind": "formative_suffix",
+      "gloss": "Предполагаемый причастный комплекс ан, письменное ян включает корневой j",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "disputed"
+    },
+    {
+      "id": "root:мог",
+      "kind": "root",
+      "gloss": "мог",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:INSTRUMENT_L",
+      "kind": "derivational_suffix",
+      "gloss": "Инструментальное л, историческое семейство (д)л; отдельно от агентного/причастного л",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:ADJECTIVAL_N_IK",
+      "kind": "derivational_suffix",
+      "gloss": "ADJECTIVAL_N_IK",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "inflection:NOM_LONG_U",
+      "kind": "inflection",
+      "gloss": "NOM_LONG_U",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:AGENT_ENIK",
+      "kind": "derivational_suffix",
+      "gloss": "AGENT_ENIK",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:VOR_CLOSE",
+      "kind": "root",
+      "gloss": "(Т)вор — открывание/закрывание; аналогическое т в письменном твор; отдельно от твор/твар создания",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "prefix:S_GOOD",
+      "kind": "prefix",
+      "gloss": "Историческое съ- «хороший/благой, свой»; ограниченная лексическая группа, не продуктивная автоматическая замена любого с-",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:SUD_CONTAINER",
+      "kind": "root",
+      "gloss": "Суд II: сосуд, вместилище; смысловая ветвь общей этимологической семьи с судом I",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "disputed"
+    },
+    {
+      "id": "root:VOD_LEAD",
+      "kind": "root",
+      "gloss": "Вод/вед: ведение, водити/вести; омоним вод воды, отдельно от вѣд знания",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:NEDEL_CALENDAR",
+      "kind": "root",
+      "gloss": "Недѣл: воскресенье/неделя; составная календарная основа не-дѣл из дѣлати",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:мѣр",
+      "kind": "root",
+      "gloss": "Мѣр: мера, умерение; письменное мир в ветви смирения",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:PAD_FALL",
+      "kind": "root",
+      "gloss": "пад: падать, упасть; отдельное гнездо от пас пастьбы/сохранения",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    },
+    {
+      "id": "root:NAROD_PEOPLE",
+      "kind": "root",
+      "gloss": "Народ: народ, множество людей; составной корень на-род в сложных словах",
+      "scope": "church_slavonic_ru_liturgical",
+      "status": "proposed"
+    }
+  ],
+  "allomorphs": [
+    {
+      "id": "formative_suffix:INF:ти",
+      "morpheme_id": "formative_suffix:INF",
+      "surface": "ти",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:душ:душ",
+      "morpheme_id": "root:душ",
+      "surface": "душ",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed"
+    },
+    {
+      "id": "stem_suffix:OV_STEM_EXTENSION:ов",
+      "morpheme_id": "stem_suffix:OV_STEM_EXTENSION",
+      "surface": "ов",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "preceding_root_ids": [
+          "root:дух",
+          "root:сын"
+        ],
+        "historical_softness": false,
+        "domain": "addressed_duh_son_families",
+        "productive": false,
+        "editorial_status": "proposed"
+      },
+      "condition_note": "Ов — расширитель основы в духови/духовный и рабочей модели сыновній/сыновство; адресное твёрдое окружение, не глобальная подстановка.",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:NOMINAL_TV:тв",
+      "morpheme_id": "derivational_suffix:NOMINAL_TV",
+      "surface": "тв",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed"
+    },
+    {
+      "id": "stem_suffix:OV_STEM_EXTENSION:ев",
+      "morpheme_id": "stem_suffix:OV_STEM_EXTENSION",
+      "surface": "ев",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "preceding_root_ids": [
+          "root:душ"
+        ],
+        "historical_softness": true,
+        "domain": "duh_dush_family",
+        "productive": false,
+        "editorial_status": "proposed"
+      },
+      "condition_note": "Исторически мягкое окружение после ш в душевный; современная твёрдость ш не задаёт правило.",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:ADJECTIVAL_V:в",
+      "morpheme_id": "derivational_suffix:ADJECTIVAL_V",
+      "surface": "в",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:ост:ости",
+      "morpheme_id": "derivational_suffix:ост",
+      "surface": "ости",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "preceding_root_ids": [
+          "root:мил"
+        ],
+        "domain": "milostivy",
+        "productive": false
+      },
+      "condition_note": "Ости — рабочий вариант именного суффиксального комплекса; и именного происхождения, не тематическое глагольное.",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:ск:еск",
+      "morpheme_id": "derivational_suffix:ск",
+      "surface": "еск",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Письменное еск в человѣческій; связано с историческим ьск. История е и распределение ск/еск не задаются общей автоматической заменой.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:люб:любл",
+      "morpheme_id": "root:люб",
+      "surface": "любл",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "process": "labial_jotation",
+        "historical_trigger": "j",
+        "counterpart_allomorph_id": "root:люб:люб",
+        "productive": false
+      },
+      "condition_note": "Любл — вариант того же корня люб; историческое bj > blʲ. Не правило «любл всюду, где нет и»; л внутри корня, и не вставляется в письменный разбор.",
+      "status": "proposed"
+    },
+    {
+      "id": "stem_suffix:LONG_U_V:ов",
+      "morpheme_id": "stem_suffix:LONG_U_V",
+      "surface": "ов",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Адресная пара ов/в в парадигме любовь, историческое ъв; не продуктивная замена для всех слов на ов.",
+      "status": "proposed"
+    },
+    {
+      "id": "stem_suffix:VERBAL_OVA:ова",
+      "morpheme_id": "stem_suffix:VERBAL_OVA",
+      "surface": "ова",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Вариант принятой пары ова/ева; точное распределение в ЦС требует проверки по словоформам. Внутренняя этимология отложена.",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:NOMINAL_AL:аль",
+      "morpheme_id": "derivational_suffix:NOMINAL_AL",
+      "surface": "аль",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Ал в печ-ал-ь и печ-ал-и-ти-ся; аль в печ-аль-н-ый. Поверхность включает только написанные буквы.",
+      "status": "proposed"
+    },
+    {
+      "id": "prefix:S_PREVERB:с",
+      "morpheme_id": "prefix:S_PREVERB",
+      "surface": "с",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:суд:суд",
+      "morpheme_id": "root:суд",
+      "surface": "суд",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "process": "d_jotation",
+        "counterpart_allomorph_id": "root:суд:сужд",
+        "productive": false,
+        "historical_vowel": {
+          "symbol": "ѫ",
+          "phoneme": "ǫ",
+          "start_cp": 1,
+          "end_cp": 2,
+          "reflex": "у"
+        }
+      },
+      "condition_note": "Исторический носовой в корне, не замена текущего у. Д/j → жд отмечено адресно.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:суд:сужд",
+      "morpheme_id": "root:суд",
+      "surface": "сужд",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "process": "d_jotation",
+        "counterpart_allomorph_id": "root:суд:суд",
+        "productive": false,
+        "historical_vowel": {
+          "symbol": "ѫ",
+          "phoneme": "ǫ",
+          "start_cp": 1,
+          "end_cp": 2,
+          "reflex": "у"
+        }
+      },
+      "condition_note": "Исторический носовой в корне, не замена текущего у. Д/j → жд отмечено адресно.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:вид:вид",
+      "morpheme_id": "root:вид",
+      "surface": "вид",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "etymological_family": "VID_VED_COGNATE",
+        "semantic_orientation": "external_perception",
+        "semantic_orientation_author": "user",
+        "productive": false
+      },
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed"
+    },
+    {
+      "id": "formative_suffix:PASSIVE_PRESENT_M:м",
+      "morpheme_id": "formative_suffix:PASSIVE_PRESENT_M",
+      "surface": "м",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:ZH_LIFE:ж",
+      "morpheme_id": "root:ZH_LIFE",
+      "surface": "ж",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "accepted_working_hypothesis",
+        "productive": false
+      },
+      "condition_note": "Принято как рабочая сегментация по решению пользователя; этимология отложена, тождество с другими формантами не установлено.",
+      "status": "disputed"
+    },
+    {
+      "id": "derivational_suffix:NOMINAL_T:т",
+      "morpheme_id": "derivational_suffix:NOMINAL_T",
+      "surface": "т",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "disputed"
+    },
+    {
+      "id": "stem_suffix:LIFE_V:в",
+      "morpheme_id": "stem_suffix:LIFE_V",
+      "surface": "в",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "accepted_working_hypothesis",
+        "productive": false
+      },
+      "condition_note": "Принято как рабочая сегментация по решению пользователя; этимология отложена, тождество с другими формантами не установлено.",
+      "status": "proposed"
+    },
+    {
+      "id": "formative_suffix:ACTIVE_PRESENT_NTJ:ящ",
+      "morpheme_id": "formative_suffix:ACTIVE_PRESENT_NTJ",
+      "surface": "ящ",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "productive": false
+      },
+      "condition_note": "Реестр пары ющ/ящ; варианты фиксируются адресно, не правилом современной мягкости.",
+      "status": "proposed"
+    },
+    {
+      "id": "formative_suffix:PASSIVE_PAST_AN:ян",
+      "morpheme_id": "formative_suffix:PASSIVE_PAST_AN",
+      "surface": "ян",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "editorial_hypothesis",
+        "productive": false
+      },
+      "condition_note": "Ян — совместная письменная область корневого j и комплекса а-н; тождество с ен не утверждено.",
+      "status": "disputed"
+    },
+    {
+      "id": "stem_suffix:THEMATIC_A:я",
+      "morpheme_id": "stem_suffix:THEMATIC_A",
+      "surface": "я",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "preceding_root_ids": [
+          "root:KAJ"
+        ],
+        "productive": false
+      },
+      "condition_note": "В каятися я отображает корневой j и тематическое а вместе.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:мог:мощ",
+      "morpheme_id": "root:мог",
+      "surface": "мощ",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "process": "gt_plus_nominal_t_fusion",
+        "productive": false
+      },
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed"
+    },
+    {
+      "id": "stem_suffix:THEMATIC_A:ва",
+      "morpheme_id": "stem_suffix:THEMATIC_A",
+      "surface": "ва",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "editorial_working_model",
+        "preceding_root_ids": [
+          "root:кров"
+        ],
+        "preceding_root_surface": "кры",
+        "phonetic_accretion": "в",
+        "productive": false
+      },
+      "condition_note": "Рабочая модель пользователя: тематическое а после кры с переходным в. Точное историческое происхождение в остаётся отдельной гипотезой, не универсальным правилом против зияния.",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:INSTRUMENT_L:л",
+      "morpheme_id": "derivational_suffix:INSTRUMENT_L",
+      "surface": "л",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Инструментальный формант в покрывало; исторически сопоставлен с *-dl-. Ненаписанного д в сегменте нет.",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:ADJECTIVAL_N_IK:ник",
+      "morpheme_id": "derivational_suffix:ADJECTIVAL_N_IK",
+      "surface": "ник",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed"
+    },
+    {
+      "id": "inflection:NOM_LONG_U:ы",
+      "morpheme_id": "inflection:NOM_LONG_U",
+      "surface": "ы",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed"
+    },
+    {
+      "id": "derivational_suffix:AGENT_ENIK:еник",
+      "morpheme_id": "derivational_suffix:AGENT_ENIK",
+      "surface": "еник",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {},
+      "condition_note": "Рабочий вариант; условия распределения не установлены.",
+      "status": "proposed"
+    },
+    {
+      "id": "formative_suffix:ACTIVE_PRESENT_NTJ:ющ",
+      "morpheme_id": "formative_suffix:ACTIVE_PRESENT_NTJ",
+      "surface": "ющ",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "productive": false
+      },
+      "condition_note": "Реестр пары ющ/ящ; варианты фиксируются адресно, не правилом современной мягкости.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:VOR_CLOSE:твор",
+      "morpheme_id": "root:VOR_CLOSE",
+      "surface": "твор",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "process": "analogical_initial_t",
+        "counterpart_allomorph_id": "root:VOR_CLOSE:вор",
+        "productive": false
+      },
+      "condition_note": "Т обобщено из отворити, входит в письменный корень; (т) — метанотация семейства, не необязательная буква текущего слова.",
+      "status": "proposed"
+    },
+    {
+      "id": "prefix:S_PREVERB:со",
+      "morpheme_id": "prefix:S_PREVERB",
+      "surface": "со",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "lexical",
+        "process": "preverb_allomorph",
+        "productive": false
+      },
+      "condition_note": "Единый письменный вариант съ/с/со. О не самостоятельная приставка в исправленной группе; выбор варианта проверяется лексически.",
+      "status": "proposed"
+    },
+    {
+      "id": "prefix:S_GOOD:с",
+      "morpheme_id": "prefix:S_GOOD",
+      "surface": "с",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "lexical_family": "SMERT",
+        "following_root_ids": [
+          "root:MER_DIE",
+          "root:мерт"
+        ],
+        "productive": false
+      },
+      "condition_note": "Исторический положительный элемент в семье смерть; не S_PREVERB.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:SUD_CONTAINER:суд",
+      "morpheme_id": "root:SUD_CONTAINER",
+      "surface": "суд",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "historical",
+        "historical_vowel": {
+          "symbol": "ѫ",
+          "phoneme": "ǫ",
+          "start_cp": 1,
+          "end_cp": 2,
+          "reflex": "у"
+        },
+        "cognate_family": "SUD_ETYMOLOGICAL",
+        "productive": false
+      },
+      "condition_note": "Историческое сѫд в сосуде; в письменном заголовке сохранено у. Суд II у Фасмера родственно суд I; отдельный ID отражает смысловую ветвь.",
+      "status": "disputed"
+    },
+    {
+      "id": "root:VOD_LEAD:вод",
+      "morpheme_id": "root:VOD_LEAD",
+      "surface": "вод",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "lexical",
+        "homonym_group": "VOD_HOMOGRAPHS",
+        "semantic_branch": "leading",
+        "productive": false
+      },
+      "condition_note": "Вод/вед: ведение, водити/вести; омоним вод воды, отдельно от вѣд знания; тождество написания не разрешает автоматический перенос между этими ID.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:NEDEL_CALENDAR:недѣл",
+      "morpheme_id": "root:NEDEL_CALENDAR",
+      "surface": "недѣл",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "context_level": "lexicalized_base",
+        "composite": true,
+        "semantic_branch": "calendar",
+        "expanded_morpheme_ids": [
+          "prefix:не",
+          "root:дѣл"
+        ]
+      },
+      "condition_note": "Внешняя календарная основа недѣл; внутреннее не-дѣл хранится в ETYM-NEDEL-CALENDAR. Корень делать, не DEL_DIVISION. Внутренняя структура не дублируется в буквенном покрытии.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:мѣр:мир",
+      "morpheme_id": "root:мѣр",
+      "surface": "мир",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "conditions": {
+        "etymological_family": "MER_MEASURE",
+        "semantic_branch": "measure_and_humility",
+        "search_family": "MIR_MER_INTERACTION",
+        "productive": false,
+        "counterpart_allomorph_id": "root:мѣр:мѣр",
+        "cognacy_hypothesis": {
+          "family": "MIR_MER_COGNACY_HYPOTHESIS",
+          "status": "disputed",
+          "proposed_by": "user",
+          "established_by_review": false
+        }
+      },
+      "condition_note": "Мѣр в мере и мир в смирении умерение/унижение: историческое сближение с миром. Это не общая фонетическая замена и/ѣ.",
+      "status": "proposed"
+    },
+    {
+      "id": "root:PAD_FALL:пас",
+      "morpheme_id": "root:PAD_FALL",
+      "surface": "пас",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "status": "proposed",
+      "conditions": {
+        "addressed_lexemes": [
+          "испасти",
+          "пасти",
+          "пастися",
+          "спасти",
+          "упасти"
+        ],
+        "before_morpheme_id": "formative_suffix:INF",
+        "before_surface": "ти",
+        "historical_boundary_change": {
+          "input": "d+t",
+          "output": "st"
+        }
+      },
+      "condition_note": "Письменный рефлекс пад перед ти в инфинитиве. Редакторская граница пас-ти; морфонологическая запись пад-ти хранится в этимологии. Не корень пас пастьбы и не свободное чередование д/с."
+    },
+    {
+      "id": "root:NAROD_PEOPLE:народ",
+      "morpheme_id": "root:NAROD_PEOPLE",
+      "surface": "народ",
+      "language_layer": "church_slavonic_ru_liturgical",
+      "notation": "written",
+      "status": "proposed",
+      "conditions": {
+        "context_level": "lexicalized_base",
+        "composite": true,
+        "semantic_branch": "people",
+        "compound_role": "first_member",
+        "expanded_morpheme_ids": [
+          "prefix:на",
+          "root:род"
+        ]
+      },
+      "condition_note": "Внешний составной корень народ в сложениях; внутреннее на-род хранится в ETYM-NAROD-PEOPLE. Внутренние части не дублируются в письменных сегментах."
+    }
+  ],
+  "morpheme_etymologies": [
+    {
+      "id": "ETYM-TV-U",
+      "morpheme_id": "derivational_suffix:NOMINAL_TV",
+      "allomorph_id": "derivational_suffix:NOMINAL_TV:тв",
+      "reconstruction": "*-tu- + *-ā (ср. *-tu-eh₂)",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "т",
+          "historical_element": "*t",
+          "function": "t_component",
+          "origin_hypothesis": "Причастный суффикс по гипотезе пользователя; не доказано ссылкой на *-tva."
+        },
+        {
+          "surface": "в",
+          "historical_element": "*u̯",
+          "function": "u_stem_element",
+          "origin_hypothesis": "Неслоговой рефлекс U-элемента перед гласной; не буква у в словоформе."
+        }
+      ],
+      "source_id": "wiktionary-tva",
+      "locator": "Etymology; References 1–2, *gonitva, ЭССЯ 7:23",
+      "note": "Компоненты — этимологическое описание единого тв, не самостоятельные сегменты текущего разбора. Историческое расширение на а не отменяет окончания а в молитва.",
+      "mapping_mode": "concatenative",
+      "related_morpheme_id": null
+    },
+    {
+      "id": "ETYM-DUSH-FUSION",
+      "morpheme_id": "root:душ",
+      "allomorph_id": "root:душ:душ",
+      "related_morpheme_id": "root:дух",
+      "mapping_mode": "fusion",
+      "reconstruction": "*dux- + *-j- → *duš-; глубже *dʰows- + *-yeh₂",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "душ",
+          "start_cp": 0,
+          "end_cp": 3,
+          "historical_element": "*dux- (ср. более раннее *dʰows-)",
+          "function": "source_root_reflex",
+          "morpheme_id": "root:дух"
+        },
+        {
+          "surface": "ш",
+          "start_cp": 2,
+          "end_cp": 3,
+          "historical_element": "*j, часть *-ja",
+          "function": "fused_derivational_element",
+          "origin_hypothesis": "Суффиксальный j участвует в общем рефлексе ш; отдельной буквы и нет."
+        }
+      ],
+      "source_id": "wiki-dusa",
+      "locator": "Etymology",
+      "note": "Обе этимологические составляющие отображаются на ш: граница поглощена. Дус + и из обсуждения — гипотетическая схема раннего уровня; не буквенная форма и не установленная полная хронология RUKI. Душевный служит сравнением, не доказательством U-парадигмы духъ."
+    },
+    {
+      "id": "ETYM-OV-HISTORY",
+      "morpheme_id": "stem_suffix:OV_STEM_EXTENSION",
+      "allomorph_id": "stem_suffix:OV_STEM_EXTENSION:ов",
+      "reconstruction": "*-ew- (косвенная U-основа) + o-тематизация; обобщение *-ovъ",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "ов",
+          "historical_element": "*-ew- / *-ov-",
+          "function": "generalized_stem_extension",
+          "origin_hypothesis": "Исторически извлечён из U-основ и распространён на o-основы."
+        }
+      ],
+      "source_id": "wiki-ov",
+      "locator": "Etymology; Usage notes; oldid=93615392",
+      "note": "U-происхождение форманта и o-парадигма духъ совместимы. По решению пользователя ов — расширитель основы в дух-ов-и и дух-ов-н-ый; конечный ъ не превращается в ов.",
+      "mapping_mode": "concatenative",
+      "related_morpheme_id": null
+    },
+    {
+      "id": "ETYM-EV-HISTORY",
+      "morpheme_id": "stem_suffix:OV_STEM_EXTENSION",
+      "allomorph_id": "stem_suffix:OV_STEM_EXTENSION:ев",
+      "reconstruction": "*-ev- — вариант форманта *-ov- в исторически мягком окружении",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "ев",
+          "historical_element": "*-ev-",
+          "function": "historically_soft_variant",
+          "origin_hypothesis": "Рабочее соотнесение с ов в семействе дух/душ; не правило современной орфографии."
+        }
+      ],
+      "source_id": "wiki-ov",
+      "locator": "Usage notes; variant *-evъ",
+      "note": "Ш в душ исторически мягкий; единый ID расширителя не объединяет корни дух и душ. История конкретного слова требует отдельной рецензии.",
+      "mapping_mode": "concatenative",
+      "related_morpheme_id": null
+    },
+    {
+      "id": "ETYM-OSTI-I",
+      "morpheme_id": "derivational_suffix:ост",
+      "allomorph_id": "derivational_suffix:ост:ости",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "*-ost-i-: именной i-компонент перед *-v-",
+      "components": [
+        {
+          "surface": "ост",
+          "historical_element": "*-ost-",
+          "function": "abstract_nominal_complex"
+        },
+        {
+          "surface": "и",
+          "historical_element": "*i",
+          "function": "nominal_i_component"
+        }
+      ],
+      "status": "proposed",
+      "source_id": "seligey-2014",
+      "locator": "С. 126–127: историческое переразложение i + v",
+      "note": "Источник даёт общее историческое сопоставление. Ости в милостивый — редакторская гипотеза пользователя. Она не означает буквальную замену окончания ь на и во всех словах."
+    },
+    {
+      "id": "ETYM-V-WO",
+      "morpheme_id": "derivational_suffix:ADJECTIVAL_V",
+      "allomorph_id": "derivational_suffix:ADJECTIVAL_V:в",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "прикм. *-vъ, сопоставляемое с *-wo-",
+      "components": [
+        {
+          "surface": "в",
+          "historical_element": "*w",
+          "function": "adjectival_quality_element"
+        }
+      ],
+      "status": "proposed",
+      "source_id": "seligey-2014",
+      "locator": "С. 126–127",
+      "note": "Прилагательное в не отождествляется автоматически с причастным в в бывший или с глагольным ва. Связь с ов/ев остаётся сравнительной гипотезой, ID морфем раздельны."
+    },
+    {
+      "id": "ETYM-LJUB-OV",
+      "morpheme_id": "stem_suffix:LONG_U_V",
+      "allomorph_id": "stem_suffix:LONG_U_V:ов",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "*ū ~ *ъv-; сильный ъ > о, слабый ъ > ∅",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "ов",
+          "historical_element": "*ū ~ *ъv-; сильный ъ > о, слабый ъ > ∅",
+          "function": "historical_stem_marker_reflex"
+        }
+      ],
+      "source_id": "izotov-2001",
+      "locator": "С. 39–40, 89 (PDF: страницы 38–39, 88)",
+      "note": "Историческое ы/ъв объясняется вариантами долгой ū-основы. В письменной модели ов/в — расширитель; ы в любы входит в окончание. Это связь парадигмы, не буквенное ов → ы."
+    },
+    {
+      "id": "ETYM-LJUB-Y",
+      "morpheme_id": "inflection:NOM_LONG_U",
+      "allomorph_id": "inflection:NOM_LONG_U:ы",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "*ū > *y",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "ы",
+          "historical_element": "*ū > *y",
+          "function": "historical_stem_marker_reflex"
+        }
+      ],
+      "source_id": "izotov-2001",
+      "locator": "С. 39–40, 89 (PDF: страницы 38–39, 88)",
+      "note": "Долгое ū основы сохранилось в именительном как ы; синхронно в выбранной модели ы — окончание. Историческую границу основы и окончания нельзя механически переносить в письменный разбор."
+    },
+    {
+      "id": "ETYM-VERBAL-OVA",
+      "morpheme_id": "stem_suffix:VERBAL_OVA",
+      "allomorph_id": "stem_suffix:VERBAL_OVA:ова",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "status": "disputed",
+      "reconstruction": "-ов-а- / -у-j-; у Хабургаева *-ou-a- / *-ou-j-",
+      "components": [
+        {
+          "surface": "ов",
+          "historical_element": "*-ou- перед гласным",
+          "function": "verbal_stem_component"
+        },
+        {
+          "surface": "а",
+          "historical_element": "*-a-",
+          "function": "infinitive_aorist_stem_formant"
+        }
+      ],
+      "source_id": "khaburgaev-1986",
+      "locator": "§ 154, с. 125",
+      "note": "Внутренняя этимология отложена решением пользователя. Прежнее ов-а сохранено как исследовательская гипотеза, не часть принятого членения."
+    },
+    {
+      "id": "ETYM-LJUBL-JOTATION",
+      "morpheme_id": "root:люб",
+      "allomorph_id": "root:люб:любл",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "status": "proposed",
+      "reconstruction": "*ljub-j- > ljubľ-; i перед гласным > j",
+      "components": [
+        {
+          "surface": "любл",
+          "historical_element": "*ljub- + j",
+          "function": "jotated_root_allomorph"
+        }
+      ],
+      "source_id": "khaburgaev-1986",
+      "locator": "§ 99, с. 86–87; § 290, с. 218",
+      "note": "Л входит в письменный вариант корня. Йотация губных не включает т/тл; самостоятельность второго н этой записью не обосновывается."
+    },
+    {
+      "id": "ETYM-HUMAN-ESK",
+      "morpheme_id": "derivational_suffix:ск",
+      "allomorph_id": "derivational_suffix:ск:еск",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "status": "proposed",
+      "reconstruction": "Историческое *-ьsk-; письменный вариант -еск-",
+      "components": [
+        {
+          "surface": "еск",
+          "historical_element": "*-ьsk-",
+          "function": "adjectival_suffix_variant"
+        }
+      ],
+      "source_id": "kiparsky-1972-sk",
+      "locator": "С. 79–80, особенно ряд человек / человеческий",
+      "note": "Е входит в письменный суффикс. Не вставлять невидимый ь в нормализованный текст; происхождение е требует отдельной проверки, не объявлено механическим сильным ером."
+    },
+    {
+      "id": "ETYM-S-PREVERB",
+      "morpheme_id": "prefix:S_PREVERB",
+      "allomorph_id": "prefix:S_PREVERB:с",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "status": "proposed",
+      "reconstruction": "с- < съ-; старославянское съ-пасти",
+      "components": [
+        {
+          "surface": "с",
+          "historical_element": "*sъ-",
+          "function": "prefix_reflex"
+        }
+      ],
+      "source_id": "vasmer-spasti",
+      "locator": "Статья Спасти: съпасти, съпасѫ",
+      "note": "Н в разбор не добавляется. Более глубокая схема съ(н) из обсуждения требует отдельного обоснования. Семейная запись съ(н) сверена с Хабургаевым §156; не предписывает н каждому алломорфу."
+    },
+    {
+      "id": "ETYM-AL-RELATION-HYPOTHESIS",
+      "morpheme_id": "derivational_suffix:NOMINAL_AL",
+      "allomorph_id": "derivational_suffix:NOMINAL_AL:аль",
+      "related_morpheme_id": "derivational_suffix:AGENT_TEL",
+      "mapping_mode": "concatenative",
+      "status": "disputed",
+      "reconstruction": "Предполагаемое родство аль / ѣль / тѣль; у Фасмера *pečalь < *pekēlь",
+      "components": [
+        {
+          "surface": "аль",
+          "historical_element": "*-ēl- (сопоставление)",
+          "function": "nominal_suffix",
+          "origin_hypothesis": "Связь с ѣль/тѣль предложена пользователем; общее происхождение не установлено."
+        }
+      ],
+      "source_id": "vasmer-pechal",
+      "locator": "Статья Печаль: *pečalь из *pekēlь",
+      "note": "Источник поддерживает историю печаль, но не доказывает родства с AGENT_TEL. Морфемные ID остаются разными."
+    },
+    {
+      "id": "ETYM-SUD-NASAL",
+      "morpheme_id": "root:суд",
+      "allomorph_id": "root:суд:суд",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "*sǫd-; старославянское сѫдъ",
+      "components": [
+        {
+          "surface": "с",
+          "historical_element": "*s",
+          "function": "root_part"
+        },
+        {
+          "surface": "у",
+          "historical_element": "*ǫ, ѫ",
+          "function": "historical_nasal_reflex"
+        },
+        {
+          "surface": "д",
+          "historical_element": "*d",
+          "function": "root_part"
+        }
+      ],
+      "status": "proposed",
+      "source_id": "vasmer-sud",
+      "locator": "Суд I: старославянское сѫдъ",
+      "note": "Исходный заголовок текущего ЦС сохраняет у; носовой хранится в этимологии и координатах варианта."
+    },
+    {
+      "id": "ETYM-SUZHD-JOTATION",
+      "morpheme_id": "root:суд",
+      "allomorph_id": "root:суд:сужд",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "*sǫd-j- > *sǫžd-",
+      "components": [
+        {
+          "surface": "с",
+          "historical_element": "*s",
+          "function": "root_part"
+        },
+        {
+          "surface": "у",
+          "historical_element": "*ǫ, ѫ",
+          "function": "historical_nasal_reflex"
+        },
+        {
+          "surface": "жд",
+          "historical_element": "*dj",
+          "function": "jotated_root_final"
+        }
+      ],
+      "status": "proposed",
+      "source_id": "khaburgaev-1986",
+      "locator": "Йотация d+j; § 290, с. 218",
+      "note": "Корень совпадает с суд; реконструированная последовательность не вставляется в словоформу."
+    },
+    {
+      "id": "ETYM-M-MEDIAL-HYPOTHESIS",
+      "morpheme_id": "formative_suffix:PASSIVE_PRESENT_M",
+      "allomorph_id": "formative_suffix:PASSIVE_PRESENT_M:м",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "Предполагаемое медиальное происхождение м; текущая функция — страдательное причастие",
+      "components": [
+        {
+          "surface": "м",
+          "historical_element": "Предполагаемое медиальное происхождение м; текущая функция — страдательное причастие",
+          "function": "historical_description"
+        }
+      ],
+      "status": "disputed",
+      "source_id": "khaburgaev-1986",
+      "locator": "§ 289, с. 217",
+      "note": "Грамматика подтверждает м и тематическое и, но не устанавливает этимологию медиального форманта. Текущий Voice остаётся Pass."
+    },
+    {
+      "id": "ETYM-ACTIVE-ющ",
+      "morpheme_id": "formative_suffix:ACTIVE_PRESENT_NTJ",
+      "allomorph_id": "formative_suffix:ACTIVE_PRESENT_NTJ:ющ",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "*-j-ont-j-; после j также *-entj-; носовой + tj",
+      "components": [
+        {
+          "surface": "ющ",
+          "historical_element": "*-j-ont-j-; после j также *-entj-; носовой + tj",
+          "function": "historical_description"
+        }
+      ],
+      "status": "proposed",
+      "source_id": "khaburgaev-1986",
+      "locator": "§§ 280–281, с. 212–213",
+      "note": "Исторически nt + j; тематические o/e/i и йотация учитываются внутри цельного письменного форманта. Это не буквенные сегменты on-t-j."
+    },
+    {
+      "id": "ETYM-ACTIVE-ящ",
+      "morpheme_id": "formative_suffix:ACTIVE_PRESENT_NTJ",
+      "allomorph_id": "formative_suffix:ACTIVE_PRESENT_NTJ:ящ",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "*-int-j- > *-ętj-; также *-entj- в соответствующих основах",
+      "components": [
+        {
+          "surface": "ящ",
+          "historical_element": "*-int-j- > *-ętj-; также *-entj- в соответствующих основах",
+          "function": "historical_description"
+        }
+      ],
+      "status": "proposed",
+      "source_id": "khaburgaev-1986",
+      "locator": "§§ 280–281, с. 212–213",
+      "note": "Исторически nt + j; тематические o/e/i и йотация учитываются внутри цельного письменного форманта. Это не буквенные сегменты on-t-j."
+    },
+    {
+      "id": "ETYM-ZH-LIFE-HYPOTHESIS",
+      "morpheme_id": "root:ZH_LIFE",
+      "allomorph_id": "root:ZH_LIFE:ж",
+      "related_morpheme_id": "root:жив",
+      "mapping_mode": "concatenative",
+      "reconstruction": "Ж + тематическое и — гипотеза; сравнительно жи-/жив-",
+      "components": [
+        {
+          "surface": "ж",
+          "historical_element": "Ж + тематическое и — гипотеза; сравнительно жи-/жив-",
+          "function": "historical_description"
+        }
+      ],
+      "status": "disputed",
+      "source_id": "vasmer-zhivu",
+      "locator": "Статья Живу",
+      "note": "Сегментация ж-и-в принята как рабочая гипотеза; выяснение этимологии отложено пользователем. Источник подтверждает семью жити/живѫ, но не выделение одного ж и не тематический статус и."
+    },
+    {
+      "id": "ETYM-LIFE-V-HYPOTHESIS",
+      "morpheme_id": "stem_suffix:LIFE_V",
+      "allomorph_id": "stem_suffix:LIFE_V:в",
+      "related_morpheme_id": "derivational_suffix:ADJECTIVAL_V",
+      "mapping_mode": "concatenative",
+      "reconstruction": "Предполагаемое тождество в в ж-и-в, и-в и глагольном ва",
+      "components": [
+        {
+          "surface": "в",
+          "historical_element": "Сопоставляемое v",
+          "function": "hypothetical_stem_extension",
+          "comparison_targets": [
+            "derivational_suffix:ADJECTIVAL_V",
+            "stem_suffix:VERBAL_OVA"
+          ]
+        }
+      ],
+      "status": "disputed",
+      "source_id": "vasmer-zhivu",
+      "locator": "Статья Живу; гипотеза пользователя",
+      "note": "Сегментация ж-и-в принята как рабочая гипотеза; выяснение этимологии отложено пользователем. Сравнительные jīvati/vīvō содержат v, но сами по себе не устанавливают его тождества славянскому ва. ID оставлены разными."
+    },
+    {
+      "id": "ETYM-KAJ-A-GRAPHIC",
+      "morpheme_id": "stem_suffix:THEMATIC_A",
+      "allomorph_id": "stem_suffix:THEMATIC_A:я",
+      "related_morpheme_id": "root:KAJ",
+      "mapping_mode": "fusion",
+      "reconstruction": "*kaj- + *-a-; j + a записаны как я",
+      "components": [
+        {
+          "surface": "я",
+          "start_cp": 0,
+          "end_cp": 1,
+          "historical_element": "*j, конец корня kaj-",
+          "function": "root_final_glide",
+          "morpheme_id": "root:KAJ"
+        },
+        {
+          "surface": "я",
+          "start_cp": 0,
+          "end_cp": 1,
+          "historical_element": "*-a-",
+          "function": "stem_vowel_and_formative"
+        }
+      ],
+      "status": "proposed",
+      "source_id": "shansky-kajatsja",
+      "locator": "Статья Каяться: *kajati",
+      "note": "Графическое совместное отображение на я, не утверждение фонетической утраты j. Единое поле surface сохраняет точное буквенное покрытие."
+    },
+    {
+      "id": "ETYM-KAJ-AN-GRAPHIC",
+      "morpheme_id": "formative_suffix:PASSIVE_PAST_AN",
+      "allomorph_id": "formative_suffix:PASSIVE_PAST_AN:ян",
+      "related_morpheme_id": "root:KAJ",
+      "mapping_mode": "fusion",
+      "reconstruction": "*kaj- + *-a-n-; j + a записаны как я",
+      "components": [
+        {
+          "surface": "я",
+          "start_cp": 0,
+          "end_cp": 1,
+          "historical_element": "*j, конец корня kaj-",
+          "function": "root_final_glide",
+          "morpheme_id": "root:KAJ"
+        },
+        {
+          "surface": "ян",
+          "start_cp": 0,
+          "end_cp": 2,
+          "historical_element": "*-a-n-",
+          "function": "stem_vowel_and_formative"
+        }
+      ],
+      "status": "disputed",
+      "source_id": "shansky-kajatsja",
+      "locator": "Статья Каяться: *kajati",
+      "note": "Графическое совместное отображение на я, не утверждение фонетической утраты j. Единое поле surface сохраняет точное буквенное покрытие."
+    },
+    {
+      "id": "ETYM-AN-EN-HYPOTHESIS",
+      "morpheme_id": "formative_suffix:PASSIVE_PAST_AN",
+      "allomorph_id": "formative_suffix:PASSIVE_PAST_AN:ян",
+      "related_morpheme_id": "formative_suffix:PASSIVE_PAST_EN",
+      "mapping_mode": "concatenative",
+      "reconstruction": "Ан/ен как предполагаемая пара причастных комплексов",
+      "components": [
+        {
+          "surface": "ян",
+          "historical_element": "Ан/ен как предполагаемая пара причастных комплексов",
+          "function": "historical_description"
+        }
+      ],
+      "status": "disputed",
+      "source_id": "khaburgaev-1986",
+      "locator": "§ 290: основа на а + н, прочие основы через е + н",
+      "note": "Сравнение возможно на уровне комплексов, но а обычно принадлежит глагольной основе; зависимости только от ряда гласной не установлено."
+    },
+    {
+      "id": "ETYM-AGENT-ENIK",
+      "morpheme_id": "derivational_suffix:AGENT_ENIK",
+      "allomorph_id": "derivational_suffix:AGENT_ENIK:еник",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "Возможное синхронное переразложение ен + ик в еник",
+      "components": [
+        {
+          "surface": "ен",
+          "historical_element": "Компонент причастной основы",
+          "function": "participial_base_component"
+        },
+        {
+          "surface": "ик",
+          "historical_element": "Именной суффикс -ик-",
+          "function": "nominal_suffix"
+        }
+      ],
+      "status": "proposed",
+      "source_id": "khaburgaev-1986",
+      "locator": "§ 142, с. 118: причастная основа + ик и усложнение формантов",
+      "note": "Основной исторический разбор уч-ен-ик; комплекс еник — отдельная сравнительная модель. Современная трактовка не переносится автоматически на ЦС."
+    },
+    {
+      "id": "ETYM-INF-NOMINAL",
+      "morpheme_id": "formative_suffix:INF",
+      "allomorph_id": "formative_suffix:INF:ти",
+      "reconstruction": "Дательный ед. ч. отглагольного имени на *-ti-; дальнейшее распределение компонентов уточняется",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "т",
+          "historical_element": "*t",
+          "function": "nominal_formant",
+          "origin_hypothesis": "Именной формант; не показатель падежа современного инфинитива."
+        },
+        {
+          "surface": "и",
+          "historical_element": "рефлекс исторического окончания формы основы на *-ti-",
+          "function": "historical_case_form_reflex",
+          "origin_hypothesis": "Вокализм всей исторической формы. Не утверждается простое ть + и или отдельное падежное и в ЦС."
+        }
+      ],
+      "source_id": "gorshkov-2002",
+      "locator": "§143, с.106",
+      "note": "Источник подтверждает именное происхождение и дательный падеж. Точный праиндоевропейский вокализм здесь не реконструирован. В письменном ЦС разборе ти остаётся единым формантом.",
+      "mapping_mode": "concatenative",
+      "related_morpheme_id": null
+    },
+    {
+      "id": "ETYM-HELP-GT-FUSION",
+      "morpheme_id": "root:мог",
+      "allomorph_id": "root:мог:мощ",
+      "related_morpheme_id": "derivational_suffix:NOMINAL_T",
+      "mapping_mode": "fusion",
+      "reconstruction": "*mog-tь > *moktь > мошть; поздняя графика мощь",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "мощ",
+          "historical_element": "*mog-",
+          "function": "root_reflex",
+          "morpheme_id": "root:мог",
+          "start_cp": 0,
+          "end_cp": 3
+        },
+        {
+          "surface": "щ",
+          "historical_element": "*t",
+          "function": "nominal_t_fused_with_root_g",
+          "morpheme_id": "derivational_suffix:NOMINAL_T",
+          "start_cp": 2,
+          "end_cp": 3
+        }
+      ],
+      "source_id": "khaburgaev-1986",
+      "locator": "§89, с.80–81: *mogtь > мошть",
+      "note": "Щ одновременно отражает г корня и т именного форманта; т не добавлено невидимым письменным сегментом. Это модель слияния, не простая йотация г. Конечный ь — отдельно окончание."
+    },
+    {
+      "id": "ETYM-NIK-N-IK",
+      "morpheme_id": "derivational_suffix:ADJECTIVAL_N_IK",
+      "allomorph_id": "derivational_suffix:ADJECTIVAL_N_IK:ник",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "(ь)н + ик; сложный -(ь)ник-",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "н",
+          "historical_element": "*-ьn-",
+          "function": "adjectival_suffix",
+          "morpheme_id": "derivational_suffix:н"
+        },
+        {
+          "surface": "ик",
+          "historical_element": "*-ik-",
+          "function": "nominal_suffix",
+          "morpheme_id": "derivational_suffix:ик"
+        }
+      ],
+      "source_id": "khaburgaev-1986",
+      "locator": "§142, с.118–119: прилагательные на ьн и сложный (ь)ник",
+      "note": "Ник единый письменный сегмент в священникъ, н/ик внутри этимологии. Точная история внутреннего ь отдельно от современного покрытия. Это не автоматический разбор каждого ник во всех лексемах."
+    },
+    {
+      "id": "ETYM-THEMATIC-A-V-ACCRETION",
+      "morpheme_id": "stem_suffix:THEMATIC_A",
+      "allomorph_id": "stem_suffix:THEMATIC_A:ва",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "Тематическое а с переходным в после кры: рабочая гипотеза",
+      "status": "disputed",
+      "components": [
+        {
+          "surface": "в",
+          "historical_element": "переходный v",
+          "function": "phonetic_accretion",
+          "origin_hypothesis": "Пользовательское объяснение устранением зияния; точная историческая цепочка не установлена."
+        },
+        {
+          "surface": "а",
+          "historical_element": "*a",
+          "function": "thematic_vowel",
+          "morpheme_id": "stem_suffix:THEMATIC_A"
+        }
+      ],
+      "source_id": "khaburgaev-1986",
+      "locator": "§110, с.93: исторический ряд ы/ъв/ов; не доказательство конкретного происхождения в в покрывало",
+      "note": "Членение принято рабочим; историческая вставка в не объявлена установленной источником. Протеза обычно обозначает начало слова; здесь используется нейтральное наращение. Не цельный ыва или ова."
+    },
+    {
+      "id": "ETYM-INSTRUMENT-L-DL",
+      "morpheme_id": "derivational_suffix:INSTRUMENT_L",
+      "allomorph_id": "derivational_suffix:INSTRUMENT_L:л",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "Инструментальное *-dl-; в данной письменной модели л",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "л",
+          "historical_element": "*-dl-",
+          "function": "instrumental_suffix_reflex"
+        }
+      ],
+      "source_id": "dementyev-1975",
+      "locator": "Словообразование существительных, з): -ло из *-dlo",
+      "note": "Семейство инструментальных образований; не утверждается, что конкретная форма покрывало непосредственно имела д. О выделено окончанием; д не добавлено к письменному сегменту."
+    },
+    {
+      "id": "ETYM-VID-VED-UNITY",
+      "morpheme_id": "root:вид",
+      "allomorph_id": "root:вид:вид",
+      "related_morpheme_id": "root:вѣд",
+      "mapping_mode": "concatenative",
+      "status": "proposed",
+      "reconstruction": "Общая индоевропейская основа вид/вѣд, разные ступени вокализма и семантические ветви",
+      "components": [
+        {
+          "surface": "вид",
+          "historical_element": "видеть/ведать: общая основа",
+          "function": "perception_branch"
+        }
+      ],
+      "source_id": "vasmer-videt",
+      "locator": "Видеть: другая ступень в вѣдѣ «я знаю»; отсылка к ведать",
+      "note": "Этимологическое единство подтверждено словарём. Направленность извне/внутрь — семантическая интерпретация пользователя, не залог или грамматическая направленность глагола. Старые корневые ID сохраняют различие восприятия и знания; они связаны общей семьёй, не свободной заменой букв."
+    },
+    {
+      "id": "ETYM-CLOSING-T",
+      "morpheme_id": "root:VOR_CLOSE",
+      "allomorph_id": "root:VOR_CLOSE:твор",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "т + вор: аналогическое обобщение т из отворити",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "т",
+          "historical_element": "аналогическое т",
+          "function": "analogical_root_accretion"
+        },
+        {
+          "surface": "вор",
+          "historical_element": "вор/вер",
+          "function": "closing_root"
+        }
+      ],
+      "source_id": "vasmer-zatvor",
+      "locator": "Затворить: т из отворить, заворити",
+      "note": "Точное письменное твор сохраняется целиком; т не отдельная приставка. Корень закрывания и корень создания имеют разные ID."
+    },
+    {
+      "id": "ETYM-SO-PREVERB",
+      "morpheme_id": "prefix:S_PREVERB",
+      "allomorph_id": "prefix:S_PREVERB:со",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "со- как вариант с-/съ-",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "со",
+          "historical_element": "съ-",
+          "function": "whole_preverb_allomorph"
+        }
+      ],
+      "source_id": "dementyev-1975",
+      "locator": "Упражнение 49а, с. 25–26",
+      "note": "О относится к варианту приставки; не вторая приставка. Историческую реализацию ера нельзя превращать в правило глобальной замены любого ъ на о."
+    },
+    {
+      "id": "ETYM-S-GOOD",
+      "morpheme_id": "prefix:S_GOOD",
+      "allomorph_id": "prefix:S_GOOD:с",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "*sъ- : su- «хороший/благой»",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "с",
+          "historical_element": "*sъ-",
+          "function": "positive_historical_prefix"
+        }
+      ],
+      "source_id": "vasmer-smert",
+      "locator": "Смерть; ср. Счастье",
+      "note": "В смерти принято положительное историческое значение. В счастье Фасмер приводит также альтернативу Бернекера — совместная доля. Автоматически размечать все начальные с как S_GOOD запрещено."
+    },
+    {
+      "id": "ETYM-CONTAINER-SUD",
+      "morpheme_id": "root:SUD_CONTAINER",
+      "allomorph_id": "root:SUD_CONTAINER:суд",
+      "related_morpheme_id": "root:суд",
+      "mapping_mode": "concatenative",
+      "reconstruction": "*sǫdъ; суд II и суд I — родственные образования",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "суд",
+          "historical_element": "*sǫd-",
+          "function": "container_branch_of_cognate_family"
+        }
+      ],
+      "source_id": "vasmer-sud",
+      "locator": "Суд II",
+      "note": "Отдельные смысловые ID, этимологическая связь явно сохранена; глубокое членение корня здесь не переносится в письменные сегменты."
+    },
+    {
+      "id": "ETYM-NOMINAL-T-MEMORY-DEATH",
+      "morpheme_id": "derivational_suffix:NOMINAL_T",
+      "allomorph_id": "derivational_suffix:NOMINAL_T:т",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "reconstruction": "Именной формант -ть в словарном этимологическом обозначении; письменная модель т + окончание ь",
+      "status": "proposed",
+      "components": [
+        {
+          "surface": "т",
+          "historical_element": "согласный именного форманта -ть",
+          "function": "nominal_derivation"
+        }
+      ],
+      "source_id": "vasmer-shansky-pamyat",
+      "locator": "Шанский, Память: ср. смерть",
+      "note": "Общий именной T. Конечный ь выделяется окончанием по принятым правилам. Не объединять по одной букве с причастным т, инструментальным (д)л или инфинитивным ти."
+    },
+    {
+      "id": "ETYM-VOD-LEADING",
+      "morpheme_id": "root:VOD_LEAD",
+      "allomorph_id": "root:VOD_LEAD:вод",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "status": "proposed",
+      "reconstruction": "вод/вед; *ved-ti > *vet-ti > вести",
+      "components": [
+        {
+          "surface": "вод",
+          "historical_element": "вод- в водити, чередование с вед-",
+          "function": "verbal_root_leading"
+        }
+      ],
+      "source_id": "vasmer-vodit",
+      "locator": "Водить: связано чередованием с веду, вести",
+      "note": "Д+т > ст в истории инфинитива, не выпадение произвольной д и не продуктивное правило для любого ст. Корень вед с е здесь не вѣд знания."
+    },
+    {
+      "id": "ETYM-NEDEL-CALENDAR",
+      "morpheme_id": "root:NEDEL_CALENDAR",
+      "allomorph_id": "root:NEDEL_CALENDAR:недѣл",
+      "related_morpheme_id": "root:дѣл",
+      "mapping_mode": "concatenative",
+      "status": "proposed",
+      "reconstruction": "недѣл = не-дѣл; календарная лексикализация от не дѣлати",
+      "components": [
+        {
+          "surface": "не",
+          "kind": "prefix",
+          "morpheme_id": "prefix:не",
+          "historical_element": "отрицание не",
+          "function": "internal_negation"
+        },
+        {
+          "surface": "дѣл",
+          "kind": "root",
+          "morpheme_id": "root:дѣл",
+          "historical_element": "дѣлати",
+          "function": "internal_root_doing"
+        }
+      ],
+      "source_id": "vasmer-shansky-nedelya",
+      "locator": "Неделя: от не dělati; первоначально нерабочий день",
+      "note": "Два уровня разметки по решению пользователя. Это составная календарная основа, не два независимых элементарных корня и не гнездо деления. Суффикс я леммы недѣля здесь не реконструируется в письменную основу."
+    },
+    {
+      "id": "ETYM-MER-MIR-CONVERGENCE",
+      "morpheme_id": "root:мѣр",
+      "allomorph_id": "root:мѣр:мир",
+      "related_morpheme_id": "root:мир",
+      "mapping_mode": "concatenative",
+      "status": "proposed",
+      "reconstruction": "съмѣрити → смирити: вторичное сближение с мир, не установленное общее происхождение",
+      "components": [
+        {
+          "surface": "мир",
+          "historical_element": "мѣр в съмѣрити, переоформленное под влиянием мир",
+          "function": "secondary_lexical_convergence"
+        }
+      ],
+      "source_id": "vasmer-shansky-smirenny",
+      "locator": "Смиренный; сопоставить Толстая 2019, с.27",
+      "note": "Предложенная пользователем общая этимология мир/мѣр хранится отдельно как disputed в conditions.cognacy_hypothesis. Не приравнивать статус к подтверждённому единству вид/вѣд."
+    },
+    {
+      "id": "ETYM-PAD-INF043",
+      "morpheme_id": "root:PAD_FALL",
+      "allomorph_id": "root:PAD_FALL:пас",
+      "related_morpheme_id": null,
+      "mapping_mode": "concatenative",
+      "status": "proposed",
+      "reconstruction": "*pad-ti > pasti; морфонологическое пад+ти",
+      "components": [
+        {
+          "surface": "пас",
+          "historical_element": "*pad- перед *-ti",
+          "function": "written_root_reflex_before_infinitive_t"
+        }
+      ],
+      "source_id": "shansky-padti-043",
+      "locator": "Пасть (глагол): dt > ст",
+      "note": "Редакторское представление в модели непересекающихся письменных сегментов. У Поливановой (2022, §17, с.31) различаются пад+ти и пас+ти при одинаковом pasti. Ти остаётся единым показателем по принятому правилу; его внутреннее устройство здесь не пересматривается."
+    },
+    {
+      "id": "ETYM-NAROD-PEOPLE",
+      "morpheme_id": "root:NAROD_PEOPLE",
+      "allomorph_id": "root:NAROD_PEOPLE:народ",
+      "related_morpheme_id": "root:род",
+      "mapping_mode": "concatenative",
+      "status": "proposed",
+      "reconstruction": "народ = на-род; внутреннее членение составной основы по модели недѣл",
+      "components": [
+        {
+          "surface": "на",
+          "kind": "prefix",
+          "morpheme_id": "prefix:на",
+          "historical_element": "на-",
+          "function": "internal_prefix"
+        },
+        {
+          "surface": "род",
+          "kind": "root",
+          "morpheme_id": "root:род",
+          "historical_element": "род",
+          "function": "internal_root"
+        }
+      ],
+      "source_id": "user-compound-refinements-051",
+      "locator": "data/morphemes/user-refinements-0.51.json",
+      "note": "Два уровня разметки по решению пользователя. Составная основа используется внутри сложных слов; модель не заявляется новым независимым доказательством исторической этимологии. Словарные значения народа и предводительства проверены в source-audit-0.50.json."
+    }
+  ]
+}

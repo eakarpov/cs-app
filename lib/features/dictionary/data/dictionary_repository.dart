@@ -103,14 +103,31 @@ class DictionaryRepository {
     return WordMorphemes(data);
   }
 
-  Future<MorphemeCard> morpheme(String id, {required String version}) async =>
-      MorphemeCard(
-        await _get(
-          base
-              .resolve('morphemes/${Uri.encodeComponent(id)}')
-              .replace(queryParameters: {'version': version}),
-        ),
+  Future<MorphemeCard> morpheme(String id, {required String version}) async {
+    final data = await _get(
+      base
+          .resolve('morphemes/${Uri.encodeComponent(id)}')
+          .replace(queryParameters: {'version': version, 'schema': '2'}),
+    );
+    final composition = object(data['composition']);
+    final etymology = object(data['etymology']);
+    if (data['schemaVersion'] != 2 ||
+        data['composition'] is! Map ||
+        data['etymology'] is! Map ||
+        data['sources'] is! List ||
+        ['models', 'notes'].any((key) => composition[key] is! List) ||
+        [
+          'nodes',
+          'relations',
+          'chains',
+          'notes',
+        ].any((key) => etymology[key] is! List)) {
+      throw const DictionaryException(
+        'API вернул неполную карточку морфемы. Откройте морфему заново.',
       );
+    }
+    return MorphemeCard(data);
+  }
 
   Future<MorphemeWords> morphemeWords(
     String id, {
