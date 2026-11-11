@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../domain/models.dart';
+import '../domain/morphemes.dart';
 
 class DictionaryException implements Exception {
   const DictionaryException(this.message, {this.status, this.retryAfter});
@@ -89,6 +90,44 @@ class DictionaryRepository {
   );
   Future<WordArticle> article(String id) async => WordArticle(
     await _get(base.resolve('lexemes/${Uri.encodeComponent(id)}')),
+  );
+  Future<WordMorphemes> wordMorphemes(String id) async {
+    final data = await _get(
+      base.resolve('lexemes/${Uri.encodeComponent(id)}/morphemes'),
+    );
+    if (string(data['version']).isEmpty || data['analyses'] is! List) {
+      throw const DictionaryException(
+        'API вернул неполный морфемный разбор. Попробуйте ещё раз.',
+      );
+    }
+    return WordMorphemes(data);
+  }
+
+  Future<MorphemeCard> morpheme(String id, {required String version}) async =>
+      MorphemeCard(
+        await _get(
+          base
+              .resolve('morphemes/${Uri.encodeComponent(id)}')
+              .replace(queryParameters: {'version': version}),
+        ),
+      );
+
+  Future<MorphemeWords> morphemeWords(
+    String id, {
+    required String version,
+    String? cursor,
+  }) async => MorphemeWords(
+    await _get(
+      base
+          .resolve('morphemes/${Uri.encodeComponent(id)}/words')
+          .replace(
+            queryParameters: {
+              'version': version,
+              'limit': '20',
+              'cursor': ?cursor,
+            },
+          ),
+    ),
   );
   Future<List<Json>> lexicalRelations(String id) async => array(
     (await _get(

@@ -7,6 +7,7 @@ import '../domain/models.dart';
 import '../domain/grammar_labels.dart';
 import 'resource_screen.dart';
 import 'report_dialog.dart';
+import 'morphemes_view.dart';
 
 class ArticleScreen extends StatefulWidget {
   const ArticleScreen({
@@ -377,7 +378,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                       : const CircularProgressIndicator(),
                 )
               : DefaultTabController(
-                  length: 3,
+                  length: 4,
                   child: SelectionArea(
                     child: NestedScrollView(
                       headerSliverBuilder: (context, innerBoxIsScrolled) => [
@@ -683,6 +684,14 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                     .toList(),
                               ),
                           ]),
+                          sectionList('morphemes', [
+                            WordMorphemesView(
+                              id: a.id,
+                              repository: widget.repository,
+                              openWord: openArticle,
+                              fontSize: personal.fontSize,
+                            ),
+                          ]),
                         ],
                       ),
                     ),
@@ -713,7 +722,7 @@ class _ArticleTabs extends SliverPersistentHeaderDelegate {
       isScrollable: true,
       tabAlignment: TabAlignment.start,
       tabs: [
-        for (final label in ['Толкования', 'Примеры', 'Формы'])
+        for (final label in ['Толкования', 'Примеры', 'Формы', 'Морфемы'])
           Tab(height: height - 2, text: label),
       ],
     ),
