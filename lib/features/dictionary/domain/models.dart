@@ -101,17 +101,19 @@ class WordForm {
 
 class FormSlot {
   FormSlot(Json j)
-    : label = string(j['label']),
+    : id = string(j['id']),
+      label = string(j['label']),
       forms = array(j['forms']).map((f) => WordForm(object(f))).toList();
-  final String label;
+  final String id, label;
   final List<WordForm> forms;
 }
 
 class Paradigm {
   Paradigm(Json j)
-    : title = string(j['title']),
+    : kind = string(j['kind']),
+      title = string(j['title']),
       slots = array(j['slots']).map((s) => FormSlot(object(s))).toList();
-  final String title;
+  final String kind, title;
   final List<FormSlot> slots;
 }
 

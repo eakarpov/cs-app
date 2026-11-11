@@ -4,7 +4,8 @@ import 'package:flutter/services.dart';
 import '../../../core/personal_store.dart';
 import '../data/dictionary_repository.dart';
 import '../domain/models.dart';
-import '../domain/grammar_labels.dart';
+import '../domain/form_presentation.dart';
+import 'forms_view.dart';
 import 'resource_screen.dart';
 import 'report_dialog.dart';
 import 'morphemes_view.dart';
@@ -139,13 +140,9 @@ class _ArticleScreenState extends State<ArticleScreen> {
         children: [
           Tooltip(
             message: f.provenance.isEmpty
-                ? 'Происхождение не установлено'
-                : '${f.stored ? '' : 'На основании схемы: '}${f.provenance.map((p) => p.label).toSet().join('\n')}',
+                ? '${f.stored ? 'Из словаря' : 'Расчётная форма'}. Происхождение не установлено'
+                : '${f.stored ? 'Из словаря: ' : 'На основании схемы: '}${f.provenance.map((p) => p.label).toSet().join('\n')}',
             child: shape,
-          ),
-          Text(
-            f.stored ? 'Из словаря' : 'Расчётная форма',
-            style: Theme.of(context).textTheme.labelSmall,
           ),
         ],
       ),
@@ -392,7 +389,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        a.name,
+                                        WordHeading(a).name,
                                         style: TextStyle(
                                           fontFamily: 'Monomakh',
                                           fontSize: personal.fontSize + 10,
@@ -417,26 +414,40 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                     IconButton(
                                       tooltip: 'Копировать слово',
                                       onPressed: () => Clipboard.setData(
-                                        ClipboardData(text: a.name),
+                                        ClipboardData(
+                                          text: WordHeading(a).name,
+                                        ),
                                       ),
                                       icon: const Icon(Icons.copy_outlined),
                                     ),
                                   ],
                                 ),
-                                Text(
-                                  a.properties.map(propertyLabel).join(' · '),
-                                ),
-                                if (widget.matched != null)
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      vertical: 12,
+                                if (WordHeading(a).titloVariants.isNotEmpty)
+                                  Text(
+                                    WordHeading(a).titloVariants.first,
+                                    key: const ValueKey('headword-titlo'),
+                                    style: TextStyle(
+                                      fontFamily: 'Monomakh',
+                                      fontSize: personal.fontSize,
                                     ),
-                                    child: Text(
-                                      'Найденная форма: ${widget.matched}\n${widget.grammar ?? ''}',
+                                  ),
+                                if (conciseProperties(a).isNotEmpty)
+                                  Text(conciseProperties(a)),
+                                if (widget.matched != null &&
+                                    widget.matched != a.name)
+                                  ExpansionTile(
+                                    tilePadding: EdgeInsets.zero,
+                                    title: Text(
+                                      'Найденная форма: ${widget.matched}',
                                       style: TextStyle(
+                                        fontFamily: 'Monomakh',
                                         fontSize: personal.fontSize,
                                       ),
                                     ),
+                                    children: [
+                                      if (widget.grammar?.isNotEmpty ?? false)
+                                        Text(conciseGrammar(widget.grammar!)),
+                                    ],
                                   ),
                               ],
                             ),
@@ -568,96 +579,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                           ]),
                           examples(a),
                           sectionList('forms', [
-                            const Text(
-                              'Подчёркивание обозначает окончание; ∅ — нулевое окончание. Неустановленные границы не выделяются.',
-                            ),
-                            if (a.morphologyStatus == 'unassigned')
-                              const Text(
-                                'Парадигма пока не определена. Показаны известные формы.',
-                              ),
-                            if (a.morphologyStatus == 'notApplicable')
-                              const Text('Слово не изменяется.'),
-                            for (final p in a.paradigms.where(
-                              (p) => p.slots.isNotEmpty,
-                            ))
-                              ExpansionTile(
-                                key: PageStorageKey(
-                                  '${a.id}:paradigm:${a.paradigms.indexOf(p)}',
-                                ),
-                                title: Text(p.title),
-                                children: p.slots
-                                    .map(
-                                      (slot) => Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 16,
-                                          vertical: 6,
-                                        ),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.stretch,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Expanded(
-                                                  child: Text(slot.label),
-                                                ),
-                                                IconButton(
-                                                  tooltip:
-                                                      'Грамматическая подпись',
-                                                  onPressed: () => showDialog<void>(
-                                                    context: context,
-                                                    builder: (_) => AlertDialog(
-                                                      title: const Text(
-                                                        'Форма слова',
-                                                      ),
-                                                      content: Text(
-                                                        grammaticalHelp(
-                                                          slot.label,
-                                                        ),
-                                                      ),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                context,
-                                                              ),
-                                                          child: const Text(
-                                                            'Понятно',
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  icon: const Icon(
-                                                    Icons.info_outline,
-                                                    size: 18,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            ...slot.forms.map(wordForm),
-                                          ],
-                                        ),
-                                      ),
-                                    )
-                                    .toList(),
-                              ),
-                            if (a.extra.isNotEmpty)
-                              ExpansionTile(
-                                key: PageStorageKey('${a.id}:extra'),
-                                initiallyExpanded: a.paradigms.every(
-                                  (p) => p.slots.isEmpty,
-                                ),
-                                title: const Text('Другие выписанные формы'),
-                                children: a.extra
-                                    .map(
-                                      (f) => ListTile(
-                                        title: wordForm(f),
-                                        subtitle: Text(f.grammar),
-                                      ),
-                                    )
-                                    .toList(),
-                              ),
+                            WordFormsView(article: a, formBuilder: wordForm),
                             if (a.composition.isNotEmpty)
                               ExpansionTile(
                                 key: PageStorageKey('${a.id}:composition'),
