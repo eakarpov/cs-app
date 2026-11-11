@@ -95,7 +95,7 @@ void main() {
       await tester.tap(find.text('О проекте'));
       await tester.pumpAndSettle();
       expect(find.text('Лексикон ЦС'), findsOneWidget);
-      expect(find.text('Версия 0.1.5'), findsOneWidget);
+      expect(find.text('Версия 0.1.6'), findsOneWidget);
       await tester.scrollUntilVisible(find.text('Полезные ресурсы'), 300);
       await tester.tap(find.text('Полезные ресурсы'));
       await tester.pumpAndSettle();
