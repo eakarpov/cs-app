@@ -1,0 +1,113 @@
+{
+  "status": "published",
+  "publishedAt": "2026-11-11T13:28:03.620507+00:00",
+  "api": "https://www.typikon.info/api/v2/cs/",
+  "serverCode": {
+    "repository": "typikon-web",
+    "branch": "master",
+    "commit": "460b956bb22f0ad5b2212a773df3ed64dc1f7767",
+    "pushed": true
+  },
+  "activation": "immutable dictionary publication and matching morpheme binding; existing API runtime",
+  "runtimeRelease": "/var/www/typikon.su/typikon-web-releases/releases/20261111T082352Z-d68e17d92bba-165820",
+  "dictionary": {
+    "beforeVersion": "41e5a92406e4bb03f215a29b6a40edf6848bcb554ae49557dc388f7d6beb4df1",
+    "version": "72dddaaac9f9029a076644ee2788b0062271feb83e5a270527007946dfe9d155",
+    "path": "/var/www/typikon-data/cs-dictionary/publications/endings-20261111-v1.sqlite",
+    "sha256": "c759ba4fb4268f1cd7497ca82c08030f422a9cb468091532929cb968b066db36",
+    "beforePath": "/var/www/typikon-data/cs-dictionary/publications/lexical-20261109.sqlite",
+    "beforeSha256": "9328123edd5764deca7e3e1d409401986f137c06888877ca8ed30e4133110a14"
+  },
+  "morphemes": {
+    "beforeVersion": "d06531f86ee7a5a9a20b162adbc4447f11d6a57d2ff25b0037aacbf3aeb2a603",
+    "version": "aa52ec1e650bbf82b109b5052337cd2d0c889edd6bcbbf99c4a7eb40dfcc346a",
+    "path": "/var/www/typikon-data/cs-dictionary/publications/morphemes-aa52ec1e650bbf82b109b5052337cd2d0c889edd6bcbbf99c4a7eb40dfcc346a.sqlite",
+    "sha256": "8802e66e3943cbe3a1c8e8b70b3e7acc4f11f66813fa57b7cf8ab4ec4bd72ba3",
+    "beforePath": "/var/www/typikon-data/cs-dictionary/publications/morphemes-d06531f86ee7a5a9a20b162adbc4447f11d6a57d2ff25b0037aacbf3aeb2a603.sqlite",
+    "contentPreserved": true
+  },
+  "articles": 34119,
+  "changedArticles": 26580,
+  "formRecords": 3139462,
+  "segmentedBefore": 973696,
+  "segmentedAfter": 2267771,
+  "added": 1343632,
+  "removedUnconfirmed": 49557,
+  "remainingWithoutSegments": 871691,
+  "segmentedParticipleRecords": 1207664,
+  "invariants": {
+    "allNonSegmentArticleFieldsPreserved": true,
+    "exactSpellingsAndAccentsPreserved": true,
+    "otherTablesIdentical": 13,
+    "sourcesSearchEditorialDecisionsAndEtymologyPreserved": true,
+    "sourceFilesRetained": true
+  },
+  "checks": {
+    "code": "ending-segments-code-checks.json",
+    "immutableContent": "ending-segments-validation.json",
+    "isolatedHttp": {
+      "api": "http://127.0.0.1:3001/api/v2/cs/",
+      "dictionaryVersion": "72dddaaac9f9029a076644ee2788b0062271feb83e5a270527007946dfe9d155",
+      "morphemeVersion": "aa52ec1e650bbf82b109b5052337cd2d0c889edd6bcbbf99c4a7eb40dfcc346a",
+      "checks": 708,
+      "status": "passed",
+      "confirmedEndings": [
+        "еши",
+        "иши",
+        "ꙋ",
+        "омꙋ",
+        "ъ"
+      ],
+      "unconfirmedSpellingRemainsNull": true,
+      "morphemeVariantsPreserved": 8
+    },
+    "activeHttp": {
+      "api": "http://127.0.0.1:3000/api/v2/cs/",
+      "dictionaryVersion": "72dddaaac9f9029a076644ee2788b0062271feb83e5a270527007946dfe9d155",
+      "morphemeVersion": "aa52ec1e650bbf82b109b5052337cd2d0c889edd6bcbbf99c4a7eb40dfcc346a",
+      "checks": 708,
+      "status": "passed",
+      "confirmedEndings": [
+        "еши",
+        "иши",
+        "ꙋ",
+        "омꙋ",
+        "ъ"
+      ],
+      "unconfirmedSpellingRemainsNull": true,
+      "morphemeVariantsPreserved": 8
+    },
+    "publicHttp": {
+      "api": "https://www.typikon.info/api/v2/cs/",
+      "dictionaryVersion": "72dddaaac9f9029a076644ee2788b0062271feb83e5a270527007946dfe9d155",
+      "morphemeVersion": "aa52ec1e650bbf82b109b5052337cd2d0c889edd6bcbbf99c4a7eb40dfcc346a",
+      "checks": 708,
+      "status": "passed",
+      "confirmedEndings": [
+        "еши",
+        "иши",
+        "ꙋ",
+        "омꙋ",
+        "ъ"
+      ],
+      "unconfirmedSpellingRemainsNull": true,
+      "morphemeVariantsPreserved": 8
+    },
+    "publicDart": {
+      "api": "https://www.typikon.info/api/v2/cs/",
+      "checks": 637,
+      "wordCards": 3,
+      "status": "passed",
+      "checkedAt": "2026-11-11T13:27:07.673250Z"
+    },
+    "dictionaryDart": 35,
+    "morphemesDart": 24
+  },
+  "rollback": {
+    "override": "/etc/systemd/system/typikon-web.service.d/zzzz-cs-ending-segments.conf",
+    "action": "Remove this override, daemon-reload, restart typikon-web.service, verify old versions; valid until a later deployment changes the configuration",
+    "previousPublicationsRetained": true
+  },
+  "appVersionChanged": false,
+  "publicApkChanged": false
+}

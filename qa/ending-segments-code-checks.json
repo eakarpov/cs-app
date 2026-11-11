@@ -1,0 +1,15 @@
+{
+  "serverCommit": "460b956bb22f0ad5b2212a773df3ed64dc1f7767",
+  "csDictionaryTests": {
+    "passed": 31,
+    "failed": 0
+  },
+  "morphologyTests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "typecheck": "passed",
+  "dartAcceptanceClientAnalyze": "passed",
+  "shellSyntax": "passed",
+  "pythonCompile": "passed"
+}

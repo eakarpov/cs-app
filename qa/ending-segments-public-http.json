@@ -1,0 +1,16 @@
+{
+  "api": "https://www.typikon.info/api/v2/cs/",
+  "dictionaryVersion": "72dddaaac9f9029a076644ee2788b0062271feb83e5a270527007946dfe9d155",
+  "morphemeVersion": "aa52ec1e650bbf82b109b5052337cd2d0c889edd6bcbbf99c4a7eb40dfcc346a",
+  "checks": 708,
+  "status": "passed",
+  "confirmedEndings": [
+    "еши",
+    "иши",
+    "ꙋ",
+    "омꙋ",
+    "ъ"
+  ],
+  "unconfirmedSpellingRemainsNull": true,
+  "morphemeVariantsPreserved": 8
+}

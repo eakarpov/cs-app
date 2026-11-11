@@ -1,0 +1,66 @@
+{
+  "dictionaryVersion": "72dddaaac9f9029a076644ee2788b0062271feb83e5a270527007946dfe9d155",
+  "dictionarySha256": "c759ba4fb4268f1cd7497ca82c08030f422a9cb468091532929cb968b066db36",
+  "morphemeVersion": "aa52ec1e650bbf82b109b5052337cd2d0c889edd6bcbbf99c4a7eb40dfcc346a",
+  "morphemeCandidate": "/var/www/typikon-data/cs-dictionary/publications/morphemes-aa52ec1e650bbf82b109b5052337cd2d0c889edd6bcbbf99c4a7eb40dfcc346a.sqlite",
+  "morphemeSha256": "8802e66e3943cbe3a1c8e8b70b3e7acc4f11f66813fa57b7cf8ab4ec4bd72ba3",
+  "checkedArticles": 34119,
+  "changedArticles": 26580,
+  "unchangedTables": {
+    "anchors": {
+      "rows": 96936,
+      "sha256": "1cea9a139a1c6aa3c4280ecc10bf80f35698d8af6094d2c45ff1d0b55084d382"
+    },
+    "etymology_review_decisions": {
+      "rows": 85,
+      "sha256": "b603d23b33d345e6d07552d32507fd4cf53f044e8e156e95e2342ed6ed48b913"
+    },
+    "etymology_sources": {
+      "rows": 31,
+      "sha256": "0698e58f7b28c53237677127ab59c5c3d706b28e27a13130dabfbc3c450600a3"
+    },
+    "explanations": {
+      "rows": 71448,
+      "sha256": "0206b58b9f0f2785fb64b84d4db9b83a3854ffca7ae5ffffd24b580bc36ab88b"
+    },
+    "explanations_config": {
+      "rows": 1,
+      "sha256": "b5ed796182bc85569f35398d0de7e903cde763a9850186aa6ba8e37f0ba4bd41"
+    },
+    "explanations_content": {
+      "rows": 71448,
+      "sha256": "7d278dc57ba0b4e5d7cf1e001812a2c54f7705bc1edf4d13bbc2d5e41f0e737f"
+    },
+    "explanations_data": {
+      "rows": 2225,
+      "sha256": "0c104c60c13c81610e580e97ae7e3ed2983cbb1f638acc044355ca190d4ae9e7"
+    },
+    "explanations_docsize": {
+      "rows": 71448,
+      "sha256": "af0fe6642da2fd8feec74121a54b072bf49dae94dbfc3ae300f7fc6a117a72f0"
+    },
+    "explanations_idx": {
+      "rows": 1767,
+      "sha256": "1f1b4e2286ad5ab5e962bb286383acd968a124abe31cbb6a1721ea79e03f6c3b"
+    },
+    "forms": {
+      "rows": 3161477,
+      "sha256": "dd15715c9aa382ab207269d580c814c013ac383ff20c15636ba37ecd861eebb0"
+    },
+    "relationDecisions": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sources": {
+      "rows": 75266,
+      "sha256": "8f3ef0e976d4068f793c49320b42ca5db5388b9dbb05367a611da3a51b44462c"
+    },
+    "translations": {
+      "rows": 37788,
+      "sha256": "210614794f3442220a5970fad81502fb076780f4a0ab1caeb5a11de6b509e49f"
+    }
+  },
+  "allNonSegmentArticleFieldsPreserved": true,
+  "exactSpellingsAndAccentsPreserved": true,
+  "morphemeContentPreserved": true
+}

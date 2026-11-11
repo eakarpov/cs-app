@@ -1,0 +1,831 @@
+{
+  "checkedOn": "2026-11-11",
+  "api": "https://www.typikon.info/api/v2/cs/",
+  "scope": "investigation_only",
+  "publishedDataChanged": false,
+  "applicationCodeChanged": false,
+  "liveCases": [
+    {
+      "name": "воспо́льзовати",
+      "id": "68399a217310e32be5d772b6",
+      "forms": [
+        {
+          "paradigm": "Спряжение",
+          "slot": "presSg2",
+          "forms": [
+            {
+              "value": "воспо́льзꙋеши",
+              "origin": "stored",
+              "grammar": "presSg2",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "form:91ef54cccb264d5c262b25bd81d4e34c6a3bb2a7f3a3fec9d12125c13bb15468",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего действительное · краткие",
+          "slot": "sgMNomAcc",
+          "forms": [
+            {
+              "value": "воспо́льзꙋющь",
+              "origin": "generated",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего действительное · краткие",
+          "slot": "sgMNGen",
+          "forms": [
+            {
+              "value": "воспо́льзꙋюща",
+              "origin": "generated",
+              "grammar": "sgMNGen",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего действительное · краткие",
+          "slot": "sgMNDat",
+          "forms": [
+            {
+              "value": "воспо́льзꙋющꙋ",
+              "origin": "generated",
+              "grammar": "sgMNDat",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего действительное · полные",
+          "slot": "sgMNomAcc",
+          "forms": [
+            {
+              "value": "воспо́льзꙋющій",
+              "origin": "generated",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего действительное · полные",
+          "slot": "sgMNGen",
+          "forms": [
+            {
+              "value": "воспо́льзꙋющагѡ",
+              "origin": "generated",
+              "grammar": "sgMNGen",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего действительное · полные",
+          "slot": "sgMNDat",
+          "forms": [
+            {
+              "value": "воспо́льзꙋющемꙋ",
+              "origin": "generated",
+              "grammar": "sgMNDat",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего страдательное · краткие",
+          "slot": "sgMNomAcc",
+          "forms": [
+            {
+              "value": "воспо́льзꙋемъ",
+              "origin": "generated",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего страдательное · краткие",
+          "slot": "sgMNGen",
+          "forms": [
+            {
+              "value": "воспо́льзꙋема",
+              "origin": "generated",
+              "grammar": "sgMNGen",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего страдательное · краткие",
+          "slot": "sgMNDat",
+          "forms": [
+            {
+              "value": "воспо́льзꙋемꙋ",
+              "origin": "generated",
+              "grammar": "sgMNDat",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего страдательное · полные",
+          "slot": "sgMNomAcc",
+          "forms": [
+            {
+              "value": "воспо́льзꙋемый",
+              "origin": "generated",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего страдательное · полные",
+          "slot": "sgMNGen",
+          "forms": [
+            {
+              "value": "воспо́льзꙋемагѡ",
+              "origin": "generated",
+              "grammar": "sgMNGen",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие настоящего страдательное · полные",
+          "slot": "sgMNDat",
+          "forms": [
+            {
+              "value": "воспо́льзꙋемомꙋ",
+              "origin": "generated",
+              "grammar": "sgMNDat",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего действительное · краткие",
+          "slot": "sgMNomAcc",
+          "forms": [
+            {
+              "value": "воспо́льзовавъ",
+              "origin": "generated",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего действительное · краткие",
+          "slot": "sgMNGen",
+          "forms": [
+            {
+              "value": "воспо́льзовава",
+              "origin": "generated",
+              "grammar": "sgMNGen",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего действительное · краткие",
+          "slot": "sgMNDat",
+          "forms": [
+            {
+              "value": "воспо́льзовавꙋ",
+              "origin": "generated",
+              "grammar": "sgMNDat",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего действительное · полные",
+          "slot": "sgMNomAcc",
+          "forms": [
+            {
+              "value": "воспо́льзовавый",
+              "origin": "generated",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего действительное · полные",
+          "slot": "sgMNGen",
+          "forms": [
+            {
+              "value": "воспо́льзовавагѡ",
+              "origin": "generated",
+              "grammar": "sgMNGen",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего действительное · полные",
+          "slot": "sgMNDat",
+          "forms": [
+            {
+              "value": "воспо́льзовавомꙋ",
+              "origin": "generated",
+              "grammar": "sgMNDat",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего страдательное · краткие",
+          "slot": "sgMNomAcc",
+          "forms": [
+            {
+              "value": "воспо́льзованъ",
+              "origin": "generated",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего страдательное · краткие",
+          "slot": "sgMNGen",
+          "forms": [
+            {
+              "value": "воспо́льзована",
+              "origin": "generated",
+              "grammar": "sgMNGen",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего страдательное · краткие",
+          "slot": "sgMNDat",
+          "forms": [
+            {
+              "value": "воспо́льзованꙋ",
+              "origin": "generated",
+              "grammar": "sgMNDat",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего страдательное · полные",
+          "slot": "sgMNomAcc",
+          "forms": [
+            {
+              "value": "воспо́льзованый",
+              "origin": "generated",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего страдательное · полные",
+          "slot": "sgMNGen",
+          "forms": [
+            {
+              "value": "воспо́льзованагѡ",
+              "origin": "generated",
+              "grammar": "sgMNGen",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Причастие прошедшего страдательное · полные",
+          "slot": "sgMNDat",
+          "forms": [
+            {
+              "value": "воспо́льзованомꙋ",
+              "origin": "generated",
+              "grammar": "sgMNDat",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "scheme:d78c866fe4037532f00b978e4a72a02b3c5d7bc196eb832c496d99f51b9a356a",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "безпеча́льный",
+      "id": "68399a217310e32be5d7654e",
+      "forms": [
+        {
+          "paradigm": "Краткие формы",
+          "slot": "sgMNomAcc",
+          "forms": [
+            {
+              "value": "без̑печа́ленъ",
+              "origin": "stored",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "form:28932193fdc8340a6f1de0d6a6da2d587b45db5265829627dd71ff60c3e449d0",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            },
+            {
+              "value": "безпеча́лен̑",
+              "origin": "stored",
+              "grammar": "sgMNomAcc",
+              "segments": [
+                {
+                  "kind": "stem",
+                  "text": "безпеча́лен̑"
+                },
+                {
+                  "kind": "ending",
+                  "text": ""
+                }
+              ],
+              "provenance": [
+                {
+                  "targetId": "form:66e2894ffcc21e316b944c6843f4669d8db463f29d007a230fe936e41fd3a2d5",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            },
+            {
+              "value": "безпеча́леⷩ҇",
+              "origin": "stored",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "sourceId": "source:unknown",
+                  "title": "Происхождение неизвестно",
+                  "origin": "unknown",
+                  "attribution": "unknown"
+                }
+              ]
+            },
+            {
+              "value": "беⷥпеча́ленъ",
+              "origin": "stored",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "sourceId": "source:unknown",
+                  "title": "Происхождение неизвестно",
+                  "origin": "unknown",
+                  "attribution": "unknown"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Краткие формы",
+          "slot": "sgMNGen",
+          "forms": [
+            {
+              "value": "безпеча́льна",
+              "origin": "generated",
+              "grammar": "sgMNGen",
+              "segments": [
+                {
+                  "kind": "stem",
+                  "text": "безпеча́льн"
+                },
+                {
+                  "kind": "ending",
+                  "text": "а"
+                }
+              ],
+              "provenance": [
+                {
+                  "targetId": "scheme:ceb9c86a799092b18da97e86c22b812be13afef3cda41f602da18113a5502188",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Краткие формы",
+          "slot": "sgMNDat",
+          "forms": [
+            {
+              "value": "безпеча́льнꙋ",
+              "origin": "stored",
+              "grammar": "sgMNDat",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "form:8878d64a640678092c551aea590876c31cdc02e530410f65b482d8f88a6f2595",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Полные формы",
+          "slot": "sgMNomAcc",
+          "forms": [
+            {
+              "value": "без̑печа́лный",
+              "origin": "stored",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "form:252ce1f2e153aa379ddd71a427849cfc26f8e49161f63d6512b70bc4b1e8c815",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            },
+            {
+              "value": "безпеча́льный",
+              "origin": "stored",
+              "grammar": "sgMNomAcc",
+              "segments": [
+                {
+                  "kind": "stem",
+                  "text": "безпеча́льн"
+                },
+                {
+                  "kind": "ending",
+                  "text": "ый"
+                }
+              ],
+              "provenance": [
+                {
+                  "targetId": "form:28c898613e48fe47d77374d1f6f5ff4bf8a3a288b7b969226f98fb4b1c2a7d90",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            },
+            {
+              "value": "беⷥпеча́лный",
+              "origin": "stored",
+              "grammar": "sgMNomAcc",
+              "segments": null,
+              "provenance": [
+                {
+                  "sourceId": "source:unknown",
+                  "title": "Происхождение неизвестно",
+                  "origin": "unknown",
+                  "attribution": "unknown"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Полные формы",
+          "slot": "sgMNGen",
+          "forms": [
+            {
+              "value": "безпеча́льнагѡ",
+              "origin": "stored",
+              "grammar": "sgMNGen",
+              "segments": [
+                {
+                  "kind": "stem",
+                  "text": "безпеча́льн"
+                },
+                {
+                  "kind": "ending",
+                  "text": "агѡ"
+                }
+              ],
+              "provenance": [
+                {
+                  "targetId": "form:684973408e1bd57b40767eaa219a85579e31f95261314af649e5324cb4de47ab",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paradigm": "Полные формы",
+          "slot": "sgMNDat",
+          "forms": [
+            {
+              "value": "безпеча́льномꙋ",
+              "origin": "stored",
+              "grammar": "sgMNDat",
+              "segments": null,
+              "provenance": [
+                {
+                  "targetId": "form:f46ab8c9cf7e980636f86a1c9a92d86b28203098f952aa30c0a06b78415b64ed",
+                  "sourceId": "work:polyakov-grammar",
+                  "title": "А. Е. Поляков. Грамматический словарь церковнославянского языка",
+                  "origin": "dictionary",
+                  "attribution": "exact-match",
+                  "carrierVersionId": "version:0e103c729fe7b2b461ba12317a7bab61ab05935e5bdb50ebf3084ed9af451653"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "snapshotArticleCount": 157,
+  "snapshotCountsExcludingParticiples": {
+    "verb": {
+      "withSegments": 1185,
+      "withoutSegments": 1187
+    },
+    "adjective": {
+      "withoutSegments": 261,
+      "withSegments": 1107
+    }
+  },
+  "findings": [
+    "В API проблемные формы имеют segments=null.",
+    "Для воспо́льзꙋеши и безпеча́льномꙋ текущий локальный сборщик на исходных записях уже вычисляет границы; опубликованные payload не пересчитываются при чтении API.",
+    "segmentsFor сопоставляет все основы без привязки к ячейке; видотвориши одновременно совпадает с видотвор- и видотвори-, поэтому граница отклоняется.",
+    "У безпечального первая словарная форма без̑печа́лный не имеет сегментов, соседняя безпеча́льный имеет окончание ый. primaryForm выбирает первую обычную форму в порядке API, а не наиболее размеченную.",
+    "Для причастных парадигм allowSegments=false задано явно."
+  ]
+}
