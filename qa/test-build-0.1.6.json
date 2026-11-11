@@ -1,0 +1,56 @@
+{
+  "version": "0.1.6+7",
+  "applicationName": "Лексикон ЦС",
+  "applicationId": "info.typikon.cs",
+  "apk": "build/acceptance/lexicon-cs-0.1.6.apk",
+  "bytes": 57786819,
+  "sha256": "deebfb05ec5d72996b3e5f427adc64ada13163f49a061d9c2b4448b268e86fb7",
+  "androidMinSdk": 24,
+  "sourceRevision": "753f1e30fcb05d9a6ed5856b3aa91a1b6c362ccd",
+  "applicationSourceMatchesRevision": true,
+  "features": [
+    "Карточка морфемы: общая шапка, вкладки Слова / Состав и этимология",
+    "Состав по конкретному алломорфу: один прямоугольник на компонент, белая карточка",
+    "Исторические описания, источники, статусы и поддержка явно заданных цепочек",
+    "Клиент schema=2 без legacy-парсера; отсутствующие связи не достраиваются"
+  ],
+  "signing": {
+    "type": "permanent release key",
+    "certificateSha256": "efbd5403c1bf73c63e8feac9f95b71b2231c96e7d39c8f2be6a153089a8398f8",
+    "sameCertificateAsPreviousApk": true,
+    "apkSignatureVerified": true
+  },
+  "checks": {
+    "flutterAnalyze": "passed",
+    "flutterTests": 45,
+    "releaseNotDebuggable": true,
+    "versionAndLabelVerified": true,
+    "displayedVersionMatchesPubspec": true,
+    "schema2Client": {
+      "api": "https://www.typikon.info/api/v2/cs/",
+      "version": "6734f4aefaa287399a9ad7d09fece448387c8b248873d2a4c69f0957f515e15a",
+      "checks": 9,
+      "status": "passed",
+      "checkedAt": "2026-11-11T16:15:19.816648Z"
+    },
+    "liveMorphemes": {
+      "api": "https://www.typikon.info/api/v2/cs/",
+      "version": "6734f4aefaa287399a9ad7d09fece448387c8b248873d2a4c69f0957f515e15a",
+      "passed": 24,
+      "rootWords": 7,
+      "pages": 1,
+      "unassignedProbe": 0,
+      "checkedAt": "2026-11-11T16:15:26.894809Z"
+    }
+  },
+  "acceptanceGuide": "docs/acceptance-0.1.6.md",
+  "physicalDeviceChecked": false,
+  "publishedToStore": false,
+  "publicUpdateCatalogChanged": false,
+  "serverDataChanged": false,
+  "currentData": {
+    "compositionModels": 16,
+    "historicalDescriptions": 44,
+    "explicitChains": 0
+  }
+}
