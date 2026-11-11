@@ -28,79 +28,116 @@ class MorphemeScheme extends StatelessWidget {
   final ValueChanged<String>? onSelect;
 
   @override
-  Widget build(BuildContext context) {
-    final side = MediaQuery.textScalerOf(context).scale(22) + 22;
-    return Wrap(
-      spacing: 4,
-      runSpacing: 6,
-      children: [
-        for (final letter in analysis.letters)
-          Builder(
-            builder: (context) {
-              final colors = letter.colorKinds.map(morphemeColor).toList();
-              if (colors.isEmpty) colors.add(morphemeColor('unresolved'));
-              final parts = analysis.parts.where(
-                (p) => letter.partIds.contains(p.id),
-              );
-              final label =
-                  '${letter.text}: ${parts.map((p) => '${p.surface.isEmpty ? '∅' : p.surface} — ${morphemeKind(p.kind)}').join('; ')}${letter.note.isEmpty ? '' : '. ${letter.note}'}';
-              return Semantics(
-                label: label,
-                button: letter.partIds.isNotEmpty,
-                selected: selected != null && letter.partIds.contains(selected),
-                excludeSemantics: true,
-                child: Tooltip(
-                  message: label,
-                  child: InkWell(
-                    onTap: letter.partIds.isEmpty
-                        ? null
-                        : () => onSelect?.call(letter.partIds.first),
-                    child: CustomPaint(
-                      painter: _LetterFill(colors),
-                      child: Container(
-                        width: side,
-                        height: side,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color:
-                                selected != null &&
-                                    letter.partIds.contains(selected)
-                                ? Theme.of(context).colorScheme.primary
-                                : Colors.black26,
-                            width:
-                                selected != null &&
-                                    letter.partIds.contains(selected)
-                                ? 3
-                                : 1,
-                          ),
-                        ),
-                        child: Text(
-                          letter.text,
-                          style: TextStyle(
-                            fontFamily: 'Monomakh',
-                            fontSize: 22,
-                            color: colors.length > 1
-                                ? Colors.white
-                                : colors.first.computeLuminance() > .5
-                                ? Colors.black
-                                : Colors.white,
-                            shadows: colors.length > 1
-                                ? const [
-                                    Shadow(color: Colors.black, blurRadius: 4),
-                                    Shadow(color: Colors.black, blurRadius: 2),
-                                  ]
-                                : null,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+  Widget build(BuildContext context) => Card(
+    key: const ValueKey('morpheme-scheme-card'),
+    color: Colors.white,
+    surfaceTintColor: Colors.transparent,
+    margin: EdgeInsets.zero,
+    child: Padding(
+      padding: const EdgeInsets.all(16),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            for (var i = 0; i < analysis.parts.length; i++)
+              Padding(
+                padding: EdgeInsets.only(
+                  right: i + 1 < analysis.parts.length ? 8 : 0,
                 ),
-              );
-            },
+                child: _part(context, analysis.parts[i]),
+              ),
+          ],
+        ),
+      ),
+    ),
+  );
+
+  Widget _part(BuildContext context, MorphemePart part) {
+    final color = morphemeColor(part.kind);
+    final foreground = color.computeLuminance() > .5
+        ? Colors.black
+        : Colors.white;
+    final surface = part.surface.isEmpty ? '∅' : part.surface;
+    final sharedLetters = analysis.letters.where(
+      (letter) => letter.partIds.contains(part.id) && letter.partIds.length > 1,
+    );
+    final label =
+        '$surface — ${morphemeKind(part.kind)}${sharedLetters.isEmpty ? '' : '. Общие буквы: ${sharedLetters.map((l) => l.text).join(', ')}'}';
+    final isSelected = selected == part.id;
+    return Semantics(
+      label: label,
+      button: onSelect != null,
+      selected: isSelected,
+      excludeSemantics: true,
+      child: Tooltip(
+        message: label,
+        child: Material(
+          key: ValueKey('morpheme-part-${part.id}'),
+          color: color,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+            side: BorderSide(
+              color: isSelected ? const Color(0xffb94e0c) : Colors.black26,
+              width: isSelected ? 3 : 1,
+            ),
           ),
-      ],
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            onTap: onSelect == null ? null : () => onSelect!(part.id),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 10,
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    for (final grapheme in surface.characters)
+                      Builder(
+                        builder: (context) {
+                          final shared = sharedLetters.where(
+                            (letter) => letter.text == grapheme,
+                          );
+                          final colors = shared.isEmpty
+                              ? [color]
+                              : shared.first.colorKinds
+                                    .map(morphemeColor)
+                                    .toList();
+                          final striped = colors.length > 1;
+                          return CustomPaint(
+                            painter: _LetterFill(
+                              colors.isEmpty ? [color] : colors,
+                            ),
+                            child: Text(
+                              grapheme,
+                              style: TextStyle(
+                                fontFamily: 'Monomakh',
+                                fontSize: 22,
+                                color: striped ? Colors.white : foreground,
+                                shadows: striped
+                                    ? const [
+                                        Shadow(
+                                          color: Colors.black,
+                                          blurRadius: 4,
+                                        ),
+                                      ]
+                                    : null,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -215,7 +252,7 @@ class _WordMorphemesViewState extends State<WordMorphemesView> {
           ),
           const SizedBox(height: 12),
           const Text(
-            'Штриховка — общая буква на стыке морфем. Нажмите на квадрат, чтобы выделить морфему. ∅ — нулевое окончание.',
+            'Один прямоугольник — одна морфема. Штриховка — общая буква соседних морфем. Нажмите на морфему, чтобы выделить её в списке. ∅ — нулевая морфема.',
           ),
           if (a.note.isNotEmpty)
             Padding(

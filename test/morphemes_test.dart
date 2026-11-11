@@ -114,6 +114,67 @@ Widget wordView(DictionaryRepository repo) => MaterialApp(
 );
 
 void main() {
+  testWidgets(
+    'one block per morpheme stays on one scrollable row in dark theme',
+    (tester) async {
+      final data = analysis();
+      (data['parts'] as List).first['surface'] = 'предлиннейший';
+      final a = MorphemeAnalysis(data);
+      String? selected;
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: ThemeData.dark(),
+          home: Scaffold(
+            body: MediaQuery(
+              data: const MediaQueryData(textScaler: TextScaler.linear(1.8)),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: SizedBox(
+                  width: 260,
+                  child: MorphemeScheme(
+                    analysis: a,
+                    onSelect: (id) => selected = id,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      final scheme = find.byType(MorphemeScheme);
+      final card = tester.widget<Card>(
+        find.byKey(const ValueKey('morpheme-scheme-card')),
+      );
+      expect(card.color, Colors.white);
+      expect(card.surfaceTintColor, Colors.transparent);
+      final blocks = [
+        for (final part in a.parts)
+          find.byKey(ValueKey('morpheme-part-${part.id}')),
+      ];
+      expect(
+        find.descendant(of: scheme, matching: find.byType(InkWell)),
+        findsNWidgets(a.parts.length),
+      );
+      final tops = blocks.map((block) => tester.getTopLeft(block).dy).toSet();
+      expect(tops, hasLength(1));
+      expect(tester.getSize(blocks.first).width, greaterThan(48));
+      final scrollable = find.descendant(
+        of: scheme,
+        matching: find.byType(Scrollable),
+      );
+      final state = tester.state<ScrollableState>(scrollable);
+      expect(state.position.axis, Axis.horizontal);
+      expect(state.position.maxScrollExtent, greaterThan(0));
+      expect(find.text('∅'), findsOneWidget);
+      await tester.drag(scheme, const Offset(-1000, 0));
+      await tester.pumpAndSettle();
+      await tester.tap(blocks.last);
+      expect(selected, 'p3');
+      expect(tester.takeException(), isNull);
+    },
+  );
+
   test(
     'API uses dictionary IDs, opaque cursors and pinned publication',
     () async {
@@ -216,49 +277,48 @@ void main() {
     },
   );
 
-  testWidgets(
-    'fusion keeps one letter, zero ending stays in named list, root opens card',
-    (tester) async {
-      tester.view.physicalSize = const Size(1000, 1500);
-      tester.view.devicePixelRatio = 1;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
-      final repo = repository((r) async {
-        if (r.url.path.endsWith('/words')) {
-          return response({
-            'version': 'v1',
-            'total': 21,
-            'items': [],
-            'nextCursor': null,
-          });
-        }
-        if (r.url.path.endsWith('/morphemes')) {
-          return response({
-            'version': 'v1',
-            'analyses': [analysis()],
-          });
-        }
-        return response(card());
-      });
-      await tester.pumpWidget(wordView(repo));
-      await tester.pumpAndSettle();
-      expect(find.text('я'), findsOneWidget);
-      expect(find.text('∅ — окончание'), findsOneWidget);
-      await tester.tap(find.text('я'));
-      await tester.pumpAndSettle();
-      final root = tester.widget<ListTile>(
-        find.widgetWithText(ListTile, 'каj — корень'),
-      );
-      expect(root.selected, isTrue);
-      await tester.tap(find.text('каj — корень'));
-      await tester.pumpAndSettle();
-      expect(find.text('Слов: 21'), findsOneWidget);
-      expect(find.text('Форм: 24'), findsOneWidget);
-      expect(find.text('Семантика'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-      repo.close();
-    },
-  );
+  testWidgets('shared letter selects its morpheme block and root opens card', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1000, 1500);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    final repo = repository((r) async {
+      if (r.url.path.endsWith('/words')) {
+        return response({
+          'version': 'v1',
+          'total': 21,
+          'items': [],
+          'nextCursor': null,
+        });
+      }
+      if (r.url.path.endsWith('/morphemes')) {
+        return response({
+          'version': 'v1',
+          'analyses': [analysis()],
+        });
+      }
+      return response(card());
+    });
+    await tester.pumpWidget(wordView(repo));
+    await tester.pumpAndSettle();
+    expect(find.text('я'), findsOneWidget);
+    expect(find.text('∅ — окончание'), findsOneWidget);
+    await tester.tap(find.text('я'));
+    await tester.pumpAndSettle();
+    final theme = tester.widget<ListTile>(
+      find.widgetWithText(ListTile, 'я — тематическая гласная'),
+    );
+    expect(theme.selected, isTrue);
+    await tester.tap(find.text('каj — корень'));
+    await tester.pumpAndSettle();
+    expect(find.text('Слов: 21'), findsOneWidget);
+    expect(find.text('Форм: 24'), findsOneWidget);
+    expect(find.text('Семантика'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    repo.close();
+  });
 
   testWidgets(
     'word pages replace items, preserve previous cursor and open dictionary ID',
@@ -349,9 +409,10 @@ void main() {
   });
 
   testWidgets(
-    'long grapheme scheme wraps at large text scale without overflow',
+    'long morpheme preserves accents at large text scale without overflow',
     (tester) async {
       final data = analysis();
+      (data['parts'] as List).first['surface'] = 'а́' * 50;
       data['letters'] = List.generate(
         50,
         (_) => {
