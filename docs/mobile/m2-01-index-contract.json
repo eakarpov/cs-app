@@ -1,0 +1,352 @@
+{
+  "format": "m2-public-index-decision-v1",
+  "date": "2026-11-15",
+  "status": "implemented-and-published-2026-11-17; original decision date retained",
+  "contracts": {
+    "reader": "cs-reader/1",
+    "addressVersion": 2,
+    "index": "cs-index/1",
+    "basePath": "/api/v2/study/reader/v1/",
+    "indexBasePath": "/api/v2/study/reader/v1/index/",
+    "breakingMajorRequiresNewRoute": true
+  },
+  "scope": {
+    "pilotId": "cs-mvp-pilot-01",
+    "navigationMaterials": 5,
+    "baselineNavigationUnits": 68,
+    "expectedDistinctPlacements": 67,
+    "countsStatus": "local E1 baseline; recheck at M2-02, not current production index statistics",
+    "materials": [
+      {
+        "pilotMaterialId": "P01",
+        "sourceIdFromLocalE1": "src_4b1c450f72434c3ca14b313e12193a8d",
+        "title": "Крестовоскресный канон Октоиха, глас 1, воскресная утреня",
+        "scope": "whole canon, 8 odes (1,3–9)",
+        "nativeRef": {
+          "kind": "canon",
+          "id": "oktoih-t1-krestovoskresny-utrenya"
+        },
+        "baselineNavigationUnits": 40,
+        "aliasOfPlacementWithin": null
+      },
+      {
+        "pilotMaterialId": "P02",
+        "sourceIdFromLocalE1": "src_940753e0284c461e84296829a3e6f1e6",
+        "title": "Акафист святителю Николаю Чудотворцу",
+        "scope": "whole akathist: 1 prooimion and 24 numbered stanzas; prayers excluded",
+        "nativeRef": {
+          "kind": "akathist",
+          "id": "akafist-svjatitelju-nikolaju-chudotvorcu"
+        },
+        "baselineNavigationUnits": 25,
+        "aliasOfPlacementWithin": null
+      },
+      {
+        "pilotMaterialId": "P03",
+        "sourceIdFromLocalE1": "src_9d0454d1a69b45939d7ebce42dd717ad",
+        "title": "Беседа первая о непостижимем",
+        "scope": "whole first chapter of Margarit; not whole collection",
+        "nativeRef": {
+          "kind": "text",
+          "id": "699c9ace0c51f1c698ea0492"
+        },
+        "baselineNavigationUnits": 1,
+        "aliasOfPlacementWithin": null
+      },
+      {
+        "pilotMaterialId": "P04",
+        "sourceIdFromLocalE1": "src_3d81e2bf35684343ad079ff6ed83ec8b",
+        "title": "Ирмос «Христос раждается»: песнь 1 выбранного канона",
+        "scope": "linked occurrence within P01; counted as an address case, not an independent textual variant",
+        "nativeRef": {
+          "kind": "chant",
+          "id": "132"
+        },
+        "baselineNavigationUnits": 1,
+        "aliasOfPlacementWithin": "P01"
+      },
+      {
+        "pilotMaterialId": "P05",
+        "sourceIdFromLocalE1": "src_9c3e68a5ac2645478e5d8a2fd0e8c4ba",
+        "title": "Тропарь святителю Николаю «Правило веры»",
+        "scope": "one troparion in Menaion, December 6, memory mineya-12-06-1",
+        "nativeRef": {
+          "kind": "chant",
+          "id": "77050"
+        },
+        "baselineNavigationUnits": 1,
+        "aliasOfPlacementWithin": null
+      }
+    ],
+    "fullTextCopied": false,
+    "newIdsAllocatedByThisStep": false,
+    "includePrimaryBodies": true,
+    "includeFootnoteBodies": false,
+    "includeRubricsAsText": false,
+    "includeScans": false,
+    "includeTopicsPeoplePlaces": false,
+    "includeAutomaticUnverifiedLemmaLinks": false
+  },
+  "access": {
+    "requiredAccount": false,
+    "requiredClientApiKey": false,
+    "embeddedServerOrEditorialCredentials": false,
+    "policyScope": "reader pilot only; global API token policy unchanged",
+    "publicationAllowlistRequired": true,
+    "currentSourceVisibilityCheckedOnEveryRequest": true,
+    "archiveCannotBypassVisibility": true,
+    "originRefererGrantExtraRights": false,
+    "automaticLicenseGrant": false,
+    "bulkExport": false,
+    "ratePolicyId": "reader-public-pilot-r1",
+    "limitsStatus": "deployed; functional quota tests passed; production capacity testing remains separate",
+    "aggregatePerIp": {
+      "requests": 120,
+      "windowSeconds": 60,
+      "dailyLimit": null
+    },
+    "searchAndOccurrencesSubset": {
+      "requests": 30,
+      "windowSeconds": 60
+    },
+    "lookupSubset": {
+      "requests": 30,
+      "windowSeconds": 60
+    },
+    "proxyCeiling": {
+      "requestsPerSecond": 10,
+      "burst": 20
+    },
+    "optionsConsumesApplicationBudget": false,
+    "retryAfterRequiredOn429": true,
+    "automaticRetries": false,
+    "rateLimitIdentity": "trusted proxy-derived IP, never arbitrary forwarded headers or installationId",
+    "cors": {
+      "allowOrigin": "*",
+      "allowCredentials": false,
+      "methods": [
+        "GET",
+        "POST",
+        "OPTIONS"
+      ],
+      "expose": [
+        "ETag",
+        "Retry-After",
+        "X-RateLimit-Limit",
+        "X-RateLimit-Remaining",
+        "X-RateLimit-Window"
+      ],
+      "legacyKeyHeadersRemainCompatible": true
+    }
+  },
+  "operations": [
+    {
+      "method": "GET",
+      "path": "index/capabilities",
+      "required": [],
+      "notes": "Only implemented and published I/C/D/P, coverage, limits and publicRead"
+    },
+    {
+      "method": "GET",
+      "path": "index/search",
+      "required": [
+        "pilotId",
+        "mode",
+        "q",
+        "profileSetId"
+      ],
+      "modes": [
+        "word",
+        "phrase"
+      ],
+      "continuationRequires": [
+        "indexRevision",
+        "cursor"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "index/occurrences",
+      "required": [
+        "pilotId",
+        "lexemeId",
+        "dictionaryVersion",
+        "profileSetId"
+      ],
+      "continuationRequires": [
+        "indexRevision",
+        "cursor"
+      ],
+      "associations": "accepted address-specific links only"
+    }
+  ],
+  "reuseReaderOperations": [
+    "capabilities",
+    "catalog",
+    "resolve",
+    "read",
+    "passport",
+    "lookup"
+  ],
+  "legacyReaderSearch": {
+    "preserved": true,
+    "deprecateWhenReplacementImplemented": true,
+    "silentShapeChange": false
+  },
+  "versioning": {
+    "activeIndexRevision": "ix1_d40064e4ed4fe8a67e41351e3ef8a2a3c2eeb3409e1b5dd455e2a68e33bc48a5",
+    "indexRevisionPrefix": "ix1_",
+    "readerReleasePrefix": "release1_",
+    "dictionaryBaseline": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b",
+    "baselineSource": "anonymous read-only schema=2 dictionary GET during M2-01",
+    "indexManifestBinds": [
+      "corpusRelease",
+      "orderedBodyRevisions",
+      "profileFingerprints",
+      "postingsHashes",
+      "dictionaryVersion",
+      "acceptedBindingRevisions",
+      "deduplicationVersion",
+      "queryProfileVersion"
+    ],
+    "morphemeVersionIsIndexDependency": false,
+    "immutablePostingArtifactsReused": true,
+    "cursorBinds": [
+      "indexRevision",
+      "corpusRelease",
+      "dictionaryVersion",
+      "profileSetId",
+      "mode",
+      "queryOrLexemeId",
+      "limit",
+      "filters",
+      "visibilityFingerprint"
+    ],
+    "cursorIsOpaque": true,
+    "unknownVersionFallsBackToLatest": false,
+    "retainedManifestGuaranteesOldRaw": false,
+    "automaticRetirement": false
+  },
+  "deduplication": {
+    "canonicalPlacementKey": "occurrenceId",
+    "hitIdInputs": [
+      "occurrenceId",
+      "bodyId",
+      "bodyRevision",
+      "orderedTokenIds"
+    ],
+    "bodyTokenProjectionReused": true,
+    "navigationAliasesDoNotMultiplyHits": true,
+    "rubricRepeatCountDoesNotMultiplyHits": true,
+    "differentPlacementsOfSameBodyRemainDistinct": true
+  },
+  "indexLimits": {
+    "pageDefault": 20,
+    "pageMax": 50,
+    "queryMaxUtf16": 200,
+    "phraseMaxTokens": 12,
+    "queryTraversalMaxUniqueHits": 500,
+    "snippetMaxRawUtf16": 512,
+    "maxResponseBytes": 1048576,
+    "snippetTooLarge": "null with explicit snippetStatus/reason; no silent truncation",
+    "totalStates": [
+      "unknown",
+      "at_least",
+      "exact"
+    ],
+    "atLeastRequiresObservedContinuation": true
+  },
+  "readerLimitsPreserved": {
+    "catalogDefault": 20,
+    "catalogMax": 50,
+    "readDefaultUnits": 10,
+    "readMaxUnits": 20,
+    "lookupMaxTokens": 20,
+    "maxRequestBytes": 65536,
+    "maxRawWindowUtf16": 65536,
+    "maxResponseBytes": 4194304,
+    "maxManifestUnits": 256
+  },
+  "searchQuality": {
+    "initialMatchKinds": [
+      "folded",
+      "abbreviation_skeleton",
+      "lexeme_verified"
+    ],
+    "literalExactAdvertised": false,
+    "unresolvedGlyphToken": "blocked whole token; no cropped key",
+    "verifiedLexemeCoverage": "partial until explicitly reviewed",
+    "zeroResultsScope": "searchable portion of this pilot only",
+    "wordMatches": "one whole token, no prefix or substring",
+    "phraseMinTokens": 2,
+    "emptyTokenizedQueryStatus": 400,
+    "unresolvedQueryGlyphStatus": 422,
+    "lemmaZeroResultLabel": "no accepted links found in this pilot, not no uses in all texts",
+    "dictionaryAliasApprovalIsCorpusLinkApproval": false,
+    "blockedTokenBreaksPhrase": true
+  },
+  "failureRules": {
+    "missingNamespace404": "feature unavailable, dictionary M1 remains usable",
+    "badCursorSyntax": 400,
+    "cursorMismatch": 409,
+    "visibilityChanged": 409,
+    "dictionaryVersionMismatch": 409,
+    "indexStaleOrIncompatible": 409,
+    "explicitlyRetiredIndex": 410,
+    "rawRevisionUnavailableInReader": 410,
+    "unsupportedProfile": 422,
+    "rateLimited": 429,
+    "oversizedMinimalResponse": 413
+  },
+  "cache": {
+    "indexSearchAndOccurrences": "no-store",
+    "postReadResolveLookup": "no-store",
+    "capabilitiesMaxAgeSeconds": 300,
+    "catalogAndPassport": "ETag, no-cache/must-revalidate, access checked before 304",
+    "conditionalWithoutBody": "one unconditional request",
+    "offlineFullTexts": false
+  },
+  "nextTasks": {
+    "M2-02": [
+      "version and publish the audited E1 reader source/real identity registry without synthetic fixtures",
+      "pilot-only anonymous access policy and explicit source eligibility",
+      "materialized immutable postings and accepted lemma links",
+      "I/C/D/P manifests, retained snapshots, visibility checks, deduplication and bounded endpoints",
+      "public capability and contract acceptance before mobile UI"
+    ],
+    "M2-04": [
+      "separate index DTO and ReaderRepository",
+      "exact D in lookup, exact C in catalog continuation",
+      "shared transport principles from M1-08; feature negotiation and no silent legacy fallback"
+    ],
+    "M2-06": [
+      "real data/address/profile/update/visibility acceptance",
+      "physical device and visual route acceptance by user"
+    ]
+  },
+  "profiles": {
+    "existingIds": [
+      "cs-pilot-source-r1",
+      "cs-pilot-unicode-r1",
+      "cs-pilot-letterfold-r1"
+    ],
+    "selection": "explicit and negotiated; only actually implemented immutable fingerprints advertised",
+    "displayOnlyChangeMayReuseTokens": true,
+    "displayOnlyChangeReusesCursor": false,
+    "corpusSearchKeyEqualsDictionaryCivilKey": false,
+    "flutterReimplementsNormalization": false
+  },
+  "implementation": {
+    "date": "2026-11-17",
+    "status": "published-https-verified",
+    "receipt": "qa/mobile/m2-02-u17/acceptance.json",
+    "unicode": "17.0",
+    "indexRevision": "ix1_d40064e4ed4fe8a67e41351e3ef8a2a3c2eeb3409e1b5dd455e2a68e33bc48a5",
+    "profiles": [
+      "cs-pilot-source-r2",
+      "cs-pilot-unicode-r2"
+    ],
+    "legacyProfileDefinitionsPreserved": true,
+    "apkPublished": false
+  }
+}

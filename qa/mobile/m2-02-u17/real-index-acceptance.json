@@ -1,0 +1,66 @@
+{
+  "format": "m2-02-real-index-acceptance/1",
+  "environment": "local real published E1 registry; not production",
+  "indexRevision": "ix1_d40064e4ed4fe8a67e41351e3ef8a2a3c2eeb3409e1b5dd455e2a68e33bc48a5",
+  "corpusRelease": "release1_3b6c6e93336a97bdcd9c3a6c05ff9ee8cacfb5a5c77faaac156b1910d9187bf4",
+  "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b",
+  "coverage": {
+    "navigationMaterials": 5,
+    "navigationUnits": 68,
+    "placements": 67,
+    "bodies": 67,
+    "tokens": 4575,
+    "searchableTokens": 4526,
+    "blockedTokens": 49,
+    "candidateLinks": 5053,
+    "acceptedLinks": 4
+  },
+  "supportedIndexProfiles": [
+    "cs-pilot-source-r2",
+    "cs-pilot-unicode-r2"
+  ],
+  "legacyProjectionDiagnostics": [
+    {
+      "profileSetId": "cs-pilot-unicode-r2",
+      "chapterTokens": 1901,
+      "sourceTokens": 1901,
+      "tokenIdsAbsentInSource": 0,
+      "advertisedByIndex": true
+    },
+    {
+      "profileSetId": "cs-pilot-letterfold-r2",
+      "chapterTokens": 1901,
+      "sourceTokens": 1901,
+      "tokenIdsAbsentInSource": 4,
+      "advertisedByIndex": false
+    }
+  ],
+  "runtime": {
+    "node": "v22.23.2",
+    "unicode": "17.0"
+  },
+  "checkedTokensAcrossProfiles": 9150,
+  "checks": [
+    "67 existing placements and bodies; no new identity allocation",
+    "all stored token IDs/raw ranges/search keys equal reader in advertised source/unicode profiles; letterfold intentionally unsupported in index",
+    "P01/P04: three repeated Христос tokens, one hit per token with alternate navigation address",
+    "four accepted address-specific links; remaining candidates separate",
+    "verified and surface channels share hit IDs",
+    "pinned hit -> reader window -> token round trip",
+    "anonymous HTTP cs-index/1 without Origin/Referer/key",
+    "wrong D returns 409"
+  ],
+  "search": {
+    "query": "Христос",
+    "hits": 14,
+    "sharedIrmosHits": 3,
+    "acceptedChristosHits": 3
+  },
+  "http": {
+    "searchStatus": 200,
+    "cacheControl": "no-store",
+    "wrongDictionaryStatus": 409
+  },
+  "visualTesting": "left to owner; not performed",
+  "apkPublished": false
+}

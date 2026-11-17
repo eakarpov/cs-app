@@ -1,0 +1,8 @@
+{
+  "phases": [
+    "compile",
+    "types",
+    "generate"
+  ],
+  "inputs_sha256": "bddc921c2bd1a7bdb599d8d2f2f73bf2fb943b08cab6260e5d7138f102995632"
+}

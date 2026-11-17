@@ -1,0 +1,40 @@
+{
+  "format": "m2-02-u17-publication/1",
+  "passed": true,
+  "date": "2026-11-17",
+  "publishedAt": "2026-11-17T19:23:35.893631+00:00",
+  "web": "/var/www/typikon.su/typikon-web-releases/releases/20261117T-m202-unicode17",
+  "previous_web": "/var/www/typikon.su/typikon-web-releases/releases/20261117T-lenten-triodion-ro",
+  "previous_engine": null,
+  "engine": "/var/www/typikon.su/typikon-ordo-releases/releases/1.19.1-lenten-triodion-ro-20261117/engine",
+  "nativeDatabase": "/var/www/typikon.su/typikon-ordo-releases/releases/1.19.1-lenten-triodion-ro-20261117/data.db",
+  "nativeDatabaseSha256Unchanged": "7e84217fe8a6b3c88491f4f44c8746791d3d6a18d7c2264ab8b272e938c7ae51",
+  "codeCommit": "fa4533b4",
+  "indexRevision": "ix1_d40064e4ed4fe8a67e41351e3ef8a2a3c2eeb3409e1b5dd455e2a68e33bc48a5",
+  "corpusRelease": "release1_3b6c6e93336a97bdcd9c3a6c05ff9ee8cacfb5a5c77faaac156b1910d9187bf4",
+  "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b",
+  "sourceIdsPreserved": true,
+  "acceptedLinksPreserved": 4,
+  "canonicalTextCopied": false,
+  "edgeQuota": {
+    "ratePerSecond": 10,
+    "burst": 20,
+    "probeRoute": "TLS loopback with canonical www SNI/Host",
+    "probeRequests": 40,
+    "limited": 18,
+    "retryAfter": 1
+  },
+  "applicationQuotaProbe": {
+    "optionsUnmetered": 35,
+    "searchSubset": 30,
+    "nextStatus": 429,
+    "siteOriginDoesNotBypass": true
+  },
+  "appUpdateSourceFilesUnchanged": [
+    "src/lib/appVersion.ts",
+    "src/pages/api/v1/app/version.ts",
+    "src/app/api/v2/app/version/route.ts"
+  ],
+  "apkPublished": false,
+  "visualTestingPerformed": false
+}

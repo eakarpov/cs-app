@@ -1,0 +1,138 @@
+{
+  "status": "planned normative cases, not executed runtime tests",
+  "cases": [
+    {
+      "id": "M201-01",
+      "key": "public-no-key",
+      "expectation": "Reader/index work anonymously without spoofed site headers or embedded keys",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-02",
+      "key": "not-published",
+      "expectation": "Missing namespace or unpublished I disables corpus feature, not dictionary",
+      "implementationTask": "M2-04",
+      "status": "planned"
+    },
+    {
+      "id": "M201-03",
+      "key": "limits-nat",
+      "expectation": "Aggregate and subset limits apply per trusted IP; OPTIONS and Retry-After behave as specified",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-04",
+      "key": "closed-source",
+      "expectation": "Closed text/book is absent from bodies, titles, totals and archived responses",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-05",
+      "key": "visibility-cursor",
+      "expectation": "Visibility changes invalidate continuation without leaking old snippets",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-06",
+      "key": "pilot-scope",
+      "expectation": "Five navigation materials; P04 shares placement with P01; other true placements remain distinct",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-07",
+      "key": "irregular-glyph",
+      "expectation": "Unknown PUA blocks whole token; raw and diagnostics remain; no cropped-word hit",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-08",
+      "key": "surface-vs-lemma",
+      "expectation": "Folded form/abbreviation match never becomes lexeme_verified automatically",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-09",
+      "key": "lemma-version",
+      "expectation": "Accepted lexeme occurrences require matching D; unsupported pair is 409, not zero or latest",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-10",
+      "key": "cursor-snapshot",
+      "expectation": "I/C/D/P/query/limit/filter mismatch is rejected; new search explicitly chooses current",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-11",
+      "key": "body-edit",
+      "expectation": "Old raw or projection unavailable produces index_stale/reader 410; no offsets applied to new text",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-12",
+      "key": "profile-change",
+      "expectation": "New tables/Unicode/rules require new immutable profile ID; unknown profile is explicit error",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-13",
+      "key": "bounds-total",
+      "expectation": "Page size, response bytes, 500-hit cap, exact/unknown/at_least and observed continuation are consistent",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-14",
+      "key": "phrase-boundary",
+      "expectation": "Phrases remain within one body and token sequence; no crossing footnotes/rubrics",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-15",
+      "key": "rights",
+      "expectation": "Public readability does not fabricate sourceRights/license or enable bulk export",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-16",
+      "key": "native-rebuild",
+      "expectation": "Legacy public IDs/occurrences survive native chant rebuild; synthetic IDs/metadata not imported",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    },
+    {
+      "id": "M201-17",
+      "key": "reader-round-trip",
+      "expectation": "Hit opens pinned address/window; returned map highlights rawRanges and supports return",
+      "implementationTask": "M2-05",
+      "status": "planned"
+    },
+    {
+      "id": "M201-18",
+      "key": "cache-304",
+      "expectation": "304 only reuses same body/version/profile; permission failure never falls back to cached content",
+      "implementationTask": "M2-04",
+      "status": "planned"
+    },
+    {
+      "id": "M201-19",
+      "key": "dictionary-alias-not-corpus-proof",
+      "expectation": "M1-DATA-01 search aliases can generate candidates but do not automatically approve pilot token-to-lexeme links",
+      "implementationTask": "M2-02",
+      "status": "planned"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "verified": true,
+  "refs": [
+    {
+      "repository": "typikon-web",
+      "originMaster": "fa4533b4229518e16efd9114af46d140df41361a"
+    },
+    {
+      "repository": "typikon-rules",
+      "originMaster": "1786f62cf03d659399ec607b925a60f82ed063f7"
+    }
+  ],
+  "publishedBookChainPreserved": true
+}

@@ -1,0 +1,113 @@
+TAP version 13
+# Subtest: Э1-09: isolated Mongo + rebuilt SQLite acceptance
+    # Subtest: initial publication and all pilot read/passport contracts
+    ok 1 - initial publication and all pilot read/passport contracts
+      ---
+      duration_ms: 3750.054991
+      type: 'test'
+      ...
+    # Subtest: unknown translator and original canon remain questions, not negative facts
+    ok 2 - unknown translator and original canon remain questions, not negative facts
+      ---
+      duration_ms: 9.141764
+      type: 'test'
+      ...
+    # Subtest: E1-10 study/material adds the same passport and address only on explicit pilot requests
+    ok 3 - E1-10 study/material adds the same passport and address only on explicit pilot requests
+      ---
+      duration_ms: 255.544923
+      type: 'test'
+      ...
+    # Subtest: fragment bindings and token references cannot borrow another source/body
+    ok 4 - fragment bindings and token references cannot borrow another source/body
+      ---
+      duration_ms: 45.910661
+      type: 'test'
+      ...
+    # Subtest: renamed source and library aliases retain former URLs; editions are not mixed
+    ok 5 - renamed source and library aliases retain former URLs; editions are not mixed
+      ---
+      duration_ms: 49.071684
+      type: 'test'
+      ...
+    # Subtest: library edit preserves identity; pinned body/token cannot select latest
+    ok 6 - library edit preserves identity; pinned body/token cannot select latest
+      ---
+      duration_ms: 43.85549
+      type: 'test'
+      ...
+    # Subtest: hidden text/book unavailable even through pinned address and passport
+    ok 7 - hidden text/book unavailable even through pinned address and passport
+      ---
+      duration_ms: 10.192815
+      type: 'test'
+      ...
+    # Subtest: rebuild remaps old public IDs before publication and rejects reused native numbers
+    ok 8 - rebuild remaps old public IDs before publication and rejects reused native numbers
+      ---
+      duration_ms: 238.265008
+      type: 'test'
+      ...
+    # Subtest: pure renumbering preserves source/body/occurrence IDs, fragments and source revisions
+    ok 9 - pure renumbering preserves source/body/occurrence IDs, fragments and source revisions
+      ---
+      duration_ms: 54.070999
+      type: 'test'
+      ...
+    # Subtest: duplicates are ambiguous in both directions, deleted and unresolved IDs are reserved
+    ok 10 - duplicates are ambiguous in both directions, deleted and unresolved IDs are reserved
+      ---
+      duration_ms: 11.207755
+      type: 'test'
+      ...
+    # Subtest: same rebuilt publication is idempotent
+    ok 11 - same rebuilt publication is idempotent
+      ---
+      duration_ms: 243.809579
+      type: 'test'
+      ...
+    # Subtest: formula edit updates dependent canon and irmos, preserving addresses; no silent fragment move
+    ok 12 - formula edit updates dependent canon and irmos, preserving addresses; no silent fragment move
+      ---
+      duration_ms: 262.563674
+      type: 'test'
+      ...
+    # Subtest: removed occurrence and fragment return 410 instead of selecting a neighbour
+    ok 13 - removed occurrence and fragment return 410 instead of selecting a neighbour
+      ---
+      duration_ms: 276.317646
+      type: 'test'
+      ...
+    # Subtest: passport alternatives stay disputed; metadata-only revision keeps text revision
+    ok 14 - passport alternatives stay disputed; metadata-only revision keeps text revision
+      ---
+      duration_ms: 212.345934
+      type: 'test'
+      ...
+    # Subtest: semantic errors are rejected even when JSON matches OpenAPI
+    ok 15 - semantic errors are rejected even when JSON matches OpenAPI
+      ---
+      duration_ms: 13.34095
+      type: 'test'
+      ...
+    # Subtest: no source bodies duplicated in registry
+    ok 16 - no source bodies duplicated in registry
+      ---
+      duration_ms: 38.087077
+      type: 'test'
+      ...
+    1..16
+ok 1 - Э1-09: isolated Mongo + rebuilt SQLite acceptance
+  ---
+  duration_ms: 5919.172144
+  type: 'test'
+  ...
+1..1
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6584.935087

@@ -1,0 +1,30 @@
+{
+  "codeCommit": "fa4533b4229518e16efd9114af46d140df41361a",
+  "patchSha256": "9f4a90bf122494321df2f83702b6fe5022d6fae1c6d6d07a56c868caeaf28913",
+  "files": [
+    {
+      "path": "src/lib/reader/native.ts",
+      "sha256": "300264267b137af5faa26d6e9a8cec8dd108068418c5c7858757bc0b90a7a948"
+    },
+    {
+      "path": "src/lib/reader/unicode-migration.test.ts",
+      "sha256": "1e07b60622bdde70cd5d6cadfe59fb74ce486734cae0cdab6e33f249ac5bc8d0"
+    },
+    {
+      "path": "docs/cs-reader-unicode17.md",
+      "sha256": "29f186b690a7ee1f60a367f8f8f1ce482a7b56e48bf63658ac8f338dcd1bafc0"
+    },
+    {
+      "path": "src/app/study/Client.tsx",
+      "sha256": "8b7636cd97095a082e7dbe9b2fc596a63fbd8cac2f324cfefe5f2bab3da6918f"
+    },
+    {
+      "path": "src/app/opyty/page.tsx",
+      "sha256": "46de94aeee021bacbc4949db1736338cbe5c2e52499186f74a681dff5969139b"
+    },
+    {
+      "path": "src/data/library/coverage.json",
+      "sha256": "e1129813a40cb6877cdd2bfec4b98e94d293a6d3cc7ac135a8d631eaa8bbecc2"
+    }
+  ]
+}

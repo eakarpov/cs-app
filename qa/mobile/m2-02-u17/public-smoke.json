@@ -1,0 +1,41 @@
+{
+  "format": "m2-02-u17-scoped-smoke/1",
+  "base": "https://www.typikon.info",
+  "passed": true,
+  "indexRevision": "ix1_d40064e4ed4fe8a67e41351e3ef8a2a3c2eeb3409e1b5dd455e2a68e33bc48a5",
+  "corpusRelease": "release1_3b6c6e93336a97bdcd9c3a6c05ff9ee8cacfb5a5c77faaac156b1910d9187bf4",
+  "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b",
+  "profiles": [
+    "cs-pilot-source-r2",
+    "cs-pilot-unicode-r2"
+  ],
+  "checks": [
+    "anonymous public capabilities, exact I/C/D/r2 profiles and five-source scope",
+    "catalog reuses all five real source IDs",
+    "14 surface Christos hits / 3 accepted shared-irmos hits / 1 accepted faith link, no P01/P04 doubling",
+    "pinned address/window/token round trip; unchanged accepted hit IDs",
+    "Margarit translator and irmos native canon remain unknown",
+    "explicit 400/409/422 for malformed cursors, wrong I/D and unsupported profiles",
+    "all five existing portal source URLs and normalized Margarit return noindex HTML; pilot remains in experiments",
+    "legacy linked-irmos/troparion addresses stay available",
+    "dictionary schema1/schema2 remain compatible with pinned D"
+  ],
+  "acceptedChristosHitIds": [
+    "hit1_09eb01fc60340c6efc1e28f38eca3f275ed5ffe396bb66d57b0559542491250a",
+    "hit1_4f1dafa94694fb0eb1233bb34e47193b9759e691abf1e4cecb8562e9f06968f8",
+    "hit1_6ac469419b30edbc2d439dc9237e8face21fead9c2b59af23d130160e2a94d73"
+  ],
+  "acceptedFaithHitIds": [
+    "hit1_1e575962b7cf0c2a4dc5272e9bd4f43d7136785f80cb8da51b6566044eb28f20"
+  ],
+  "sourceIds": [
+    "src_4b1c450f72434c3ca14b313e12193a8d",
+    "src_940753e0284c461e84296829a3e6f1e6",
+    "src_9d0454d1a69b45939d7ebce42dd717ad",
+    "src_3d81e2bf35684343ad079ff6ed83ec8b",
+    "src_9c3e68a5ac2645478e5d8a2fd0e8c4ba"
+  ],
+  "applicationQuotaProbe": null,
+  "visualTestingPerformed": false,
+  "apkPublished": false
+}

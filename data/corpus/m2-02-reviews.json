@@ -1,0 +1,115 @@
+{
+  "format": "cs-index-reviews/1",
+  "date": "2026-11-15",
+  "reviewScope": "Address-specific lexical identity, assessed by Codex against pilot context and pinned digital dictionary sources; not human scholarly review, grammatical or sense annotation",
+  "reviews": [
+    {
+      "id": "m202-review-001",
+      "decision": "accepted",
+      "occurrenceId": "occ_8a0c139e1c014751b0198311de21d202",
+      "bodyId": "bdy_f21cdacddae44f8e8ec60876adad9bae",
+      "bodyRevision": "br1_827f5238ae70f3eb641c6b32cf6da97373fa1944ad44fdf1965b63ee65511ae4",
+      "tokenIds": [
+        "tok1_a1b29805f5cd0d422e1478cff0b8babeb695d94fc6b8f0630c72d366fccdd264"
+      ],
+      "lexemeId": "68399a217310e32be5d7e0fe",
+      "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b",
+      "sourceId": "src_4b1c450f72434c3ca14b313e12193a8d",
+      "sourceRevision": "sr1_5204ce4a34132d525f632e7d7ff527f5aa5557c614b8ca45202a031c22bfd761",
+      "rawRanges": [
+        [
+          0,
+          8
+        ]
+      ],
+      "quoteSha256": "2be0aebd63b1ff90372efb57db998f76eab88a413bd034bbfeefa34223c1e8fd",
+      "dictionarySourceIds": [
+        "abd40eb58bdb400ead1093fa302a591ebaa67983269cd0db9b0c7c8319d2802c",
+        "9fc38fe025581e372e3a5494e7143071c77ce5a94ecefea87ebae86d863cb9b0"
+      ],
+      "reviewer": "codex:m2-02-context-review",
+      "rationale": "Три обращения «Христос раждается / с Небес / на земли» обозначают Спасителя. Сопоставлено с Дьяченко («имя Спасителя») и orthodic. Принимается идентичность лексемы; морфологический разбор и смысловой anchor не утверждаются."
+    },
+    {
+      "id": "m202-review-002",
+      "decision": "accepted",
+      "occurrenceId": "occ_8a0c139e1c014751b0198311de21d202",
+      "bodyId": "bdy_f21cdacddae44f8e8ec60876adad9bae",
+      "bodyRevision": "br1_827f5238ae70f3eb641c6b32cf6da97373fa1944ad44fdf1965b63ee65511ae4",
+      "tokenIds": [
+        "tok1_0900398e8f93da23a2e3a3da3a2e6e2210a0d4e7a223edac2c7776130f822831"
+      ],
+      "lexemeId": "68399a217310e32be5d7e0fe",
+      "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b",
+      "sourceId": "src_4b1c450f72434c3ca14b313e12193a8d",
+      "sourceRevision": "sr1_5204ce4a34132d525f632e7d7ff527f5aa5557c614b8ca45202a031c22bfd761",
+      "rawRanges": [
+        [
+          34,
+          42
+        ]
+      ],
+      "quoteSha256": "2be0aebd63b1ff90372efb57db998f76eab88a413bd034bbfeefa34223c1e8fd",
+      "dictionarySourceIds": [
+        "abd40eb58bdb400ead1093fa302a591ebaa67983269cd0db9b0c7c8319d2802c",
+        "9fc38fe025581e372e3a5494e7143071c77ce5a94ecefea87ebae86d863cb9b0"
+      ],
+      "reviewer": "codex:m2-02-context-review",
+      "rationale": "Три обращения «Христос раждается / с Небес / на земли» обозначают Спасителя. Сопоставлено с Дьяченко («имя Спасителя») и orthodic. Принимается идентичность лексемы; морфологический разбор и смысловой anchor не утверждаются."
+    },
+    {
+      "id": "m202-review-003",
+      "decision": "accepted",
+      "occurrenceId": "occ_8a0c139e1c014751b0198311de21d202",
+      "bodyId": "bdy_f21cdacddae44f8e8ec60876adad9bae",
+      "bodyRevision": "br1_827f5238ae70f3eb641c6b32cf6da97373fa1944ad44fdf1965b63ee65511ae4",
+      "tokenIds": [
+        "tok1_2f89cf27df0ec9f3fc38d029406d79cfbafef43ae9e81da710ca9bc79679309b"
+      ],
+      "lexemeId": "68399a217310e32be5d7e0fe",
+      "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b",
+      "sourceId": "src_4b1c450f72434c3ca14b313e12193a8d",
+      "sourceRevision": "sr1_5204ce4a34132d525f632e7d7ff527f5aa5557c614b8ca45202a031c22bfd761",
+      "rawRanges": [
+        [
+          66,
+          74
+        ]
+      ],
+      "quoteSha256": "2be0aebd63b1ff90372efb57db998f76eab88a413bd034bbfeefa34223c1e8fd",
+      "dictionarySourceIds": [
+        "abd40eb58bdb400ead1093fa302a591ebaa67983269cd0db9b0c7c8319d2802c",
+        "9fc38fe025581e372e3a5494e7143071c77ce5a94ecefea87ebae86d863cb9b0"
+      ],
+      "reviewer": "codex:m2-02-context-review",
+      "rationale": "Три обращения «Христос раждается / с Небес / на земли» обозначают Спасителя. Сопоставлено с Дьяченко («имя Спасителя») и orthodic. Принимается идентичность лексемы; морфологический разбор и смысловой anchor не утверждаются."
+    },
+    {
+      "id": "m202-review-004",
+      "decision": "accepted",
+      "occurrenceId": "occ_a47aea1b8aa848148e151bdba1177442",
+      "bodyId": "bdy_eb92914ba4654735953b4c217ec96414",
+      "bodyRevision": "br1_a181faa542651cbf31bf74e7cc036cd73ceb622f4b53bd8436a25639ee6fa7cb",
+      "tokenIds": [
+        "tok1_73d2d04cc7e4f6848d5778c8bf2cda7e14cbc4f94ec02ba51dffff5df6c25d3a"
+      ],
+      "lexemeId": "68399a217310e32be5d77634",
+      "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b",
+      "sourceId": "src_9c3e68a5ac2645478e5d8a2fd0e8c4ba",
+      "sourceRevision": "sr1_61affd1777b89f6ee53618abe9be8f69a254068a574fe9ee032462a319199c1f",
+      "rawRanges": [
+        [
+          9,
+          14
+        ]
+      ],
+      "quoteSha256": "05d83e07f6b0b6c5fc1ab8b1505038c7642e9e8c3e75e27ab4e2d05e80312a48",
+      "dictionarySourceIds": [
+        "d8a04f7ce6b0d87561b59a6edc5f5d641930212914c6e6c326b0e239f618d43e",
+        "a6755670957e4d6ae3275e18001ea104cc489b80cb490f37dad42899d5e72dc4"
+      ],
+      "reviewer": "codex:m2-02-context-review",
+      "rationale": "В сочетании «Правило веры» тропаря Николаю употреблено нарицательное существительное «вера», а не имя мученицы. Проверены словоформа «вѣры» и источники Седаковой/словаря 1847; принимается только лексемная идентичность, без выбора смыслового anchor."
+    }
+  ]
+}

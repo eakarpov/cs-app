@@ -1,0 +1,16 @@
+{
+  "format": "cs-reader-u17-server-import/1",
+  "staged": true,
+  "nativeRebound": true,
+  "projectionsCompared": 201,
+  "nativeDatasetRevision": "ds1_9c68ef60de160edde90e920f7d9d06045f3f255cd08481e9a248e400187cc3b1",
+  "prepared": false,
+  "activated": false,
+  "nativeBodiesChecked": 67,
+  "navigationUnits": 68,
+  "unicode": "17.0",
+  "corpusRelease": "release1_3b6c6e93336a97bdcd9c3a6c05ff9ee8cacfb5a5c77faaac156b1910d9187bf4",
+  "indexRevision": "ix1_d40064e4ed4fe8a67e41351e3ef8a2a3c2eeb3409e1b5dd455e2a68e33bc48a5",
+  "noCanonicalTextCopied": true,
+  "globalLegacyRegistryActivated": false
+}

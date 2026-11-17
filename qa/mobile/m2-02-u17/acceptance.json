@@ -1,0 +1,85 @@
+{
+  "format": "m2-02-u17-acceptance/1",
+  "status": "published-and-verified",
+  "date": "2026-11-17",
+  "codeCommit": "fa4533b4229518e16efd9114af46d140df41361a",
+  "rulesCommit": "1786f62cf03d659399ec607b925a60f82ed063f7",
+  "indexRevision": "ix1_d40064e4ed4fe8a67e41351e3ef8a2a3c2eeb3409e1b5dd455e2a68e33bc48a5",
+  "corpusRelease": "release1_3b6c6e93336a97bdcd9c3a6c05ff9ee8cacfb5a5c77faaac156b1910d9187bf4",
+  "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b",
+  "urls": {
+    "pilot": "https://www.typikon.info/opyty/cs-reader",
+    "capabilities": "https://www.typikon.info/api/v2/study/reader/v1/index/capabilities"
+  },
+  "localTests": {
+    "moduleContractAndDeploymentPassed": 37,
+    "readerIntegrationPassed": 17,
+    "failed": 0,
+    "typecheckPassed": true
+  },
+  "unicodeComparison": {
+    "bodies": 67,
+    "profilesComparedPerBody": 3,
+    "projections": 201,
+    "lexicalTokenComparisons": 13725,
+    "rawChanges": 0,
+    "tokenChanges": 0,
+    "mapSegmentChanges": 0,
+    "sourceBodyOccurrenceFragmentIdsPreserved": true,
+    "allSevenIndexTablesHaveOriginalHashes": true,
+    "acceptedReviewRecordsByteIdentical": true
+  },
+  "server": {
+    "buildPhases": [
+      "compile",
+      "types",
+      "generate"
+    ],
+    "sourceInputsSha256": "bddc921c2bd1a7bdb599d8d2f2f73bf2fb943b08cab6260e5d7138f102995632",
+    "commonBackupWebOrdoLocksUsed": true,
+    "sourceRegistryStagedWithoutCanonicalTextCopy": true,
+    "publicHttpsPassed": true,
+    "externalAnonymousHttpsPassed": true,
+    "schema1Schema2Passed": true,
+    "oldFiveSourceAddressesPassed": true,
+    "margaritNormalizedViewPassed": true,
+    "indexP01P04NotDuplicated": true,
+    "sharedIpApplicationQuota": {
+      "optionsUnmetered": 35,
+      "searchSubset": 30,
+      "nextStatus": 429,
+      "siteOriginDoesNotBypass": true
+    },
+    "edgeQuota": {
+      "ratePerSecond": 10,
+      "burst": 20,
+      "probeRoute": "TLS loopback with canonical www SNI/Host",
+      "probeRequests": 40,
+      "limited": 18,
+      "retryAfter": 1
+    },
+    "bookEngineAndDatabaseUnchanged": true,
+    "nativeDatabaseSha256": "7e84217fe8a6b3c88491f4f44c8746791d3d6a18d7c2264ab8b272e938c7ae51"
+  },
+  "coordination": {
+    "bookPublicationUsedAsBase": "/var/www/typikon.su/typikon-web-releases/releases/20261117T-lenten-triodion-ro",
+    "coverageSha256": "e1129813a40cb6877cdd2bfec4b98e94d293a6d3cc7ac135a8d631eaa8bbecc2",
+    "agentAgreedFreeze": true,
+    "publishedBookChainInBothMasterRepos": true
+  },
+  "recovery": {
+    "scheduled": true,
+    "pid": 2907515,
+    "helper": "/home/admin/typikon_release_recovery.py",
+    "state": "scheduled; verification/retention handled by standard helper; no manual old-release deletion"
+  },
+  "limitations": [
+    "letterfold-r2 is excluded from index because of pre-existing PUA token differences",
+    "accepted corpus lexeme coverage remains four address-specific Codex decisions; other proposals remain candidates",
+    "Flutter repository/UI and visual acceptance remain M2-03–06; no APK publication"
+  ],
+  "apkPublished": false,
+  "appUpdateEndpointsChanged": false,
+  "personalDataModified": false,
+  "visualTestingPerformed": false
+}

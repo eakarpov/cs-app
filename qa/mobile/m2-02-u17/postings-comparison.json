@@ -1,0 +1,16 @@
+{
+  "format": "m2-02-u17-immutable-postings-comparison/1",
+  "oldIndex": "ix1_7eaaeb96062723c6e127d7c101dd35635e3020746eb7a8606025a919c876a0fc",
+  "newIndex": "ix1_d40064e4ed4fe8a67e41351e3ef8a2a3c2eeb3409e1b5dd455e2a68e33bc48a5",
+  "tableHashesUnchanged": {
+    "bodies": true,
+    "placements": true,
+    "tokens": true,
+    "search_keys": true,
+    "candidates": true,
+    "reviews": true,
+    "accepted_links": true
+  },
+  "hitIdentityInputsUnchanged": true,
+  "acceptedReviewRecordsUnchanged": true
+}

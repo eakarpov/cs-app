@@ -1,0 +1,21 @@
+{
+  "format": "m2-02-u17-external-https/1",
+  "passed": true,
+  "checks": [
+    {
+      "path": "/api/v2/study/reader/v1/index/capabilities",
+      "status": 200,
+      "contract": "cs-index/1",
+      "schemaVersion": null,
+      "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b"
+    },
+    {
+      "path": "/api/v2/cs/search?schema=2&q=%D0%B2%D0%BE%D0%B7%D0%B4%D1%83%D1%88%D0%BD%D1%8B%D0%B9&limit=1",
+      "status": 200,
+      "contract": null,
+      "schemaVersion": 2,
+      "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b"
+    }
+  ],
+  "accountOrKeySent": false
+}
