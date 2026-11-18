@@ -3,6 +3,7 @@ import '../data/dictionary_repository.dart';
 import '../domain/models.dart';
 import '../domain/morphemes.dart';
 import 'resource_screen.dart';
+import 'retry_button.dart';
 
 part 'morpheme_detail.dart';
 
@@ -182,8 +183,12 @@ class WordMorphemesView extends StatefulWidget {
     required this.repository,
     required this.openWord,
     required this.fontSize,
+    this.dictionaryVersion,
+    this.initialForm,
   });
   final String id;
+  final String? dictionaryVersion;
+  final String? initialForm;
   final DictionaryRepository repository;
   final ValueChanged<String> openWord;
   final double fontSize;
@@ -194,9 +199,11 @@ class WordMorphemesView extends StatefulWidget {
 class _WordMorphemesViewState extends State<WordMorphemesView> {
   late Future<WordMorphemes> future = widget.repository.wordMorphemes(
     widget.id,
+    dictionaryVersion: widget.dictionaryVersion,
   );
   int analysisIndex = 0;
   String? selected;
+  String? analysisId, analysisVersion, lastForm;
 
   @override
   Widget build(BuildContext context) => FutureBuilder<WordMorphemes>(
@@ -206,7 +213,11 @@ class _WordMorphemesViewState extends State<WordMorphemesView> {
         return _LoadError(
           error: snapshot.error!,
           retry: () => setState(() {
-            future = widget.repository.wordMorphemes(widget.id);
+            future = widget.repository.wordMorphemes(
+              widget.id,
+              dictionaryVersion: widget.dictionaryVersion,
+            );
+            future.ignore();
           }),
         );
       }
@@ -217,12 +228,33 @@ class _WordMorphemesViewState extends State<WordMorphemesView> {
       if (data.analyses.isEmpty) {
         return const Text('Морфемный разбор этого слова пока не задан.');
       }
+      final changedVersion = analysisVersion != data.version;
+      if (changedVersion || lastForm != widget.initialForm) {
+        if (changedVersion) {
+          analysisId = null;
+          selected = null;
+          analysisIndex = 0;
+        }
+        final matches = data.analyses
+            .where((a) => a.form == widget.initialForm)
+            .toList();
+        if (matches.length == 1) {
+          analysisId = matches.single.id;
+          selected = null;
+        }
+        analysisVersion = data.version;
+        lastForm = widget.initialForm;
+      }
+      final found = data.analyses.indexWhere((a) => a.id == analysisId);
+      analysisIndex = found < 0 ? 0 : found;
       final a = data.analyses[analysisIndex];
+      analysisId = a.id;
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           if (data.analyses.length > 1)
             DropdownButtonFormField<int>(
+              key: ValueKey('${data.version}:$analysisId'),
               initialValue: analysisIndex,
               isExpanded: true,
               decoration: const InputDecoration(labelText: 'Вариант разбора'),
@@ -238,6 +270,7 @@ class _WordMorphemesViewState extends State<WordMorphemesView> {
               ],
               onChanged: (value) => setState(() {
                 analysisIndex = value!;
+                analysisId = data.analyses[value].id;
                 selected = null;
               }),
             ),
@@ -246,6 +279,11 @@ class _WordMorphemesViewState extends State<WordMorphemesView> {
             analysisStatus(a.status),
             style: Theme.of(context).textTheme.labelLarge,
           ),
+          if (a.reviewLabel.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 4),
+              child: Text(a.reviewLabel),
+            ),
           const SizedBox(height: 12),
           MorphemeScheme(
             analysis: a,
@@ -278,18 +316,21 @@ class _WordMorphemesViewState extends State<WordMorphemesView> {
               subtitle: part.gloss.isEmpty ? null : Text(part.gloss),
               trailing: part.navigable ? const Icon(Icons.chevron_right) : null,
               onTap: part.navigable
-                  ? () => Navigator.push(
-                      context,
-                      MaterialPageRoute<void>(
-                        builder: (_) => MorphemeScreen(
-                          id: part.morphemeId!,
-                          version: data.version,
-                          repository: widget.repository,
-                          openWord: widget.openWord,
-                          fontSize: widget.fontSize,
+                  ? () {
+                      setState(() => selected = part.id);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (_) => MorphemeScreen(
+                            id: part.morphemeId!,
+                            version: data.version,
+                            repository: widget.repository,
+                            openWord: widget.openWord,
+                            fontSize: widget.fontSize,
+                          ),
                         ),
-                      ),
-                    )
+                      );
+                    }
                   : () => setState(() => selected = part.id),
             ),
         ],
@@ -325,7 +366,13 @@ class _MorphemeScreenState extends State<MorphemeScreen> {
   late Future<MorphemeWords> words = loadWords(null);
   final cursors = <String?>[null];
   int page = 0;
-  Future<MorphemeWords> loadWords(String? cursor) async {
+  Future<MorphemeWords> loadWords(String? cursor) {
+    final request = _loadWords(cursor);
+    request.ignore();
+    return request;
+  }
+
+  Future<MorphemeWords> _loadWords(String? cursor) async {
     final data = await widget.repository.morphemeWords(
       widget.id,
       version: widget.version,
@@ -444,12 +491,13 @@ class _MorphemeScreenState extends State<MorphemeScreen> {
         if (snapshot.hasError) {
           return _LoadError(
             error: snapshot.error!,
-            retry: () => setState(
-              () => future = widget.repository.morpheme(
+            retry: () => setState(() {
+              future = widget.repository.morpheme(
                 widget.id,
                 version: widget.version,
-              ),
-            ),
+              );
+              future.ignore();
+            }),
           );
         }
         if (!snapshot.hasData) {
@@ -572,7 +620,7 @@ class _LoadError extends StatelessWidget {
               ? 'Морфемные данные пока недоступны через API.'
               : error.toString(),
         ),
-        TextButton(onPressed: retry, child: const Text('Повторить')),
+        RetryButton(error: error, onRetry: retry),
       ],
     ),
   );

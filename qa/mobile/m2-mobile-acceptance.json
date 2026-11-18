@@ -1,0 +1,60 @@
+{
+  "format": "m2-mobile-acceptance/1",
+  "date": "2026-11-18",
+  "status": "implementation-and-automated-acceptance-passed; owner-device-acceptance-pending",
+  "tasks": {
+    "M2-03": "implemented",
+    "M2-04": "implemented",
+    "M2-05": "implemented",
+    "M2-06": "automated-passed; owner-visual-and-android-link-checks-pending"
+  },
+  "tests": {
+    "fullRegressionPassed": 100,
+    "subsequentReaderAndNavigationPassed": 12,
+    "uniqueTestsWithAddedContinuationCase": 101,
+    "analyze": "no issues found",
+    "logs": [
+      "qa/mobile/m2-regression.log",
+      "qa/mobile/m2-reader-tests.log",
+      "qa/mobile/m2-analyze.log"
+    ]
+  },
+  "https": {
+    "receipt": "qa/mobile/m2-mobile-live.json",
+    "navigationMaterials": 5,
+    "navigationUnits": 68,
+    "physicalPlacements": 67,
+    "indexRevision": "ix1_d40064e4ed4fe8a67e41351e3ef8a2a3c2eeb3409e1b5dd455e2a68e33bc48a5",
+    "corpusRelease": "release1_3b6c6e93336a97bdcd9c3a6c05ff9ee8cacfb5a5c77faaac156b1910d9187bf4",
+    "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b",
+    "surfaceChristosHits": 14,
+    "acceptedChristosHits": 3,
+    "allReadPagesValidated": true,
+    "legacyAndPermanentLinks": true
+  },
+  "lookup": {
+    "implementation": "existing dictionary schema=2 search with exact D and server-supplied lookupKey",
+    "usesUnpinnedLegacyReaderLookup": false,
+    "prefixHitsExcludedFromTokenCandidates": true,
+    "automaticCorpusBinding": false
+  },
+  "sourceTreeSha256": "c54c009354b519bef863838fa46ed57c10c67344cebb78a0765374b3942b6fa8",
+  "sourceInputsReceipt": "qa/mobile/m2-source-inputs.json",
+  "artifactReceipt": "qa/mobile/m2-apk.json",
+  "apkSha256": "27992df6899a2a03d18e4e5099cd99686302bf19d0f8f38ac8ffac44493abce7",
+  "published": false,
+  "installed": false,
+  "launched": false,
+  "visualChecked": false,
+  "serverChanged": false,
+  "updateEndpointsChanged": false,
+  "personalStoreFormatChanged": false,
+  "codeScope": "M2 reader plus required existing M1 schema=2 mobile worktree dependencies; unrelated data/editorial tools excluded",
+  "remaining": [
+    "owner acceptance: light/dark, large text, PUA/titlo, TalkBack and return state",
+    "cold/warm Android incoming links and system HTTPS handler selection",
+    "no verified App Links domain ownership or iOS association in this task",
+    "no offline full corpus or persistent reading position across process restart",
+    "partial accepted-link coverage; no human scholarly acceptance claimed"
+  ]
+}

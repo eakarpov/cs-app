@@ -4,6 +4,8 @@ import '../../../core/external_link.dart';
 import 'package:flutter/material.dart';
 import '../data/dictionary_repository.dart';
 import '../domain/models.dart';
+import 'report_dialog.dart';
+import 'retry_button.dart';
 
 class ResourceScreen extends StatefulWidget {
   const ResourceScreen({
@@ -13,11 +15,19 @@ class ResourceScreen extends StatefulWidget {
     this.protoId,
     this.expectedBodyHash,
     this.lookup,
+    this.dictionaryVersion,
+    this.dictionarySchema = 2,
+    this.wordName,
+    this.mappingLabel,
+    this.expectedSourceVersion,
     required this.size,
   });
   final DictionaryRepository repository;
   final String id;
   final String? expectedBodyHash;
+  final String? dictionaryVersion;
+  final String? wordName, mappingLabel, expectedSourceVersion;
+  final int dictionarySchema;
   final int? protoId;
   final double size;
   final void Function(String)? lookup;
@@ -36,7 +46,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
   void load() {
     future = widget.protoId != null
         ? widget.repository.etymology(widget.protoId!)
-        : widget.repository.source(widget.id);
+        : widget.repository.source(
+            widget.id,
+            version: widget.dictionaryVersion,
+            schema: widget.dictionarySchema,
+            sourceVersion: widget.expectedSourceVersion,
+          );
+    future.ignore();
   }
 
   Future<void> openLink(String target) async {
@@ -73,12 +89,16 @@ class _ResourceScreenState extends State<ResourceScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(s.error.toString()),
-                  const SizedBox(height: 12),
-                  FilledButton(
-                    onPressed: () => setState(load),
-                    child: const Text('Повторить'),
+                  Text(
+                    s.error is DictionaryException &&
+                            (s.error as DictionaryException).status == 404
+                        ? (widget.protoId == null
+                              ? 'Статья источника недоступна.'
+                              : 'Этимологическая статья недоступна.')
+                        : s.error.toString(),
                   ),
+                  const SizedBox(height: 12),
+                  RetryButton(error: s.error, onRetry: () => setState(load)),
                 ],
               ),
             ),
@@ -88,6 +108,9 @@ class _ResourceScreenState extends State<ResourceScreen> {
         final j = s.data!;
         if (widget.protoId != null) {
           return ListView(
+            key: PageStorageKey(
+              'etymology:${widget.protoId}:${widget.expectedBodyHash}',
+            ),
             padding: const EdgeInsets.all(20),
             children: [
               Text(
@@ -126,13 +149,42 @@ class _ResourceScreenState extends State<ResourceScreen> {
             .map((r) => string(r['target']))
             .toSet();
         return ListView(
+          key: PageStorageKey(
+            'source:${widget.id}:${widget.dictionaryVersion}',
+          ),
           padding: const EdgeInsets.all(20),
           children: [
+            if (widget.wordName != null)
+              Text('Источник для: ${widget.wordName}'),
+            if (widget.mappingLabel != null) Text(widget.mappingLabel!),
             Text(
               string(j['title']),
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 16),
+            if (!paragraphs.any(
+              (p) => array(
+                p['runs'],
+              ).any((r) => string(object(r)['text']).trim().isNotEmpty),
+            )) ...[
+              if (string(j['text']).trim().isNotEmpty)
+                SelectableText(
+                  string(j['text']),
+                  style: TextStyle(fontSize: widget.size),
+                )
+              else ...[
+                const Text('Текст статьи пока недоступен.'),
+                TextButton(
+                  onPressed: () => showContentReport(
+                    context,
+                    widget.repository,
+                    query: 'Источник ${widget.id}',
+                    initialReason: 'source',
+                  ),
+                  child: const Text('Сообщить об источнике'),
+                ),
+              ],
+            ],
             for (final p in paragraphs)
               Padding(
                 padding: const EdgeInsets.only(bottom: 12),

@@ -34,7 +34,9 @@ class SettingsScreen extends StatelessWidget {
                 child: Text('Тёмная тема'),
               ),
             ],
-            onChanged: (value) => personal.settings(theme: value),
+            onChanged: personal.canEdit
+                ? (value) => personal.settings(theme: value)
+                : null,
           ),
           const SizedBox(height: 20),
           Text('Размер текста: ${personal.fontSize.round()}'),
@@ -44,19 +46,25 @@ class SettingsScreen extends StatelessWidget {
             max: 36,
             divisions: 20,
             label: personal.fontSize.round().toString(),
-            onChanged: (value) => personal.settings(size: value),
+            onChanged: personal.canEdit
+                ? (value) => personal.settings(size: value)
+                : null,
           ),
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
             title: const Text('Выделять окончания'),
             value: personal.highlightEndings,
-            onChanged: (value) => personal.settings(endings: value),
+            onChanged: personal.canEdit
+                ? (value) => personal.settings(endings: value)
+                : null,
           ),
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
             title: const Text('Показывать предположительные связи'),
             value: personal.showProposed,
-            onChanged: (value) => personal.settings(proposed: value),
+            onChanged: personal.canEdit
+                ? (value) => personal.settings(proposed: value)
+                : null,
           ),
           const SizedBox(height: 20),
           const Text(

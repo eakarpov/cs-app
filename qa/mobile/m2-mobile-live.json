@@ -1,0 +1,94 @@
+{
+  "indexRevision": "ix1_d40064e4ed4fe8a67e41351e3ef8a2a3c2eeb3409e1b5dd455e2a68e33bc48a5",
+  "corpusRelease": "release1_3b6c6e93336a97bdcd9c3a6c05ff9ee8cacfb5a5c77faaac156b1910d9187bf4",
+  "dictionaryVersion": "caa7e26568a660d8333321335cfbe477835dbc395959f569e9ad77e7faa08b5b",
+  "sources": [
+    {
+      "sourceId": "src_4b1c450f72434c3ca14b313e12193a8d",
+      "addressPinned": true,
+      "navigationUnits": 40,
+      "uniqueBodies": 40,
+      "projectedTokens": 2380,
+      "lastPageBody": "bdy_5179af748bde4fc8ad13f9d2b2e2667d",
+      "lastPageTokenCount": 75,
+      "lastPageRawLengthUtf16": 223
+    },
+    {
+      "sourceId": "src_940753e0284c461e84296829a3e6f1e6",
+      "addressPinned": true,
+      "navigationUnits": 25,
+      "uniqueBodies": 25,
+      "projectedTokens": 3775,
+      "lastPageBody": "bdy_0ef4c69adf9e45a3af4a9befc0a7fe6f",
+      "lastPageTokenCount": 71,
+      "lastPageRawLengthUtf16": 253
+    },
+    {
+      "sourceId": "src_9d0454d1a69b45939d7ebce42dd717ad",
+      "addressPinned": true,
+      "navigationUnits": 1,
+      "uniqueBodies": 1,
+      "projectedTokens": 4211,
+      "lastPageBody": "bdy_7c45004b64ac4c0e8a782740c22f7707",
+      "lastPageTokenCount": 4211,
+      "lastPageRawLengthUtf16": 12489
+    },
+    {
+      "sourceId": "src_3d81e2bf35684343ad079ff6ed83ec8b",
+      "addressPinned": true,
+      "navigationUnits": 1,
+      "uniqueBodies": 1,
+      "projectedTokens": 65,
+      "lastPageBody": "bdy_f21cdacddae44f8e8ec60876adad9bae",
+      "lastPageTokenCount": 65,
+      "lastPageRawLengthUtf16": 186
+    },
+    {
+      "sourceId": "src_9c3e68a5ac2645478e5d8a2fd0e8c4ba",
+      "addressPinned": true,
+      "navigationUnits": 1,
+      "uniqueBodies": 1,
+      "projectedTokens": 76,
+      "lastPageBody": "bdy_eb92914ba4654735953b4c217ec96414",
+      "lastPageTokenCount": 76,
+      "lastPageRawLengthUtf16": 255
+    }
+  ],
+  "margaritFields": {
+    "authorship": {
+      "state": "candidate",
+      "display": "Атрибуция Иоанну Златоусту унаследована от сборника; глава отдельно не проверена.",
+      "assertionIds": [
+        "assert:chapter-author-candidate"
+      ],
+      "questionIds": [
+        "q:chapter-author"
+      ]
+    },
+    "translator": {
+      "state": "unknown",
+      "display": "Переводчик не установлен.",
+      "assertionIds": [],
+      "questionIds": [
+        "q:chapter-translator"
+      ]
+    }
+  },
+  "irmosFields": {
+    "originalPartOf": {
+      "state": "unknown",
+      "display": "Родной канон ирмоса не установлен.",
+      "assertionIds": [],
+      "questionIds": [
+        "q:irmos-original"
+      ]
+    }
+  },
+  "surfaceHits": 14,
+  "acceptedHits": 3,
+  "lookupPinnedD": true,
+  "lookupExactCandidates": 1,
+  "profilesRoundTrip": true,
+  "legacyAndPermanentLinks": true,
+  "status": "passed"
+}

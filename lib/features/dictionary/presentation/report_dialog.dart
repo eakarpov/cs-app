@@ -1,23 +1,35 @@
 import 'package:flutter/material.dart';
 import '../data/dictionary_repository.dart';
+import 'retry_button.dart';
 
 Future<void> showContentReport(
   BuildContext context,
   DictionaryRepository repository, {
   String? id,
   String? query,
+  String? initialReason,
 }) async {
   await showDialog<void>(
     context: context,
-    builder: (context) =>
-        _ReportDialog(repository: repository, id: id, query: query),
+    builder: (context) => _ReportDialog(
+      repository: repository,
+      id: id,
+      query: query,
+      initialReason: initialReason,
+    ),
   );
 }
 
 class _ReportDialog extends StatefulWidget {
-  const _ReportDialog({required this.repository, this.id, this.query});
+  const _ReportDialog({
+    required this.repository,
+    this.id,
+    this.query,
+    this.initialReason,
+  });
   final DictionaryRepository repository;
   final String? id, query;
+  final String? initialReason;
   @override
   State<_ReportDialog> createState() => _ReportDialogState();
 }
@@ -26,11 +38,13 @@ class _ReportDialogState extends State<_ReportDialog> {
   final comment = TextEditingController();
   String reason = 'inaccurate';
   String? error;
+  Object? failure;
   bool sending = false;
   @override
   void initState() {
     super.initState();
     if (widget.id == null) reason = 'missing';
+    if (widget.initialReason != null) reason = widget.initialReason!;
   }
 
   @override
@@ -47,6 +61,7 @@ class _ReportDialogState extends State<_ReportDialog> {
     setState(() {
       sending = true;
       error = null;
+      failure = null;
     });
     try {
       await widget.repository.report(
@@ -61,6 +76,7 @@ class _ReportDialogState extends State<_ReportDialog> {
         setState(() {
           sending = false;
           error = e.toString();
+          failure = e;
         });
       }
     }
@@ -117,9 +133,10 @@ class _ReportDialogState extends State<_ReportDialog> {
         onPressed: sending ? null : () => Navigator.pop(context),
         child: const Text('Отмена'),
       ),
-      FilledButton(
-        onPressed: sending ? null : submit,
-        child: Text(sending ? 'Отправляем…' : 'Отправить'),
+      RetryButton(
+        error: failure,
+        onRetry: sending ? null : submit,
+        label: sending ? 'Отправляем…' : 'Отправить',
       ),
     ],
   );

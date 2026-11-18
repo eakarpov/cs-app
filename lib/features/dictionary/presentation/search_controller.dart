@@ -9,8 +9,11 @@ class WordSearchController extends ChangeNotifier {
   Timer? _timer;
   int _generation = 0;
   bool _disposed = false, loading = false;
+  bool loadingMore = false, restartRequired = false;
+  int schemaVersion = 2;
   String query = '', direction = 'cu-ru';
   String? error, nextCursor, version;
+  Object? failure;
   List<SearchHit> items = [];
   void change(String value, {String? mode, bool immediate = false}) {
     _timer?.cancel();
@@ -21,6 +24,10 @@ class WordSearchController extends ChangeNotifier {
     nextCursor = null;
     version = null;
     error = null;
+    failure = null;
+    loadingMore = false;
+    restartRequired = false;
+    schemaVersion = 2;
     loading = value.trim().isNotEmpty;
     notifyListeners();
     if (value.trim().isEmpty) return;
@@ -40,23 +47,37 @@ class WordSearchController extends ChangeNotifier {
     await _fetch(_generation, true);
   }
 
-  void retry() => change(query, immediate: true);
+  void retry() {
+    if (loading) return;
+    if (!restartRequired && items.isNotEmpty && nextCursor != null) {
+      more();
+    } else {
+      change(query, immediate: true);
+    }
+  }
+
   Future<void> _fetch(int generation, bool append) async {
     if (_disposed || generation != _generation) return;
     loading = true;
+    loadingMore = append;
     error = null;
+    failure = null;
     notifyListeners();
     try {
       final page = await repository.search(
         query.trim(),
         direction,
         cursor: append ? nextCursor : null,
+        version: append && schemaVersion == 2 ? version : null,
+        schema: append ? schemaVersion : 2,
       );
       if (_disposed || generation != _generation) return;
       if (append && version != null && version != page.version) {
         loading = false;
         nextCursor = null;
         error = 'Словарь обновился. Повторите поиск.';
+        restartRequired = true;
+        loadingMore = false;
         notifyListeners();
         return;
       }
@@ -66,15 +87,25 @@ class WordSearchController extends ChangeNotifier {
             }.values.toList()
           : page.items;
       version = page.version;
+      schemaVersion = page.schemaVersion;
       nextCursor = page.nextCursor;
     } catch (e) {
       if (_disposed || generation != _generation) return;
+      failure = e;
       error = e is DictionaryException
           ? e.message
           : 'Не удалось выполнить поиск.';
+      if (e is DictionaryException &&
+          (e.status == 409 ||
+              e.code == 'bad_cursor' ||
+              e.code == 'invalid_contract' && append)) {
+        restartRequired = true;
+        nextCursor = null;
+      }
     }
     if (_disposed || generation != _generation) return;
     loading = false;
+    loadingMore = false;
     notifyListeners();
   }
 

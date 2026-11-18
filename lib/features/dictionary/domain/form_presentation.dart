@@ -7,7 +7,7 @@ bool hasRaisedLetters(String value) =>
 
 List<WordForm> uniqueForms(Iterable<WordForm> forms) {
   final seen = <String>{};
-  return forms.where((f) => seen.add(f.value)).toList();
+  return forms.where((f) => seen.add(f.selectionKey)).toList();
 }
 
 List<WordForm> readableForms(Iterable<WordForm> forms) =>

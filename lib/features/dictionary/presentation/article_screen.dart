@@ -6,9 +6,13 @@ import '../data/dictionary_repository.dart';
 import '../domain/models.dart';
 import '../domain/form_presentation.dart';
 import 'forms_view.dart';
+import '../../reader/presentation/corpus_screen.dart';
 import 'resource_screen.dart';
+import 'retry_button.dart';
 import 'report_dialog.dart';
 import 'morphemes_view.dart';
+import 'dictionary_screen.dart';
+import 'form_information.dart';
 
 class ArticleScreen extends StatefulWidget {
   const ArticleScreen({
@@ -19,9 +23,14 @@ class ArticleScreen extends StatefulWidget {
     this.lookup,
     this.matched,
     this.grammar,
+    this.match,
+    this.dictionaryVersion,
+    this.dictionarySchema = 2,
   });
   final String id;
   final String? matched, grammar;
+  final String? match, dictionaryVersion;
+  final int dictionarySchema;
   final DictionaryRepository repository;
   final PersonalStore personal;
   final void Function(String)? lookup;
@@ -31,17 +40,47 @@ class ArticleScreen extends StatefulWidget {
 
 class _ArticleScreenState extends State<ArticleScreen> {
   late Future<WordArticle> future;
+  String? pinnedVersion;
+  int profile = 2;
+  WordArticle? loadedArticle;
+  WordForm? selectedForm;
+  bool useLookupContext = true;
+  String get scopeKey =>
+      '${widget.id}:${loadedArticle?.version ?? pinnedVersion ?? 'latest'}';
+
   @override
   void initState() {
     super.initState();
+    pinnedVersion = widget.dictionaryVersion;
+    profile = widget.dictionarySchema;
     load();
   }
 
   void load() {
-    future = widget.repository.article(widget.id).then((a) {
-      widget.personal.opened(SavedWord(a.id, a.name));
-      return a;
-    });
+    future = widget.repository
+        .article(widget.id, version: pinnedVersion, schema: profile)
+        .then((a) {
+          if (loadedArticle?.version != a.version) selectedForm = null;
+          loadedArticle = a;
+          final matches = uniqueForms(
+            a.allForms.where(
+              (f) =>
+                  useLookupContext &&
+                  !{'translation', 'explanation'}.contains(widget.match) &&
+                  f.value == widget.matched,
+            ),
+          );
+          if (selectedForm == null && matches.length == 1) {
+            selectedForm = matches.single;
+          }
+          profile = a.schemaVersion;
+          pinnedVersion = profile == 2 ? a.version : null;
+          widget.personal.opened(SavedWord(a.id, a.name));
+          return a;
+        });
+    // Retry can fail before FutureBuilder subscribes on the next frame.
+    // Mark the error handled without changing the future seen by the view.
+    future.ignore();
   }
 
   void openArticle(String id) => Navigator.push(
@@ -49,6 +88,8 @@ class _ArticleScreenState extends State<ArticleScreen> {
     MaterialPageRoute<void>(
       builder: (_) => ArticleScreen(
         id: id,
+        dictionaryVersion: pinnedVersion,
+        dictionarySchema: profile,
         repository: widget.repository,
         personal: widget.personal,
         lookup: lookupWord,
@@ -56,51 +97,32 @@ class _ArticleScreenState extends State<ArticleScreen> {
     ),
   );
   Future<void> lookupWord(String word) async {
-    try {
-      final result = await widget.repository.search(
-        word.replaceFirst(RegExp(r'_\d+$'), ''),
-        'cu-ru',
-      );
-      if (!mounted) return;
-      if (result.items.length == 1) {
-        openArticle(result.items.first.id);
-        return;
-      }
-      final selected = await showModalBottomSheet<String>(
-        context: context,
-        builder: (context) => SafeArea(
-          child: result.items.isEmpty
-              ? const Padding(
-                  padding: EdgeInsets.all(24),
-                  child: Text('Подходящая статья пока не найдена.'),
-                )
-              : ListView(
-                  shrinkWrap: true,
-                  children: result.items
-                      .map(
-                        (hit) => ListTile(
-                          title: Text(
-                            hit.name,
-                            style: const TextStyle(fontFamily: 'Monomakh'),
-                          ),
-                          subtitle: Text(
-                            hit.grammar.isEmpty ? hit.matchLabel : hit.grammar,
-                          ),
-                          onTap: () => Navigator.pop(context, hit.id),
-                        ),
-                      )
-                      .toList(),
-                ),
+    await Navigator.push<void>(
+      context,
+      MaterialPageRoute(
+        builder: (_) => DictionaryScreen(
+          repository: widget.repository,
+          personal: widget.personal,
+          initialQuery: word.replaceFirst(RegExp(r'_\d+$'), ''),
+          nestedLookup: true,
         ),
-      );
-      if (selected != null && mounted) openArticle(selected);
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text(e.toString())));
-      }
-    }
+      ),
+    );
+  }
+
+  void showFormDetails(WordForm f) {
+    setState(() => selectedForm = f);
+    showFormInformation(
+      context,
+      f,
+      fontSize: widget.personal.fontSize,
+      openSource: (id, revision) => openSource(
+        id,
+        sourceVersion: revision,
+        wordName: f.value,
+        mappingLabel: 'Свидетельство формы',
+      ),
+    );
   }
 
   Widget wordForm(WordForm f) {
@@ -133,27 +155,44 @@ class _ArticleScreenState extends State<ArticleScreen> {
             f.value,
             style: TextStyle(fontFamily: 'Monomakh', fontSize: size),
           );
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Tooltip(
-            message: f.provenance.isEmpty
-                ? '${f.stored ? 'Из словаря' : 'Расчётная форма'}. Происхождение не установлено'
-                : '${f.stored ? 'Из словаря: ' : 'На основании схемы: '}${f.provenance.map((p) => p.label).toSet().join('\n')}',
-            child: shape,
-          ),
-        ],
+    final selected = selectedForm?.selectionKey == f.selectionKey;
+
+    return Semantics(
+      selected: selected,
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
+        decoration: BoxDecoration(
+          border: selected
+              ? Border.all(color: Theme.of(context).colorScheme.primary)
+              : null,
+          borderRadius: BorderRadius.circular(4),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onLongPress: () => showFormDetails(f),
+              child: shape,
+            ),
+            Tooltip(
+              message: 'Сведения о форме: ${f.value}',
+              child: TextButton.icon(
+                onPressed: () => showFormDetails(f),
+                icon: const Icon(Icons.info_outline, size: 18),
+                label: const Text('Сведения о форме'),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
   Widget relations(List<Json> rows, bool proposed) => ExpansionTile(
-    key: PageStorageKey('${widget.id}:relations:$proposed'),
+    key: PageStorageKey('$scopeKey:relations:$proposed'),
     title: Text(proposed ? 'Предположительные связи' : 'Подтверждённые связи'),
     subtitle: proposed
-        ? const Text('Машинное сопоставление; требует проверки')
+        ? const Text('Связь требует проверки; основание указано ниже')
         : null,
     children: rows
         .map(
@@ -180,16 +219,12 @@ class _ArticleScreenState extends State<ArticleScreen> {
                           child: const Text('Значение связанного слова'),
                         ),
                     ],
-                    onSelected: (id) => Navigator.push(
-                      context,
-                      MaterialPageRoute<void>(
-                        builder: (_) => ResourceScreen(
-                          repository: widget.repository,
-                          id: id,
-                          size: widget.personal.fontSize,
-                          lookup: lookupWord,
-                        ),
-                      ),
+                    onSelected: (id) => openSource(
+                      id,
+                      wordName: id == r['targetSourceId']
+                          ? string(r['targetName'])
+                          : loadedArticle?.name,
+                      mappingLabel: 'Основание смысловой связи',
                     ),
                   )
                 : null,
@@ -213,9 +248,13 @@ class _ArticleScreenState extends State<ArticleScreen> {
               'Источники и пометы',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            const ListTile(
-              title: Text('Извод: русский синодальный'),
-              subtitle: Text(
+            ListTile(
+              title: Text(
+                a.izvod.isEmpty
+                    ? 'Извод не указан'
+                    : 'Извод: ${a.izvod == 'russian-synodal' ? 'русский синодальный' : a.izvod}',
+              ),
+              subtitle: const Text(
                 'Другие исторические свидетельства различаются по источникам.',
               ),
             ),
@@ -238,7 +277,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
             const Padding(
               padding: EdgeInsets.all(16),
               child: Text(
-                'Для сведений об источнике отдельной формы нажмите и удерживайте её.',
+                'Используйте действие «Сведения о форме» рядом с нужным написанием.',
               ),
             ),
             for (final u in a.usage)
@@ -249,11 +288,8 @@ class _ArticleScreenState extends State<ArticleScreen> {
             for (final source in a.sources)
               ListTile(
                 title: Text(source.title),
-                subtitle: Text(
-                  source.proposed
-                      ? 'Сопоставление требует проверки'
-                      : 'Сопоставлено по написанию и словарному указателю',
-                ),
+                subtitle: Text(source.mappingLabel),
+                onTap: () => openSource(source.id),
               ),
             TextButton.icon(
               onPressed: () =>
@@ -267,28 +303,33 @@ class _ArticleScreenState extends State<ArticleScreen> {
     ),
   );
 
-  Widget sectionList(String key, List<Widget> children) => Builder(
-    builder: (context) => CustomScrollView(
-      key: PageStorageKey('${widget.id}:$key'),
-      slivers: [
-        SliverOverlapInjector(
-          handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-        ),
-        SliverPadding(
-          padding: const EdgeInsets.all(16),
-          sliver: SliverList.list(children: children),
-        ),
-      ],
+  Widget sectionList(String key, List<Widget> children) => _KeepArticleSection(
+    key: ValueKey('$scopeKey:$key'),
+    child: Builder(
+      builder: (context) => CustomScrollView(
+        key: PageStorageKey('$scopeKey:$key'),
+        slivers: [
+          SliverOverlapInjector(
+            handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.all(16),
+            sliver: SliverList.list(children: children),
+          ),
+        ],
+      ),
     ),
   );
 
   Widget examples(WordArticle a) => sectionList('examples', [
     const Text('Цитаты из словарей. Сохраняется написание источника.'),
     if (a.examples.isEmpty) ...[
-      const Padding(
-        padding: EdgeInsets.symmetric(vertical: 16),
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16),
         child: Text(
-          'Примеры пока не выделены отдельно. Цитаты можно посмотреть в статьях источников.',
+          a.sources.isEmpty
+              ? 'Примеры пока не выделены отдельно.'
+              : 'Примеры пока не выделены отдельно. Цитаты можно посмотреть в статьях источников.',
         ),
       ),
       for (final source in a.sources)
@@ -315,7 +356,12 @@ class _ArticleScreenState extends State<ArticleScreen> {
               const SizedBox(height: 12),
               ScriptureText(example.citation),
               TextButton.icon(
-                onPressed: () => openSource(example.sourceId),
+                onPressed: () => openSource(
+                  example.sourceId,
+                  sourceVersion: example.sourceVersion.isEmpty
+                      ? null
+                      : example.sourceVersion,
+                ),
                 icon: const Icon(Icons.menu_book_outlined),
                 label: Text(example.sourceTitle),
               ),
@@ -325,17 +371,38 @@ class _ArticleScreenState extends State<ArticleScreen> {
       ),
   ]);
 
-  void openSource(String id) => Navigator.push(
-    context,
-    MaterialPageRoute<void>(
-      builder: (_) => ResourceScreen(
-        repository: widget.repository,
-        id: id,
-        size: widget.personal.fontSize,
-        lookup: lookupWord,
+  void openSource(
+    String id, {
+    String? sourceVersion,
+    String? mappingLabel,
+    String? wordName,
+  }) {
+    final matches = [
+      ...?loadedArticle?.sources,
+      ...?loadedArticle?.relatedSources,
+    ].where((s) => s.id == id).toList();
+    final source = matches.length == 1 ? matches.single : null;
+    Navigator.push<void>(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ResourceScreen(
+          dictionaryVersion: pinnedVersion,
+          dictionarySchema: profile,
+          repository: widget.repository,
+          id: id,
+          size: widget.personal.fontSize,
+          lookup: lookupWord,
+          wordName: wordName ?? loadedArticle?.name,
+          mappingLabel: mappingLabel ?? source?.mappingLabel,
+          expectedSourceVersion:
+              sourceVersion ??
+              (source?.sourceVersion.isNotEmpty == true
+                  ? source!.sourceVersion
+                  : null),
+        ),
       ),
-    ),
-  );
+    );
+  }
 
   @override
   Widget build(BuildContext context) => ListenableBuilder(
@@ -364,17 +431,38 @@ class _ArticleScreenState extends State<ArticleScreen> {
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text(snapshot.error.toString()),
-                              FilledButton(
-                                onPressed: () => setState(load),
-                                child: const Text('Повторить'),
+                              Text(
+                                snapshot.error is DictionaryException &&
+                                        (snapshot.error as DictionaryException)
+                                                .status ==
+                                            404
+                                    ? 'Статья недоступна по сохранённому адресу.'
+                                    : snapshot.error.toString(),
                               ),
+                              RetryButton(
+                                error: snapshot.error,
+                                onRetry: () => setState(load),
+                              ),
+                              if (snapshot.error is DictionaryException &&
+                                  (snapshot.error as DictionaryException)
+                                          .status ==
+                                      409)
+                                TextButton(
+                                  onPressed: () => setState(() {
+                                    useLookupContext = false;
+                                    pinnedVersion = null;
+                                    profile = 2;
+                                    load();
+                                  }),
+                                  child: const Text('Открыть текущую версию'),
+                                ),
                             ],
                           ),
                         )
                       : const CircularProgressIndicator(),
                 )
               : DefaultTabController(
+                  key: ValueKey(scopeKey),
                   length: 4,
                   child: SelectionArea(
                     child: NestedScrollView(
@@ -400,7 +488,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                       tooltip: personal.isFavorite(a.id)
                                           ? 'Убрать из избранного'
                                           : 'В избранное',
-                                      onPressed: personal.ready
+                                      onPressed: personal.canEdit
                                           ? () => personal.toggle(
                                               SavedWord(a.id, a.name),
                                             )
@@ -431,14 +519,34 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                       fontSize: personal.fontSize,
                                     ),
                                   ),
+                                OutlinedButton.icon(
+                                  onPressed: a.schemaVersion == 2
+                                      ? () => Navigator.push<void>(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (_) => CorpusScreen(
+                                              dictionary: widget.repository,
+                                              personal: personal,
+                                              lexemeId: a.id,
+                                              dictionaryVersion: a.version,
+                                              word:
+                                                  selectedForm?.value ?? a.name,
+                                            ),
+                                          ),
+                                        )
+                                      : null,
+                                  icon: const Icon(Icons.find_in_page_outlined),
+                                  label: const Text('Употребления'),
+                                ),
                                 if (conciseProperties(a).isNotEmpty)
                                   Text(conciseProperties(a)),
-                                if (widget.matched != null &&
+                                if (useLookupContext &&
+                                    widget.matched != null &&
                                     widget.matched != a.name)
                                   ExpansionTile(
                                     tilePadding: EdgeInsets.zero,
                                     title: Text(
-                                      'Найденная форма: ${widget.matched}',
+                                      '${widget.match == 'translation' || widget.match == 'explanation' ? 'Найдено по' : 'Найденная форма'}: ${widget.matched}',
                                       style: TextStyle(
                                         fontFamily: 'Monomakh',
                                         fontSize: personal.fontSize,
@@ -476,7 +584,16 @@ class _ArticleScreenState extends State<ArticleScreen> {
                               const Padding(
                                 padding: EdgeInsets.symmetric(vertical: 12),
                                 child: Text(
-                                  'Для этой статьи пока не подготовлено объяснение из источников. Формы и грамматические сведения доступны во вкладке «Формы».',
+                                  'Для этой статьи пока не подготовлено объяснение из источников.',
+                                ),
+                              ),
+                            if (a.sources.isEmpty && a.hasForms)
+                              Builder(
+                                builder: (context) => TextButton(
+                                  onPressed: () => DefaultTabController.of(
+                                    context,
+                                  ).animateTo(2),
+                                  child: const Text('Открыть формы'),
                                 ),
                               ),
                             for (final source in a.sources)
@@ -484,19 +601,12 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                 child: ListTile(
                                   title: Text(source.title),
                                   subtitle: ScriptureText(
-                                    '${source.proposed ? 'Предположительное сопоставление\n' : ''}${source.preview}',
+                                    '${source.mappingLabel}\n${source.preview}',
                                   ),
                                   trailing: const Icon(Icons.chevron_right),
-                                  onTap: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute<void>(
-                                      builder: (_) => ResourceScreen(
-                                        repository: widget.repository,
-                                        id: source.id,
-                                        size: personal.fontSize,
-                                        lookup: lookupWord,
-                                      ),
-                                    ),
+                                  onTap: () => openSource(
+                                    source.id,
+                                    mappingLabel: source.mappingLabel,
                                   ),
                                 ),
                               ),
@@ -514,16 +624,10 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                       (source) => ListTile(
                                         title: Text(source.title),
                                         subtitle: ScriptureText(source.preview),
-                                        onTap: () => Navigator.push(
-                                          context,
-                                          MaterialPageRoute<void>(
-                                            builder: (_) => ResourceScreen(
-                                              repository: widget.repository,
-                                              id: source.id,
-                                              size: personal.fontSize,
-                                              lookup: lookupWord,
-                                            ),
-                                          ),
+                                        onTap: () => openSource(
+                                          source.id,
+                                          mappingLabel:
+                                              'Перекрёстная ссылка; не является толкованием этого слова. ${source.mappingLabel}',
                                         ),
                                       ),
                                     )
@@ -548,6 +652,22 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                     .toList(),
                                 true,
                               ),
+                            if (!personal.showProposed &&
+                                a.relations.any(
+                                  (r) => r['status'] == 'proposed',
+                                ))
+                              const Text(
+                                'Предположительные связи скрыты настройкой.',
+                              ),
+                            if (a.relations.any(
+                              (r) => !{
+                                'verified',
+                                'proposed',
+                              }.contains(r['status']),
+                            ))
+                              const Text(
+                                'Есть связи с неустановленным или спорным статусом; подтверждение не задано.',
+                              ),
                             if (a.relations.isEmpty)
                               const Padding(
                                 padding: EdgeInsets.symmetric(vertical: 12),
@@ -566,6 +686,8 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                   context,
                                   MaterialPageRoute<void>(
                                     builder: (_) => ResourceScreen(
+                                      dictionaryVersion: pinnedVersion,
+                                      dictionarySchema: profile,
                                       repository: widget.repository,
                                       id: '',
                                       protoId: (e['articleId'] as num).toInt(),
@@ -579,7 +701,18 @@ class _ArticleScreenState extends State<ArticleScreen> {
                           ]),
                           examples(a),
                           sectionList('forms', [
-                            WordFormsView(article: a, formBuilder: wordForm),
+                            if (selectedForm != null)
+                              TextButton(
+                                onPressed: () => showFormDetails(selectedForm!),
+                                child: Text(
+                                  'Выбрана форма: ${selectedForm!.value}',
+                                ),
+                              ),
+                            WordFormsView(
+                              key: ValueKey('$scopeKey:forms'),
+                              article: a,
+                              formBuilder: wordForm,
+                            ),
                             if (a.composition.isNotEmpty)
                               ExpansionTile(
                                 key: PageStorageKey('${a.id}:composition'),
@@ -608,6 +741,8 @@ class _ArticleScreenState extends State<ArticleScreen> {
                           ]),
                           sectionList('morphemes', [
                             WordMorphemesView(
+                              initialForm: selectedForm?.value,
+                              dictionaryVersion: pinnedVersion,
                               id: a.id,
                               repository: widget.repository,
                               openWord: openArticle,
@@ -652,4 +787,22 @@ class _ArticleTabs extends SliverPersistentHeaderDelegate {
   @override
   bool shouldRebuild(covariant _ArticleTabs oldDelegate) =>
       oldDelegate.height != height || oldDelegate.color != color;
+}
+
+class _KeepArticleSection extends StatefulWidget {
+  const _KeepArticleSection({super.key, required this.child});
+  final Widget child;
+  @override
+  State<_KeepArticleSection> createState() => _KeepArticleSectionState();
+}
+
+class _KeepArticleSectionState extends State<_KeepArticleSection>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    return widget.child;
+  }
 }

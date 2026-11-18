@@ -66,7 +66,7 @@ void main() {
       tester
           .widgetList<NavigationDestination>(find.byType(NavigationDestination))
           .map((d) => d.label),
-      ['Словарь', 'Связи', 'Энциклопедия'],
+      ['Словарь', 'Тексты', 'Связи', 'Энциклопедия'],
     );
     await tester.enterText(find.byType(TextField), 'сохранённый запрос');
     await tester.pump(const Duration(milliseconds: 300));
@@ -167,7 +167,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(
         tester.widget<NavigationBar>(find.byType(NavigationBar)).selectedIndex,
-        2,
+        3,
       );
       expect(find.byTooltip('История'), findsNothing);
       expect(tester.takeException(), isNull);
@@ -175,7 +175,7 @@ void main() {
   );
 
   for (final width in [320.0, 390.0]) {
-    testWidgets('three navigation labels fit one line at width $width', (
+    testWidgets('four navigation labels fit one line at width $width', (
       tester,
     ) async {
       tester.view.physicalSize = Size(width, 844);

@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
 import 'package:cs/app/app.dart';
+import 'package:cs/core/app_version.dart';
 import 'package:cs/core/personal_store.dart';
 import 'package:cs/features/dictionary/data/dictionary_repository.dart';
 import 'package:cs/features/dictionary/domain/models.dart';
@@ -95,7 +96,7 @@ void main() {
       await tester.tap(find.text('О проекте'));
       await tester.pumpAndSettle();
       expect(find.text('Лексикон ЦС'), findsOneWidget);
-      expect(find.text('Версия 0.1.6'), findsOneWidget);
+      expect(find.text('Версия $appVersion'), findsOneWidget);
       await tester.scrollUntilVisible(find.text('Полезные ресурсы'), 300);
       await tester.tap(find.text('Полезные ресурсы'));
       await tester.pumpAndSettle();

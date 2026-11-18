@@ -1,0 +1,425 @@
+{
+  "format": "android-source-inputs-v1",
+  "gitHead": "97a8cbda438f8b1c6a5bff9abc908466606791d4",
+  "gitWorkingTreeClean": false,
+  "sourceTreeSha256": "c54c009354b519bef863838fa46ed57c10c67344cebb78a0765374b3942b6fa8",
+  "files": [
+    {
+      "path": "analysis_options.yaml",
+      "sha256": "e0ea485cfdbc3e12b93efb8679a5ea73ebfe20ea4ca0c473dc594fc2fb274ed5",
+      "bytes": 1420
+    },
+    {
+      "path": "android/.gitignore",
+      "sha256": "b027c9de1011765c015e5819bf857c0d75bfcd0886fb01721c091159012e50f1",
+      "bytes": 253
+    },
+    {
+      "path": "android/app/build.gradle.kts",
+      "sha256": "7cb10d4e02122823ea32fde110e9b95891903f4949842d70211b86b4a7aee630",
+      "bytes": 4313
+    },
+    {
+      "path": "android/app/src/debug/AndroidManifest.xml",
+      "sha256": "4e4a0e0726baf45d2d878ea5d0e0666e08ea6e9dbdc33ecd2a74a3525cf5ba51",
+      "bytes": 434
+    },
+    {
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "sha256": "ab3baffc5dc8fa2739e662d7c6cce7c7b654245469f2b577ea1f08af201c01da",
+      "bytes": 3262
+    },
+    {
+      "path": "android/app/src/main/kotlin/info/typikon/cs/MainActivity.kt",
+      "sha256": "26723766cffc86ee258eb5cf7bd65f3dc6177bff4518cf56c227a9f72883777f",
+      "bytes": 1685
+    },
+    {
+      "path": "android/app/src/main/res/drawable/launch_background.xml",
+      "sha256": "94433756fe10005ddd6fc55cc5c0b1e9f3c10b66a08ceac795ece6713d34e28a",
+      "bytes": 434
+    },
+    {
+      "path": "android/app/src/main/res/drawable-v21/launch_background.xml",
+      "sha256": "7ca6d5cec2169c5a98661a119db23a6f3399c8fef2256ff04f3a642831282478",
+      "bytes": 438
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "sha256": "fe47ed7428ad1fa858a4d80302f71245ff8b0bb272824dcb0157adb7ef9015b9",
+      "bytes": 4697
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "sha256": "d88828283a14daf694400790fa656293b25eba3aea99bd3cf0ea8efe0bcb80d0",
+      "bytes": 3007
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "sha256": "28d28c2acda3fd17a308ae360c8b990eb97620f97b34a1e14e9a270585c697d5",
+      "bytes": 6283
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "sha256": "c15f6595e69405a06c9a5af5632d8d186bf642ab7653c32d3ad7e81e88f5ab50",
+      "bytes": 9495
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "sha256": "4397207a0e63b9ce8ea9571e7770fbf2c318c7e3302c6665a1f0ab91486764a9",
+      "bytes": 12880
+    },
+    {
+      "path": "android/app/src/main/res/values/styles.xml",
+      "sha256": "937d7c82f539c72eb94fd3a3773f29b3d3fef1997213c92cb632298cedf4bda9",
+      "bytes": 996
+    },
+    {
+      "path": "android/app/src/main/res/values-night/styles.xml",
+      "sha256": "8c5bad5152f217e837519f9c15211d19f39bd45f5f67faf6dd81cb4b299e518f",
+      "bytes": 995
+    },
+    {
+      "path": "android/app/src/profile/AndroidManifest.xml",
+      "sha256": "30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b",
+      "bytes": 378
+    },
+    {
+      "path": "android/build.gradle.kts",
+      "sha256": "6a26dba2cb8dfba1e74f540b0d17a89d96c1301d3c3bfda14348bed257fddcba",
+      "bytes": 537
+    },
+    {
+      "path": "android/cs_android.iml",
+      "sha256": "90d961bc4ccb4b0ae3f75ce495c273f08745a55c50bd213e259723fc341d0193",
+      "bytes": 1601
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "16caeaf66d57a0d1d2087fef6a97efa62de8da69afa5b908f40db35afc4342da",
+      "bytes": 53636
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "3221993eac1057198d652b7437105e2953ca4850d415eb0eb2b9625874fd059e",
+      "bytes": 202
+    },
+    {
+      "path": "android/gradle.properties",
+      "sha256": "0f82b18017fba6bb5ce3aa4b2d1a00c9382fc8aae7b1d9326e44b18abd66d80b",
+      "bytes": 300
+    },
+    {
+      "path": "android/gradlew",
+      "sha256": "ec56c02543666d92d9ac5ae7fcc48f88ce4de0deb8b7f9b39928ca46f68c1b2b",
+      "bytes": 4971
+    },
+    {
+      "path": "android/settings.gradle.kts",
+      "sha256": "b76d554153a63772dddbe2ee91abdf582f5f871af40698b80a2ef7b70903d96f",
+      "bytes": 771
+    },
+    {
+      "path": "assets/branding/README.md",
+      "sha256": "7ce3fa0841b6682e63a9ff4a0fa2ece05a6068851088cddeb4fb13874d53724b",
+      "bytes": 1585
+    },
+    {
+      "path": "assets/branding/app-icon.png",
+      "sha256": "25602a76f72b4992d7c9aefe88323ed55fcbbaa933fcc4c33d9c9af5f098b9de",
+      "bytes": 21493
+    },
+    {
+      "path": "assets/branding/app-icon.svg",
+      "sha256": "6af39cd68051fd760375dfcc078276ce69e41e365072db1a2fb3fe38e7b84f42",
+      "bytes": 2481
+    },
+    {
+      "path": "assets/branding/concepts.png",
+      "sha256": "77ad30c945f471f657d473c9c79db38201fffe2d2093d69b33530b0fd8586a4e",
+      "bytes": 53904
+    },
+    {
+      "path": "assets/branding/cs.png",
+      "sha256": "25602a76f72b4992d7c9aefe88323ed55fcbbaa933fcc4c33d9c9af5f098b9de",
+      "bytes": 21493
+    },
+    {
+      "path": "assets/branding/cs.svg",
+      "sha256": "6af39cd68051fd760375dfcc078276ce69e41e365072db1a2fb3fe38e7b84f42",
+      "bytes": 2481
+    },
+    {
+      "path": "assets/branding/store-icon-512.png",
+      "sha256": "f3c4678623682d0f50204af9fc2621210efeebf0ab913221c96a232a05d90e13",
+      "bytes": 23290
+    },
+    {
+      "path": "assets/branding/yat.png",
+      "sha256": "a0f8f0ebac39541877118f5f1e0b0e375883d5b07093801f3caaa2b77c6c28ad",
+      "bytes": 19782
+    },
+    {
+      "path": "assets/branding/yat.svg",
+      "sha256": "8d24c2d191ec77a6f028089fa6f33a210c688e281250c378efdd63ce7e0e82d6",
+      "bytes": 3251
+    },
+    {
+      "path": "assets/branding/yus.png",
+      "sha256": "22a37b114585a4105d5b2c5b0588c31ab54900791a7155881e90c8082a553900",
+      "bytes": 28357
+    },
+    {
+      "path": "assets/branding/yus.svg",
+      "sha256": "c1a920725ca7a260f96ffe5d5f5e0b2c1126216ba66881399429e279d4f79877",
+      "bytes": 3085
+    },
+    {
+      "path": "assets/fonts/LICENSE.txt",
+      "sha256": "066bd76b688eafaf88ca38f4280d9ea54a208b25221e6d67cf7d5eac1c9d91f0",
+      "bytes": 5186
+    },
+    {
+      "path": "assets/fonts/MonomakhUnicode.otf",
+      "sha256": "dabfc588016ffffcd43409d023b47c7d86c8c0e1298c0e8efdd66d1d226497b6",
+      "bytes": 144424
+    },
+    {
+      "path": "assets/fonts/OldStandard-Regular.otf",
+      "sha256": "e50ccdff8daf34ba658c238e6dca1f254980dffb8e1456603ef90f2abf7c29b2",
+      "bytes": 227688
+    },
+    {
+      "path": "assets/fonts/Shafarik-OFL.txt",
+      "sha256": "1f43120e025ded73f14be9cca6e2fa6d67ab38af6c6c1446c094c9da8edafe97",
+      "bytes": 4390
+    },
+    {
+      "path": "assets/fonts/Shafarik-Regular.otf",
+      "sha256": "2b28fffc674ec07f1bca520a0334435e2f12129a05988527a6b7be4b8673323a",
+      "bytes": 402236
+    },
+    {
+      "path": "lib/app/app.dart",
+      "sha256": "61e711cd1dea531aac2970eff530dc74517dcfbecdfd17491abf076840a44cbd",
+      "bytes": 2362
+    },
+    {
+      "path": "lib/core/app_version.dart",
+      "sha256": "a9097f88e71076946f9f4e36f6c4f80b003009d78afe0b58fdf946aa58764aa4",
+      "bytes": 84
+    },
+    {
+      "path": "lib/core/external_link.dart",
+      "sha256": "dc96be1ec85630062690865b399864b18b5f56083275a6b97cc2d4b37ad18c65",
+      "bytes": 1677
+    },
+    {
+      "path": "lib/core/personal_store.dart",
+      "sha256": "5606bb213304230314172ac558d95c68047c0ebbffc621052072531431a02076",
+      "bytes": 5466
+    },
+    {
+      "path": "lib/core/personal_store_banner.dart",
+      "sha256": "24aeaac9ab6f63adbf6f493cef77d3d1823d44387149f9e5ccdd6cef32baae7e",
+      "bytes": 588
+    },
+    {
+      "path": "lib/features/dictionary/data/dictionary_repository.dart",
+      "sha256": "422e9d0b7509be3577c5531d67103d692d15e088886917e19ac2099c97f3bba3",
+      "bytes": 15483
+    },
+    {
+      "path": "lib/features/dictionary/domain/form_presentation.dart",
+      "sha256": "66e49ecb614df987bc40fa91d74561f8e4ac3c3dc626ff0ba04f55d24c96a847",
+      "bytes": 6307
+    },
+    {
+      "path": "lib/features/dictionary/domain/grammar_labels.dart",
+      "sha256": "de2109dfe90a4d0d21181320af7859e7f2d41c36b573458af0d42d5648230853",
+      "bytes": 4139
+    },
+    {
+      "path": "lib/features/dictionary/domain/models.dart",
+      "sha256": "2d3d4e2bc97bb5fd5026040f009da1cffeb38a3fa8b39dbcba0c79db5d6433d1",
+      "bytes": 9110
+    },
+    {
+      "path": "lib/features/dictionary/domain/morphemes.dart",
+      "sha256": "7fdf4ba4459dbcd4fcfbf6633cc4a01cb33ad59cc39e97edb101aaf810250a3c",
+      "bytes": 6406
+    },
+    {
+      "path": "lib/features/dictionary/presentation/article_screen.dart",
+      "sha256": "40755010d6a77fa407fca0f8fd60cb7a68952c13acf2e93ddd75720c6dbbebfc",
+      "bytes": 34349
+    },
+    {
+      "path": "lib/features/dictionary/presentation/cs_keyboard.dart",
+      "sha256": "1fd270c853cd5b9b334332b027c63d5122ecf4975487f4517564d0df59f942a8",
+      "bytes": 10684
+    },
+    {
+      "path": "lib/features/dictionary/presentation/dictionary_screen.dart",
+      "sha256": "1024f96cf09ae178d5dbb633898db63a63494ca7cdb53c9e19558d33b51139e3",
+      "bytes": 18129
+    },
+    {
+      "path": "lib/features/dictionary/presentation/form_information.dart",
+      "sha256": "181b72c317330b10f73eb1487e31f15d7dc77321551dbe5371aa11bd1eaf1d19",
+      "bytes": 4651
+    },
+    {
+      "path": "lib/features/dictionary/presentation/forms_view.dart",
+      "sha256": "0eba4cd2e94cb8d9187e2cdfecd515a0c00f39c31eaa199c57b249528cf95afe",
+      "bytes": 10537
+    },
+    {
+      "path": "lib/features/dictionary/presentation/lexical_search_controller.dart",
+      "sha256": "35ece661ab5ce24e31b96f6f79cf7b077b561c73bf4a804bc8fa936076420e91",
+      "bytes": 3940
+    },
+    {
+      "path": "lib/features/dictionary/presentation/lexical_search_view.dart",
+      "sha256": "4048ee3ed198aaefce7dd55267af21a7e8715f5c3f4e99c80ba1fc3f653d2fa8",
+      "bytes": 7016
+    },
+    {
+      "path": "lib/features/dictionary/presentation/morpheme_detail.dart",
+      "sha256": "74d771fe28a3040ff52e7b785da53db7397842037a75db570619758c112537de",
+      "bytes": 18545
+    },
+    {
+      "path": "lib/features/dictionary/presentation/morphemes_view.dart",
+      "sha256": "f37bb6a7736e43d571e712754304beb6cdb8f72852d951ab1e13d85d88c6dd20",
+      "bytes": 21284
+    },
+    {
+      "path": "lib/features/dictionary/presentation/personal_screens.dart",
+      "sha256": "493a98afd732a2420ddc067e007a846e9f1a9cce75c0282b8a237a33835b52e9",
+      "bytes": 3212
+    },
+    {
+      "path": "lib/features/dictionary/presentation/project_pages.dart",
+      "sha256": "5d7166efe0a4d39b17422fe46a2a9d8fa2e0832ae0e00066f93caaa2a5e5426e",
+      "bytes": 8244
+    },
+    {
+      "path": "lib/features/dictionary/presentation/report_dialog.dart",
+      "sha256": "af6bbddb808b08b64a766721d32eb19420ed716290c85c90116b7879a61ba3c8",
+      "bytes": 3995
+    },
+    {
+      "path": "lib/features/dictionary/presentation/resource_screen.dart",
+      "sha256": "7abafff43f2510da6aab8f0401bf3f58a7574b258d5a162daedca598994650cd",
+      "bytes": 8208
+    },
+    {
+      "path": "lib/features/dictionary/presentation/retry_button.dart",
+      "sha256": "ac2b77458ce12b1cf3d4a554ed1ba566ed3b53e06eadd602eef7f2ee4283c78a",
+      "bytes": 1615
+    },
+    {
+      "path": "lib/features/dictionary/presentation/search_controller.dart",
+      "sha256": "9b1e21f1d28186020636136aac64a9ddeb1b19d055430262f45cab3cef000c68",
+      "bytes": 3352
+    },
+    {
+      "path": "lib/features/dictionary/presentation/search_result_heading.dart",
+      "sha256": "e41267381077c2600b41ccd548dd60fda5f4c699821aafdfe39eb48085c46e0f",
+      "bytes": 2441
+    },
+    {
+      "path": "lib/features/dictionary/presentation/settings_screen.dart",
+      "sha256": "d238a9311dcb63b715fddd0c2cb6e1babee25022fe5092a1122616db2739ca46",
+      "bytes": 3184
+    },
+    {
+      "path": "lib/features/encyclopedia/domain/content.dart",
+      "sha256": "91b54fa4b2a024dc3369e710363de289f8412d973d0aaff614fb379c92714987",
+      "bytes": 6355
+    },
+    {
+      "path": "lib/features/encyclopedia/presentation/encyclopedia_screen.dart",
+      "sha256": "12cb885ba38b45aabf04c2f50743a1a5920ec29028d38bca656ef33ba181c3e0",
+      "bytes": 7898
+    },
+    {
+      "path": "lib/features/reader/data/reader_repository.dart",
+      "sha256": "5e32cc75a1193969465ff4e531ff1a0a419eac4bba09174394aa43e08a487e7c",
+      "bytes": 12295
+    },
+    {
+      "path": "lib/features/reader/domain/corpus.dart",
+      "sha256": "1229dc8e13d5e01a6ae1838826fe354264d1143fa298cfca10420325b72751cc",
+      "bytes": 11307
+    },
+    {
+      "path": "lib/features/reader/domain/reader_link.dart",
+      "sha256": "196b0ea0109e335604dfbe3ac7645f5c81fd4f2e18ba47178d53b8ac8ed58f8d",
+      "bytes": 998
+    },
+    {
+      "path": "lib/features/reader/domain/reader_packet.dart",
+      "sha256": "ed8d6017528aac144eef7ffe9878c8c26849928e9113a362e009d21d0dbe6721",
+      "bytes": 6185
+    },
+    {
+      "path": "lib/features/reader/presentation/corpus_controller.dart",
+      "sha256": "1015bc13e7e28e4d1a1b4c00c168a0a4ea41aa7e3900fd1beb9c594bbdb21e14",
+      "bytes": 3218
+    },
+    {
+      "path": "lib/features/reader/presentation/corpus_screen.dart",
+      "sha256": "5aee5fc03aca7ff1fcb263506b2f14e9203bf67779743cf5b3c977a7f7ca3702",
+      "bytes": 16412
+    },
+    {
+      "path": "lib/features/reader/presentation/corpus_widgets.dart",
+      "sha256": "45777a77f190537acf8b731fad70f3f39a50d4f8667cf5a8b63ba05323dd59e7",
+      "bytes": 4599
+    },
+    {
+      "path": "lib/features/reader/presentation/reader_link_screen.dart",
+      "sha256": "1b6e5fc5c3d84bb8e59a1ae68a60394ae277454b1d461dfff979a63a98c52c33",
+      "bytes": 1597
+    },
+    {
+      "path": "lib/features/reader/presentation/reader_screen.dart",
+      "sha256": "1888308cb2170262c81069e67b9955b485e92f8bc03b21b7012b2b9e958246ef",
+      "bytes": 26543
+    },
+    {
+      "path": "lib/features/scripture/domain/books.dart",
+      "sha256": "9b8d4405665f65fb82ca340198cc9a4700caa9fca92f204220b9c8885f140c3e",
+      "bytes": 18258
+    },
+    {
+      "path": "lib/features/scripture/domain/scripture_reference.dart",
+      "sha256": "e426777eb7d3a49529326f20fd0db30bdbcdbf5bdffda93cd042b7e0e99a9ac9",
+      "bytes": 3426
+    },
+    {
+      "path": "lib/features/scripture/presentation/scripture_text.dart",
+      "sha256": "2f2369a9052ed03c48a226c6ef9db3dadee74425ea7af631fda85f7987cf2ce3",
+      "bytes": 2927
+    },
+    {
+      "path": "lib/main.dart",
+      "sha256": "69cb233f0ea4b3737fc5fc079a684cdf2467e6971532d60f6875195356b3f2fa",
+      "bytes": 769
+    },
+    {
+      "path": "pubspec.lock",
+      "sha256": "a8c89fdca2e888222b758a52d25c0da0635ecd7befdb425a80a89d8a006524d5",
+      "bytes": 14093
+    },
+    {
+      "path": "pubspec.yaml",
+      "sha256": "251c979beaee4834d6e82f00b53cf29ed94e0dc5e3026127e6d647f20f2ba905",
+      "bytes": 887
+    }
+  ],
+  "scope": "Android inputs from current worktree; signing material external; generated plugin registration from locked dependencies",
+  "secretFilesIncluded": false
+}

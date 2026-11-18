@@ -1,0 +1,3112 @@
+{
+  "contract": "cs-reader/1",
+  "exampleOnly": true,
+  "newRoutesDeployed": false,
+  "newProductionIdsAllocated": false,
+  "containsFullText": false,
+  "scope": "Request/response fixtures for future portal and Flutter. No publication readiness, live search results or actual dictionary candidates are implied.",
+  "examples": [
+    {
+      "id": "capabilities",
+      "method": "GET",
+      "path": "/api/v2/study/reader/v1/capabilities",
+      "responseSchema": "CapabilitiesResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "addressVersion": 2,
+          "profileSets": [
+            {
+              "id": "cs-pilot-source-r1",
+              "profiles": {
+                "markup": "markup-r1",
+                "display": "display-source-r1",
+                "tokenizer": "token-cs-r1",
+                "lookup": "lookup-cs-r1",
+                "search": "search-cs-r1"
+              },
+              "versions": {
+                "unicode": "16.0",
+                "segmenter": "cs-grapheme-r1/unicode16.0",
+                "puaTableSha256": "e1bc221a320783e676a2da8e0489873a47697b6b2f8685ca69fd5db8e1ce69b8",
+                "letterTableSha256": "cae49489cf7656f67f9ac13bcbc23c680d3a4b19de8ca987b773e15a9f377bbb"
+              }
+            },
+            {
+              "id": "cs-pilot-unicode-r1",
+              "profiles": {
+                "markup": "markup-r1",
+                "display": "display-unicode-r1",
+                "tokenizer": "token-cs-r1",
+                "lookup": "lookup-cs-r1",
+                "search": "search-cs-r1"
+              },
+              "versions": {
+                "unicode": "16.0",
+                "segmenter": "cs-grapheme-r1/unicode16.0",
+                "puaTableSha256": "e1bc221a320783e676a2da8e0489873a47697b6b2f8685ca69fd5db8e1ce69b8",
+                "letterTableSha256": "cae49489cf7656f67f9ac13bcbc23c680d3a4b19de8ca987b773e15a9f377bbb"
+              }
+            },
+            {
+              "id": "cs-pilot-letterfold-r1",
+              "profiles": {
+                "markup": "markup-r1",
+                "display": "display-letterfold-r1",
+                "tokenizer": "token-cs-r1",
+                "lookup": "lookup-cs-r1",
+                "search": "search-cs-r1"
+              },
+              "versions": {
+                "unicode": "16.0",
+                "segmenter": "cs-grapheme-r1/unicode16.0",
+                "puaTableSha256": "e1bc221a320783e676a2da8e0489873a47697b6b2f8685ca69fd5db8e1ce69b8",
+                "letterTableSha256": "cae49489cf7656f67f9ac13bcbc23c680d3a4b19de8ca987b773e15a9f377bbb"
+              }
+            }
+          ],
+          "features": [
+            "addresses.v2",
+            "pilot-catalog",
+            "aggregate-sources",
+            "raw-windows",
+            "tokens",
+            "raw-view-maps",
+            "passport.evidence",
+            "legacy-resolve",
+            "pilot-search",
+            "batch-lookup"
+          ],
+          "limits": {
+            "catalogDefault": 20,
+            "catalogMax": 50,
+            "searchDefault": 20,
+            "searchMax": 50,
+            "readDefaultUnits": 10,
+            "readMaxUnits": 20,
+            "lookupMaxTokens": 20,
+            "maxRequestBytes": 65536,
+            "maxRawWindowUtf16": 65536,
+            "maxResponseBytes": 4194304,
+            "maxManifestUnits": 256
+          }
+        },
+        "warnings": []
+      }
+    },
+    {
+      "id": "catalog",
+      "method": "GET",
+      "path": "/api/v2/study/reader/v1/catalog",
+      "responseSchema": "CatalogResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "items": [
+            {
+              "sourceId": "src_00000000000040008000000000000001",
+              "kind": "canon",
+              "title": "Крестовоскресный канон Октоиха, глас 1, воскресная утреня",
+              "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000001",
+              "editorialStatus": "not_reviewed_for_pilot",
+              "sourceRights": {
+                "status": "unresolved",
+                "licenseId": null,
+                "licenseUrl": null,
+                "conditions": null
+              },
+              "legacyTarget": null
+            },
+            {
+              "sourceId": "src_00000000000040008000000000000002",
+              "kind": "akathist",
+              "title": "Акафист святителю Николаю Чудотворцу",
+              "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000002",
+              "editorialStatus": "not_reviewed_for_pilot",
+              "sourceRights": {
+                "status": "unresolved",
+                "licenseId": null,
+                "licenseUrl": null,
+                "conditions": null
+              },
+              "legacyTarget": null
+            },
+            {
+              "sourceId": "src_00000000000040008000000000000003",
+              "kind": "text",
+              "title": "Беседа первая о непостижимем",
+              "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000003",
+              "editorialStatus": "texted",
+              "sourceRights": {
+                "status": "unresolved",
+                "licenseId": null,
+                "licenseUrl": null,
+                "conditions": null
+              },
+              "legacyTarget": {
+                "kind": "text",
+                "id": "699c9ace0c51f1c698ea0492",
+                "edition": "6992d190b9df99cbe01f6174"
+              }
+            },
+            {
+              "sourceId": "src_00000000000040008000000000000004",
+              "kind": "chant",
+              "title": "Ирмос «Христос раждается»: песнь 1 выбранного канона",
+              "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000004",
+              "editorialStatus": "not_reviewed_for_pilot",
+              "sourceRights": {
+                "status": "unresolved",
+                "licenseId": null,
+                "licenseUrl": null,
+                "conditions": null
+              },
+              "legacyTarget": {
+                "kind": "chant",
+                "id": "132"
+              }
+            },
+            {
+              "sourceId": "src_00000000000040008000000000000005",
+              "kind": "chant",
+              "title": "Тропарь святителю Николаю «Правило веры»",
+              "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000005",
+              "editorialStatus": "not_reviewed_for_pilot",
+              "sourceRights": {
+                "status": "unresolved",
+                "licenseId": null,
+                "licenseUrl": null,
+                "conditions": null
+              },
+              "legacyTarget": {
+                "kind": "chant",
+                "id": "77050",
+                "edition": "menaion"
+              }
+            }
+          ],
+          "catalogRevision": "cat1_5fc15bd9ef98b68c3c6a967a47b4a7e5bb7c134d9e50595cedecfacd5e8f4189",
+          "nextCursor": null
+        },
+        "warnings": []
+      },
+      "query": {
+        "pilotId": "cs-mvp-pilot-01"
+      }
+    },
+    {
+      "id": "resolve-P01",
+      "method": "POST",
+      "path": "/api/v2/study/reader/v1/resolve",
+      "responseSchema": "ResolveResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "result": "resolved",
+          "source": {
+            "sourceId": "src_00000000000040008000000000000001",
+            "kind": "canon",
+            "title": "Крестовоскресный канон Октоиха, глас 1, воскресная утреня",
+            "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000001",
+            "editorialStatus": "not_reviewed_for_pilot",
+            "sourceRights": {
+              "status": "unresolved",
+              "licenseId": null,
+              "licenseUrl": null,
+              "conditions": null
+            },
+            "legacyTarget": null
+          },
+          "resolvedAddress": {
+            "version": 2,
+            "sourceId": "src_00000000000040008000000000000001",
+            "sourceRevision": "sr1_96eb8f87f1d0d84fbd27f2a0432097865a30e7cf3b68d7f9e3993bcf593b318c",
+            "passportRevision": "pr1_177b4577bec62972a6b8bc6c4c482d13f040a0255cfc00eb625aad312f534fd2"
+          },
+          "snapshot": {
+            "sourceId": "src_00000000000040008000000000000001",
+            "sourceRevision": "sr1_96eb8f87f1d0d84fbd27f2a0432097865a30e7cf3b68d7f9e3993bcf593b318c",
+            "passportRevision": "pr1_177b4577bec62972a6b8bc6c4c482d13f040a0255cfc00eb625aad312f534fd2",
+            "datasetRevisions": [
+              "ds1_dbbffc2fb043796a639ca5c510920f883337ad8b8c8c3cf864fe7d76c221f951"
+            ],
+            "passportPolicy": "current"
+          },
+          "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000001",
+          "legacyTarget": null
+        },
+        "warnings": []
+      },
+      "requestSchema": "ResolveRequest",
+      "request": {
+        "contract": "cs-reader/1",
+        "url": "https://www.typikon.info/canons/oktoih-t1-krestovoskresny-utrenya"
+      }
+    },
+    {
+      "id": "resolve-P02",
+      "method": "POST",
+      "path": "/api/v2/study/reader/v1/resolve",
+      "responseSchema": "ResolveResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "result": "resolved",
+          "source": {
+            "sourceId": "src_00000000000040008000000000000002",
+            "kind": "akathist",
+            "title": "Акафист святителю Николаю Чудотворцу",
+            "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000002",
+            "editorialStatus": "not_reviewed_for_pilot",
+            "sourceRights": {
+              "status": "unresolved",
+              "licenseId": null,
+              "licenseUrl": null,
+              "conditions": null
+            },
+            "legacyTarget": null
+          },
+          "resolvedAddress": {
+            "version": 2,
+            "sourceId": "src_00000000000040008000000000000002",
+            "sourceRevision": "sr1_86ae2cccbcd157a327e211df7c3680857602b8c44151d545e8549fad4a48d8a5",
+            "passportRevision": "pr1_077ded3e1259297324228a8466853af8a7f224e49b610f10ac042219fc85844d"
+          },
+          "snapshot": {
+            "sourceId": "src_00000000000040008000000000000002",
+            "sourceRevision": "sr1_86ae2cccbcd157a327e211df7c3680857602b8c44151d545e8549fad4a48d8a5",
+            "passportRevision": "pr1_077ded3e1259297324228a8466853af8a7f224e49b610f10ac042219fc85844d",
+            "datasetRevisions": [
+              "ds1_dbbffc2fb043796a639ca5c510920f883337ad8b8c8c3cf864fe7d76c221f951"
+            ],
+            "passportPolicy": "current"
+          },
+          "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000002",
+          "legacyTarget": null
+        },
+        "warnings": []
+      },
+      "requestSchema": "ResolveRequest",
+      "request": {
+        "contract": "cs-reader/1",
+        "url": "https://www.typikon.info/akathists/akafist-svjatitelju-nikolaju-chudotvorcu"
+      }
+    },
+    {
+      "id": "resolve-P03",
+      "method": "POST",
+      "path": "/api/v2/study/reader/v1/resolve",
+      "responseSchema": "ResolveResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "result": "resolved",
+          "source": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "title": "Беседа первая о непостижимем",
+            "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000003",
+            "editorialStatus": "texted",
+            "sourceRights": {
+              "status": "unresolved",
+              "licenseId": null,
+              "licenseUrl": null,
+              "conditions": null
+            },
+            "legacyTarget": {
+              "kind": "text",
+              "id": "699c9ace0c51f1c698ea0492",
+              "edition": "6992d190b9df99cbe01f6174"
+            }
+          },
+          "resolvedAddress": {
+            "version": 2,
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+          },
+          "snapshot": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7",
+            "datasetRevisions": [
+              "ds1_dbbffc2fb043796a639ca5c510920f883337ad8b8c8c3cf864fe7d76c221f951"
+            ],
+            "passportPolicy": "current"
+          },
+          "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000003",
+          "legacyTarget": {
+            "kind": "text",
+            "id": "699c9ace0c51f1c698ea0492",
+            "edition": "6992d190b9df99cbe01f6174"
+          }
+        },
+        "warnings": []
+      },
+      "requestSchema": "ResolveRequest",
+      "request": {
+        "contract": "cs-reader/1",
+        "url": "https://www.typikon.info/reading/margarit-1"
+      }
+    },
+    {
+      "id": "resolve-P04",
+      "method": "POST",
+      "path": "/api/v2/study/reader/v1/resolve",
+      "responseSchema": "ResolveResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "result": "resolved",
+          "source": {
+            "sourceId": "src_00000000000040008000000000000004",
+            "kind": "chant",
+            "title": "Ирмос «Христос раждается»: песнь 1 выбранного канона",
+            "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000004",
+            "editorialStatus": "not_reviewed_for_pilot",
+            "sourceRights": {
+              "status": "unresolved",
+              "licenseId": null,
+              "licenseUrl": null,
+              "conditions": null
+            },
+            "legacyTarget": {
+              "kind": "chant",
+              "id": "132"
+            }
+          },
+          "resolvedAddress": {
+            "version": 2,
+            "sourceId": "src_00000000000040008000000000000004",
+            "sourceRevision": "sr1_1fd154b2058c9b5f558db09775d8288f92ffd53f3642d90161a939d7181382c0",
+            "passportRevision": "pr1_33afe278c11758d370edee83043cd62c192936679f7862f9e8711918ddc535bc"
+          },
+          "snapshot": {
+            "sourceId": "src_00000000000040008000000000000004",
+            "sourceRevision": "sr1_1fd154b2058c9b5f558db09775d8288f92ffd53f3642d90161a939d7181382c0",
+            "passportRevision": "pr1_33afe278c11758d370edee83043cd62c192936679f7862f9e8711918ddc535bc",
+            "datasetRevisions": [
+              "ds1_dbbffc2fb043796a639ca5c510920f883337ad8b8c8c3cf864fe7d76c221f951"
+            ],
+            "passportPolicy": "current"
+          },
+          "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000004",
+          "legacyTarget": {
+            "kind": "chant",
+            "id": "132"
+          }
+        },
+        "warnings": []
+      },
+      "requestSchema": "ResolveRequest",
+      "request": {
+        "contract": "cs-reader/1",
+        "url": "https://www.typikon.info/chants/132"
+      }
+    },
+    {
+      "id": "resolve-P05",
+      "method": "POST",
+      "path": "/api/v2/study/reader/v1/resolve",
+      "responseSchema": "ResolveResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "result": "resolved",
+          "source": {
+            "sourceId": "src_00000000000040008000000000000005",
+            "kind": "chant",
+            "title": "Тропарь святителю Николаю «Правило веры»",
+            "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000005",
+            "editorialStatus": "not_reviewed_for_pilot",
+            "sourceRights": {
+              "status": "unresolved",
+              "licenseId": null,
+              "licenseUrl": null,
+              "conditions": null
+            },
+            "legacyTarget": {
+              "kind": "chant",
+              "id": "77050",
+              "edition": "menaion"
+            }
+          },
+          "resolvedAddress": {
+            "version": 2,
+            "sourceId": "src_00000000000040008000000000000005",
+            "sourceRevision": "sr1_c71bbcfc7d038388707b831e09470c310a009c15fc3cf0e67595b399b7f2409c",
+            "passportRevision": "pr1_55d759178baff948004fde0dc212e90b0992433ac9d9c14722a5ec1936060bfe"
+          },
+          "snapshot": {
+            "sourceId": "src_00000000000040008000000000000005",
+            "sourceRevision": "sr1_c71bbcfc7d038388707b831e09470c310a009c15fc3cf0e67595b399b7f2409c",
+            "passportRevision": "pr1_55d759178baff948004fde0dc212e90b0992433ac9d9c14722a5ec1936060bfe",
+            "datasetRevisions": [
+              "ds1_dbbffc2fb043796a639ca5c510920f883337ad8b8c8c3cf864fe7d76c221f951"
+            ],
+            "passportPolicy": "current"
+          },
+          "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000005",
+          "legacyTarget": {
+            "kind": "chant",
+            "id": "77050",
+            "edition": "menaion"
+          }
+        },
+        "warnings": []
+      },
+      "requestSchema": "ResolveRequest",
+      "request": {
+        "contract": "cs-reader/1",
+        "url": "https://www.typikon.info/chants/77050"
+      }
+    },
+    {
+      "id": "read-P03-window",
+      "method": "POST",
+      "path": "/api/v2/study/reader/v1/read",
+      "responseSchema": "ReadResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "source": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "title": "Беседа первая о непостижимем",
+            "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000003",
+            "editorialStatus": "texted",
+            "sourceRights": {
+              "status": "unresolved",
+              "licenseId": null,
+              "licenseUrl": null,
+              "conditions": null
+            },
+            "legacyTarget": {
+              "kind": "text",
+              "id": "699c9ace0c51f1c698ea0492",
+              "edition": "6992d190b9df99cbe01f6174"
+            }
+          },
+          "snapshot": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7",
+            "datasetRevisions": [
+              "ds1_dbbffc2fb043796a639ca5c510920f883337ad8b8c8c3cf864fe7d76c221f951"
+            ],
+            "passportPolicy": "pinned"
+          },
+          "resolvedAddress": {
+            "version": 2,
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+          },
+          "profileSet": {
+            "id": "cs-pilot-source-r1",
+            "profiles": {
+              "markup": "markup-r1",
+              "display": "display-source-r1",
+              "tokenizer": "token-cs-r1",
+              "lookup": "lookup-cs-r1",
+              "search": "search-cs-r1"
+            },
+            "versions": {
+              "unicode": "16.0",
+              "segmenter": "cs-grapheme-r1/unicode16.0",
+              "puaTableSha256": "e1bc221a320783e676a2da8e0489873a47697b6b2f8685ca69fd5db8e1ce69b8",
+              "letterTableSha256": "cae49489cf7656f67f9ac13bcbc23c680d3a4b19de8ca987b773e15a9f377bbb"
+            }
+          },
+          "sourceDescriptor": {
+            "profile": "source-r1",
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "units": [
+              {
+                "occurrenceId": "occ_00000000000040008000000000000042",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                "placement": {
+                  "ode": null,
+                  "unit": "body",
+                  "stanzaKind": null,
+                  "stanza": null,
+                  "marker": null
+                },
+                "repeatCount": 1,
+                "rubricRevision": null
+              }
+            ],
+            "footnotes": []
+          },
+          "units": [
+            {
+              "occurrenceId": "occ_00000000000040008000000000000042",
+              "bodyRef": {
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f"
+              },
+              "placement": {
+                "ode": null,
+                "unit": "body",
+                "stanzaKind": null,
+                "stanza": null,
+                "marker": null
+              },
+              "projectionIds": [
+                "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38"
+              ]
+            }
+          ],
+          "projections": [
+            {
+              "projectionId": "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38",
+              "bodyId": "bdy_00000000000040008000000000000042",
+              "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+              "profileSetId": "cs-pilot-source-r1",
+              "bodyLengthUtf16": 12489,
+              "rawWindow": [
+                47,
+                51
+              ],
+              "rawText": "бл҃г",
+              "viewText": "бл҃г",
+              "map": {
+                "mapId": "map1_56698087fc977f702094d323f76ed9cc2189d0587be2e01a4c62eccb28d5686e",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                "profileSetId": "cs-pilot-source-r1",
+                "inputProfileId": "raw-r1",
+                "outputProfileId": "display-source-r1",
+                "rawWindow": [
+                  47,
+                  51
+                ],
+                "outputLengthUtf16": 4,
+                "segments": [
+                  {
+                    "rawRanges": [
+                      [
+                        47,
+                        51
+                      ]
+                    ],
+                    "outRange": [
+                      0,
+                      4
+                    ],
+                    "operation": "copy",
+                    "ruleId": "copy",
+                    "fidelity": "preserved"
+                  }
+                ]
+              },
+              "tokens": [
+                {
+                  "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+                  "type": "word",
+                  "rawRanges": [
+                    [
+                      47,
+                      51
+                    ]
+                  ],
+                  "surfaceRanges": [
+                    [
+                      0,
+                      4
+                    ]
+                  ],
+                  "flags": [
+                    "abbreviated"
+                  ],
+                  "tokenizerProfileId": "token-cs-r1",
+                  "lookupKey": {
+                    "profileId": "lookup-cs-r1",
+                    "value": "бл҃г"
+                  },
+                  "searchKeys": [
+                    {
+                      "profileId": "search-cs-r1",
+                      "value": "блг",
+                      "matchKind": "abbreviation_skeleton"
+                    }
+                  ],
+                  "blockedReason": null
+                }
+              ],
+              "runs": [
+                {
+                  "type": "text",
+                  "viewRange": [
+                    0,
+                    4
+                  ],
+                  "styles": []
+                }
+              ]
+            }
+          ],
+          "focus": {
+            "status": "resolved",
+            "occurrenceId": "occ_00000000000040008000000000000042",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ]
+          },
+          "coverage": "window",
+          "page": {
+            "nextCursor": null,
+            "selectionComplete": true
+          }
+        },
+        "warnings": []
+      },
+      "requestSchema": "ReadRequest",
+      "request": {
+        "contract": "cs-reader/1",
+        "address": {
+          "version": 2,
+          "sourceId": "src_00000000000040008000000000000003",
+          "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+          "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+        },
+        "profileSetId": "cs-pilot-source-r1",
+        "window": {
+          "bodyId": "bdy_00000000000040008000000000000042",
+          "rawRange": [
+            47,
+            51
+          ]
+        }
+      },
+      "note": "Only raw [47,51) of the real chapter is included, not a body replica. Full-body br1 is from the evidence snapshot; this is a protocol fixture, not a live service response."
+    },
+    {
+      "id": "passport-P03",
+      "method": "GET",
+      "path": "/api/v2/study/reader/v1/passport/src_00000000000040008000000000000003",
+      "responseSchema": "PassportResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "sourceId": "src_00000000000040008000000000000003",
+          "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7",
+          "fields": {
+            "authorship": {
+              "state": "candidate",
+              "display": "Атрибуция Иоанну Златоусту унаследована от сборника; глава отдельно не проверена.",
+              "assertionIds": [
+                "assert:chapter-author-candidate"
+              ],
+              "questionIds": [
+                "q:chapter-author"
+              ]
+            },
+            "translator": {
+              "state": "unknown",
+              "display": "Переводчик не установлен.",
+              "assertionIds": [],
+              "questionIds": [
+                "q:chapter-translator"
+              ]
+            }
+          },
+          "subjects": [
+            {
+              "id": "sub:chapter",
+              "entityRef": null,
+              "entityType": "work",
+              "resolution": "unallocated",
+              "describedBy": {
+                "namespace": "typikon.texts",
+                "id": "699c9ace0c51f1c698ea0492"
+              }
+            },
+            {
+              "id": "sub:book",
+              "entityRef": {
+                "namespace": "typikon.books",
+                "id": "6992d190b9df99cbe01f6174"
+              },
+              "entityType": "digital_source",
+              "resolution": "existing_native"
+            },
+            {
+              "id": "sub:text",
+              "entityRef": {
+                "namespace": "typikon.texts",
+                "id": "699c9ace0c51f1c698ea0492"
+              },
+              "entityType": "digital_source",
+              "resolution": "existing_native"
+            },
+            {
+              "id": "sub:manuscript",
+              "entityRef": null,
+              "entityType": "witness",
+              "resolution": "unallocated",
+              "describedBy": {
+                "namespace": "typikon.sources",
+                "id": "6a9207f5f4a7d662d0b1bd47"
+              }
+            }
+          ],
+          "assertions": [
+            {
+              "id": "assert:chapter-author-candidate",
+              "revision": 1,
+              "subjectId": "sub:chapter",
+              "predicate": "authoredBy",
+              "polarity": "positive",
+              "value": {
+                "type": "entity",
+                "ref": null,
+                "label": "Иоанн Златоуст",
+                "identityStatus": "unresolved"
+              },
+              "scope": {
+                "level": "work",
+                "qualification": "Inherited candidate from collection; chapter identity and authorship require review."
+              },
+              "origin": {
+                "kind": "imported"
+              },
+              "evidenceLinks": [
+                {
+                  "observationId": "obs:book-author",
+                  "role": "supports",
+                  "directness": "inherited",
+                  "explanation": "Collection metadata, not chapter-specific evidence."
+                },
+                {
+                  "observationId": "obs:catalog-title",
+                  "role": "supports",
+                  "directness": "inherited",
+                  "explanation": "Cached collection title; independence from book attribution unknown."
+                }
+              ],
+              "reviewStatus": "unreviewed",
+              "validationStatus": "valid",
+              "lifecycle": "active"
+            },
+            {
+              "id": "assert:book-author-field",
+              "revision": 1,
+              "subjectId": "sub:book",
+              "predicate": "reportedField",
+              "polarity": "positive",
+              "value": {
+                "type": "literal",
+                "field": "author",
+                "value": "Иоанн Златоуст"
+              },
+              "scope": {
+                "level": "digital_source"
+              },
+              "origin": {
+                "kind": "imported"
+              },
+              "evidenceLinks": [
+                {
+                  "observationId": "obs:book-author",
+                  "role": "supports",
+                  "directness": "direct",
+                  "explanation": "Direct observation of stored field, not historical proof."
+                }
+              ],
+              "reviewStatus": "unreviewed",
+              "validationStatus": "valid",
+              "lifecycle": "active"
+            },
+            {
+              "id": "assert:technical-created",
+              "revision": 1,
+              "subjectId": "sub:text",
+              "predicate": "recordCreatedAt",
+              "polarity": "positive",
+              "value": {
+                "type": "timestamp",
+                "value": "2026-02-23T18:22:06.311Z"
+              },
+              "scope": {
+                "level": "digital_source"
+              },
+              "origin": {
+                "kind": "imported"
+              },
+              "evidenceLinks": [
+                {
+                  "observationId": "obs:technical-created",
+                  "role": "supports",
+                  "directness": "direct",
+                  "explanation": ""
+                }
+              ],
+              "reviewStatus": "unreviewed",
+              "validationStatus": "valid",
+              "lifecycle": "active"
+            }
+          ],
+          "sources": [
+            {
+              "id": "src:book",
+              "kind": "native_record",
+              "nativeRef": {
+                "namespace": "typikon.books",
+                "id": "6992d190b9df99cbe01f6174"
+              },
+              "snapshot": "library-evidence.json#/book"
+            },
+            {
+              "id": "src:catalog-cache",
+              "kind": "cached_catalog",
+              "nativeRef": {
+                "namespace": "typikon.sources",
+                "id": "6a9207f5f4a7d662d0b1bd47"
+              },
+              "snapshot": "library-evidence.json#/cachedSource",
+              "url": "https://lib-fond.ru/lib-rgb/304-i/f-304i-147/",
+              "sourceFetchedAt": "2026-08-28T22:13:09.668Z"
+            },
+            {
+              "id": "src:text",
+              "kind": "native_record",
+              "nativeRef": {
+                "namespace": "typikon.texts",
+                "id": "699c9ace0c51f1c698ea0492"
+              },
+              "snapshot": "library-evidence.json#/text"
+            }
+          ],
+          "observations": [
+            {
+              "id": "obs:book-author",
+              "sourceRef": "src:book",
+              "observationKind": "database_field",
+              "observationStatus": "record_read",
+              "recordedAt": "2026-11-13",
+              "locator": "books.author",
+              "rawValue": "Иоанн Златоуст",
+              "dependencyGroup": "dep:book-attribution",
+              "revision": 1
+            },
+            {
+              "id": "obs:catalog-title",
+              "sourceRef": "src:catalog-cache",
+              "observationKind": "cached_catalog_entry",
+              "observationStatus": "cache_read",
+              "recordedAt": "2026-11-13",
+              "locator": "sources.title",
+              "rawValue": "Ф.304/I №147. Маргарит свт. Иоанна Златоустаго, с прибавлениями",
+              "sourceFetchedAt": "2026-08-28T22:13:09.668Z",
+              "dependencyGroup": "dep:catalog-cache",
+              "revision": 1
+            },
+            {
+              "id": "obs:empty-chapter-fields",
+              "sourceRef": "src:text",
+              "observationKind": "database_field",
+              "observationStatus": "record_read",
+              "recordedAt": "2026-11-13",
+              "locator": "texts.author, texts.translator, texts.ruLink",
+              "rawValue": {
+                "author": "",
+                "translator": "",
+                "ruLink": []
+              },
+              "revision": 1
+            },
+            {
+              "id": "obs:technical-created",
+              "sourceRef": "src:text",
+              "observationKind": "database_field",
+              "observationStatus": "record_read",
+              "recordedAt": "2026-11-13",
+              "locator": "texts.createdAt",
+              "rawValue": "2026-02-23T18:22:06.311Z",
+              "revision": 1
+            }
+          ],
+          "questions": [
+            {
+              "id": "q:chapter-author",
+              "subjectId": "sub:chapter",
+              "predicate": "authoredBy",
+              "status": "open",
+              "reason": "Chapter-specific attribution needs investigation.",
+              "checkedObservationIds": [
+                "obs:book-author",
+                "obs:catalog-title",
+                "obs:empty-chapter-fields"
+              ],
+              "candidateAssertionIds": [
+                "assert:chapter-author-candidate"
+              ],
+              "revision": 1
+            },
+            {
+              "id": "q:chapter-translator",
+              "subjectId": "sub:chapter",
+              "predicate": "translationIdentity",
+              "status": "open",
+              "reason": "Empty translator fields do not prove historical anonymity or absence of translation.",
+              "checkedObservationIds": [
+                "obs:empty-chapter-fields"
+              ],
+              "candidateAssertionIds": [],
+              "revision": 1
+            },
+            {
+              "id": "q:witness-date",
+              "subjectId": "sub:manuscript",
+              "predicate": "witnessedAt",
+              "status": "open",
+              "reason": "No witness dating in inspected cached title.",
+              "checkedObservationIds": [
+                "obs:catalog-title"
+              ],
+              "candidateAssertionIds": [],
+              "revision": 1
+            }
+          ],
+          "cases": [
+            {
+              "id": "case:chapter-author",
+              "subjectId": "sub:chapter",
+              "predicate": "authoredBy",
+              "assertionIds": [
+                "assert:chapter-author-candidate"
+              ],
+              "relationship": "requires_identity_review",
+              "status": "unresolved",
+              "preferredAssertionIds": [],
+              "reviewEventIds": [],
+              "revision": 1
+            }
+          ],
+          "reviewEvents": []
+        },
+        "warnings": []
+      },
+      "query": {
+        "revision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+      }
+    },
+    {
+      "id": "passport-P04",
+      "method": "GET",
+      "path": "/api/v2/study/reader/v1/passport/src_00000000000040008000000000000004",
+      "responseSchema": "PassportResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "sourceId": "src_00000000000040008000000000000004",
+          "passportRevision": "pr1_33afe278c11758d370edee83043cd62c192936679f7862f9e8711918ddc535bc",
+          "fields": {
+            "originalPartOf": {
+              "state": "unknown",
+              "display": "Родной канон ирмоса не установлен.",
+              "assertionIds": [],
+              "questionIds": [
+                "q:irmos-original"
+              ]
+            }
+          },
+          "subjects": [
+            {
+              "id": "sub:irmos",
+              "entityRef": null,
+              "entityType": "text_unit",
+              "resolution": "unallocated",
+              "describedBy": {
+                "namespace": "rules.fixed_texts",
+                "id": "irmologij-irmosy-0003"
+              }
+            }
+          ],
+          "assertions": [
+            {
+              "id": "assert:irmos-storage",
+              "revision": 1,
+              "subjectId": "sub:irmos",
+              "predicate": "storedAt",
+              "polarity": "positive",
+              "value": {
+                "type": "entity",
+                "ref": {
+                  "namespace": "rules.fixed_texts",
+                  "id": "irmologij-irmosy-0003"
+                },
+                "identityStatus": "existing_native"
+              },
+              "scope": {
+                "level": "text_unit"
+              },
+              "origin": {
+                "kind": "computed"
+              },
+              "evidenceLinks": [
+                {
+                  "observationId": "obs:irmos-reference",
+                  "role": "supports",
+                  "directness": "direct",
+                  "explanation": "Derived read model; body owner only, no historical origin claim."
+                }
+              ],
+              "reviewStatus": "unreviewed",
+              "validationStatus": "valid",
+              "lifecycle": "active"
+            },
+            {
+              "id": "assert:irmos-use",
+              "revision": 1,
+              "subjectId": "sub:irmos",
+              "predicate": "usedIn",
+              "polarity": "positive",
+              "value": {
+                "type": "entity",
+                "ref": {
+                  "namespace": "example.occurrences",
+                  "id": "example:occurrence:P01:132"
+                },
+                "identityStatus": "example_unregistered"
+              },
+              "scope": {
+                "level": "text_unit"
+              },
+              "origin": {
+                "kind": "computed"
+              },
+              "evidenceLinks": [
+                {
+                  "observationId": "obs:irmos-reference",
+                  "role": "supports",
+                  "directness": "direct",
+                  "explanation": "Occurrence in first ode of pilot canon, not proof of original composition."
+                }
+              ],
+              "reviewStatus": "unreviewed",
+              "validationStatus": "valid",
+              "lifecycle": "active"
+            }
+          ],
+          "sources": [
+            {
+              "id": "src:structure",
+              "kind": "native_record",
+              "nativeRef": {
+                "namespace": "rules.content_items",
+                "id": "132"
+              },
+              "snapshot": "chant-evidence.json#/items/P04/0"
+            }
+          ],
+          "observations": [
+            {
+              "id": "obs:irmos-reference",
+              "sourceRef": "src:structure",
+              "observationKind": "computed_structure",
+              "observationStatus": "record_read",
+              "recordedAt": "2026-11-13",
+              "locator": "content_items:132 → ref_text_id → fixed_texts",
+              "rawValue": {
+                "ownText": false,
+                "canonId": "oktoih-t1-krestovoskresny-utrenya",
+                "ode": 1,
+                "ref_text_id": "irmologij-irmosy-0003",
+                "sha256Utf8": "827f5238ae70f3eb641c6b32cf6da97373fa1944ad44fdf1965b63ee65511ae4"
+              },
+              "revision": 1
+            }
+          ],
+          "questions": [
+            {
+              "id": "q:irmos-original",
+              "subjectId": "sub:irmos",
+              "predicate": "originalPartOf",
+              "status": "open",
+              "reason": "Original canon not established; incipit, storage and current use are insufficient.",
+              "checkedObservationIds": [
+                "obs:irmos-reference"
+              ],
+              "candidateAssertionIds": [],
+              "revision": 1
+            }
+          ],
+          "cases": [
+            {
+              "id": "case:irmos-origin",
+              "subjectId": "sub:irmos",
+              "predicate": "originalPartOf",
+              "assertionIds": [],
+              "relationship": "not_yet_established",
+              "status": "open",
+              "preferredAssertionIds": [],
+              "reviewEventIds": [],
+              "revision": 1
+            }
+          ],
+          "reviewEvents": []
+        },
+        "warnings": []
+      },
+      "query": {
+        "revision": "pr1_33afe278c11758d370edee83043cd62c192936679f7862f9e8711918ddc535bc"
+      }
+    },
+    {
+      "id": "lookup-shape",
+      "method": "POST",
+      "path": "/api/v2/study/reader/v1/lookup",
+      "responseSchema": "LookupResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "results": [
+            {
+              "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+              "status": "candidates",
+              "candidates": [
+                {
+                  "lexemeId": "fixture-lexeme-1",
+                  "label": "Условная лексема",
+                  "basis": "synthetic-contract-fixture",
+                  "reviewStatus": "unreviewed"
+                }
+              ]
+            }
+          ],
+          "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+          "profileSetId": "cs-pilot-source-r1"
+        },
+        "warnings": []
+      },
+      "requestSchema": "LookupRequest",
+      "request": {
+        "contract": "cs-reader/1",
+        "address": {
+          "version": 2,
+          "sourceId": "src_00000000000040008000000000000003",
+          "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+          "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+        },
+        "profileSetId": "cs-pilot-source-r1",
+        "tokens": [
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          }
+        ]
+      },
+      "note": "Candidate is synthetic. No real dictionary coverage or lexeme linkage is asserted."
+    },
+    {
+      "id": "search-shape",
+      "method": "GET",
+      "path": "/api/v2/study/reader/v1/search",
+      "responseSchema": "SearchResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "hits": [
+            {
+              "address": {
+                "version": 2,
+                "sourceId": "src_00000000000040008000000000000003",
+                "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+                "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+              },
+              "bodyId": "bdy_00000000000040008000000000000042",
+              "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+              "rawRanges": [
+                [
+                  47,
+                  51
+                ]
+              ],
+              "matchKind": "abbreviation_skeleton",
+              "snippet": {
+                "projectionId": "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                "profileSetId": "cs-pilot-source-r1",
+                "bodyLengthUtf16": 12489,
+                "rawWindow": [
+                  47,
+                  51
+                ],
+                "rawText": "бл҃г",
+                "viewText": "бл҃г",
+                "map": {
+                  "mapId": "map1_56698087fc977f702094d323f76ed9cc2189d0587be2e01a4c62eccb28d5686e",
+                  "bodyId": "bdy_00000000000040008000000000000042",
+                  "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                  "profileSetId": "cs-pilot-source-r1",
+                  "inputProfileId": "raw-r1",
+                  "outputProfileId": "display-source-r1",
+                  "rawWindow": [
+                    47,
+                    51
+                  ],
+                  "outputLengthUtf16": 4,
+                  "segments": [
+                    {
+                      "rawRanges": [
+                        [
+                          47,
+                          51
+                        ]
+                      ],
+                      "outRange": [
+                        0,
+                        4
+                      ],
+                      "operation": "copy",
+                      "ruleId": "copy",
+                      "fidelity": "preserved"
+                    }
+                  ]
+                },
+                "tokens": [
+                  {
+                    "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+                    "type": "word",
+                    "rawRanges": [
+                      [
+                        47,
+                        51
+                      ]
+                    ],
+                    "surfaceRanges": [
+                      [
+                        0,
+                        4
+                      ]
+                    ],
+                    "flags": [
+                      "abbreviated"
+                    ],
+                    "tokenizerProfileId": "token-cs-r1",
+                    "lookupKey": {
+                      "profileId": "lookup-cs-r1",
+                      "value": "бл҃г"
+                    },
+                    "searchKeys": [
+                      {
+                        "profileId": "search-cs-r1",
+                        "value": "блг",
+                        "matchKind": "abbreviation_skeleton"
+                      }
+                    ],
+                    "blockedReason": null
+                  }
+                ],
+                "runs": [
+                  {
+                    "type": "text",
+                    "viewRange": [
+                      0,
+                      4
+                    ],
+                    "styles": []
+                  }
+                ]
+              },
+              "snippetHighlightRanges": [
+                [
+                  0,
+                  4
+                ]
+              ]
+            }
+          ],
+          "indexRevision": "idx1_c5d526ff22d7cddcf718d8d4de9b34d72f7890575d3440762b91283a7eb7d464",
+          "profileSetId": "cs-pilot-source-r1",
+          "nextCursor": null
+        },
+        "warnings": []
+      },
+      "query": {
+        "pilotId": "cs-mvp-pilot-01",
+        "q": "блг",
+        "profileSetId": "cs-pilot-source-r1"
+      },
+      "note": "Search hit is a protocol fixture over the sampled abbreviation, not a tested live index."
+    },
+    {
+      "id": "resolve-library-container",
+      "method": "POST",
+      "path": "/api/v2/study/reader/v1/resolve",
+      "requestSchema": "ResolveRequest",
+      "request": {
+        "contract": "cs-reader/1",
+        "url": "https://www.typikon.info/library/margarit"
+      },
+      "responseSchema": "ResolveResponse",
+      "status": 200,
+      "response": {
+        "contract": "cs-reader/1",
+        "data": {
+          "result": "container",
+          "container": {
+            "nativeRef": {
+              "namespace": "typikon.books",
+              "id": "6992d190b9df99cbe01f6174"
+            },
+            "title": "Маргарит",
+            "canonicalUrl": "https://www.typikon.info/library/margarit"
+          },
+          "resolvedAddress": null,
+          "canonicalUrl": "https://www.typikon.info/library/margarit",
+          "legacyTarget": null
+        },
+        "warnings": []
+      },
+      "note": "A container opens its catalog. No historical work identity or first-chapter read address is invented."
+    }
+  ],
+  "errorExamples": [
+    {
+      "id": "error-invalid_boundary",
+      "responseSchema": "ReaderError",
+      "status": 400,
+      "response": {
+        "contract": "cs-reader/1",
+        "error": {
+          "code": "invalid_boundary",
+          "message": "Пример диагностического сообщения.",
+          "retryable": false,
+          "details": {}
+        }
+      }
+    },
+    {
+      "id": "error-map_revision_mismatch",
+      "responseSchema": "ReaderError",
+      "status": 409,
+      "response": {
+        "contract": "cs-reader/1",
+        "error": {
+          "code": "map_revision_mismatch",
+          "message": "Пример диагностического сообщения.",
+          "retryable": false,
+          "details": {}
+        }
+      }
+    },
+    {
+      "id": "error-cursor_mismatch",
+      "responseSchema": "ReaderError",
+      "status": 409,
+      "response": {
+        "contract": "cs-reader/1",
+        "error": {
+          "code": "cursor_mismatch",
+          "message": "Пример диагностического сообщения.",
+          "retryable": false,
+          "details": {}
+        }
+      }
+    },
+    {
+      "id": "error-revision_unavailable",
+      "responseSchema": "ReaderError",
+      "status": 410,
+      "response": {
+        "contract": "cs-reader/1",
+        "error": {
+          "code": "revision_unavailable",
+          "message": "Пример диагностического сообщения.",
+          "retryable": false,
+          "details": {}
+        }
+      }
+    },
+    {
+      "id": "error-unsupported_profile",
+      "responseSchema": "ReaderError",
+      "status": 422,
+      "response": {
+        "contract": "cs-reader/1",
+        "error": {
+          "code": "unsupported_profile",
+          "message": "Пример диагностического сообщения.",
+          "retryable": false,
+          "details": {}
+        }
+      }
+    },
+    {
+      "id": "error-rate_limited",
+      "responseSchema": "ReaderError",
+      "status": 429,
+      "response": {
+        "contract": "cs-reader/1",
+        "error": {
+          "code": "rate_limited",
+          "message": "Пример диагностического сообщения.",
+          "retryable": true,
+          "details": {}
+        }
+      }
+    },
+    {
+      "id": "error-projection_unavailable",
+      "responseSchema": "ReaderError",
+      "status": 503,
+      "response": {
+        "contract": "cs-reader/1",
+        "error": {
+          "code": "projection_unavailable",
+          "message": "Пример диагностического сообщения.",
+          "retryable": true,
+          "details": {}
+        }
+      }
+    }
+  ],
+  "invalidSchemaExamples": [
+    {
+      "id": "mixed-selector",
+      "schema": "ReadRequest",
+      "value": {
+        "contract": "cs-reader/1",
+        "address": {
+          "version": 2,
+          "sourceId": "src_00000000000040008000000000000003",
+          "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+          "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7",
+          "selector": {
+            "kind": "occurrence",
+            "occurrenceId": "occ_00000000000040008000000000000042",
+            "fragmentId": "frg_00000000000040008000000000000001"
+          }
+        },
+        "profileSetId": "cs-pilot-source-r1",
+        "window": {
+          "bodyId": "bdy_00000000000040008000000000000042",
+          "rawRange": [
+            47,
+            51
+          ]
+        }
+      },
+      "expected": "schema_invalid"
+    },
+    {
+      "id": "cursor-plus-window",
+      "schema": "ReadRequest",
+      "value": {
+        "contract": "cs-reader/1",
+        "address": {
+          "version": 2,
+          "sourceId": "src_00000000000040008000000000000003",
+          "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+          "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+        },
+        "profileSetId": "cs-pilot-source-r1",
+        "window": {
+          "bodyId": "bdy_00000000000040008000000000000042",
+          "rawRange": [
+            47,
+            51
+          ]
+        },
+        "cursor": "fixture:cursor"
+      },
+      "expected": "schema_invalid"
+    },
+    {
+      "id": "unknown-contract",
+      "schema": "ReadRequest",
+      "value": {
+        "contract": "cs-reader/2",
+        "address": {
+          "version": 2,
+          "sourceId": "src_00000000000040008000000000000003",
+          "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+          "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+        },
+        "profileSetId": "cs-pilot-source-r1",
+        "window": {
+          "bodyId": "bdy_00000000000040008000000000000042",
+          "rawRange": [
+            47,
+            51
+          ]
+        }
+      },
+      "expected": "schema_invalid"
+    },
+    {
+      "id": "two-resolve-inputs",
+      "schema": "ResolveRequest",
+      "value": {
+        "contract": "cs-reader/1",
+        "url": "https://www.typikon.info/reading/margarit-1",
+        "address": {
+          "version": 2,
+          "sourceId": "src_00000000000040008000000000000003",
+          "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+          "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+        }
+      },
+      "expected": "schema_invalid"
+    },
+    {
+      "id": "too-many-lookup-tokens",
+      "schema": "LookupRequest",
+      "value": {
+        "contract": "cs-reader/1",
+        "address": {
+          "version": 2,
+          "sourceId": "src_00000000000040008000000000000003",
+          "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+          "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+        },
+        "profileSetId": "cs-pilot-source-r1",
+        "tokens": [
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          },
+          {
+            "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+            "tokenizerProfileId": "token-cs-r1",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ],
+            "occurrenceId": "occ_00000000000040008000000000000042"
+          }
+        ]
+      },
+      "expected": "schema_invalid"
+    },
+    {
+      "id": "missing-map",
+      "schema": "ReadResponse",
+      "value": {
+        "contract": "cs-reader/1",
+        "data": {
+          "source": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "title": "Беседа первая о непостижимем",
+            "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000003",
+            "editorialStatus": "texted",
+            "sourceRights": {
+              "status": "unresolved",
+              "licenseId": null,
+              "licenseUrl": null,
+              "conditions": null
+            },
+            "legacyTarget": {
+              "kind": "text",
+              "id": "699c9ace0c51f1c698ea0492",
+              "edition": "6992d190b9df99cbe01f6174"
+            }
+          },
+          "snapshot": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7",
+            "datasetRevisions": [
+              "ds1_dbbffc2fb043796a639ca5c510920f883337ad8b8c8c3cf864fe7d76c221f951"
+            ],
+            "passportPolicy": "pinned"
+          },
+          "resolvedAddress": {
+            "version": 2,
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+          },
+          "profileSet": {
+            "id": "cs-pilot-source-r1",
+            "profiles": {
+              "markup": "markup-r1",
+              "display": "display-source-r1",
+              "tokenizer": "token-cs-r1",
+              "lookup": "lookup-cs-r1",
+              "search": "search-cs-r1"
+            },
+            "versions": {
+              "unicode": "16.0",
+              "segmenter": "cs-grapheme-r1/unicode16.0",
+              "puaTableSha256": "e1bc221a320783e676a2da8e0489873a47697b6b2f8685ca69fd5db8e1ce69b8",
+              "letterTableSha256": "cae49489cf7656f67f9ac13bcbc23c680d3a4b19de8ca987b773e15a9f377bbb"
+            }
+          },
+          "sourceDescriptor": {
+            "profile": "source-r1",
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "units": [
+              {
+                "occurrenceId": "occ_00000000000040008000000000000042",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                "placement": {
+                  "ode": null,
+                  "unit": "body",
+                  "stanzaKind": null,
+                  "stanza": null,
+                  "marker": null
+                },
+                "repeatCount": 1,
+                "rubricRevision": null
+              }
+            ],
+            "footnotes": []
+          },
+          "units": [
+            {
+              "occurrenceId": "occ_00000000000040008000000000000042",
+              "bodyRef": {
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f"
+              },
+              "placement": {
+                "ode": null,
+                "unit": "body",
+                "stanzaKind": null,
+                "stanza": null,
+                "marker": null
+              },
+              "projectionIds": [
+                "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38"
+              ]
+            }
+          ],
+          "projections": [
+            {
+              "projectionId": "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38",
+              "bodyId": "bdy_00000000000040008000000000000042",
+              "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+              "profileSetId": "cs-pilot-source-r1",
+              "bodyLengthUtf16": 12489,
+              "rawWindow": [
+                47,
+                51
+              ],
+              "rawText": "бл҃г",
+              "viewText": "бл҃г",
+              "tokens": [
+                {
+                  "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+                  "type": "word",
+                  "rawRanges": [
+                    [
+                      47,
+                      51
+                    ]
+                  ],
+                  "surfaceRanges": [
+                    [
+                      0,
+                      4
+                    ]
+                  ],
+                  "flags": [
+                    "abbreviated"
+                  ],
+                  "tokenizerProfileId": "token-cs-r1",
+                  "lookupKey": {
+                    "profileId": "lookup-cs-r1",
+                    "value": "бл҃г"
+                  },
+                  "searchKeys": [
+                    {
+                      "profileId": "search-cs-r1",
+                      "value": "блг",
+                      "matchKind": "abbreviation_skeleton"
+                    }
+                  ],
+                  "blockedReason": null
+                }
+              ],
+              "runs": [
+                {
+                  "type": "text",
+                  "viewRange": [
+                    0,
+                    4
+                  ],
+                  "styles": []
+                }
+              ]
+            }
+          ],
+          "focus": {
+            "status": "resolved",
+            "occurrenceId": "occ_00000000000040008000000000000042",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ]
+          },
+          "coverage": "window",
+          "page": {
+            "nextCursor": null,
+            "selectionComplete": true
+          }
+        },
+        "warnings": []
+      },
+      "expected": "schema_invalid"
+    }
+  ],
+  "semanticInvalidExamples": [
+    {
+      "id": "stale-map",
+      "schema": "ReadResponse",
+      "value": {
+        "contract": "cs-reader/1",
+        "data": {
+          "source": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "title": "Беседа первая о непостижимем",
+            "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000003",
+            "editorialStatus": "texted",
+            "sourceRights": {
+              "status": "unresolved",
+              "licenseId": null,
+              "licenseUrl": null,
+              "conditions": null
+            },
+            "legacyTarget": {
+              "kind": "text",
+              "id": "699c9ace0c51f1c698ea0492",
+              "edition": "6992d190b9df99cbe01f6174"
+            }
+          },
+          "snapshot": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7",
+            "datasetRevisions": [
+              "ds1_dbbffc2fb043796a639ca5c510920f883337ad8b8c8c3cf864fe7d76c221f951"
+            ],
+            "passportPolicy": "pinned"
+          },
+          "resolvedAddress": {
+            "version": 2,
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+          },
+          "profileSet": {
+            "id": "cs-pilot-source-r1",
+            "profiles": {
+              "markup": "markup-r1",
+              "display": "display-source-r1",
+              "tokenizer": "token-cs-r1",
+              "lookup": "lookup-cs-r1",
+              "search": "search-cs-r1"
+            },
+            "versions": {
+              "unicode": "16.0",
+              "segmenter": "cs-grapheme-r1/unicode16.0",
+              "puaTableSha256": "e1bc221a320783e676a2da8e0489873a47697b6b2f8685ca69fd5db8e1ce69b8",
+              "letterTableSha256": "cae49489cf7656f67f9ac13bcbc23c680d3a4b19de8ca987b773e15a9f377bbb"
+            }
+          },
+          "sourceDescriptor": {
+            "profile": "source-r1",
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "units": [
+              {
+                "occurrenceId": "occ_00000000000040008000000000000042",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                "placement": {
+                  "ode": null,
+                  "unit": "body",
+                  "stanzaKind": null,
+                  "stanza": null,
+                  "marker": null
+                },
+                "repeatCount": 1,
+                "rubricRevision": null
+              }
+            ],
+            "footnotes": []
+          },
+          "units": [
+            {
+              "occurrenceId": "occ_00000000000040008000000000000042",
+              "bodyRef": {
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f"
+              },
+              "placement": {
+                "ode": null,
+                "unit": "body",
+                "stanzaKind": null,
+                "stanza": null,
+                "marker": null
+              },
+              "projectionIds": [
+                "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38"
+              ]
+            }
+          ],
+          "projections": [
+            {
+              "projectionId": "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38",
+              "bodyId": "bdy_00000000000040008000000000000042",
+              "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+              "profileSetId": "cs-pilot-source-r1",
+              "bodyLengthUtf16": 12489,
+              "rawWindow": [
+                47,
+                51
+              ],
+              "rawText": "бл҃г",
+              "viewText": "бл҃г",
+              "map": {
+                "mapId": "map1_56698087fc977f702094d323f76ed9cc2189d0587be2e01a4c62eccb28d5686e",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_0000000000000000000000000000000000000000000000000000000000000000",
+                "profileSetId": "cs-pilot-source-r1",
+                "inputProfileId": "raw-r1",
+                "outputProfileId": "display-source-r1",
+                "rawWindow": [
+                  47,
+                  51
+                ],
+                "outputLengthUtf16": 4,
+                "segments": [
+                  {
+                    "rawRanges": [
+                      [
+                        47,
+                        51
+                      ]
+                    ],
+                    "outRange": [
+                      0,
+                      4
+                    ],
+                    "operation": "copy",
+                    "ruleId": "copy",
+                    "fidelity": "preserved"
+                  }
+                ]
+              },
+              "tokens": [
+                {
+                  "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+                  "type": "word",
+                  "rawRanges": [
+                    [
+                      47,
+                      51
+                    ]
+                  ],
+                  "surfaceRanges": [
+                    [
+                      0,
+                      4
+                    ]
+                  ],
+                  "flags": [
+                    "abbreviated"
+                  ],
+                  "tokenizerProfileId": "token-cs-r1",
+                  "lookupKey": {
+                    "profileId": "lookup-cs-r1",
+                    "value": "бл҃г"
+                  },
+                  "searchKeys": [
+                    {
+                      "profileId": "search-cs-r1",
+                      "value": "блг",
+                      "matchKind": "abbreviation_skeleton"
+                    }
+                  ],
+                  "blockedReason": null
+                }
+              ],
+              "runs": [
+                {
+                  "type": "text",
+                  "viewRange": [
+                    0,
+                    4
+                  ],
+                  "styles": []
+                }
+              ]
+            }
+          ],
+          "focus": {
+            "status": "resolved",
+            "occurrenceId": "occ_00000000000040008000000000000042",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ]
+          },
+          "coverage": "window",
+          "page": {
+            "nextCursor": null,
+            "selectionComplete": true
+          }
+        },
+        "warnings": []
+      },
+      "expected": "shape_valid_but_semantically_invalid",
+      "expectedCode": "map_revision_mismatch"
+    },
+    {
+      "id": "wrong-window-length",
+      "schema": "ReadResponse",
+      "value": {
+        "contract": "cs-reader/1",
+        "data": {
+          "source": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "title": "Беседа первая о непостижимем",
+            "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000003",
+            "editorialStatus": "texted",
+            "sourceRights": {
+              "status": "unresolved",
+              "licenseId": null,
+              "licenseUrl": null,
+              "conditions": null
+            },
+            "legacyTarget": {
+              "kind": "text",
+              "id": "699c9ace0c51f1c698ea0492",
+              "edition": "6992d190b9df99cbe01f6174"
+            }
+          },
+          "snapshot": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7",
+            "datasetRevisions": [
+              "ds1_dbbffc2fb043796a639ca5c510920f883337ad8b8c8c3cf864fe7d76c221f951"
+            ],
+            "passportPolicy": "pinned"
+          },
+          "resolvedAddress": {
+            "version": 2,
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+          },
+          "profileSet": {
+            "id": "cs-pilot-source-r1",
+            "profiles": {
+              "markup": "markup-r1",
+              "display": "display-source-r1",
+              "tokenizer": "token-cs-r1",
+              "lookup": "lookup-cs-r1",
+              "search": "search-cs-r1"
+            },
+            "versions": {
+              "unicode": "16.0",
+              "segmenter": "cs-grapheme-r1/unicode16.0",
+              "puaTableSha256": "e1bc221a320783e676a2da8e0489873a47697b6b2f8685ca69fd5db8e1ce69b8",
+              "letterTableSha256": "cae49489cf7656f67f9ac13bcbc23c680d3a4b19de8ca987b773e15a9f377bbb"
+            }
+          },
+          "sourceDescriptor": {
+            "profile": "source-r1",
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "units": [
+              {
+                "occurrenceId": "occ_00000000000040008000000000000042",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                "placement": {
+                  "ode": null,
+                  "unit": "body",
+                  "stanzaKind": null,
+                  "stanza": null,
+                  "marker": null
+                },
+                "repeatCount": 1,
+                "rubricRevision": null
+              }
+            ],
+            "footnotes": []
+          },
+          "units": [
+            {
+              "occurrenceId": "occ_00000000000040008000000000000042",
+              "bodyRef": {
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f"
+              },
+              "placement": {
+                "ode": null,
+                "unit": "body",
+                "stanzaKind": null,
+                "stanza": null,
+                "marker": null
+              },
+              "projectionIds": [
+                "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38"
+              ]
+            }
+          ],
+          "projections": [
+            {
+              "projectionId": "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38",
+              "bodyId": "bdy_00000000000040008000000000000042",
+              "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+              "profileSetId": "cs-pilot-source-r1",
+              "bodyLengthUtf16": 12489,
+              "rawWindow": [
+                47,
+                51
+              ],
+              "rawText": "бл҃гг",
+              "viewText": "бл҃г",
+              "map": {
+                "mapId": "map1_56698087fc977f702094d323f76ed9cc2189d0587be2e01a4c62eccb28d5686e",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                "profileSetId": "cs-pilot-source-r1",
+                "inputProfileId": "raw-r1",
+                "outputProfileId": "display-source-r1",
+                "rawWindow": [
+                  47,
+                  51
+                ],
+                "outputLengthUtf16": 4,
+                "segments": [
+                  {
+                    "rawRanges": [
+                      [
+                        47,
+                        51
+                      ]
+                    ],
+                    "outRange": [
+                      0,
+                      4
+                    ],
+                    "operation": "copy",
+                    "ruleId": "copy",
+                    "fidelity": "preserved"
+                  }
+                ]
+              },
+              "tokens": [
+                {
+                  "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+                  "type": "word",
+                  "rawRanges": [
+                    [
+                      47,
+                      51
+                    ]
+                  ],
+                  "surfaceRanges": [
+                    [
+                      0,
+                      4
+                    ]
+                  ],
+                  "flags": [
+                    "abbreviated"
+                  ],
+                  "tokenizerProfileId": "token-cs-r1",
+                  "lookupKey": {
+                    "profileId": "lookup-cs-r1",
+                    "value": "бл҃г"
+                  },
+                  "searchKeys": [
+                    {
+                      "profileId": "search-cs-r1",
+                      "value": "блг",
+                      "matchKind": "abbreviation_skeleton"
+                    }
+                  ],
+                  "blockedReason": null
+                }
+              ],
+              "runs": [
+                {
+                  "type": "text",
+                  "viewRange": [
+                    0,
+                    4
+                  ],
+                  "styles": []
+                }
+              ]
+            }
+          ],
+          "focus": {
+            "status": "resolved",
+            "occurrenceId": "occ_00000000000040008000000000000042",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ]
+          },
+          "coverage": "window",
+          "page": {
+            "nextCursor": null,
+            "selectionComplete": true
+          }
+        },
+        "warnings": []
+      },
+      "expected": "shape_valid_but_semantically_invalid",
+      "expectedCode": "invalid_response"
+    },
+    {
+      "id": "foreign-occurrence",
+      "schema": "ReadResponse",
+      "value": {
+        "contract": "cs-reader/1",
+        "data": {
+          "source": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "title": "Беседа первая о непостижимем",
+            "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000003",
+            "editorialStatus": "texted",
+            "sourceRights": {
+              "status": "unresolved",
+              "licenseId": null,
+              "licenseUrl": null,
+              "conditions": null
+            },
+            "legacyTarget": {
+              "kind": "text",
+              "id": "699c9ace0c51f1c698ea0492",
+              "edition": "6992d190b9df99cbe01f6174"
+            }
+          },
+          "snapshot": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7",
+            "datasetRevisions": [
+              "ds1_dbbffc2fb043796a639ca5c510920f883337ad8b8c8c3cf864fe7d76c221f951"
+            ],
+            "passportPolicy": "pinned"
+          },
+          "resolvedAddress": {
+            "version": 2,
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+          },
+          "profileSet": {
+            "id": "cs-pilot-source-r1",
+            "profiles": {
+              "markup": "markup-r1",
+              "display": "display-source-r1",
+              "tokenizer": "token-cs-r1",
+              "lookup": "lookup-cs-r1",
+              "search": "search-cs-r1"
+            },
+            "versions": {
+              "unicode": "16.0",
+              "segmenter": "cs-grapheme-r1/unicode16.0",
+              "puaTableSha256": "e1bc221a320783e676a2da8e0489873a47697b6b2f8685ca69fd5db8e1ce69b8",
+              "letterTableSha256": "cae49489cf7656f67f9ac13bcbc23c680d3a4b19de8ca987b773e15a9f377bbb"
+            }
+          },
+          "sourceDescriptor": {
+            "profile": "source-r1",
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "units": [
+              {
+                "occurrenceId": "occ_00000000000040008000000000000042",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                "placement": {
+                  "ode": null,
+                  "unit": "body",
+                  "stanzaKind": null,
+                  "stanza": null,
+                  "marker": null
+                },
+                "repeatCount": 1,
+                "rubricRevision": null
+              }
+            ],
+            "footnotes": []
+          },
+          "units": [
+            {
+              "occurrenceId": "occ_00000000000040008000000000000001",
+              "bodyRef": {
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f"
+              },
+              "placement": {
+                "ode": null,
+                "unit": "body",
+                "stanzaKind": null,
+                "stanza": null,
+                "marker": null
+              },
+              "projectionIds": [
+                "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38"
+              ]
+            }
+          ],
+          "projections": [
+            {
+              "projectionId": "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38",
+              "bodyId": "bdy_00000000000040008000000000000042",
+              "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+              "profileSetId": "cs-pilot-source-r1",
+              "bodyLengthUtf16": 12489,
+              "rawWindow": [
+                47,
+                51
+              ],
+              "rawText": "бл҃г",
+              "viewText": "бл҃г",
+              "map": {
+                "mapId": "map1_56698087fc977f702094d323f76ed9cc2189d0587be2e01a4c62eccb28d5686e",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                "profileSetId": "cs-pilot-source-r1",
+                "inputProfileId": "raw-r1",
+                "outputProfileId": "display-source-r1",
+                "rawWindow": [
+                  47,
+                  51
+                ],
+                "outputLengthUtf16": 4,
+                "segments": [
+                  {
+                    "rawRanges": [
+                      [
+                        47,
+                        51
+                      ]
+                    ],
+                    "outRange": [
+                      0,
+                      4
+                    ],
+                    "operation": "copy",
+                    "ruleId": "copy",
+                    "fidelity": "preserved"
+                  }
+                ]
+              },
+              "tokens": [
+                {
+                  "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+                  "type": "word",
+                  "rawRanges": [
+                    [
+                      47,
+                      51
+                    ]
+                  ],
+                  "surfaceRanges": [
+                    [
+                      0,
+                      4
+                    ]
+                  ],
+                  "flags": [
+                    "abbreviated"
+                  ],
+                  "tokenizerProfileId": "token-cs-r1",
+                  "lookupKey": {
+                    "profileId": "lookup-cs-r1",
+                    "value": "бл҃г"
+                  },
+                  "searchKeys": [
+                    {
+                      "profileId": "search-cs-r1",
+                      "value": "блг",
+                      "matchKind": "abbreviation_skeleton"
+                    }
+                  ],
+                  "blockedReason": null
+                }
+              ],
+              "runs": [
+                {
+                  "type": "text",
+                  "viewRange": [
+                    0,
+                    4
+                  ],
+                  "styles": []
+                }
+              ]
+            }
+          ],
+          "focus": {
+            "status": "resolved",
+            "occurrenceId": "occ_00000000000040008000000000000042",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ]
+          },
+          "coverage": "window",
+          "page": {
+            "nextCursor": null,
+            "selectionComplete": true
+          }
+        },
+        "warnings": []
+      },
+      "expected": "shape_valid_but_semantically_invalid",
+      "expectedCode": "invalid_response"
+    },
+    {
+      "id": "wrong-profile",
+      "schema": "ReadResponse",
+      "value": {
+        "contract": "cs-reader/1",
+        "data": {
+          "source": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "title": "Беседа первая о непостижимем",
+            "canonicalUrl": "https://www.typikon.info/sources/id/src_00000000000040008000000000000003",
+            "editorialStatus": "texted",
+            "sourceRights": {
+              "status": "unresolved",
+              "licenseId": null,
+              "licenseUrl": null,
+              "conditions": null
+            },
+            "legacyTarget": {
+              "kind": "text",
+              "id": "699c9ace0c51f1c698ea0492",
+              "edition": "6992d190b9df99cbe01f6174"
+            }
+          },
+          "snapshot": {
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7",
+            "datasetRevisions": [
+              "ds1_dbbffc2fb043796a639ca5c510920f883337ad8b8c8c3cf864fe7d76c221f951"
+            ],
+            "passportPolicy": "pinned"
+          },
+          "resolvedAddress": {
+            "version": 2,
+            "sourceId": "src_00000000000040008000000000000003",
+            "sourceRevision": "sr1_a51cdbdb36dda6015352049d22b3fab20d5b7e309aac6979f23c6a8205856153",
+            "passportRevision": "pr1_27cb6c0104a402c62d2a04f11134e52fbde1c80bb6b9e0d2e26d8cfffeadd7f7"
+          },
+          "profileSet": {
+            "id": "cs-pilot-source-r1",
+            "profiles": {
+              "markup": "markup-r1",
+              "display": "display-source-r1",
+              "tokenizer": "token-cs-r1",
+              "lookup": "lookup-cs-r1",
+              "search": "search-cs-r1"
+            },
+            "versions": {
+              "unicode": "16.0",
+              "segmenter": "cs-grapheme-r1/unicode16.0",
+              "puaTableSha256": "e1bc221a320783e676a2da8e0489873a47697b6b2f8685ca69fd5db8e1ce69b8",
+              "letterTableSha256": "cae49489cf7656f67f9ac13bcbc23c680d3a4b19de8ca987b773e15a9f377bbb"
+            }
+          },
+          "sourceDescriptor": {
+            "profile": "source-r1",
+            "sourceId": "src_00000000000040008000000000000003",
+            "kind": "text",
+            "units": [
+              {
+                "occurrenceId": "occ_00000000000040008000000000000042",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                "placement": {
+                  "ode": null,
+                  "unit": "body",
+                  "stanzaKind": null,
+                  "stanza": null,
+                  "marker": null
+                },
+                "repeatCount": 1,
+                "rubricRevision": null
+              }
+            ],
+            "footnotes": []
+          },
+          "units": [
+            {
+              "occurrenceId": "occ_00000000000040008000000000000042",
+              "bodyRef": {
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f"
+              },
+              "placement": {
+                "ode": null,
+                "unit": "body",
+                "stanzaKind": null,
+                "stanza": null,
+                "marker": null
+              },
+              "projectionIds": [
+                "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38"
+              ]
+            }
+          ],
+          "projections": [
+            {
+              "projectionId": "proj1_7813ef14bd3c8984a920b8381e3ee054aa7886bf3562f3554108c485adf2af38",
+              "bodyId": "bdy_00000000000040008000000000000042",
+              "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+              "profileSetId": "cs-unknown-r1",
+              "bodyLengthUtf16": 12489,
+              "rawWindow": [
+                47,
+                51
+              ],
+              "rawText": "бл҃г",
+              "viewText": "бл҃г",
+              "map": {
+                "mapId": "map1_56698087fc977f702094d323f76ed9cc2189d0587be2e01a4c62eccb28d5686e",
+                "bodyId": "bdy_00000000000040008000000000000042",
+                "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+                "profileSetId": "cs-pilot-source-r1",
+                "inputProfileId": "raw-r1",
+                "outputProfileId": "display-source-r1",
+                "rawWindow": [
+                  47,
+                  51
+                ],
+                "outputLengthUtf16": 4,
+                "segments": [
+                  {
+                    "rawRanges": [
+                      [
+                        47,
+                        51
+                      ]
+                    ],
+                    "outRange": [
+                      0,
+                      4
+                    ],
+                    "operation": "copy",
+                    "ruleId": "copy",
+                    "fidelity": "preserved"
+                  }
+                ]
+              },
+              "tokens": [
+                {
+                  "tokenId": "tok1_ea1044362f815ed50e618fab08cdf1637df042f142a93b89e6255ffca6517e4e",
+                  "type": "word",
+                  "rawRanges": [
+                    [
+                      47,
+                      51
+                    ]
+                  ],
+                  "surfaceRanges": [
+                    [
+                      0,
+                      4
+                    ]
+                  ],
+                  "flags": [
+                    "abbreviated"
+                  ],
+                  "tokenizerProfileId": "token-cs-r1",
+                  "lookupKey": {
+                    "profileId": "lookup-cs-r1",
+                    "value": "бл҃г"
+                  },
+                  "searchKeys": [
+                    {
+                      "profileId": "search-cs-r1",
+                      "value": "блг",
+                      "matchKind": "abbreviation_skeleton"
+                    }
+                  ],
+                  "blockedReason": null
+                }
+              ],
+              "runs": [
+                {
+                  "type": "text",
+                  "viewRange": [
+                    0,
+                    4
+                  ],
+                  "styles": []
+                }
+              ]
+            }
+          ],
+          "focus": {
+            "status": "resolved",
+            "occurrenceId": "occ_00000000000040008000000000000042",
+            "bodyId": "bdy_00000000000040008000000000000042",
+            "rawRanges": [
+              [
+                47,
+                51
+              ]
+            ]
+          },
+          "coverage": "window",
+          "page": {
+            "nextCursor": null,
+            "selectionComplete": true
+          }
+        },
+        "warnings": []
+      },
+      "expected": "shape_valid_but_semantically_invalid",
+      "expectedCode": "unsupported_profile"
+    }
+  ],
+  "passportDescriptors": {
+    "P01": {
+      "profile": "passport-r1",
+      "sourceId": "src_00000000000040008000000000000001",
+      "assertions": [
+        {
+          "id": "assert:canon-author",
+          "revision": 1
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs:attribution",
+          "revision": 1
+        },
+        {
+          "id": "obs:greek-reference",
+          "revision": 1
+        }
+      ],
+      "cases": [],
+      "decisions": [],
+      "questions": [
+        {
+          "id": "q:canon-created",
+          "revision": 1
+        },
+        {
+          "id": "q:canon-translation",
+          "revision": 1
+        }
+      ],
+      "fields": []
+    },
+    "P02": {
+      "profile": "passport-r1",
+      "sourceId": "src_00000000000040008000000000000002",
+      "assertions": [
+        {
+          "id": "assert:ak-status-field",
+          "revision": 1
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs:ak-fields",
+          "revision": 1
+        }
+      ],
+      "cases": [],
+      "decisions": [],
+      "questions": [
+        {
+          "id": "q:ak-approval",
+          "revision": 1
+        },
+        {
+          "id": "q:ak-author",
+          "revision": 1
+        }
+      ],
+      "fields": []
+    },
+    "P03": {
+      "profile": "passport-r1",
+      "sourceId": "src_00000000000040008000000000000003",
+      "assertions": [
+        {
+          "id": "assert:book-author-field",
+          "revision": 1
+        },
+        {
+          "id": "assert:chapter-author-candidate",
+          "revision": 1
+        },
+        {
+          "id": "assert:technical-created",
+          "revision": 1
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs:book-author",
+          "revision": 1
+        },
+        {
+          "id": "obs:catalog-title",
+          "revision": 1
+        },
+        {
+          "id": "obs:empty-chapter-fields",
+          "revision": 1
+        },
+        {
+          "id": "obs:technical-created",
+          "revision": 1
+        }
+      ],
+      "cases": [
+        {
+          "id": "case:chapter-author",
+          "revision": 1
+        }
+      ],
+      "decisions": [],
+      "questions": [
+        {
+          "id": "q:chapter-author",
+          "revision": 1
+        },
+        {
+          "id": "q:chapter-translator",
+          "revision": 1
+        },
+        {
+          "id": "q:witness-date",
+          "revision": 1
+        }
+      ],
+      "fields": [
+        {
+          "id": "fixture:field:P03:authorship",
+          "revision": 1
+        },
+        {
+          "id": "fixture:field:P03:translator",
+          "revision": 1
+        }
+      ]
+    },
+    "P04": {
+      "profile": "passport-r1",
+      "sourceId": "src_00000000000040008000000000000004",
+      "assertions": [
+        {
+          "id": "assert:irmos-storage",
+          "revision": 1
+        },
+        {
+          "id": "assert:irmos-use",
+          "revision": 1
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs:irmos-reference",
+          "revision": 1
+        }
+      ],
+      "cases": [
+        {
+          "id": "case:irmos-origin",
+          "revision": 1
+        }
+      ],
+      "decisions": [],
+      "questions": [
+        {
+          "id": "q:irmos-original",
+          "revision": 1
+        }
+      ],
+      "fields": [
+        {
+          "id": "fixture:field:P04:originalPartOf",
+          "revision": 1
+        }
+      ]
+    },
+    "P05": {
+      "profile": "passport-r1",
+      "sourceId": "src_00000000000040008000000000000005",
+      "assertions": [],
+      "observations": [],
+      "cases": [],
+      "decisions": [],
+      "questions": [],
+      "fields": []
+    }
+  },
+  "digestInputs": {
+    "map": {
+      "bodyId": "bdy_00000000000040008000000000000042",
+      "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+      "rawWindow": [
+        47,
+        51
+      ],
+      "profileSetId": "cs-pilot-source-r1",
+      "segments": [
+        {
+          "rawRanges": [
+            [
+              47,
+              51
+            ]
+          ],
+          "outRange": [
+            0,
+            4
+          ],
+          "operation": "copy",
+          "ruleId": "copy",
+          "fidelity": "preserved"
+        }
+      ]
+    },
+    "token": {
+      "bodyId": "bdy_00000000000040008000000000000042",
+      "bodyRevision": "br1_9b908856543a0c9930d633d2c5f57337151fd38d19c29fca9b7a65224612896f",
+      "tokenizerProfileId": "token-cs-r1",
+      "type": "word",
+      "rawRanges": [
+        [
+          47,
+          51
+        ]
+      ]
+    }
+  },
+  "legacyCompatibility": {
+    "oldErrorShape": {
+      "error": {
+        "code": "bad_request",
+        "message": "Legacy response remains unchanged."
+      }
+    },
+    "newReaderErrorsHaveContract": true,
+    "legacyReaderDeprecated": true,
+    "deprecationInventory": "legacy-reader-deprecations.json",
+    "dictionaryContractStillUsed": true
+  }
+}

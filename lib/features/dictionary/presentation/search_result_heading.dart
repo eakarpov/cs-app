@@ -34,7 +34,7 @@ class SearchResultHeading extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: const Text(
-                  '100%',
+                  'Точное совпадение',
                   style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -62,7 +62,7 @@ class SearchResultHeading extends StatelessWidget {
             message: label,
             excludeFromSemantics: true,
             child: Icon(
-              translation ? Icons.check_circle : Icons.arrow_forward_rounded,
+              translation ? Icons.translate : Icons.arrow_forward_rounded,
               size: 20,
               color: color,
               semanticLabel: label,

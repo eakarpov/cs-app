@@ -52,7 +52,7 @@ class HistoryScreen extends StatelessWidget {
         actions: [
           IconButton(
             tooltip: 'Очистить историю',
-            onPressed: personal.ready && personal.history.isNotEmpty
+            onPressed: personal.canEdit && personal.history.isNotEmpty
                 ? personal.clearHistory
                 : null,
             icon: const Icon(Icons.delete_outline),

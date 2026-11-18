@@ -25,6 +25,8 @@ class PersonalStore extends ChangeNotifier {
   late final Future<void> initialized;
   bool _readFailed = false;
   bool ready = false;
+  bool get canEdit => ready && !_readFailed;
+  bool _reading = false;
   String? error;
   List<SavedWord> favorites = [], history = [];
   ThemeMode themeMode = ThemeMode.system;
@@ -33,12 +35,42 @@ class PersonalStore extends ChangeNotifier {
   Future<void> _tail = Future.value();
   Future<void> retryPersistence() => _readFailed ? _load() : _save();
   Future<void> _load() async {
-    _readFailed = false;
+    if (_reading) return;
+    _reading = true;
+    ready = false;
+    _readFailed = true;
     error = null;
+    notifyListeners();
     try {
       final raw = await preferences.read();
       if (raw != null) {
-        final j = object(jsonDecode(raw));
+        final decoded = jsonDecode(raw);
+        if (decoded is! Map<String, dynamic>) throw const FormatException();
+        final j = decoded;
+        if (j['version'] != null && j['version'] != 1) {
+          throw const FormatException();
+        }
+        for (final key in ['favorites', 'history']) {
+          final values = j[key];
+          if (values != null &&
+              (values is! List ||
+                  values.any(
+                    (v) =>
+                        v is! Map ||
+                        v['id'] is! String ||
+                        (v['id'] as String).isEmpty ||
+                        v['name'] is! String,
+                  ))) {
+            throw const FormatException();
+          }
+        }
+        if (j['fontSize'] != null &&
+                (j['fontSize'] is! num || !(j['fontSize'] as num).isFinite) ||
+            j['theme'] != null && j['theme'] is! String ||
+            j['highlightEndings'] != null && j['highlightEndings'] is! bool ||
+            j['showProposed'] != null && j['showProposed'] is! bool) {
+          throw const FormatException();
+        }
         favorites = array(j['favorites'])
             .map((v) => SavedWord.fromJson(object(v)))
             .where((w) => w.id.isNotEmpty)
@@ -58,18 +90,20 @@ class PersonalStore extends ChangeNotifier {
         highlightEndings = j['highlightEndings'] != false;
         showProposed = j['showProposed'] != false;
       }
+      _readFailed = false;
     } catch (_) {
       _readFailed = true;
       error =
           'Не удалось прочитать сохранённые настройки. Данные не будут перезаписаны.';
     }
     ready = true;
+    _reading = false;
     notifyListeners();
   }
 
   bool isFavorite(String id) => favorites.any((w) => w.id == id);
   Future<void> toggle(SavedWord word) async {
-    if (!ready) return;
+    if (!canEdit) return;
     if (isFavorite(word.id)) {
       favorites.removeWhere((w) => w.id == word.id);
     } else {
@@ -79,7 +113,7 @@ class PersonalStore extends ChangeNotifier {
   }
 
   Future<void> opened(SavedWord word) async {
-    if (!ready) return;
+    if (!canEdit) return;
     final favoriteIndex = favorites.indexWhere((w) => w.id == word.id);
     if (favoriteIndex >= 0) favorites[favoriteIndex] = word;
     history.removeWhere((w) => w.id == word.id);
@@ -94,7 +128,7 @@ class PersonalStore extends ChangeNotifier {
     bool? endings,
     bool? proposed,
   }) async {
-    if (!ready) return;
+    if (!canEdit) return;
     themeMode = theme ?? themeMode;
     fontSize = (size ?? fontSize).clamp(16, 36);
     highlightEndings = endings ?? highlightEndings;
@@ -103,7 +137,7 @@ class PersonalStore extends ChangeNotifier {
   }
 
   Future<void> clearHistory() async {
-    if (!ready) return;
+    if (!canEdit) return;
     history = [];
     await _save();
   }

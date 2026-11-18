@@ -1,11 +1,14 @@
 import 'lexical_search_controller.dart';
 import 'lexical_search_view.dart';
+import '../../reader/presentation/corpus_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../../core/personal_store.dart';
 import '../../../core/personal_store_banner.dart';
 import '../data/dictionary_repository.dart';
 import '../domain/models.dart';
 import 'search_controller.dart';
+import 'retry_button.dart';
 import 'article_screen.dart';
 import 'report_dialog.dart';
 import 'search_result_heading.dart';
@@ -20,9 +23,13 @@ class DictionaryScreen extends StatefulWidget {
     super.key,
     required this.repository,
     required this.personal,
+    this.initialQuery,
+    this.nestedLookup = false,
   });
   final DictionaryRepository repository;
   final PersonalStore personal;
+  final String? initialQuery;
+  final bool nestedLookup;
   @override
   State<DictionaryScreen> createState() => _DictionaryScreenState();
 }
@@ -33,12 +40,30 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
   );
   late final lexical = LexicalSearchController(widget.repository);
   final text = TextEditingController();
+  final resultsScroll = ScrollController();
   int tab = 0;
+  @override
+  void initState() {
+    super.initState();
+    search.addListener(() {
+      if (search.items.isEmpty &&
+          !search.loadingMore &&
+          resultsScroll.hasClients) {
+        resultsScroll.jumpTo(0);
+      }
+    });
+    if (widget.initialQuery != null) {
+      text.text = widget.initialQuery!;
+      search.change(text.text, immediate: true);
+    }
+  }
+
   @override
   void dispose() {
     search.dispose();
     lexical.dispose();
     text.dispose();
+    resultsScroll.dispose();
     super.dispose();
   }
 
@@ -56,6 +81,11 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
         id: id,
         matched: hit?.matched,
         grammar: hit?.grammar,
+        match: hit?.match,
+        dictionaryVersion: hit != null && search.schemaVersion == 2
+            ? search.version
+            : null,
+        dictionarySchema: hit != null ? search.schemaVersion : 2,
         repository: widget.repository,
         personal: widget.personal,
         lookup: lookup,
@@ -106,6 +136,24 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
     MaterialPageRoute<void>(
       builder: (_) =>
           HistoryScreen(personal: widget.personal, open: (id) => open(id)),
+    ),
+  );
+
+  Widget searchError() => Padding(
+    padding: const EdgeInsets.all(12),
+    child: Column(
+      children: [
+        Text(search.error!),
+        RetryButton(
+          error: search.failure,
+          onRetry: search.retry,
+          label: search.restartRequired
+              ? 'Повторить поиск'
+              : search.items.isNotEmpty
+              ? 'Повторить загрузку'
+              : 'Повторить',
+        ),
+      ],
     ),
   );
 
@@ -233,20 +281,18 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
             ],
           ),
         ),
-        if (search.loading) const LinearProgressIndicator(),
-        if (search.error != null)
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              children: [
-                Text(search.error!),
-                TextButton(
-                  onPressed: search.retry,
-                  child: const Text('Повторить'),
-                ),
-              ],
+        if (search.schemaVersion == 1 && search.version != null)
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+            child: Text(
+              'Сервер использует прежний формат словаря; закрепление версии недоступно.',
             ),
           ),
+        if (search.loading && !search.loadingMore)
+          const LinearProgressIndicator(),
+        if (search.error != null &&
+            (search.items.isEmpty || search.restartRequired))
+          searchError(),
         Expanded(
           child: search.items.isEmpty
               ? Center(
@@ -256,15 +302,26 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          search.query.isEmpty
+                          search.query.trim().isEmpty
                               ? 'Найдите слово, его значение и формы.'
                               : search.loading
                               ? 'Ищем…'
                               : search.error != null
-                              ? 'Для поиска нужен доступ к сети.'
-                              : 'По этому запросу ничего не найдено.',
+                              ? ''
+                              : 'По этому запросу в словаре пока ничего не найдено.',
                         ),
-                        if (search.query.isNotEmpty && !search.loading)
+                        if (search.query.trim().isNotEmpty &&
+                            !search.loading &&
+                            search.error == null)
+                          TextButton(
+                            onPressed: () => Clipboard.setData(
+                              ClipboardData(text: text.text),
+                            ),
+                            child: const Text('Копировать запрос'),
+                          ),
+                        if (search.query.trim().isNotEmpty &&
+                            !search.loading &&
+                            search.error == null)
                           TextButton(
                             onPressed: () => showContentReport(
                               context,
@@ -278,12 +335,29 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                   ),
                 )
               : ListView.builder(
+                  key: PageStorageKey(
+                    'dictionary:${search.direction}:${search.query}',
+                  ),
+                  controller: resultsScroll,
                   itemCount:
-                      search.items.length + (search.nextCursor != null ? 1 : 0),
+                      search.items.length +
+                      (search.nextCursor != null ||
+                              search.error != null && !search.restartRequired
+                          ? 1
+                          : 0),
                   itemBuilder: (context, i) {
                     if (i == search.items.length) {
+                      if (search.error != null) return searchError();
+                      if (search.loadingMore) {
+                        return const Padding(
+                          padding: EdgeInsets.all(12),
+                          child: Center(child: CircularProgressIndicator()),
+                        );
+                      }
                       return TextButton(
-                        onPressed: search.loading ? null : search.more,
+                        onPressed: search.loading || search.error != null
+                            ? null
+                            : search.more,
                         child: const Text('Показать ещё'),
                       );
                     }
@@ -311,7 +385,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
     builder: (context, _) => Scaffold(
       appBar: AppBar(
         title: Text(
-          const ['Словарь', 'Связи', 'Энциклопедия'][tab],
+          const ['Словарь', 'Тексты', 'Связи', 'Энциклопедия'][tab],
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -358,30 +432,77 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
           Expanded(
             child: !widget.personal.ready
                 ? const Center(child: CircularProgressIndicator())
-                : switch (tab) {
-                    1 => LexicalSearchView(
-                      controller: lexical,
-                      personal: widget.personal,
-                      open: (id) => open(id),
-                    ),
-                    2 => EncyclopediaHome(textSize: widget.personal.fontSize),
-                    _ => searchView(),
-                  },
+                : IndexedStack(
+                    index: tab,
+                    children: [
+                      searchView(),
+                      _LazyCorpusTab(
+                        active: tab == 1,
+                        repository: widget.repository,
+                        personal: widget.personal,
+                      ),
+                      LexicalSearchView(
+                        controller: lexical,
+                        personal: widget.personal,
+                        open: (id) => open(id),
+                      ),
+                      EncyclopediaHome(textSize: widget.personal.fontSize),
+                    ],
+                  ),
           ),
         ],
       ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: tab,
-        onDestinationSelected: (i) => setState(() => tab = i),
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.search), label: 'Словарь'),
-          NavigationDestination(icon: Icon(Icons.hub_outlined), label: 'Связи'),
-          NavigationDestination(
-            icon: Icon(Icons.auto_stories_outlined),
-            label: 'Энциклопедия',
-          ),
-        ],
-      ),
+      bottomNavigationBar: widget.nestedLookup
+          ? null
+          : NavigationBar(
+              labelTextStyle: const WidgetStatePropertyAll(
+                TextStyle(fontSize: 11),
+              ),
+              selectedIndex: tab,
+              onDestinationSelected: (i) => setState(() => tab = i),
+              destinations: const [
+                NavigationDestination(
+                  icon: Icon(Icons.search),
+                  label: 'Словарь',
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.menu_book_outlined),
+                  label: 'Тексты',
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.hub_outlined),
+                  label: 'Связи',
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.auto_stories_outlined),
+                  label: 'Энциклопедия',
+                ),
+              ],
+            ),
     ),
   );
+}
+
+class _LazyCorpusTab extends StatefulWidget {
+  const _LazyCorpusTab({
+    required this.active,
+    required this.repository,
+    required this.personal,
+  });
+  final bool active;
+  final DictionaryRepository repository;
+  final PersonalStore personal;
+  @override
+  State<_LazyCorpusTab> createState() => _LazyCorpusTabState();
+}
+
+class _LazyCorpusTabState extends State<_LazyCorpusTab> {
+  bool opened = false;
+  @override
+  Widget build(BuildContext context) {
+    opened = opened || widget.active;
+    return opened
+        ? CorpusScreen(dictionary: widget.repository, personal: widget.personal)
+        : const SizedBox.shrink();
+  }
 }

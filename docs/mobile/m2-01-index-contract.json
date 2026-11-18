@@ -348,5 +348,12 @@
     ],
     "legacyProfileDefinitionsPreserved": true,
     "apkPublished": false
+  },
+  "mobileImplementation": {
+    "date": "2026-11-18",
+    "status": "implemented-automated-accepted; device-acceptance-pending",
+    "receipt": "qa/mobile/m2-mobile-acceptance.json",
+    "lookup": "Reuse /api/v2/cs/search schema=2 with exact D and server token lookupKey. Unpinned reader lookup remains compatible but is deprecated for this mobile route. No local normalization.",
+    "publishedApk": false
   }
 }

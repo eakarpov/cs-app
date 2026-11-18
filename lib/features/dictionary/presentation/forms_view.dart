@@ -18,10 +18,14 @@ class WordFormsView extends StatefulWidget {
 class _WordFormsViewState extends State<WordFormsView> {
   bool detailed = false;
 
-  void showSpellings(String label, List<WordForm> forms) => showDialog<void>(
+  void showSpellings(
+    String label,
+    List<WordForm> forms, {
+    String title = 'Иные написания',
+  }) => showDialog<void>(
     context: context,
     builder: (context) => AlertDialog(
-      title: const Text('Иные написания'),
+      title: Text(title),
       content: SizedBox(
         width: 400,
         child: SingleChildScrollView(
@@ -32,7 +36,7 @@ class _WordFormsViewState extends State<WordFormsView> {
               Text(label),
               const SizedBox(height: 12),
               const Text(
-                'Дополнительные написания и варианты из словаря. Порядок показа не устанавливает языковую норму.',
+                'Дополнительные написания и сведения. Происхождение указано у каждой формы. Порядок показа не устанавливает языковую норму.',
               ),
               for (final form in forms) widget.formBuilder(form),
             ],
@@ -52,7 +56,7 @@ class _WordFormsViewState extends State<WordFormsView> {
     final readable = readableForms(forms);
     final primary = primaryForm(readable);
     final alternatives = readable
-        .where((f) => f.value != primary?.value)
+        .where((f) => f.selectionKey != primary?.selectionKey)
         .toList();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,9 +65,17 @@ class _WordFormsViewState extends State<WordFormsView> {
         if (primary != null) widget.formBuilder(primary) else const Text('—'),
         if (alternatives.isNotEmpty)
           TextButton(
-            onPressed: () => showSpellings(label, alternatives),
+            onPressed: () => showSpellings(
+              label,
+              alternatives,
+              title: alternatives.any((f) => f.value == primary?.value)
+                  ? 'Другие варианты формы'
+                  : 'Иные написания',
+            ),
             style: TextButton.styleFrom(padding: EdgeInsets.zero),
-            child: Text('Иные написания (${alternatives.length})'),
+            child: Text(
+              '${alternatives.any((f) => f.value == primary?.value) ? 'Другие варианты' : 'Иные написания'} (${alternatives.length})',
+            ),
           ),
       ],
     );
@@ -81,6 +93,9 @@ class _WordFormsViewState extends State<WordFormsView> {
           ),
         ),
       SingleChildScrollView(
+        key: PageStorageKey(
+          'forms:${widget.article.id}:${widget.article.version}:${grid.title}',
+        ),
         scrollDirection: Axis.horizontal,
         child: DataTable(
           columnSpacing: 20,
@@ -123,14 +138,19 @@ class _WordFormsViewState extends State<WordFormsView> {
     final displayedValues = {
       for (final p in article.paradigms)
         for (final s in p.slots)
-          for (final f in s.forms) f.value,
+          for (final f in s.forms) f.selectionKey,
     };
     final extra = readableForms(
       article.extra,
-    ).where((f) => !displayedValues.contains(f.value)).toList();
+    ).where((f) => !displayedValues.contains(f.selectionKey)).toList();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        if (!article.hasForms)
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12),
+            child: Text('Формы пока не подготовлены.'),
+          ),
         Wrap(
           spacing: 8,
           children: [
@@ -148,7 +168,7 @@ class _WordFormsViewState extends State<WordFormsView> {
         ),
         const SizedBox(height: 12),
         const Text(
-          'Подчёркивание — окончание; ∅ — нулевое окончание. Дополнительные написания раскрываются отдельно.',
+          'Подчёркивание — окончание; ∅ — нулевое окончание. — означает отсутствие данных для ячейки. Дополнительные написания раскрываются отдельно.',
         ),
         if (!detailed && article.paradigms.isNotEmpty)
           const Padding(
@@ -156,7 +176,11 @@ class _WordFormsViewState extends State<WordFormsView> {
             child: Text('Таблицу можно прокрутить по горизонтали.'),
           ),
         if (article.morphologyStatus == 'unassigned')
-          const Text('Парадигма пока не определена. Показаны известные формы.'),
+          Text(
+            article.hasForms
+                ? 'Парадигма пока не определена. Показаны известные формы.'
+                : 'Парадигма пока не определена.',
+          ),
         if (article.morphologyStatus == 'notApplicable')
           const Text('Слово не изменяется.'),
         for (final p in article.paradigms.where((p) => p.slots.isNotEmpty))
@@ -233,7 +257,11 @@ class _WordFormsViewState extends State<WordFormsView> {
           ExpansionTile(
             key: PageStorageKey('${article.id}:extra:$detailed'),
             initiallyExpanded: article.paradigms.every((p) => p.slots.isEmpty),
-            title: const Text('Другие выписанные формы'),
+            title: Text(
+              extra.every((f) => f.formOrigin == 'dictionary')
+                  ? 'Другие выписанные формы'
+                  : 'Дополнительные формы',
+            ),
             children: [
               for (final f in extra)
                 ListTile(

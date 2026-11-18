@@ -1,0 +1,33 @@
+{
+  "packageId": "info.typikon.cs",
+  "versionCode": 8,
+  "versionName": "0.1.7",
+  "label": "Лексикон ЦС",
+  "minSdk": 24,
+  "targetSdk": 36,
+  "debuggable": false,
+  "certificateSha256": "efbd5403c1bf73c63e8feac9f95b71b2231c96e7d39c8f2be6a153089a8398f8",
+  "signatureVerified": true,
+  "nativeCode": "'arm64-v8a' 'armeabi-v7a' 'x86_64'",
+  "status": "passed",
+  "kind": "release",
+  "path": "/Users/georgecarpow/Documents/own/cs-app/build/acceptance/m2/lexicon-cs-0.1.7+8-m2-candidate.apk",
+  "sha256": "27992df6899a2a03d18e4e5099cd99686302bf19d0f8f38ac8ffac44493abce7",
+  "bytes": 58672123,
+  "sourceVersion": "0.1.7+8",
+  "serverHttpsStringPresent": true,
+  "dictionaryOrPrivateKeyBundled": false,
+  "installed": false,
+  "launched": false,
+  "visualChecked": false,
+  "previousApk": {
+    "path": "build/acceptance/lexicon-cs-0.1.6.apk",
+    "versionName": "0.1.6",
+    "versionCode": 7,
+    "samePackageAndCertificate": true
+  },
+  "nativeUpgradeTested": false,
+  "readerHttpsStringPresent": true,
+  "incomingLinkFiltersDeclared": true,
+  "verifiedAppLinksOnDevice": false
+}

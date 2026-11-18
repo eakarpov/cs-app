@@ -1,0 +1,119 @@
+{
+  "search": {
+    "version": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "query": "аа",
+    "direction": "cu-ru",
+    "items": [
+      {
+        "id": "000000000000000000000001",
+        "name": "a1",
+        "pos": "noun",
+        "match": "lemma",
+        "matched": "a1",
+        "grammar": "",
+        "rank": 10,
+        "exact": false
+      },
+      {
+        "id": "000000000000000000000002",
+        "name": "a2",
+        "pos": "noun",
+        "match": "lemma",
+        "matched": "a2",
+        "grammar": "",
+        "rank": 10,
+        "exact": false
+      }
+    ],
+    "nextCursor": "WzIsImFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiLCJjdS1ydSIsItCw0LAiLCJkaWN0aW9uYXJ5LXNlYXJjaC0xIiwyLDJd",
+    "schemaVersion": 2,
+    "dictionaryVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "continuation": {
+    "version": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "query": "аа",
+    "direction": "cu-ru",
+    "items": [
+      {
+        "id": "000000000000000000000003",
+        "name": "a3",
+        "pos": "noun",
+        "match": "lemma",
+        "matched": "a3",
+        "grammar": "",
+        "rank": 10,
+        "exact": false
+      },
+      {
+        "id": "000000000000000000000004",
+        "name": "a4",
+        "pos": "noun",
+        "match": "lemma",
+        "matched": "a4",
+        "grammar": "",
+        "rank": 10,
+        "exact": false
+      }
+    ],
+    "nextCursor": null,
+    "schemaVersion": 2,
+    "dictionaryVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "article": {
+    "id": "000000000000000000000001",
+    "name": "a1",
+    "originalName": "original",
+    "pos": "noun",
+    "properties": [],
+    "scheme": "",
+    "morphologyStatus": "unassigned",
+    "izvod": "",
+    "paradigms": [],
+    "extra": [
+      {
+        "value": "а",
+        "grammar": "",
+        "segments": null,
+        "origin": "stored",
+        "formOrigin": "dictionary",
+        "reviewStatus": "unknown",
+        "provenance": [],
+        "evidence": []
+      }
+    ],
+    "sources": [
+      {
+        "id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "title": "Source",
+        "preview": "text",
+        "mappingStatus": "verified",
+        "sourceVersion": "source-revision"
+      }
+    ],
+    "relations": [],
+    "etymologies": [],
+    "usage": [],
+    "composition": [],
+    "examples": [],
+    "schemaVersion": 2,
+    "version": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "dictionaryVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "relatedSources": []
+  },
+  "source": {
+    "id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "entryId": "native",
+    "sourceCode": "test",
+    "title": "Source",
+    "bibliographyStatus": "unknown",
+    "version": "source-revision",
+    "paragraphs": [],
+    "text": "text",
+    "anchors": [],
+    "examples": [],
+    "schemaVersion": 2,
+    "sourceVersion": "source-revision",
+    "publicationVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "dictionaryVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  }
+}

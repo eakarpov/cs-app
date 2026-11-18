@@ -64,11 +64,23 @@ class MorphemeAnalysis {
       form = string(j['form']),
       status = string(j['status']),
       note = string(j['note']),
+      generationOrigin = string(j['generationOrigin']),
+      reviewStatus = string(j['reviewStatus']),
+      completeness = string(j['completeness']),
       parts = array(j['parts']).map((v) => MorphemePart(object(v))).toList(),
       letters = array(
         j['letters'],
       ).map((v) => MorphemeLetter(object(v))).toList();
   final String id, form, status, note;
+  final String generationOrigin, reviewStatus, completeness;
+  String get reviewLabel => switch (reviewStatus) {
+    'dictionary_checked' => 'Проверено по словарям',
+    'user_accepted' => 'Принято редактором',
+    'unreviewed' when generationOrigin == 'automatic' =>
+      'Автоматический кандидат · Не проверен',
+    'unreviewed' => 'Проверка не зафиксирована',
+    _ => '',
+  };
   final List<MorphemePart> parts;
   final List<MorphemeLetter> letters;
 }
