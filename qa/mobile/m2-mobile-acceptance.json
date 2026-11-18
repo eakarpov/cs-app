@@ -38,7 +38,7 @@
     "prefixHitsExcludedFromTokenCandidates": true,
     "automaticCorpusBinding": false
   },
-  "sourceTreeSha256": "c54c009354b519bef863838fa46ed57c10c67344cebb78a0765374b3942b6fa8",
+  "sourceTreeSha256": "80ee6f10baa975996d58e45a53b09348996b27606515980000b379635a53bd14",
   "sourceInputsReceipt": "qa/mobile/m2-source-inputs.json",
   "artifactReceipt": "qa/mobile/m2-apk.json",
   "apkSha256": "27992df6899a2a03d18e4e5099cd99686302bf19d0f8f38ac8ffac44493abce7",
@@ -56,5 +56,7 @@
     "no verified App Links domain ownership or iOS association in this task",
     "no offline full corpus or persistent reading position across process restart",
     "partial accepted-link coverage; no human scholarly acceptance claimed"
-  ]
+  ],
+  "codeCommit": "16a9f8531d4163d8677c18db4893824e06af1750",
+  "trackedBuildInputsMatchCommit": true
 }

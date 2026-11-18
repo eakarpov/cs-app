@@ -1,8 +1,8 @@
 {
   "format": "android-source-inputs-v1",
-  "gitHead": "97a8cbda438f8b1c6a5bff9abc908466606791d4",
+  "gitHead": "16a9f8531d4163d8677c18db4893824e06af1750",
   "gitWorkingTreeClean": false,
-  "sourceTreeSha256": "c54c009354b519bef863838fa46ed57c10c67344cebb78a0765374b3942b6fa8",
+  "sourceTreeSha256": "80ee6f10baa975996d58e45a53b09348996b27606515980000b379635a53bd14",
   "files": [
     {
       "path": "analysis_options.yaml",
@@ -88,11 +88,6 @@
       "path": "android/build.gradle.kts",
       "sha256": "6a26dba2cb8dfba1e74f540b0d17a89d96c1301d3c3bfda14348bed257fddcba",
       "bytes": 537
-    },
-    {
-      "path": "android/cs_android.iml",
-      "sha256": "90d961bc4ccb4b0ae3f75ce495c273f08745a55c50bd213e259723fc341d0193",
-      "bytes": 1601
     },
     {
       "path": "android/gradle/wrapper/gradle-wrapper.jar",
@@ -421,5 +416,20 @@
     }
   ],
   "scope": "Android inputs from current worktree; signing material external; generated plugin registration from locked dependencies",
-  "secretFilesIncluded": false
+  "secretFilesIncluded": false,
+  "trackedInputsMatchCommit": "16a9f8531d4163d8677c18db4893824e06af1750",
+  "trackedInputCount": 80,
+  "generatedBuildSupport": [
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "16caeaf66d57a0d1d2087fef6a97efa62de8da69afa5b908f40db35afc4342da",
+      "bytes": 53636
+    },
+    {
+      "path": "android/gradlew",
+      "sha256": "ec56c02543666d92d9ac5ae7fcc48f88ce4de0deb8b7f9b39928ca46f68c1b2b",
+      "bytes": 4971
+    }
+  ],
+  "generatedBuildSupportNote": "Flutter-generated Gradle bootstrap is ignored by the Android template; hashes retained for the actual build, IDE .iml excluded."
 }

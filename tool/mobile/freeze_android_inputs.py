@@ -10,7 +10,7 @@ def inputs():
    rel=p.relative_to(ROOT);parts=rel.parts
    if any(x in {'build','.gradle','.cxx','.kotlin','.idea','.DS_Store'} for x in parts):continue
    if p.name in {'local.properties','key.properties','signing.properties','GeneratedPluginRegistrant.java','gradlew.bat'}:continue
-   if p.suffix in {'.jks','.keystore','.log','.p12','.pem'} or p.name.startswith('.env'):continue
+   if p.suffix in {'.jks','.keystore','.log','.p12','.pem','.iml'} or p.name.startswith('.env'):continue
    paths.append(p)
  return sorted({p for p in paths if p.is_file()})
 def freeze(out,archive=None):
